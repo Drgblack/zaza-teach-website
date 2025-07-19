@@ -10,22 +10,16 @@ import {
   CardTitle,
 } from '../components/ui/card'
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-violet-600 to-indigo-700 text-white px-4">
-      <Card className="w-full max-w-xl shadow-2xl border-none bg-white/10 backdrop-blur-sm">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-3xl font-bold text-center">
-            Welcome to Zaza Teach
-          </CardTitle>
+          <CardTitle>Welcome to Zaza Teach</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4 text-center">
-          <p className="text-lg">
-            AI tools to help teachers plan faster, communicate better, and thrive.
-          </p>
-          <Button className="text-white bg-purple-600 hover:bg-purple-700">
-            Explore Zaza Teach
-          </Button>
+        <CardContent>
+          <p>This is the homepage of your site. Edit <code>app/page.tsx</code> to get started.</p>
+          <Button className="mt-4">Explore</Button>
         </CardContent>
       </Card>
     </main>
