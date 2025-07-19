@@ -1,3 +1,7 @@
+// pages/index.tsx
+export default function Home() {
+  return <h1>Zaza Teach is live!</h1>;
+}
 "use client"
 
 import { useState, useEffect } from "react"
