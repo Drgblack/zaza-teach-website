@@ -1,35 +1,27 @@
-'use client'
 
-import { useState, useEffect } from 'react'
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-} from 'framer-motion'
+export const metadata = {
+  title: 'Zaza Teach | AI Lesson Planning for Educators',
+  description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
+  openGraph: {
+    title: 'Zaza Teach | AI Lesson Planning for Educators',
+    description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
+    url: 'https://zazatechnologies.com/teach',
+    siteName: 'Zaza Technologies',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zaza Teach | AI Lesson Planning for Educators',
+    description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
+  },
+  alternates: {
+    canonical: 'https://zazatechnologies.com/teach',
+  },
+};
 
-import { Button } from '../components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '../components/ui/card'
+import dynamic from 'next/dynamic';
+const HomePage = dynamic(() => import('./../components/HomePage'), { ssr: false });
 
-export default function Home() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Card>
-        <CardHeader>
-          <CardTitle>Zaza Teach</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>This is your homepage.</p>
-          <Button onClick={() => setCount(count + 1)}>Click me ({count})</Button>
-        </CardContent>
-      </Card>
-    </main>
-  )
+export default function Page() {
+  return <HomePage />;
 }

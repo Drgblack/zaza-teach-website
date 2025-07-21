@@ -1,5 +1,5 @@
 {
-  "name": "my-v0-project",
+  "name": "teach",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -42,21 +42,24 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "latest",
-    "date-fns": "4.1.0",
+    "date-fns": "^3.0.0",
+    "dotenv": "^17.2.0",
     "embla-carousel-react": "latest",
     "framer-motion": "latest",
     "input-otp": "latest",
     "lucide-react": "^0.454.0",
     "next": "^14.2.30",
     "next-themes": "latest",
-    "react": "^18",
+    "node-fetch": "^3.3.2",
+    "react": "^18.2.0",
     "react-day-picker": "latest",
-    "react-dom": "^18",
+    "react-dom": "^18.2.0",
     "react-hook-form": "latest",
     "react-resizable-panels": "latest",
     "recharts": "latest",
     "sonner": "latest",
     "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "latest",
     "zod": "^3.24.1"
@@ -66,7 +69,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8.5",
-    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }
