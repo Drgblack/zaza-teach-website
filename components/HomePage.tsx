@@ -1,11 +1,51 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
-import { BookOpen, Clock, Users, Sparkles, ArrowRight, Star, CheckCircle, X, Zap, FileText, Share2, Globe, Heart, Coffee, AlertTriangle, Battery } from 'lucide-react';
+import { BookOpen, Clock, Users, Sparkles, ArrowRight, Star, CheckCircle, X, Zap, FileText, Share2, Globe, Heart, Coffee, AlertTriangle, Battery, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function HomePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const teachers = [
+    {
+      name: "Sarah Mitchell",
+      image: "/images/sarah-teacher.png",
+      subject: "Elementary Mathematics",
+      quote: "Plans that actually work in my classroom"
+    },
+    {
+      name: "Marcus Johnson", 
+      image: "/images/marcus-teacher.png",
+      subject: "High School Science",
+      quote: "Saves me hours every week"
+    },
+    {
+      name: "Lisa Kim",
+      image: "/images/lisa-teacher.png", 
+      subject: "Middle School English",
+      quote: "Finally, lesson planning I can enjoy"
+    }
+  ];
+
+  // Auto-rotate slides every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % teachers.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [teachers.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % teachers.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + teachers.length) % teachers.length);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#F8F8FC] via-white to-[#E8E6F5]">
       {/* Hero Section */}
@@ -49,7 +89,7 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Right Column - Teacher Photo */}
+            {/* Right Column - Teacher Photo Carousel */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -61,30 +101,89 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#66B2B2]/20 to-[#8A2BE2]/20 rounded-2xl transform rotate-3"></div>
                 <div className="absolute inset-0 bg-gradient-to-tl from-[#FFD700]/20 to-[#E0115F]/20 rounded-2xl transform -rotate-2"></div>
                 
-                {/* Teacher photo */}
-                <div className="relative bg-white rounded-2xl p-4 shadow-2xl">
-                  <img
-                    src="/images/sarah-teacher.png"
-                    alt="Teacher Sarah - Using Zaza Teach for lesson planning"
-                    className="w-full h-auto rounded-xl object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = "/placeholder-user.jpg"
-                    }}
-                  />
-                  
-                  {/* Floating badge */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1, duration: 0.5 }}
-                    className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg border-4 border-[#66B2B2]"
+                {/* Carousel Container */}
+                <div className="relative bg-white rounded-2xl p-4 shadow-2xl overflow-hidden">
+                  <div className="relative h-96 md:h-[450px]">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentSlide}
+                        initial={{ opacity: 0, x: 300 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -300 }}
+                        transition={{ duration: 0.5 }}
+                        className="absolute inset-0"
+                      >
+                        <img
+                          src={teachers[currentSlide].image}
+                          alt={`${teachers[currentSlide].name} - ${teachers[currentSlide].subject} teacher using Zaza Teach`}
+                          className="w-full h-full rounded-xl object-cover"
+                          onError={(e) => {
+                            e.currentTarget.src = "/placeholder-user.jpg"
+                          }}
+                        />
+                        
+                        {/* Teacher Info Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-xl">
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                          >
+                            <h3 className="text-white font-bold text-lg">{teachers[currentSlide].name}</h3>
+                            <p className="text-white/90 text-sm">{teachers[currentSlide].subject}</p>
+                            <p className="text-white/80 text-sm italic mt-1">"{teachers[currentSlide].quote}"</p>
+                          </motion.div>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Carousel Controls */}
+                  <button
+                    onClick={prevSlide}
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                    aria-label="Previous teacher"
                   >
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-[#66B2B2]">5min</div>
-                      <div className="text-xs text-[#2C3E35]/70 font-medium">Planning Time</div>
-                    </div>
-                  </motion.div>
+                    <ChevronLeft className="h-5 w-5 text-[#2C3E35]" />
+                  </button>
+                  
+                  <button
+                    onClick={nextSlide}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                    aria-label="Next teacher"
+                  >
+                    <ChevronRight className="h-5 w-5 text-[#2C3E35]" />
+                  </button>
+
+                  {/* Slide Indicators */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {teachers.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                          index === currentSlide 
+                            ? 'bg-white scale-125' 
+                            : 'bg-white/50 hover:bg-white/75'
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
+                
+                {/* Floating badge */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1, duration: 0.5 }}
+                  className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg border-4 border-[#66B2B2]"
+                >
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-[#66B2B2]">5min</div>
+                    <div className="text-xs text-[#2C3E35]/70 font-medium">Planning Time</div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
