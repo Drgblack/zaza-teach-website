@@ -1,12 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
-
+import { useState } from 'react';
 import { Button } from './ui/button';
 import {
   Card,

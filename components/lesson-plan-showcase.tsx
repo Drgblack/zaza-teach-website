@@ -88,9 +88,9 @@ const LessonPlanShowcase = () => {
                 <Badge
                   className="text-xs font-medium px-3 py-1 rounded-full"
                   style={{
-                    backgroundColor: `${plan.statusColor}20`,
-                    color: plan.statusColor,
-                    border: `1px solid ${plan.statusColor}40`,
+                    backgroundColor: plan.status === 'Draft' ? '#7A5F00' : `${plan.statusColor}CC`,
+                    color: '#fff',
+                    border: `1px solid ${plan.statusColor}80`,
                   }}
                 >
                   {plan.status}
@@ -121,8 +121,8 @@ const LessonPlanShowcase = () => {
                   </motion.div>
 
                   <div className="flex-1 min-w-0">
-                    <CardTitle className="text-lg font-bold text-[#2C3E35] mb-1 line-clamp-2">{plan.title}</CardTitle>
-                    <div className="flex items-center space-x-3 text-sm text-[#2C3E35]/60">
+                    <CardTitle className="text-lg font-bold text-[#2C3E35] mb-1 line-clamp-2" title={plan.title}>{plan.title}</CardTitle>
+                    <div className="flex items-center space-x-3 text-sm text-[#2C3E35]/80">
                       <span className="font-medium">{plan.grade}</span>
                       <div className="flex items-center space-x-1">
                         <Clock className="h-3 w-3" />
@@ -134,7 +134,7 @@ const LessonPlanShowcase = () => {
               </CardHeader>
 
               <CardContent className="pt-0">
-                <p className="text-sm text-[#2C3E35]/70 mb-4 line-clamp-2">{plan.description}</p>
+                <p className="text-sm text-[#2C3E35]/80 mb-4 line-clamp-2" title={plan.description}>{plan.description}</p>
 
                 <div className="flex items-center space-x-2">
                   <Button
@@ -147,7 +147,7 @@ const LessonPlanShowcase = () => {
                   <Button
                     size="sm"
                     variant="outline"
-                    className="flex-1 border-[#8A2BE2] text-[#8A2BE2] hover:bg-[#8A2BE2] hover:text-white rounded-full text-xs font-medium transition-all duration-300 bg-transparent"
+                    className="flex-1 border-[#8A2BE2] text-[#8A2BE2] hover:bg-[#8A2BE2] hover:text-white rounded-full text-xs font-medium transition-all duration-300 bg-transparent focus:bg-[#8A2BE2] focus:text-white"
                   >
                     <Edit3 className="h-3 w-3 mr-1" />
                     Edit
@@ -163,7 +163,7 @@ const LessonPlanShowcase = () => {
                       exit={{ opacity: 0, height: 0 }}
                       className="mt-3 pt-3 border-t border-[#2C3E35]/10"
                     >
-                      <div className="flex items-center justify-between text-xs text-[#2C3E35]/60">
+                      <div className="flex items-center justify-between text-xs text-[#2C3E35]/80">
                         <span className="flex items-center space-x-1">
                           <Sparkles className="h-3 w-3" />
                           <span>Curriculum Aligned</span>
@@ -203,9 +203,9 @@ const LessonPlanShowcase = () => {
             </div>
             <div className="space-y-2">
               <h4 className="font-semibold text-[#2C3E35]">Before Zaza</h4>
-              <p className="text-sm text-[#2C3E35]/70">Late-night clutter, multiple tabs, endless searching</p>
+              <p className="text-sm text-[#2C3E35]/80">Late-night clutter, multiple tabs, endless searching</p>
               <div className="text-2xl font-bold text-red-500">3 hours</div>
-              <p className="text-xs text-[#2C3E35]/60">of prep time</p>
+              <p className="text-xs text-[#2C3E35]/80">of prep time</p>
             </div>
           </div>
 
@@ -232,9 +232,9 @@ const LessonPlanShowcase = () => {
             </div>
             <div className="space-y-2">
               <h4 className="font-semibold text-[#2C3E35]">After Zaza</h4>
-              <p className="text-sm text-[#2C3E35]/70">Single screen calm, early evening, cup of tea</p>
+              <p className="text-sm text-[#2C3E35]/80">Single screen calm, early evening, cup of tea</p>
               <div className="text-2xl font-bold text-[#66B2B2]">5 minutes</div>
-              <p className="text-xs text-[#2C3E35]/60">of clarity</p>
+              <p className="text-xs text-[#2C3E35]/80">of clarity</p>
             </div>
           </div>
         </div>
@@ -247,7 +247,7 @@ const LessonPlanShowcase = () => {
           className="text-center mt-6 pt-6 border-t border-[#2C3E35]/10"
         >
           <p className="text-lg font-semibold text-[#8A2BE2]">3 hours of prep → 5 minutes of clarity</p>
-          <p className="text-sm text-[#2C3E35]/70 mt-1">Reclaim your evenings. Rediscover your passion for teaching.</p>
+          <p className="text-sm text-[#2C3E35]/80 mt-1">Reclaim your evenings. Rediscover your passion for teaching.</p>
         </motion.div>
       </motion.div>
     </div>

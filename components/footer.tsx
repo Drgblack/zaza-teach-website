@@ -92,13 +92,13 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={social.name}
                     className="text-white hover:text-purple-300 transition-all duration-300 hover:scale-110"
                     whileHover={{ scale: 1.1 }}
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    aria-label={social.name}
                   >
                     {social.icon}
                   </motion.a>
@@ -128,14 +128,14 @@ const Footer = () => {
                     <div className="flex items-center space-x-2">
                       <Link
                         href={link.href}
-                        className="text-white hover:text-purple-300 transition-colors duration-300"
+                        className="text-white hover:text-purple-800 transition-colors duration-300"
                       >
                         {link.name}
                       </Link>
                       {link.comingSoon && (
                         <Badge
                           variant="outline"
-                          className="text-xs bg-purple-500/20 text-purple-300 border-purple-400/30"
+                          className="text-xs bg-purple-700 text-white border-purple-900"
                         >
                           Coming Soon
                         </Badge>
@@ -165,7 +165,7 @@ const Footer = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 + index * 0.05 }}
                   >
-                    <Link href={link.href} className="text-white hover:text-purple-300 transition-colors duration-300">
+                    <Link href={link.href} className="text-white hover:text-purple-800 transition-colors duration-300">
                       {link.name}
                     </Link>
                   </motion.li>
@@ -192,7 +192,7 @@ const Footer = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + index * 0.05 }}
                   >
-                    <Link href={link.href} className="text-white hover:text-purple-300 transition-colors duration-300">
+                    <Link href={link.href} className="text-white hover:text-purple-800 transition-colors duration-300">
                       {link.name}
                     </Link>
                   </motion.li>
@@ -210,10 +210,10 @@ const Footer = () => {
           transition={{ delay: 0.4 }}
           className="border-t border-white/20 mt-8 pt-4 text-center"
         >
-          <p className="text-sm text-white/80 mb-2">
+          <p className="text-sm text-white/90 mb-2">
             © 2025 Zaza Technologies UG (haftungsbeschränkt). All rights reserved.
           </p>
-          <p className="text-sm text-white/60">Made with 💙 by teachers, for teachers.</p>
+          <p className="text-sm text-white">Made with 💙 by teachers, for teachers.</p>
         </motion.div>
       </div>
     </footer>

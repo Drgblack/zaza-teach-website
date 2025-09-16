@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -19,6 +19,10 @@ const Header = () => {
     { code: "ES", label: "Spanish", href: "/es" },
     { code: "FR", label: "French", href: "/fr" },
   ]
+
+  const solutionsMenuRef = useRef(null)
+  const learningMenuRef = useRef(null)
+  const aboutMenuRef = useRef(null)
 
   // Initialize dark mode from localStorage and system preference
   useEffect(() => {
@@ -83,14 +87,78 @@ const Header = () => {
     setActiveDropdown(null)
   }
 
+  const handleDropdownKeyDown = (e, dropdown) => {
+    if (e.key === "Enter" || e.key === " ") {
+      handleDropdownToggle(dropdown)
+    } else if (e.key === "ArrowDown") {
+      setActiveDropdown(dropdown)
+      setTimeout(() => {
+        const menu =
+          dropdown === "solutions"
+            ? solutionsMenuRef.current
+            : dropdown === "learning"
+            ? learningMenuRef.current
+            : aboutMenuRef.current
+        if (menu) menu.querySelector('[role="menuitem"]')?.focus()
+      }, 0)
+    }
+  }
+  const handleMenuKeyDown = (e) => {
+    const items = Array.from(e.currentTarget.querySelectorAll('[role="menuitem"]'))
+    const idx = items.indexOf(document.activeElement)
+    if (e.key === "ArrowDown") {
+      e.preventDefault()
+      const next = items[(idx + 1) % items.length]
+      next?.focus()
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault()
+      const prev = items[(idx - 1 + items.length) % items.length]
+      prev?.focus()
+    } else if (e.key === "Escape") {
+      closeDropdown()
+      // Return focus to toggle
+      document.querySelector(`[aria-controls="${e.currentTarget.id}"]`)?.focus()
+    }
+  }
+
   const LanguageSwitcher = ({ isMobile = false }) => {
     const [isOpen, setIsOpen] = useState(false)
+    const buttonRef = useRef(null)
+    const menuRef = useRef(null)
 
     const currentLang = languages.find((lang) => lang.code === currentLanguage) || languages[0]
+
+    const handleLanguageSwitcherKeyDown = (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        setIsOpen((open) => !open)
+      } else if (e.key === "ArrowDown") {
+        setIsOpen(true)
+        setTimeout(() => {
+          menuRef.current?.querySelector('[role="menuitem"]')?.focus()
+        }, 0)
+      }
+    }
+    const handleLanguageMenuKeyDown = (e) => {
+      const items = Array.from(e.currentTarget.querySelectorAll('[role="menuitem"]'))
+      const idx = items.indexOf(document.activeElement)
+      if (e.key === "ArrowDown") {
+        e.preventDefault()
+        const next = items[(idx + 1) % items.length]
+        next?.focus()
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault()
+        const prev = items[(idx - 1 + items.length) % items.length]
+        prev?.focus()
+      } else if (e.key === "Escape") {
+        setIsOpen(false)
+        buttonRef.current?.focus()
+      }
+    }
 
     return (
       <div className={`relative ${isMobile ? "w-full" : ""}`}>
         <button
+          ref={buttonRef}
           onClick={() => setIsOpen(!isOpen)}
           onBlur={(e) => {
             // Close dropdown when focus leaves the component
@@ -98,12 +166,14 @@ const Header = () => {
               setTimeout(() => setIsOpen(false), 150)
             }
           }}
+          onKeyDown={handleLanguageSwitcherKeyDown}
+          aria-label="Select language"
+          aria-haspopup="menu"
+          aria-expanded={isOpen}
+          aria-controls="language-menu"
           className={`flex items-center space-x-2 px-3 py-2 text-sm font-medium text-slate-800 dark:text-white hover:text-[#E0115F] hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#E0115F] focus:ring-offset-2 ${
             isMobile ? "w-full justify-center" : ""
           }`}
-          aria-label="Select language"
-          aria-expanded={isOpen}
-          aria-haspopup="true"
         >
           <span>{currentLang.code}</span>
           <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
@@ -114,6 +184,10 @@ const Header = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+              id="language-menu"
+              role="menu"
+              ref={menuRef}
+              tabIndex={-1}
               initial={{ opacity: 0, y: -10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -121,8 +195,9 @@ const Header = () => {
               className={`absolute ${
                 isMobile ? "left-0 right-0 top-full" : "right-0 top-full"
               } mt-2 bg-white dark:bg-[#111827] rounded-lg shadow-xl border border-gray-200/50 dark:border-gray-700/50 py-2 z-50 min-w-[120px]`}
+              onKeyDown={handleLanguageMenuKeyDown}
             >
-              {languages.map((lang) => (
+              {languages.map((lang, idx) => (
                 <Link
                   key={lang.code}
                   href={lang.href}
@@ -131,13 +206,14 @@ const Header = () => {
                     setIsOpen(false)
                     if (isMobile) setMobileMenuOpen(false)
                   }}
+                  role="menuitem"
+                  tabIndex={0}
                   className={`flex items-center px-4 py-2 text-sm transition-colors duration-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:bg-slate-100 dark:focus:bg-slate-800 ${
                     currentLanguage === lang.code
                       ? "text-[#E0115F] font-semibold bg-[#E0115F]/5"
                       : "text-slate-800 dark:text-white"
                   }`}
                   aria-label={`Switch to ${lang.label}`}
-                  role="menuitem"
                 >
                   <span className="mr-3">{lang.code}</span>
                   <span className="text-xs text-slate-500 dark:text-slate-400">{lang.label}</span>
@@ -182,6 +258,10 @@ const Header = () => {
               <button
                 onClick={() => handleDropdownToggle("solutions")}
                 onMouseEnter={() => setActiveDropdown("solutions")}
+                onKeyDown={(e) => handleDropdownKeyDown(e, "solutions")}
+                aria-haspopup="menu"
+                aria-expanded={activeDropdown === "solutions"}
+                aria-controls="solutions-menu"
                 className="flex items-center space-x-1 text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
               >
                 <span>Our Solutions</span>
@@ -193,17 +273,24 @@ const Header = () => {
               <AnimatePresence>
                 {activeDropdown === "solutions" && (
                   <motion.div
+                    id="solutions-menu"
+                    role="menu"
+                    tabIndex={-1}
+                    ref={solutionsMenuRef}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-[#111827] rounded-lg shadow-xl border border-gray-200/50 dark:border-gray-700/50 py-2 z-50"
                     onMouseLeave={closeDropdown}
+                    onKeyDown={handleMenuKeyDown}
                   >
                     {solutions.map((solution, index) => (
                       <Link
                         key={solution.name}
                         href={solution.href}
+                        role="menuitem"
+                        tabIndex={0}
                         className="flex items-center justify-between px-4 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors"
                         onClick={closeDropdown}
                       >
@@ -228,6 +315,10 @@ const Header = () => {
               <button
                 onClick={() => handleDropdownToggle("learning")}
                 onMouseEnter={() => setActiveDropdown("learning")}
+                onKeyDown={(e) => handleDropdownKeyDown(e, "learning")}
+                aria-haspopup="menu"
+                aria-expanded={activeDropdown === "learning"}
+                aria-controls="learning-menu"
                 className="flex items-center space-x-1 text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
               >
                 <span>Learning Centre</span>
@@ -239,17 +330,24 @@ const Header = () => {
               <AnimatePresence>
                 {activeDropdown === "learning" && (
                   <motion.div
+                    id="learning-menu"
+                    role="menu"
+                    tabIndex={-1}
+                    ref={learningMenuRef}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-[#111827] rounded-lg shadow-xl border border-gray-200/50 dark:border-gray-700/50 py-2 z-50"
                     onMouseLeave={closeDropdown}
+                    onKeyDown={handleMenuKeyDown}
                   >
                     {learningCentre.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
+                        role="menuitem"
+                        tabIndex={0}
                         className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors font-medium"
                         onClick={closeDropdown}
                       >
@@ -266,6 +364,10 @@ const Header = () => {
               <button
                 onClick={() => handleDropdownToggle("about")}
                 onMouseEnter={() => setActiveDropdown("about")}
+                onKeyDown={(e) => handleDropdownKeyDown(e, "about")}
+                aria-haspopup="menu"
+                aria-expanded={activeDropdown === "about"}
+                aria-controls="about-menu"
                 className="flex items-center space-x-1 text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
               >
                 <span>About Us</span>
@@ -277,17 +379,24 @@ const Header = () => {
               <AnimatePresence>
                 {activeDropdown === "about" && (
                   <motion.div
+                    id="about-menu"
+                    role="menu"
+                    tabIndex={-1}
+                    ref={aboutMenuRef}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-[#111827] rounded-lg shadow-xl border border-gray-200/50 dark:border-gray-700/50 py-2 z-50"
                     onMouseLeave={closeDropdown}
+                    onKeyDown={handleMenuKeyDown}
                   >
                     {aboutUs.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
+                        role="menuitem"
+                        tabIndex={0}
                         className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors font-medium"
                         onClick={closeDropdown}
                       >
@@ -317,6 +426,7 @@ const Header = () => {
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}
+              aria-pressed={!!isDarkMode}
               className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle dark mode"
             >
@@ -419,6 +529,7 @@ const Header = () => {
                 <div className="flex justify-center pt-2">
                   <button
                     onClick={toggleDarkMode}
+                    aria-pressed={!!isDarkMode}
                     className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                     aria-label="Toggle dark mode"
                   >
