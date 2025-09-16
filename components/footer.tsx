@@ -6,12 +6,8 @@ import Link from "next/link"
 
 const Footer = () => {
   const productLinks = [
-    { name: "Zaza Promptly", href: "/promptly", comingSoon: false },
     { name: "Zaza Teach", href: "/", comingSoon: false },
-    { name: "Zaza Visuals", href: "/visuals", comingSoon: true },
-    { name: "Zaza Coach", href: "/coach", comingSoon: true },
-    { name: "Zaza Study", href: "/study", comingSoon: true },
-    { name: "Zaza Inbox", href: "/inbox", comingSoon: true },
+    { name: "Zaza Promptly", href: "/promptly", comingSoon: false },
   ]
 
   const resourceLinks = [

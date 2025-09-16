@@ -49,17 +49,8 @@ const Header = () => {
   }
 
   const solutions = [
-    { name: "Zaza Promptly", href: "/promptly", comingSoon: false },
     { name: "Zaza Teach", href: "/", comingSoon: false },
-    { name: "Zaza Inbox", href: "/inbox", comingSoon: true },
-    { name: "Zaza Visuals", href: "/visuals", comingSoon: true },
-    { name: "Zaza Coach", href: "/coach", comingSoon: true },
-    { name: "Zaza Kids", href: "/kids", comingSoon: true },
-    { name: "Zaza Schwoop", href: "/schwoop", comingSoon: true },
-    { name: "Zaza FocusFriend", href: "/focusfriend", comingSoon: true },
-    { name: "Zaza ClarityDeck", href: "/claritydeck", comingSoon: true },
-    { name: "Zaza BragBoard", href: "/bragboard", comingSoon: true },
-    { name: "Zaza Stackmate", href: "/stackmate", comingSoon: true },
+    { name: "Zaza Promptly", href: "/promptly", comingSoon: false },
   ]
 
   const learningCentre = [
