@@ -35,15 +35,15 @@ export default function FounderBioShort({ showImage = true, className = "" }: Fo
       
       <div className="text-sm text-[#2C3E35]/90 leading-relaxed space-y-3">
         <p>
-          Dr. Greg Blackburn is the Founder & CEO of Zaza Technologies. His path started in Tasmania as a painter and decorator — and it was education that changed everything. Step by step, learning opened doors that led to a career in professional education and ultimately to the CLO role.
+          Dr. Greg Blackburn is the Founder & CEO of Zaza Technologies. His path started in Tasmania as a painter and decorator - and it was education that changed everything. Step by step, learning opened doors that led to a career in professional education and ultimately to the CLO role.
         </p>
         
         <p>
-          Greg has trained thousands of people in business classrooms and worked alongside teachers, schools, and universities around the world. He holds a <strong>PhD in Professional Education from City, University of London</strong> and has published widely on how people think, learn, and solve problems. Teaching runs in the family — with a sister, aunty, uncle, cousins, and many close friends in the profession.
+          Greg has trained thousands of people in business classrooms and worked alongside teachers, schools, and universities around the world. He holds a <strong>PhD in Professional Education from City, University of London</strong> and has published widely on how people think, learn, and solve problems. Teaching runs in the family - with a sister, aunty, uncle, cousins, and many close friends in the profession.
         </p>
         
         <p>
-          Zaza Teach is Greg's promise to educators: tools built on sound pedagogy and deep empathy that give teachers back their time, creativity, and confidence — so they can do what they do best: just teach.
+          Zaza Teach is Greg's promise to educators: tools built on sound pedagogy and deep empathy that give teachers back their time, creativity, and confidence - so they can do what they do best: just teach.
         </p>
       </div>
       

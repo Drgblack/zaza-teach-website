@@ -44,7 +44,7 @@ Implemented comprehensive "About the Founder" section for Zaza Teach website to 
 - **Link to full bio** for engagement
 
 ### SEO & Social Optimization
-- **Title**: "About the Founder — Dr. Greg Blackburn | Zaza Teach"
+- **Title**: "About the Founder - Dr. Greg Blackburn | Zaza Teach"
 - **Meta description**: Optimized for search with key credentials and location
 - **Open Graph tags** for social media sharing
 - **Twitter Card** with large image support

@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import AboutFounderContent from './AboutFounderContent';
 
 export const metadata: Metadata = {
-  title: 'About the Founder — Dr. Greg Blackburn | Zaza Teach',
-  description: 'Dr. Greg Blackburn, Founder & CEO of Zaza Technologies. From Tasmanian trades to PhD at City, University of London — a career dedicated to helping teachers thrive.',
+  title: 'About the Founder - Dr. Greg Blackburn | Zaza Teach',
+  description: 'Dr. Greg Blackburn, Founder & CEO of Zaza Technologies. From Tasmanian trades to PhD at City, University of London - a career dedicated to helping teachers thrive.',
   openGraph: {
-    title: 'About the Founder — Dr. Greg Blackburn | Zaza Teach',
-    description: 'Education transformed Greg\'s life. Now his mission is to help teachers thrive — with empathetic, pedagogically sound AI.',
+    title: 'About the Founder - Dr. Greg Blackburn | Zaza Teach',
+    description: 'Education transformed Greg\'s life. Now his mission is to help teachers thrive - with empathetic, pedagogically sound AI.',
     url: 'https://zazatechnologies.com/teach/about-founder',
     siteName: 'Zaza Teach',
     type: 'website',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About the Founder — Dr. Greg Blackburn | Zaza Teach',
-    description: 'Education transformed Greg\'s life. Now his mission is to help teachers thrive — with empathetic, pedagogically sound AI.',
+    title: 'About the Founder - Dr. Greg Blackburn | Zaza Teach',
+    description: 'Education transformed Greg\'s life. Now his mission is to help teachers thrive - with empathetic, pedagogically sound AI.',
     images: ['/og/founder.jpg'],
   },
   alternates: {

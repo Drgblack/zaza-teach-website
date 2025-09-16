@@ -64,11 +64,11 @@ export default function AboutFounderContent() {
               </p>
 
               <p className="text-lg text-[#2C3E35]/90 leading-relaxed mb-6">
-                I didn't come to education through the usual path. My journey began in Tasmania, working as a painter and decorator — a job I quickly realised was going nowhere. What changed everything was education. Step by step, learning opened doors I never thought possible, lifting me out of a dead-end role and guiding me all the way to becoming a Chief Learning Officer.
+                I didn't come to education through the usual path. My journey began in Tasmania, working as a painter and decorator - a job I quickly realised was going nowhere. What changed everything was education. Step by step, learning opened doors I never thought possible, lifting me out of a dead-end role and guiding me all the way to becoming a Chief Learning Officer.
               </p>
 
               <p className="text-lg text-[#2C3E35]/90 leading-relaxed mb-6">
-                Along the way, I trained thousands of professionals in business classrooms, helping them build skills, confidence, and resilience. Those experiences gave me a deep appreciation for what it means to stand at the front of a room, to juggle expectations, and to pour energy into others every single day. Teachers will recognise that rhythm — it's the same commitment, just in a different context.
+                Along the way, I trained thousands of professionals in business classrooms, helping them build skills, confidence, and resilience. Those experiences gave me a deep appreciation for what it means to stand at the front of a room, to juggle expectations, and to pour energy into others every single day. Teachers will recognise that rhythm - it's the same commitment, just in a different context.
               </p>
 
               <p className="text-lg text-[#2C3E35]/90 leading-relaxed mb-6">
@@ -76,20 +76,20 @@ export default function AboutFounderContent() {
               </p>
 
               <p className="text-lg text-[#2C3E35]/90 leading-relaxed mb-6">
-                Teaching is also in my blood. My sister, aunty, uncle, cousins — and many close friends — are educators. Through them, and through decades in education and learning design, I've seen the realities of constant planning, admin overload, and the emotional labour of trying to be everything to everyone.
+                Teaching is also in my blood. My sister, aunty, uncle, cousins - and many close friends - are educators. Through them, and through decades in education and learning design, I've seen the realities of constant planning, admin overload, and the emotional labour of trying to be everything to everyone.
               </p>
 
               <p className="text-lg text-[#2C3E35]/90 leading-relaxed mb-6">
-                That's why I created <strong>Zaza Teach</strong>. It rests on two pillars: rigorous pedagogy and deep empathy for teachers. This isn't about replacing anyone — it's about giving teachers time, creativity, and confidence back. A tool that feels like a trusted colleague, taking on the heavy lifting so you can focus on what truly matters: just teaching.
+                That's why I created <strong>Zaza Teach</strong>. It rests on two pillars: rigorous pedagogy and deep empathy for teachers. This isn't about replacing anyone - it's about giving teachers time, creativity, and confidence back. A tool that feels like a trusted colleague, taking on the heavy lifting so you can focus on what truly matters: just teaching.
               </p>
 
               <p className="text-lg text-[#2C3E35]/90 leading-relaxed mb-8">
-                Education changed the trajectory of my life. Now my mission is to help teachers thrive — because when teachers thrive, students flourish.
+                Education changed the trajectory of my life. Now my mission is to help teachers thrive - because when teachers thrive, students flourish.
               </p>
 
               <div className="border-t border-[#2C3E35]/10 pt-6">
                 <p className="text-lg font-medium text-[#2C3E35]">
-                  — <strong>Dr. Greg Blackburn</strong><br />
+                  - <strong>Dr. Greg Blackburn</strong><br />
                   <span className="text-[#66B2B2]">Founder & CEO, Zaza Technologies</span>
                 </p>
               </div>
