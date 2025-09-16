@@ -10,41 +10,84 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-[#F8F8FC] via-white to-[#E8E6F5]">
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-[#66B2B2] to-[#8A2BE2] rounded-xl flex items-center justify-center">
-                <BookOpen className="h-6 w-6 text-white" />
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center lg:text-left"
+            >
+              <div className="flex items-center justify-center lg:justify-start space-x-2 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-[#66B2B2] to-[#8A2BE2] rounded-xl flex items-center justify-center">
+                  <BookOpen className="h-6 w-6 text-white" />
+                </div>
+                <h1 className="text-5xl font-bold bg-gradient-to-r from-[#2C3E35] to-[#8A2BE2] bg-clip-text text-transparent">
+                  Zaza Teach
+                </h1>
               </div>
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-[#2C3E35] to-[#8A2BE2] bg-clip-text text-transparent">
-                Zaza Teach
-              </h1>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E35] mb-6 leading-tight">
-              Lesson plans done in minutes – not hours.
-            </h2>
-            
-            <p className="text-xl text-[#2C3E35]/80 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Teachers spend evenings buried in planning. Zaza Teach helps you reclaim that time, 
-              giving you clear, curriculum-aligned lesson plans in just a few taps.
-            </p>
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E35] mb-6 leading-tight">
+                Lesson plans done in minutes – not hours.
+              </h2>
+              
+              <p className="text-xl text-[#2C3E35]/80 mb-8 leading-relaxed">
+                Teachers spend evenings buried in planning. Zaza Teach helps you reclaim that time, 
+                giving you clear, curriculum-aligned lesson plans in just a few taps.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button 
-                size="lg" 
-                className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
-              >
-                <Sparkles className="h-5 w-5 mr-2" />
-                Try Free – 5 Lesson Plans/Month
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Button>
-            </div>
-          </motion.div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
+                <Button 
+                  size="lg" 
+                  className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
+                >
+                  <Sparkles className="h-5 w-5 mr-2" />
+                  Try Free – 5 Lesson Plans/Month
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Teacher Photo */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative">
+                {/* Background decoration */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#66B2B2]/20 to-[#8A2BE2]/20 rounded-2xl transform rotate-3"></div>
+                <div className="absolute inset-0 bg-gradient-to-tl from-[#FFD700]/20 to-[#E0115F]/20 rounded-2xl transform -rotate-2"></div>
+                
+                {/* Teacher photo */}
+                <div className="relative bg-white rounded-2xl p-4 shadow-2xl">
+                  <img
+                    src="/images/sarah-teacher.png"
+                    alt="Teacher Sarah - Using Zaza Teach for lesson planning"
+                    className="w-full h-auto rounded-xl object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = "/placeholder-user.jpg"
+                    }}
+                  />
+                  
+                  {/* Floating badge */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 1, duration: 0.5 }}
+                    className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg border-4 border-[#66B2B2]"
+                  >
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-[#66B2B2]">5min</div>
+                      <div className="text-xs text-[#2C3E35]/70 font-medium">Planning Time</div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
