@@ -11,22 +11,22 @@ export default function HomePage() {
   
   const teachers = [
     {
-      name: "Sarah Mitchell",
-      image: "/images/sarah-teacher.png",
+      name: "Ms. Elena Rodriguez",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
       subject: "Elementary Mathematics",
-      quote: "Plans that actually work in my classroom"
+      quote: "Zaza Teach gives me my evenings back while keeping my lessons engaging"
     },
     {
-      name: "Marcus Johnson", 
-      image: "/images/marcus-teacher.png",
+      name: "Mr. David Chen", 
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
       subject: "High School Science",
-      quote: "Saves me hours every week"
+      quote: "From 3 hours to 5 minutes - this tool is a game changer"
     },
     {
-      name: "Lisa Kim",
-      image: "/images/lisa-teacher.png", 
+      name: "Ms. Aisha Thompson",
+      image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80", 
       subject: "Middle School English",
-      quote: "Finally, lesson planning I can enjoy"
+      quote: "Finally, lesson planning that sparks creativity instead of killing it"
     }
   ];
 
