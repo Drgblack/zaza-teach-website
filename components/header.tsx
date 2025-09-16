@@ -60,10 +60,10 @@ const Header = () => {
   ]
 
   const aboutUs = [
+    { name: "About the Founder", href: "/about-founder" },
     { name: "Vision & Mission", href: "/mission" },
     { name: "Zaza Product List", href: "/products" },
     { name: "Why Not Just Use ChatGPT?", href: "/why-not-chatgpt" },
-    { name: "Founder Manifesto", href: "/founder-manifesto" },
     { name: "Zaza Quote Wall", href: "/quote-wall" },
     { name: "Zaza Feature Request", href: "/feature-request" },
     { name: "Support", href: "/support" },

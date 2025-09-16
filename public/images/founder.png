@@ -1,0 +1,5 @@
+# This is a placeholder for the founder photo
+# Replace this file with the actual founder photo: /public/images/founder.png
+# The image should be a professional headshot, 400x400 pixels or larger
+# Format: PNG or JPG
+# For now, the component will fall back to placeholder-user.jpg if this file doesn't load
