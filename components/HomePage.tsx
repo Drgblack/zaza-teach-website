@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from './ui/button';
@@ -362,7 +362,7 @@ export default function HomePage() {
               {[
                 "It feels like having a planning partner who never gets tired.",
                 "For the first time in years, I leave school with energy left for my family.",
-                "I don't feel guilty about lesson prep anymore â€“ it's under control."
+                "I don't feel guilty about lesson prep anymore - it's under control."
               ].map((quote, index) => (
                 <motion.div
                   key={index}

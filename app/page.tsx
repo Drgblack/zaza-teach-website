@@ -1,4 +1,3 @@
-﻿
 export const metadata = {
   title: 'Zaza Teach | AI Lesson Planning for Educators',
   description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',

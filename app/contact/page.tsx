@@ -30,11 +30,11 @@ export default function ContactPage() {
                 <div className="space-y-4">
                   <div>
                     <h3 className="font-medium text-gray-900 dark:text-white">Email</h3>
-                    <p className="text-gray-600 dark:text-gray-300">hello@zazateach.com</p>
+                    <p className="text-gray-600 dark:text-gray-300">help@zazatechnologies.com</p>
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900 dark:text-white">Support</h3>
-                    <p className="text-gray-600 dark:text-gray-300">support@zazateach.com</p>
+                    <p className="text-gray-600 dark:text-gray-300">help@zazatechnologies.com</p>
                   </div>
                 </div>
               </div>
