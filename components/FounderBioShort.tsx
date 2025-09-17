@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -52,7 +52,7 @@ export default function FounderBioShort({ showImage = true, className = "" }: Fo
           href="/about-founder"
           className="text-[#66B2B2] hover:text-[#8A2BE2] font-medium text-sm transition-colors duration-200"
         >
-          Read full story →
+          Read full story â†’
         </Link>
       </div>
     </div>

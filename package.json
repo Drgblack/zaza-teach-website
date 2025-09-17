@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@drgblack/shared-ui": "file:C:/Users/User/zaza-shared-ui/drgblack-shared-ui-0.1.0.tgz",
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "latest",
@@ -51,9 +52,9 @@
     "next": "14.2.16",
     "next-themes": "latest",
     "node-fetch": "^3.3.2",
-    "react": "^18",
+    "react": "18.3.1",
     "react-day-picker": "latest",
-    "react-dom": "^18",
+    "react-dom": "18.3.1",
     "react-hook-form": "latest",
     "react-resizable-panels": "latest",
     "recharts": "latest",

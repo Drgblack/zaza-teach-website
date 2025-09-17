@@ -1,0 +1,81 @@
+﻿import { Footer } from "@drgblack/shared-ui";
+function normalizeFooterConfig(cfg) {
+  const linksArray = Array.isArray(cfg.links)
+    ? cfg.links
+    : Object.entries(cfg.links || {}).map(([title, links]) => ({
+        title,
+        links: Array.isArray(links) ? links : []
+      }));
+  return {
+    ...cfg,
+    links: linksArray,
+    socials: Array.isArray(cfg.socials) ? cfg.socials : [],
+    ctas: Array.isArray(cfg.ctas) ? cfg.ctas : [],
+    legal: cfg.legal || { privacy: "/privacy", terms: "/terms" },
+  };
+
+const TEACH_FOOTER_NORM = normalizeFooterConfig(TEACH_FOOTER);}
+
+const TEACH_FOOTER = {
+  productId: "teach",
+  links: {
+    Resources: [{ label: "Help Center", href: "/support" }],
+    Company:   [{ label: "About", href: "/about" }],
+    Legal:     [{ label: "Privacy", href: "/privacy" }, { label: "Terms", href: "/terms" }]
+  },
+  socials: [],
+  ctas: [],
+  legal: { privacy: "/privacy", terms: "/terms", impressum: "/impressum" },
+  tagline: "Made for teachers — with care and clean AI."
+};
+function toColumns(v) {
+  if (Array.isArray(v)) return v;
+  if (v && typeof v === "object") {
+    return Object.entries(v).map(([title, links]) => ({
+      title,
+      links: Array.isArray(links) ? links : []
+    }));
+  }
+  return [];
+}
+const FOOTER_SAFE = (() => {
+  const base = typeof TEACH_FOOTER === "object" ? TEACH_FOOTER : {};
+  const links = toColumns(base.links);
+  const columns = Array.isArray(base.columns) ? base.columns : links;
+  return {
+    productId: base.productId || "teach",
+    links,
+    columns,
+    socials: Array.isArray(base.socials) ? base.socials : [],
+    ctas: Array.isArray(base.ctas) ? base.ctas : [],
+    legal: base.legal || { privacy: "/privacy", terms: "/terms" },
+    tagline: base.tagline || "Made for teachers — with care and clean AI."
+  };
+})();
+
+
+const TEACH_FOOTER_NORM = normalizeFooterConfig(TEACH_FOOTER);import type { Metadata } from 'next'
+import './globals.css'
+import Header from '../components/header'
+export const metadata: Metadata = {
+  title: 'Zaza Teach | AI Lesson Planning for Educators',
+  description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
+  generator: 'v0.dev',
+}
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en">
+      <body className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer config={FOOTER_SAFE} locale="en" />
+      </body>
+    </html>
+  )
+}

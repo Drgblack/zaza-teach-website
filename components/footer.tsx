@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
@@ -207,9 +207,9 @@ const Footer = () => {
           className="border-t border-white/20 mt-8 pt-4 text-center"
         >
           <p className="text-sm text-white/90 mb-2">
-            © 2025 Zaza Technologies UG (haftungsbeschränkt). All rights reserved.
+            Â© 2025 Zaza Technologies UG (haftungsbeschrÃ¤nkt). All rights reserved.
           </p>
-          <p className="text-sm text-white">Made with 💙 by teachers, for teachers.</p>
+          <p className="text-sm text-white">Made with ðŸ’™ by teachers, for teachers.</p>
         </motion.div>
       </div>
     </footer>

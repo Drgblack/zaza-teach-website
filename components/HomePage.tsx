@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from './ui/button';
@@ -81,7 +81,7 @@ export default function HomePage() {
               </div>
               
               <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E35] mb-6 leading-tight">
-                Lesson plans done in minutes – not hours.
+                Lesson plans done in minutes â€“ not hours.
               </h2>
               
               <p className="text-xl text-[#2C3E35]/80 mb-8 leading-relaxed">
@@ -95,7 +95,7 @@ export default function HomePage() {
                   className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
                 >
                   <Sparkles className="h-5 w-5 mr-2" />
-                  Try Free – 5 Lesson Plans/Month
+                  Try Free â€“ 5 Lesson Plans/Month
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </div>
@@ -251,10 +251,10 @@ export default function HomePage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
               {[
-                { icon: Zap, text: "5-minute lesson planning – structured, adaptable plans instantly" },
-                { icon: Star, text: "Confidence boost – professional, creative scaffolding at your fingertips" },
-                { icon: CheckCircle, text: "Curriculum-ready – aligned outputs that fit your class needs" },
-                { icon: Heart, text: "Energy reclaimed – more focus for students and for your life outside school" }
+                { icon: Zap, text: "5-minute lesson planning â€“ structured, adaptable plans instantly" },
+                { icon: Star, text: "Confidence boost â€“ professional, creative scaffolding at your fingertips" },
+                { icon: CheckCircle, text: "Curriculum-ready â€“ aligned outputs that fit your class needs" },
+                { icon: Heart, text: "Energy reclaimed â€“ more focus for students and for your life outside school" }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -290,7 +290,7 @@ export default function HomePage() {
             transition={{ delay: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">Built for teachers – not techies</h3>
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">Built for teachers â€“ not techies</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -362,7 +362,7 @@ export default function HomePage() {
               {[
                 "It feels like having a planning partner who never gets tired.",
                 "For the first time in years, I leave school with energy left for my family.",
-                "I don't feel guilty about lesson prep anymore – it's under control."
+                "I don't feel guilty about lesson prep anymore â€“ it's under control."
               ].map((quote, index) => (
                 <motion.div
                   key={index}
@@ -399,14 +399,14 @@ export default function HomePage() {
               {[
                 {
                   title: "Free Plan",
-                  price: "€0",
+                  price: "â‚¬0",
                   features: ["5 lesson plans/month"],
                   cta: "Get Started Free",
                   popular: false
                 },
                 {
                   title: "Pro Plan", 
-                  price: "€19.99",
+                  price: "â‚¬19.99",
                   period: "/month",
                   features: ["Unlimited plans", "Full template library", "Priority support"],
                   cta: "Start Pro Trial",
@@ -414,7 +414,7 @@ export default function HomePage() {
                 },
                 {
                   title: "Bundle",
-                  price: "€24.99", 
+                  price: "â‚¬24.99", 
                   period: "/month",
                   features: ["Zaza Teach + Zaza Promptly", "All Pro features", "Cross-platform sync"],
                   cta: "Get Bundle",
@@ -474,7 +474,7 @@ export default function HomePage() {
             className="bg-gradient-to-r from-[#66B2B2]/10 to-[#8A2BE2]/10 rounded-2xl p-12"
           >
             <h3 className="text-3xl font-bold text-[#2C3E35] mb-6">
-              Zaza Teach helps teachers thrive – by giving back your time, energy, and confidence.
+              Zaza Teach helps teachers thrive â€“ by giving back your time, energy, and confidence.
             </h3>
             <Button 
               size="lg" 

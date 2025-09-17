@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -19,7 +19,7 @@ const LessonPlanShowcase = () => {
       subject: "Mathematics",
       status: "Saved",
       statusColor: "#66B2B2",
-      icon: "🍕",
+      icon: "ðŸ•",
       description: "Interactive fraction lesson using pizza slices",
     },
     {
@@ -30,7 +30,7 @@ const LessonPlanShowcase = () => {
       subject: "Science",
       status: "Draft",
       statusColor: "#FFD700",
-      icon: "🌿",
+      icon: "ðŸŒ¿",
       description: "Exploring food chains and habitats",
     },
     {
@@ -41,7 +41,7 @@ const LessonPlanShowcase = () => {
       subject: "English",
       status: "Shared",
       statusColor: "#8A2BE2",
-      icon: "✍️",
+      icon: "âœï¸",
       description: "Story starters and character development",
     },
   ]
@@ -246,7 +246,7 @@ const LessonPlanShowcase = () => {
           transition={{ delay: 1.5 }}
           className="text-center mt-6 pt-6 border-t border-[#2C3E35]/10"
         >
-          <p className="text-lg font-semibold text-[#8A2BE2]">3 hours of prep → 5 minutes of clarity</p>
+          <p className="text-lg font-semibold text-[#8A2BE2]">3 hours of prep â†’ 5 minutes of clarity</p>
           <p className="text-sm text-[#2C3E35]/80 mt-1">Reclaim your evenings. Rediscover your passion for teaching.</p>
         </motion.div>
       </motion.div>
