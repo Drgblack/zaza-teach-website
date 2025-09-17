@@ -7,7 +7,7 @@ import { ChevronDown, Menu, X, Moon, Sun, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 const Header = () => {
-  const [activeDropdown, setActiveDropdown] = useState(null)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [currentLanguage, setCurrentLanguage] = useState("EN")
@@ -70,7 +70,7 @@ const Header = () => {
     { name: "Contact", href: "/contact" },
   ]
 
-  const handleDropdownToggle = (dropdown) => {
+  const handleDropdownToggle = (dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
   }
 
@@ -78,7 +78,7 @@ const Header = () => {
     setActiveDropdown(null)
   }
 
-  const handleDropdownKeyDown = (e, dropdown) => {
+  const handleDropdownKeyDown = (e: React.KeyboardEvent, dropdown: string) => {
     if (e.key === "Enter" || e.key === " ") {
       handleDropdownToggle(dropdown)
     } else if (e.key === "ArrowDown") {
@@ -90,25 +90,25 @@ const Header = () => {
             : dropdown === "learning"
             ? learningMenuRef.current
             : aboutMenuRef.current
-        if (menu) menu.querySelector('[role="menuitem"]')?.focus()
+        if (menu) (menu.querySelector('[role="menuitem"]') as HTMLElement)?.focus()
       }, 0)
     }
   }
-  const handleMenuKeyDown = (e) => {
+  const handleMenuKeyDown = (e: React.KeyboardEvent) => {
     const items = Array.from(e.currentTarget.querySelectorAll('[role="menuitem"]'))
     const idx = items.indexOf(document.activeElement)
     if (e.key === "ArrowDown") {
       e.preventDefault()
-      const next = items[(idx + 1) % items.length]
+      const next = items[(idx + 1) % items.length] as HTMLElement
       next?.focus()
     } else if (e.key === "ArrowUp") {
       e.preventDefault()
-      const prev = items[(idx - 1 + items.length) % items.length]
+      const prev = items[(idx - 1 + items.length) % items.length] as HTMLElement
       prev?.focus()
     } else if (e.key === "Escape") {
       closeDropdown()
       // Return focus to toggle
-      document.querySelector(`[aria-controls="${e.currentTarget.id}"]`)?.focus()
+      (document.querySelector(`[aria-controls="${e.currentTarget.id}"]`) as HTMLElement)?.focus()
     }
   }
 
@@ -119,26 +119,26 @@ const Header = () => {
 
     const currentLang = languages.find((lang) => lang.code === currentLanguage) || languages[0]
 
-    const handleLanguageSwitcherKeyDown = (e) => {
+    const handleLanguageSwitcherKeyDown = (e: React.KeyboardEvent) => {
       if (e.key === "Enter" || e.key === " ") {
         setIsOpen((open) => !open)
       } else if (e.key === "ArrowDown") {
         setIsOpen(true)
         setTimeout(() => {
-          menuRef.current?.querySelector('[role="menuitem"]')?.focus()
+          (menuRef.current?.querySelector('[role="menuitem"]') as HTMLElement)?.focus()
         }, 0)
       }
     }
-    const handleLanguageMenuKeyDown = (e) => {
+    const handleLanguageMenuKeyDown = (e: React.KeyboardEvent) => {
       const items = Array.from(e.currentTarget.querySelectorAll('[role="menuitem"]'))
       const idx = items.indexOf(document.activeElement)
       if (e.key === "ArrowDown") {
         e.preventDefault()
-        const next = items[(idx + 1) % items.length]
+        const next = items[(idx + 1) % items.length] as HTMLElement
         next?.focus()
       } else if (e.key === "ArrowUp") {
         e.preventDefault()
-        const prev = items[(idx - 1 + items.length) % items.length]
+        const prev = items[(idx - 1 + items.length) % items.length] as HTMLElement
         prev?.focus()
       } else if (e.key === "Escape") {
         setIsOpen(false)
