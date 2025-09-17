@@ -9,7 +9,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@drgblack/shared-ui": "file:C:/Users/User/zaza-shared-ui/drgblack-shared-ui-0.1.0.tgz",
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "latest",
