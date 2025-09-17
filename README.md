@@ -8,7 +8,7 @@ AI Lesson Planning for Educators - Plan lessons faster with Zaza Teach, the AI-p
 
 ### ✅ Deployment Status - September 17, 2025
 
-**Production URL:** https://zaza-teach-website-10ky2wnqj-zaza-d3c15292.vercel.app  
+**Production URL:** https://zaza-teach-website-abpkx181t-zaza-d3c15292.vercel.app  
 **Repository:** https://github.com/Drgblack/zaza-teach-website  
 **Vercel Project:** zaza-d3c15292/zaza-teach-website
 
