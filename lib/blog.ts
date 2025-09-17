@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
+import { getAuthorBySlug, type Author } from './authors';
 
 export interface BlogPost {
   slug: string;
@@ -9,6 +10,7 @@ export interface BlogPost {
   description: string;
   date: string;
   author: string;
+  authorData?: Author;
   readingTime: string;
   tags: string[];
   heroImage?: string;
@@ -44,11 +46,14 @@ export function getAllPosts(): BlogPost[] {
         .trim()
         .substring(0, 150) + '...';
 
+      const authorData = matterResult.data.author ? getAuthorBySlug(matterResult.data.author) : null;
+
       return {
         slug,
         content: matterResult.content,
         excerpt,
         readingTime: readingStats.text,
+        authorData,
         ...matterResult.data,
       } as BlogPost;
     });
@@ -72,11 +77,14 @@ export function getPostBySlug(slug: string): BlogPost | null {
       .trim()
       .substring(0, 150) + '...';
 
+    const authorData = matterResult.data.author ? getAuthorBySlug(matterResult.data.author) : null;
+
     return {
       slug,
       content: matterResult.content,
       excerpt,
       readingTime: readingStats.text,
+      authorData,
       ...matterResult.data,
     } as BlogPost;
   } catch (error) {
