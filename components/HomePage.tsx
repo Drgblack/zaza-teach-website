@@ -290,7 +290,7 @@ export default function HomePage() {
             transition={{ delay: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">Built for teachers â€“ not techies</h3>
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">Built for teachers - not techies</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -399,14 +399,14 @@ export default function HomePage() {
               {[
                 {
                   title: "Free Plan",
-                  price: "â‚¬0",
+                  price: "€0",
                   features: ["5 lesson plans/month"],
                   cta: "Get Started Free",
                   popular: false
                 },
                 {
                   title: "Pro Plan", 
-                  price: "â‚¬19.99",
+                  price: "€19.99",
                   period: "/month",
                   features: ["Unlimited plans", "Full template library", "Priority support"],
                   cta: "Start Pro Trial",
@@ -414,7 +414,7 @@ export default function HomePage() {
                 },
                 {
                   title: "Bundle",
-                  price: "â‚¬24.99", 
+                  price: "€24.99", 
                   period: "/month",
                   features: ["Zaza Teach + Zaza Promptly", "All Pro features", "Cross-platform sync"],
                   cta: "Get Bundle",
