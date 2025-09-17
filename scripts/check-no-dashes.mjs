@@ -2,7 +2,7 @@
 import { promises as fs } from "node:fs";
 import { globSync } from "glob";
 
-const RE = /(\u2013|\u2014|&ndash;|&mdash;|â€"|â€")/;
+const RE = /(\u2013|\u2014|&ndash;|&mdash;|â€"|â€"|â€™|â€œ|â€\u009d)/;
 
 const files = globSync([
   "app/**/*.{tsx,ts,jsx,js,md,mdx,html,txt,json}",

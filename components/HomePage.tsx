@@ -81,7 +81,7 @@ export default function HomePage() {
               </div>
               
               <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E35] mb-6 leading-tight">
-                Lesson plans done in minutes â€“ not hours.
+                Lesson plans done in minutes - not hours.
               </h2>
               
               <p className="text-xl text-[#2C3E35]/80 mb-8 leading-relaxed">

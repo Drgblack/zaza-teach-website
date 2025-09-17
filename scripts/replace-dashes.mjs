@@ -3,7 +3,7 @@
 import { promises as fs } from "node:fs";
 import { globSync } from "glob";
 
-const RE = /(\u2013|\u2014|&ndash;|&mdash;|â€"|â€")/g; // en/em + mojibake
+const RE = /(\u2013|\u2014|&ndash;|&mdash;|â€"|â€"|â€™|â€œ|â€\u009d)/g; // en/em + mojibake
 const OK = " - ";
 
 const files = globSync([
