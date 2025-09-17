@@ -8,11 +8,25 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./content/**/*.{md,mdx}",
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
   	extend: {
   		colors: {
+  			// Blog color tokens
+  			ink: '#1F2937',
+  			slate: '#334155',
+  			cloud: '#F8FAFC',
+  			paper: '#FFFFFF',
+  			lavender: '#8B7CF6',
+  			mint: '#34D399',
+  			peach: '#F59E7D',
+  			sun: '#FCD34D',
+  			rose: '#F43F5E',
+  			sky: '#38BDF8',
+  			shadow: 'rgba(15, 23, 42, 0.08)',
+  			
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -93,6 +107,9 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 };
 export default config;
