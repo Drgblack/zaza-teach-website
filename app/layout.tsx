@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Zaza Teach | AI Lesson Planning for Educators',
   description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
   generator: 'v0.dev',
+  // Force rebuild 2025-01-17
 }
 export default function RootLayout({
   children,
