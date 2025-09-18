@@ -6,7 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "fix:dashes": "node scripts/replace-dashes.mjs",
+    "lint:dashes": "node scripts/check-no-dashes.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -46,6 +48,7 @@
     "dotenv": "^17.2.0",
     "embla-carousel-react": "latest",
     "framer-motion": "latest",
+    "globby": "^13.2.2",
     "input-otp": "latest",
     "lucide-react": "^0.454.0",
     "next": "14.2.16",
