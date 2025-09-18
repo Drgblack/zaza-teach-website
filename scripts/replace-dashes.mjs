@@ -1,8 +1,18 @@
 import { promises as fs } from "node:fs";
 import { globby } from "globby";
 
-const RE = /(\u2013|\u2014|&ndash;|&mdash;|â€"|â€")/g;
-const OK = " - ";
+// Multiple replacement patterns for different character issues
+const replacements = [
+  { pattern: /(\u2013|\u2014|&ndash;|&mdash;|â€"|â€")/g, replacement: " - " },
+  { pattern: /â€™/g, replacement: "'" },
+  { pattern: /â€œ|â€/g, replacement: '"' },
+  { pattern: /â†'/g, replacement: "→" },
+  { pattern: /â‚¬/g, replacement: "€" },
+  { pattern: /ðŸ•/g, replacement: "🕐" },
+  { pattern: /ðŸŒ¿/g, replacement: "🌿" },
+  { pattern: /âœï¸/g, replacement: "✏️" },
+  { pattern: /ðŸ'™/g, replacement: "💙" }
+];
 
 const files = await globby([
   "app/**/*.{tsx,ts,jsx,js,md,mdx,html,txt,json}",
@@ -15,12 +25,21 @@ const files = await globby([
 let changed = 0;
 
 for (const f of files) {
-  const s = (await fs.readFile(f)).toString("utf8").replace(/^\uFEFF/, "");
-  const s2 = s.replace(RE, OK);
-  if (s2 !== s) { 
-    await fs.writeFile(f, s2, "utf8"); 
-    changed++; 
-    console.log("fixed:", f); 
+  let s = (await fs.readFile(f)).toString("utf8").replace(/^\uFEFF/, "");
+  let modified = false;
+  
+  for (const { pattern, replacement } of replacements) {
+    const newS = s.replace(pattern, replacement);
+    if (newS !== s) {
+      s = newS;
+      modified = true;
+    }
+  }
+  
+  if (modified) {
+    await fs.writeFile(f, s, "utf8");
+    changed++;
+    console.log("fixed:", f);
   }
 }
 
