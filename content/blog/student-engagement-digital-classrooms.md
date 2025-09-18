@@ -4,7 +4,7 @@ description: "Strategies for maintaining student attention and participation in 
 slug: "student-engagement-digital-classrooms"
 date: "2024-12-25"
 updated: "2024-12-25"
-image: "/images/blog/digital-engagement.jpg"
+image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["Digital Learning", "Student Engagement"]
 readTime: 5
 ---

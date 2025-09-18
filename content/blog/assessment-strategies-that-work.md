@@ -4,7 +4,7 @@ description: "Move beyond traditional testing with these innovative assessment a
 slug: "assessment-strategies-that-work"
 date: "2024-12-20"
 updated: "2024-12-20"
-image: "/images/blog/assessment-strategies.jpg"
+image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["Assessment", "Teaching Tips"]
 readTime: 6
 ---

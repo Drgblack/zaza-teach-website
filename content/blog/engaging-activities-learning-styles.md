@@ -4,7 +4,7 @@ description: "Learn how to design activities that cater to visual, auditory, and
 slug: "engaging-activities-learning-styles"
 date: "2025-01-05"
 updated: "2025-01-05"
-image: "/images/blog/learning-styles.jpg"
+image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["Classroom Strategies", "Differentiation"]
 readTime: 6
 ---
