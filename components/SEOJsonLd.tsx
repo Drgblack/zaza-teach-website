@@ -70,3 +70,52 @@ export function FAQJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
   };
   return <Script data={data} />;
 }
+
+export function BlogPostingJsonLd({
+  slug,
+  title,
+  description,
+  image,
+  datePublished,
+  dateModified,
+  tags,
+  site = "https://zazateach.com"
+}: {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified: string;
+  tags: string[];
+  site?: string;
+}) {
+  const data: Thing = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "image": image,
+    "url": `${site}/blog/${slug}`,
+    "datePublished": datePublished,
+    "dateModified": dateModified,
+    "author": {
+      "@type": "Organization",
+      "name": "Zaza Technologies",
+      "url": site
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zaza Technologies",
+      "url": site,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${site}/og-logo.png`
+      }
+    },
+    "keywords": tags.join(", "),
+    "articleSection": "Education",
+    "inLanguage": "en-US"
+  };
+  return <Script data={data} />;
+}
