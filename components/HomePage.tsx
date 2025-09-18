@@ -129,9 +129,6 @@ export default function HomePage() {
                           src={teachers[currentSlide].image}
                           alt={`${teachers[currentSlide].name} - ${teachers[currentSlide].subject} teacher using Zaza Teach`}
                           className="w-full h-full rounded-xl object-cover"
-                          onError={(e) => {
-                            e.currentTarget.src = "/placeholder-user.jpg"
-                          }}
                         />
                         
                         {/* Teacher Info Overlay */}

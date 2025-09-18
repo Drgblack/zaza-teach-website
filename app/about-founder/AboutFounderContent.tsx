@@ -29,9 +29,6 @@ export default function AboutFounderContent() {
                       width={220}
                       height={220}
                       className="rounded-full shadow-xl object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "/placeholder-user.jpg"
-                      }}
                     />
                   </div>
                 </div>

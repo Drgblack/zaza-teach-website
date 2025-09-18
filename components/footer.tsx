@@ -74,9 +74,6 @@ const Footer = () => {
                   src="/zaza_z_logo.png"
                   alt="Zaza Z Logo"
                   className="h-8 w-8"
-                  onError={(e) => {
-                    e.currentTarget.src = "/placeholder.svg?height=32&width=32&text=Z"
-                  }}
                 />
                 <span className="text-xl font-bold">Zaza Technologies</span>
               </div>

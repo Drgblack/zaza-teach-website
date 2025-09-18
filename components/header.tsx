@@ -233,9 +233,6 @@ const Header = () => {
               alt="Zaza Z Logo"
               className="h-8 w-8 transition-transform group-hover:scale-105"
               whileHover={{ scale: 1.05 }}
-              onError={(e) => {
-                e.currentTarget.src = "/placeholder.svg?height=32&width=32&text=Z"
-              }}
             />
             <span className="text-xl font-bold text-slate-800 dark:text-white group-hover:underline transition-all duration-200">
               Zaza Teach
