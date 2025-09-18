@@ -44,7 +44,7 @@ export function TeachAppJsonLd({
   return <Script data={data} />;
 }
 
-export function BreadcrumbsJsonLd(items: { name: string; item: string }[]) {
+export function BreadcrumbsJsonLd({ items }: { items: { name: string; item: string }[] }) {
   const data: Thing = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -58,7 +58,7 @@ export function BreadcrumbsJsonLd(items: { name: string; item: string }[]) {
   return <Script data={data} />;
 }
 
-export function FAQJsonLd(faqs: { q: string; a: string }[]) {
+export function FAQJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
   const data: Thing = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
