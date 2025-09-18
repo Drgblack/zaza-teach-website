@@ -4,7 +4,7 @@ description: "A calm, repeatable system to plan next week in half an hour."
 slug: "ai-lesson-planning"
 date: "2025-01-15"
 updated: "2025-01-16"
-image: "/images/blog/ai-lesson-planning.jpg"
+image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["AI in education", "Teaching Tips"]
 readTime: 5
 ---

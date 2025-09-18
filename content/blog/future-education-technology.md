@@ -4,7 +4,7 @@ description: "Exploring emerging trends in EdTech and what they mean for teacher
 slug: "future-education-technology"
 date: "2024-12-30"
 updated: "2024-12-30"
-image: "/images/blog/future-edtech.jpg"
+image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["EdTech Trends", "Future of Education"]
 readTime: 7
 ---
