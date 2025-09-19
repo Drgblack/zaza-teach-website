@@ -13,32 +13,32 @@ const resources = [
   {
     title: 'Lesson Plan Template',
     description: 'A comprehensive template for creating structured lesson plans.',
-    downloadUrl: '/resources/lesson-plan-template.pdf'
+    viewUrl: '/resources/lesson-plan-template'
   },
   {
     title: 'Assessment Rubric Guide',
     description: 'Guidelines for creating effective assessment rubrics.',
-    downloadUrl: '/resources/assessment-rubric-guide.pdf'
+    viewUrl: '/resources/assessment-rubric-guide'
   },
   {
     title: 'Classroom Management Tips',
     description: 'Practical strategies for effective classroom management.',
-    downloadUrl: '/resources/classroom-management-tips.pdf'
+    viewUrl: '/resources/classroom-management-tips'
   },
   {
     title: 'Student Engagement Activities',
     description: 'Creative activities to boost student participation.',
-    downloadUrl: '/resources/student-engagement-activities.pdf'
+    viewUrl: '/resources/student-engagement-activities'
   },
   {
-    title: 'Technology Integration Guide',
-    description: 'How to effectively integrate technology in your lessons.',
-    downloadUrl: '/resources/technology-integration-guide.pdf'
+    title: 'AI Teaching Prompts Pack',
+    description: 'Ready-to-use AI prompts for lesson planning and assessment.',
+    viewUrl: '/resources/ai-teaching-prompts'
   },
   {
-    title: 'Differentiated Instruction Strategies',
-    description: 'Methods for adapting lessons to different learning styles.',
-    downloadUrl: '/resources/differentiated-instruction-strategies.pdf'
+    title: 'Time-Saving Teacher Checklist',
+    description: 'Weekly and daily checklists to streamline your workflow.',
+    viewUrl: '/resources/time-saving-checklist'
   }
 ];
 
@@ -51,7 +51,10 @@ export default function ResourcesPage() {
             Free Teaching Resources
           </h1>
           <p className="text-xl text-gray-600">
-            Download helpful PDFs and templates to enhance your teaching
+            View and print helpful templates and guides to enhance your teaching
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Tip: Click "View & Print" to open in a new tab, then use Ctrl+P (Cmd+P on Mac) to save as PDF
           </p>
         </div>
 
@@ -65,11 +68,12 @@ export default function ResourcesPage() {
                 {resource.description}
               </p>
               <a
-                href={resource.downloadUrl}
+                href={resource.viewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors"
-                download
               >
-                Download PDF
+                View & Print
               </a>
             </div>
           ))}
