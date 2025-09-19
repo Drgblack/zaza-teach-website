@@ -18,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><meta charSet="utf-8" /></head>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">
