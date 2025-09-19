@@ -83,11 +83,11 @@ export default function AboutPage() {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Meet Our Founder</h2>
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <img
-                src="/images/founder.png"
-                alt="Dr. Greg Blackburn"
-                className="w-32 h-32 rounded-full object-cover"
-              />
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-600">GB</div>
+                </div>
+              </div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Dr. Greg Blackburn</h3>
                 <p className="text-gray-600 mb-3">Founder & CEO</p>
