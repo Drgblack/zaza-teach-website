@@ -24,7 +24,7 @@ export default function AboutFounderContent() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#66B2B2] to-[#8A2BE2] rounded-full p-1">
                   <div className="bg-white rounded-full p-2">
                     <Image
-                      src="/images/founder-photo.jpg"
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=220&q=80"
                       alt="Dr. Greg Blackburn, Founder of Zaza Technologies"
                       width={220}
                       height={220}
