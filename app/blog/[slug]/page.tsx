@@ -119,18 +119,9 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </header>
 
           {/* Article Content */}
-          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 md:p-12">
             <div 
-              className="prose prose-lg prose-gray max-w-none
-                prose-headings:text-gray-900 prose-headings:font-bold
-                prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
-                prose-p:text-gray-700 prose-p:leading-relaxed
-                prose-a:text-purple-600 prose-a:no-underline hover:prose-a:underline
-                prose-strong:text-gray-900 prose-strong:font-semibold
-                prose-ul:text-gray-700 prose-ol:text-gray-700
-                prose-li:text-gray-700 prose-li:leading-relaxed
-                prose-blockquote:text-gray-700 prose-blockquote:border-purple-200
-                prose-code:text-purple-600 prose-code:bg-purple-50 prose-code:px-1 prose-code:rounded"
+              className="prose prose-lg max-w-none dark:prose-invert prose-a:no-underline hover:prose-a:underline"
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
           </div>

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from '@tailwindcss/typography';
 
 // all in fixtures is set to tailwind v3 as interims solutions
 
@@ -90,9 +91,27 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+  		typography: ({ theme }: { theme: any }) => ({
+  			DEFAULT: {
+  				css: {
+  					'--tw-prose-body': theme('colors.slate.700'),
+  					'--tw-prose-headings': theme('colors.slate.900'),
+  					'--tw-prose-links': theme('colors.indigo.600'),
+  					'--tw-prose-bold': theme('colors.slate.900'),
+  				},
+  			},
+  			invert: {
+  				css: {
+  					'--tw-prose-body': theme('colors.slate.200'),
+  					'--tw-prose-headings': theme('colors.white'),
+  					'--tw-prose-links': theme('colors.indigo.300'),
+  					'--tw-prose-bold': theme('colors.white'),
+  				},
+  			},
+  		})
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), typography],
 };
 export default config;
