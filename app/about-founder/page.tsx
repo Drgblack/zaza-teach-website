@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/founder.jpg',
+        url: '/images/founder-photo.jpg',
         width: 1200,
         height: 630,
         alt: 'Dr. Greg Blackburn, Founder of Zaza Technologies',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About the Founder - Dr. Greg Blackburn | Zaza Teach',
     description: 'Education transformed Greg\'s life. Now his mission is to help teachers thrive - with empathetic, pedagogically sound AI.',
-    images: ['/images/founder.jpg'],
+    images: ['/images/founder-photo.jpg'],
   },
   alternates: {
     canonical: 'https://zazatechnologies.com/teach/about-founder',

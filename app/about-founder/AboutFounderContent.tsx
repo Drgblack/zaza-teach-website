@@ -1,5 +1,6 @@
 ﻿"use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutFounderContent() {
   return (
@@ -22,12 +23,13 @@ export default function AboutFounderContent() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#66B2B2] to-[#8A2BE2] rounded-full p-1">
                   <div className="bg-white rounded-full p-2">
-                    <img
-                      src="/images/founder.jpg"
+                    <Image
+                      src="/images/founder-photo.jpg"
                       alt="Dr. Greg Blackburn, Founder of Zaza Technologies"
                       width={220}
                       height={220}
                       className="rounded-full shadow-xl object-cover"
+                      priority
                     />
                   </div>
                 </div>
