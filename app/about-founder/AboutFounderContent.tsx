@@ -22,14 +22,14 @@ export default function AboutFounderContent() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#66B2B2] to-[#8A2BE2] rounded-full p-1">
                   <div className="bg-white rounded-full p-2">
-                    <img
-                      src="/placeholder-user.jpg"
-                      alt="Dr. Greg Blackburn, Founder of Zaza Technologies"
-                      width={220}
-                      height={220}
-                      className="rounded-full shadow-xl object-cover w-[220px] h-[220px]"
-                      loading="eager"
-                    />
+                    <div 
+                      className="w-[220px] h-[220px] rounded-full shadow-xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center"
+                    >
+                      <div className="text-center">
+                        <div className="text-6xl font-bold text-gray-600">GB</div>
+                        <div className="text-sm text-gray-500 mt-1">Dr. Greg Blackburn</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
