@@ -75,3 +75,4 @@ AI Lesson Planning for Educators - Plan lessons faster with Zaza Teach, the AI-p
 
 *Last updated: September 17, 2025*  
 *Deployment managed via Vercel CLI*
+# Deployment trigger 19 Sep 2025 12:05:08
