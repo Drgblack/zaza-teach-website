@@ -29,6 +29,7 @@ export default function AboutFounderContent() {
                       width={220}
                       height={220}
                       className="rounded-full shadow-xl object-cover"
+                      priority
                     />
                   </div>
                 </div>
