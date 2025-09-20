@@ -51,7 +51,7 @@ const Header = () => {
 
   const solutions = [
     { name: "Zaza Teach", href: "/", comingSoon: false },
-    { name: "Zaza Promptly", href: "/promptly", comingSoon: false },
+    { name: "Zaza Promptly", href: "https://zazapromptly.com", comingSoon: false },
   ]
 
   const learningCentre = [
@@ -404,14 +404,14 @@ const Header = () => {
 
           {/* Right Section - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/promptly">
+            <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 className="bg-gradient-to-r from-[#E0115F] to-[#8A2BE2] hover:from-[#E0115F]/90 hover:to-[#8A2BE2]/90 text-white border-0 font-medium"
               >
                 Try Zaza Promptly
               </Button>
-            </Link>
+            </a>
             <Link href="/">
               <Button className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white font-medium">Try Zaza Teach</Button>
             </Link>
@@ -501,14 +501,14 @@ const Header = () => {
 
               {/* Mobile CTA Buttons and Dark Mode Toggle */}
               <div className="px-4 pt-4 space-y-3 border-t border-gray-200/50 dark:border-gray-700/50">
-                <Link href="/promptly" className="block">
+                <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer" className="block">
                   <Button
                     className="w-full bg-gradient-to-r from-[#E0115F] to-[#8A2BE2] hover:from-[#E0115F]/90 hover:to-[#8A2BE2]/90 text-white font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Try Zaza Promptly
                   </Button>
-                </Link>
+                </a>
                 <Link href="/" className="block">
                   <Button
                     className="w-full bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white font-medium"

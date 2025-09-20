@@ -20,7 +20,7 @@ export default function ProductsPage() {
     <>
       <TeachAppJsonLd pageUrl={canonical('/products')} />
       <BreadcrumbsJsonLd items={breadcrumbs} />
-      <div className="min-h-screen bg-gray-50 py-12">
+      <div className="min-h-screen bg-gray-50 pt-24 pb-12">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
