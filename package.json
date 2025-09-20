@@ -12,6 +12,7 @@
     "lint:dashes": "node scripts/check-no-dashes.mjs"
   },
   "dependencies": {
+    "@drgblack/shared-ui": "^0.1.1",
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "latest",
