@@ -5,6 +5,37 @@ function Script({ data }: { data: Thing }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
+export function WebSiteJsonLd({ site = "https://zazateach.com" }: { site?: string }) {
+  const data: Thing = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Zaza Teach",
+    "alternateName": "Zaza Technologies",
+    "url": site,
+    "description": "AI-powered lesson planning tool for educators. Create curriculum-aligned lessons in minutes.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zaza Technologies",
+      "url": site,
+      "logo": `${site}/og-logo.png`
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${site}/search?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "mainEntity": {
+      "@type": "SoftwareApplication",
+      "name": "Zaza Teach",
+      "applicationCategory": "EducationalApplication"
+    }
+  };
+  return <Script data={data} />;
+}
+
 export function OrgJsonLd({ site = "https://zazateach.com" }: { site?: string }) {
   const data: Thing = {
     "@context": "https://schema.org",

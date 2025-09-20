@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { BookOpen, Clock, Users, Sparkles, ArrowRight, Star, CheckCircle, X, Zap, FileText, Share2, Globe, Heart, Coffee, AlertTriangle, Battery, ChevronLeft, ChevronRight } from 'lucide-react';
+import { AIOptimizedContent, SchemaEnhancedText, EDUCATION_SEMANTIC_KEYWORDS, AI_EDUCATION_TOPICS } from './AIOptimizedContent';
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
