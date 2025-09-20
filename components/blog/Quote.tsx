@@ -10,7 +10,7 @@ export default function Quote({
       <p className="m-0 text-lg leading-relaxed">{children}</p>
       {cite && (
         <footer className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-          — {cite}
+          - {cite}
         </footer>
       )}
     </blockquote>
