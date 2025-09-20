@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -80,7 +80,7 @@ const navigation: NavItem[] = [
   { label: 'About', href: '/about' }
 ];
 
-export default function EnhancedHeader() {
+function EnhancedHeaderInner() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -366,5 +366,13 @@ export default function EnhancedHeader() {
         </AnimatePresence>
       </div>
     </header>
+  );
+}
+
+export default function EnhancedHeader() {
+  return (
+    <Suspense fallback={<div className="h-16 bg-white border-b border-gray-100" />}>
+      <EnhancedHeaderInner />
+    </Suspense>
   );
 }

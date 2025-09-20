@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 declare global {
@@ -17,7 +17,7 @@ interface GoogleAnalyticsProps {
   trackingId?: string;
 }
 
-export default function GoogleAnalytics({ trackingId = 'G-XXXXXXXXXX' }: GoogleAnalyticsProps) {
+function GoogleAnalyticsInner({ trackingId = 'G-XXXXXXXXXX' }: GoogleAnalyticsProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -64,7 +64,7 @@ export default function GoogleAnalytics({ trackingId = 'G-XXXXXXXXXX' }: GoogleA
   useEffect(() => {
     if (!trackingId || trackingId === 'G-XXXXXXXXXX' || !window.gtag) return;
 
-    const url = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
+    const url = `${pathname}${searchParams?.toString() ? `?${searchParams.toString()}` : ''}`;
     
     window.gtag('config', trackingId, {
       page_path: url,
@@ -105,3 +105,11 @@ export const trackSignup = (method: string) => {
 export const trackButtonClick = (buttonName: string, location: string) => {
   trackEvent('click', 'engagement', `${buttonName}_${location}`);
 };
+
+export default function GoogleAnalytics(props: GoogleAnalyticsProps) {
+  return (
+    <Suspense fallback={null}>
+      <GoogleAnalyticsInner {...props} />
+    </Suspense>
+  );
+}
