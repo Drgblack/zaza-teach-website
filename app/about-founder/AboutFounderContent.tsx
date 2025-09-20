@@ -13,30 +13,12 @@ export default function AboutFounderContent() {
             transition={{ duration: 0.8 }}
           >
             {/* Founder Photo */}
-            <div className="mb-8">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative inline-block"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#66B2B2] to-[#8A2BE2] rounded-full p-1">
-                  <div className="bg-white rounded-full p-2">
-                    <img
-                      src="https://raw.githubusercontent.com/Drgblack/zaza-teach-website/main/public/images/founder.jpg?t=1726832400"
-                      alt="Dr. Greg Blackburn, Founder of Zaza Technologies"
-                      width={220}
-                      height={220}
-                      className="rounded-full shadow-xl object-cover w-[220px] h-[220px]"
-                      loading="eager"
-                      onError={(e) => {
-                        console.log('Image failed to load:', e);
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                </div>
-              </motion.div>
+            <div className="mb-8 flex justify-center">
+              <img
+                src="https://raw.githubusercontent.com/Drgblack/zaza-teach-website/main/public/images/founder.jpg"
+                alt="Dr. Greg Blackburn, Founder of Zaza Technologies"
+                className="w-56 h-56 rounded-full object-cover shadow-xl"
+              />
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-[#2C3E35] mb-6">
