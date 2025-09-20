@@ -23,12 +23,16 @@ export default function AboutFounderContent() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#66B2B2] to-[#8A2BE2] rounded-full p-1">
                   <div className="bg-white rounded-full p-2">
                     <img
-                      src="https://raw.githubusercontent.com/Drgblack/zaza-teach-website/main/public/images/founder.jpg?v=2"
+                      src="https://raw.githubusercontent.com/Drgblack/zaza-teach-website/main/public/images/founder.jpg?t=1726832400"
                       alt="Dr. Greg Blackburn, Founder of Zaza Technologies"
                       width={220}
                       height={220}
                       className="rounded-full shadow-xl object-cover w-[220px] h-[220px]"
                       loading="eager"
+                      onError={(e) => {
+                        console.log('Image failed to load:', e);
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                   </div>
                 </div>
