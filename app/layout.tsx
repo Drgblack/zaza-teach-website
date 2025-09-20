@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
-import './globals.css'
+﻿import type { Metadata } from 'next'
+import "./globals.css";
+import SiteFooter from "../components/SiteFooter";
 import Header from '../components/header'
 import Footer from '../components/footer'
 import GoogleAnalytics from '../components/GoogleAnalytics'
@@ -90,3 +91,4 @@ export default function RootLayout({
     </html>
   )
 }
+

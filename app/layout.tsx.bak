@@ -1,42 +1,70 @@
-﻿function normalizeFooterConfig(cfg) {
-  const linksArray = Array.isArray(cfg.links)
-    ? cfg.links
-    : Object.entries(cfg.links || {}).map(([title, links]) => ({
-        title,
-        links: Array.isArray(links) ? links : []
-      }));
-  return {
-    ...cfg,
-    links: linksArray,
-    socials: Array.isArray(cfg.socials) ? cfg.socials : [],
-    ctas: Array.isArray(cfg.ctas) ? cfg.ctas : [],
-    legal: cfg.legal || { privacy: "/privacy", terms: "/terms" },
-  };
-
-const TEACH_FOOTER_NORM = normalizeFooterConfig(TEACH_FOOTER);}
-import { Footer } from "@drgblack/shared-ui";
-
-const TEACH_FOOTER = {
-  productId: "teach",
-  links: {
-    Resources: [{ label: "Help Center", href: "/support" }],
-    Company:   [{ label: "About", href: "/about" }],
-    Legal:     [{ label: "Privacy", href: "/privacy" }, { label: "Terms", href: "/terms" }]
-  },
-  socials: [],
-  ctas: [],
-  legal: { privacy: "/privacy", terms: "/terms", impressum: "/impressum" },
-  tagline: "Made for teachers — with care and clean AI."
-};
-
-
-const TEACH_FOOTER_NORM = normalizeFooterConfig(TEACH_FOOTER);import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import './globals.css'
 import Header from '../components/header'
+import Footer from '../components/footer'
+import GoogleAnalytics from '../components/GoogleAnalytics'
+import { siteUrl } from '@/lib/site'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Zaza Teach | AI Lesson Planning for Educators',
   description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
-  generator: 'v0.dev',
+  keywords: ['AI lesson planning', 'teacher tools', 'curriculum design', 'educational technology', 'lesson plan generator', 'teaching assistant', 'education AI'],
+  authors: [{ name: 'Dr. Greg Blackburn', url: `${siteUrl}/about-founder` }],
+  creator: 'Zaza Technologies',
+  publisher: 'Zaza Technologies',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: { canonical: siteUrl },
+  generator: 'Next.js',
+  applicationName: 'Zaza Teach',
+  referrer: 'origin-when-cross-origin',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  verification: {
+    google: 'your-google-site-verification-code',
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.json',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    siteName: 'Zaza Teach',
+    title: 'Zaza Teach | AI Lesson Planning for Educators',
+    description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Zaza Teach - AI Lesson Planning for Educators',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zaza Teach | AI Lesson Planning for Educators',
+    description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
+    images: [`${siteUrl}/og-image.png`],
+    creator: '@zazatechnologies',
+  },
 }
 export default function RootLayout({
   children,
@@ -45,14 +73,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#66B2B2" />
+        <meta name="color-scheme" content="light dark" />
+      </head>
       <body className="min-h-screen flex flex-col">
+        <GoogleAnalytics trackingId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
         <Header />
         <main className="flex-1">
           {children}
         </main>
-        <Footer config={TEACH_FOOTER_NORM} locale="en" />
+        <Footer />
       </body>
     </html>
   )
 }
-
