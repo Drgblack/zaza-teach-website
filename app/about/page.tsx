@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { canonical } from '@/lib/site';
 import { BreadcrumbsJsonLd } from '@/components/SEOJsonLd';
+import OptimizedImage from '@/components/OptimizedImage';
 
 export const metadata: Metadata = {
   title: 'About | Zaza Teach - Made by Teachers, for Teachers',
@@ -83,10 +84,13 @@ export default function AboutPage() {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Meet Our Founder</h2>
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <img
+              <OptimizedImage
                 src="https://raw.githubusercontent.com/Drgblack/zaza-teach-website/main/public/images/founder.jpg"
                 alt="Dr. Greg Blackburn"
+                width={128}
+                height={128}
                 className="w-32 h-32 rounded-full object-cover"
+                loading="lazy"
               />
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Dr. Greg Blackburn</h3>

@@ -1,5 +1,6 @@
 ﻿"use client";
 import { motion } from "framer-motion";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function AboutFounderContent() {
   return (
@@ -14,10 +15,13 @@ export default function AboutFounderContent() {
           >
             {/* Founder Photo */}
             <div className="mb-8 flex justify-center">
-              <img
+              <OptimizedImage
                 src="https://raw.githubusercontent.com/Drgblack/zaza-teach-website/main/public/images/founder.jpg"
                 alt="Dr. Greg Blackburn, Founder of Zaza Technologies"
+                width={224}
+                height={224}
                 className="w-56 h-56 rounded-full object-cover shadow-xl"
+                priority={true}
               />
             </div>
 

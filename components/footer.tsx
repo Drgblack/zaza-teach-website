@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
+import OptimizedImage from "@/components/OptimizedImage"
 
 const Footer = () => {
   const productLinks = [
@@ -70,10 +71,13 @@ const Footer = () => {
               className="mb-6"
             >
               <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
-                <img
+                <OptimizedImage
                   src="/zaza_z_logo.png"
                   alt="Zaza Z Logo"
+                  width={32}
+                  height={32}
                   className="h-8 w-8"
+                  priority={false}
                 />
                 <span className="text-xl font-bold">Zaza Technologies</span>
               </div>

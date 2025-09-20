@@ -16,6 +16,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    formats: ['image/webp'],
   },
   async redirects() {
     return [
