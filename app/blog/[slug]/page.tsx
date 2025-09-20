@@ -40,7 +40,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   
   if (!post) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12">
+      <div className="min-h-screen bg-gray-50 pt-24 pb-12">
         <div className="container mx-auto max-w-3xl px-4 text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Post Not Found</h1>
           <p className="text-gray-600 mb-6">The blog post you're looking for doesn't exist.</p>
@@ -64,7 +64,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         tags={post.tags}
       />
       
-      <article className="min-h-screen bg-gray-50 py-12">
+      <article className="min-h-screen bg-gray-50 pt-24 pb-12">
         <div className="container mx-auto max-w-4xl px-4">
           {/* Breadcrumb */}
           <nav className="mb-8">

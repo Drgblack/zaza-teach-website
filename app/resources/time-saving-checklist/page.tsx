@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function TimeSavingChecklistPage() {
   return (
-    <div className="min-h-screen bg-white py-12 print:py-0">
+    <div className="min-h-screen bg-white pt-24 pb-12 print:py-0">
       <div className="max-w-4xl mx-auto px-4 print:px-0">
         {/* Header - hidden when printing */}
         <div className="text-center mb-8 print:hidden">

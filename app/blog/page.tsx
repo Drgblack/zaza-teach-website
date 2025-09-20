@@ -15,7 +15,7 @@ export default function BlogIndex() {
   const tags = Array.from(new Set(posts.flatMap(p => p.tags))).sort();
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
+    <main className="min-h-screen bg-gray-50 pt-24 pb-12">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
