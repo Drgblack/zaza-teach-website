@@ -2,7 +2,7 @@
 import "./globals.css";
 import SiteFooter from "../components/SiteFooter";
 import Header from '../components/header'
-import Footer from '../components/footer'
+
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import { siteUrl } from '@/lib/site'
 
@@ -86,12 +86,13 @@ export default function RootLayout({
         <main className="flex-1">
           {children}
         </main>
-        <Footer />
+        
               <SiteFooter />
       </body>
     </html>
   )
 }
+
 
 
 
