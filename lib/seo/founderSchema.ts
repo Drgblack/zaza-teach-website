@@ -7,7 +7,8 @@ export const founderPersonJsonLd = {
   "worksFor": { "@type": "Organization", "name": "Zaza Technologies" },
   "sameAs": [
     "https://www.linkedin.com/in/drgregblackburn/",
-    "https://scholar.google.com/citations?user=lkG7Ym0AAAAJ&hl=en"
+    "https://scholar.google.com/citations?user=lkG7Ym0AAAAJ&hl=en",
+    "https://elearningindustry.com/elearning-authors/greg-blackburn"
   ],
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "City, University of London" },

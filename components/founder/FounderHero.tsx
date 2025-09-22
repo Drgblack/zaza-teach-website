@@ -39,6 +39,15 @@ export function FounderHero() {
           >
             Google Scholar
           </a>
+          <span aria-hidden="true" className="text-muted-foreground">·</span>
+          <a
+            className="text-sm underline underline-offset-4 hover:text-primary transition-colors"
+            href="https://elearningindustry.com/elearning-authors/greg-blackburn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            eLearning Industry
+          </a>
         </div>
       </div>
     </header>
