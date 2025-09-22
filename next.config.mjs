@@ -26,7 +26,6 @@ const nextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
-    quality: 80,
     minimumCacheTTL: 31536000, // 1 year
   },
   async redirects() {
