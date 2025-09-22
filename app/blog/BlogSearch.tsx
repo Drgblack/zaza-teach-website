@@ -103,6 +103,12 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
                     {post.description}
                   </p>
 
+                  {post.author && (
+                    <p className="text-sm text-gray-500 mb-4">
+                      Written by {post.author}
+                    </p>
+                  )}
+
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">
                       {new Date(post.date).toLocaleDateString("en-US", {

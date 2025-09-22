@@ -62,6 +62,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         datePublished={post.date}
         dateModified={post.updated ?? post.date}
         tags={post.tags}
+        author={post.author}
       />
       
       <article className="min-h-screen bg-gray-50 pt-24 pb-12">
@@ -96,7 +97,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               {post.title}
             </h1>
             
-            <div className="flex items-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
               <span>
                 Published {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -116,6 +117,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               <span>•</span>
               <span>{post.readTime ? `${post.readTime} min read` : "5 min read"}</span>
             </div>
+            
+            {post.author && (
+              <div className="text-sm text-gray-700 dark:text-gray-300 mb-6">
+                <span className="font-medium">Written by {post.author}</span>
+              </div>
+            )}
           </header>
 
           {/* Article Content */}

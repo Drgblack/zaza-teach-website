@@ -13,6 +13,7 @@ export type PostMeta = {
   image: string;
   tags: string[]; 
   readTime?: number;
+  author?: string;
 };
 
 export type Post = PostMeta & { html: string };
