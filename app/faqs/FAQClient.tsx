@@ -26,12 +26,23 @@ interface FAQClientProps {
   faqCategories: FAQCategory[];
 }
 
-const FAQItem = ({ faq, isOpen, onClick }: { faq: FAQ, isOpen: boolean, onClick: () => void }) => {
+const FAQItem = ({ faq, isOpen, onClick, itemId }: { faq: FAQ, isOpen: boolean, onClick: () => void, itemId: string }) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md">
       <button
         onClick={onClick}
-        className="w-full px-6 py-5 text-left bg-white hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between"
+        onKeyDown={handleKeyDown}
+        className="w-full px-6 py-5 text-left bg-white hover:bg-gray-50 focus:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset transition-colors duration-200 flex items-center justify-between"
+        aria-expanded={isOpen}
+        aria-controls={`faq-answer-${itemId}`}
+        id={`faq-question-${itemId}`}
       >
         <h3 className="text-lg font-semibold text-gray-900 pr-4">
           {faq.q}
@@ -40,11 +51,17 @@ const FAQItem = ({ faq, isOpen, onClick }: { faq: FAQ, isOpen: boolean, onClick:
           className={`w-5 h-5 text-gray-500 transition-transform duration-300 flex-shrink-0 ${
             isOpen ? 'rotate-180' : ''
           }`}
+          aria-hidden="true"
         />
       </button>
-      <div className={`transition-all duration-300 overflow-hidden ${
-        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-      }`}>
+      <div 
+        className={`transition-all duration-300 overflow-hidden ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+        id={`faq-answer-${itemId}`}
+        role="region"
+        aria-labelledby={`faq-question-${itemId}`}
+      >
         <div className="px-6 pb-5 bg-gray-50">
           <p className="text-gray-700 leading-relaxed">
             {faq.a}
@@ -183,6 +200,7 @@ export default function FAQClient({ faqCategories }: FAQClientProps) {
                       faq={faq}
                       isOpen={openItems.has(`${actualCategoryIndex}-${faqIndex}`)}
                       onClick={() => toggleItem(actualCategoryIndex, faqIndex)}
+                      itemId={`${actualCategoryIndex}-${faqIndex}`}
                     />
                   ))}
                 </div>

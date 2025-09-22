@@ -2,6 +2,7 @@
 import "./globals.css";
 import SiteFooter from "../components/SiteFooter";
 import Header from '../components/header'
+import { SkipLink } from '../components/SkipLink'
 
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import { siteUrl } from '@/lib/site'
@@ -82,8 +83,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <GoogleAnalytics trackingId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
+        <SkipLink />
         <Header />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           {children}
         </main>
         
