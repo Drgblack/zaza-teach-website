@@ -7,16 +7,27 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
-    domains: ['raw.githubusercontent.com'],
+    domains: ['raw.githubusercontent.com', 'images.unsplash.com', 'plus.unsplash.com'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com',
+        pathname: '/**',
+      },
     ],
-    formats: ['image/webp'],
+    formats: ['image/webp', 'image/avif'],
+    quality: 80,
+    minimumCacheTTL: 31536000, // 1 year
   },
   async redirects() {
     return [
