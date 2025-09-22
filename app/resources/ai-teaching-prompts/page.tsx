@@ -14,7 +14,7 @@ export default function AITeachingPromptsPage() {
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             AI Teaching Prompts Pack
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-700">
             Use Ctrl+P (Cmd+P on Mac) to print or save as PDF
           </p>
         </div>
@@ -23,8 +23,8 @@ export default function AITeachingPromptsPage() {
         <div className="bg-white p-8 print:p-0">
           <div className="text-center mb-8">
             <h1 className="text-2xl font-bold mb-2">AI TEACHING PROMPTS PACK</h1>
-            <p className="text-sm text-gray-600">Ready-to-use prompts for ChatGPT, Claude, and other AI tools</p>
-            <p className="text-xs text-gray-500 mt-1">Free resource from Zaza Teach</p>
+            <p className="text-sm text-gray-800">Ready-to-use prompts for ChatGPT, Claude, and other AI tools</p>
+            <p className="text-xs text-gray-700 mt-1">Free resource from Zaza Teach</p>
           </div>
 
           <div className="space-y-8">
