@@ -181,7 +181,7 @@ export default function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600">support@zazateach.com</p>
+                    <p className="text-gray-600">help@zazatechnologies.com</p>
                     <p className="text-sm text-gray-500 mt-1">We respond within 24 hours</p>
                   </div>
                 </div>
