@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 import type { PostMeta } from "@/lib/blog";
 
 type BlogSearchProps = {
@@ -9,9 +10,90 @@ type BlogSearchProps = {
   allTags: string[];
 };
 
+type CategoryConfig = {
+  label: string;
+  tags: string[];
+  defaultOpen?: boolean;
+};
+
+const CATEGORIES: Record<string, CategoryConfig> = {
+  "teaching-practice": {
+    label: "Teaching Practice",
+    tags: ["Classroom Management", "Classroom Practice", "Student Engagement", "Assessment", "Feedback", "Differentiation", "Components", "Teaching Tips"],
+    defaultOpen: true
+  },
+  "curriculum-planning": {
+    label: "Curriculum & Planning",
+    tags: ["Lesson Planning", "Grading", "Curriculum Standards", "Educational Innovation"]
+  },
+  "ai-innovation": {
+    label: "AI & Innovation",
+    tags: ["AI in Education", "AI Teaching Assistants", "Educational Technology", "Digital Teacher Assistants", "Future Classroom 2035", "EdTech Trends", "Robots in Classroom"]
+  },
+  "classroom-culture": {
+    label: "Classroom Culture",
+    tags: ["Classroom Culture", "Positive Environment", "Collaboration", "Classroom Strategies", "Creating Joy"]
+  },
+  "teacher-wellbeing": {
+    label: "Teacher Wellbeing",
+    tags: ["Stress Management", "Teacher Wellbeing", "Work-Life Balance", "Self Care", "Teacher Efficiency"]
+  },
+  "professional-growth": {
+    label: "Professional Growth",
+    tags: ["Productivity", "Teaching Innovation", "Future of Education"]
+  }
+};
+
 export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [openCategories, setOpenCategories] = useState<Set<string>>(
+    new Set(Object.keys(CATEGORIES).filter(key => CATEGORIES[key].defaultOpen))
+  );
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const toggleCategory = (categoryKey: string) => {
+    const newOpenCategories = new Set(openCategories);
+    if (newOpenCategories.has(categoryKey)) {
+      newOpenCategories.delete(categoryKey);
+    } else {
+      newOpenCategories.add(categoryKey);
+    }
+    setOpenCategories(newOpenCategories);
+  };
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setOpenCategories(new Set());
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close dropdowns on escape key
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenCategories(new Set());
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
+
+  // Get available tags for each category (only tags that exist in posts)
+  const availableTagsByCategory = useMemo(() => {
+    const result: Record<string, string[]> = {};
+    Object.entries(CATEGORIES).forEach(([key, config]) => {
+      result[key] = config.tags.filter(tag => allTags.includes(tag));
+    });
+    return result;
+  }, [allTags]);
 
   const filteredPosts = useMemo(() => {
     const searchText = query.toLowerCase();
@@ -37,31 +119,94 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
         />
       </div>
 
-      {/* Tag Filters */}
-      <div className="mb-8 flex flex-wrap gap-3">
-        <button
-          onClick={() => setActiveTag(null)}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-            !activeTag
-              ? "bg-purple-600 text-white"
-              : "bg-white text-gray-600 border border-gray-300 hover:bg-purple-50 hover:text-purple-600"
-          }`}
-        >
-          All Posts
-        </button>
-        {allTags.map((tag) => (
+      {/* Category Filters */}
+      <div className="mb-8" ref={containerRef}>
+        {/* All Posts Button */}
+        <div className="mb-6">
           <button
-            key={tag}
-            onClick={() => setActiveTag(tag)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              activeTag === tag
-                ? "bg-purple-600 text-white"
+            onClick={() => setActiveTag(null)}
+            className={`px-6 py-3 rounded-full text-sm font-medium transition-colors ${
+              !activeTag
+                ? "bg-purple-600 text-white shadow-md"
                 : "bg-white text-gray-600 border border-gray-300 hover:bg-purple-50 hover:text-purple-600"
             }`}
           >
-            {tag}
+            All Posts
           </button>
-        ))}
+        </div>
+
+        {/* Category Dropdowns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+          {Object.entries(CATEGORIES).map(([categoryKey, config]) => {
+            const availableTags = availableTagsByCategory[categoryKey] || [];
+            const isOpen = openCategories.has(categoryKey);
+            
+            if (availableTags.length === 0) return null;
+
+            return (
+              <div key={categoryKey} className="relative">
+                {/* Category Header */}
+                <button
+                  onClick={() => toggleCategory(categoryKey)}
+                  className="w-full flex items-center justify-between px-4 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                >
+                  <span className="text-sm font-medium text-gray-700">
+                    {config.label}
+                  </span>
+                  <ChevronDown 
+                    className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {/* Dropdown Content */}
+                {isOpen && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-64 overflow-y-auto">
+                    <div className="p-2">
+                      {availableTags.map((tag) => (
+                        <button
+                          key={tag}
+                          onClick={() => {
+                            setActiveTag(tag);
+                            // Close dropdown on mobile after selection
+                            if (typeof window !== 'undefined' && window.innerWidth < 768) {
+                              setOpenCategories(new Set());
+                            }
+                          }}
+                          className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
+                            activeTag === tag
+                              ? "bg-purple-600 text-white"
+                              : "text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Active Filter Display */}
+        {activeTag && (
+          <div className="mt-4 flex items-center gap-2">
+            <span className="text-sm text-gray-600">Active filter:</span>
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+              {activeTag}
+              <button
+                onClick={() => setActiveTag(null)}
+                className="ml-1 hover:text-purple-600"
+                aria-label="Remove filter"
+              >
+                ×
+              </button>
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Posts Grid */}
