@@ -1,12 +1,13 @@
-﻿
+import { canonical } from '@/lib/site';
+
 export const metadata = {
   title: 'Zaza Teach | AI Lesson Planning for Educators',
   description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
   openGraph: {
     title: 'Zaza Teach | AI Lesson Planning for Educators',
     description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
-    url: 'https://zazatechnologies.com/teach',
-    siteName: 'Zaza Technologies',
+    url: canonical('/'),
+    siteName: 'Zaza Teach',
     type: 'website',
   },
   twitter: {
@@ -15,7 +16,7 @@ export const metadata = {
     description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
   },
   alternates: {
-    canonical: 'https://zazatechnologies.com/teach',
+    canonical: canonical('/'),
   },
 };
 

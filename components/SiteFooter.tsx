@@ -21,7 +21,7 @@ export default function SiteFooter() {
             <div className="text-sm font-semibold uppercase tracking-wide text-white/70">Product</div>
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/" className="hover:underline">Features</Link></li>
-              <li><Link href="/templates" className="hover:underline">Templates</Link></li>
+              <li><Link href="/resources/lesson-plan-template" className="hover:underline">Templates</Link></li>
               <li><Link href="/pricing" className="hover:underline">Pricing</Link></li>
               <li><Link href="/resources" className="hover:underline">Resources</Link></li>
             </ul>
@@ -64,6 +64,10 @@ export default function SiteFooter() {
             <span aria-hidden>•</span>
             <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
               Zaza Promptly
+            </a>
+            <span aria-hidden>•</span>
+            <a href="https://realtyclose.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              RealtyClose
             </a>
           </div>
         </div>

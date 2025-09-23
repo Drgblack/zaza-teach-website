@@ -52,6 +52,7 @@ const Header = () => {
   const solutions = [
     { name: "Zaza Teach", href: "/", comingSoon: false },
     { name: "Zaza Promptly", href: "https://zazapromptly.com", comingSoon: false },
+    { name: "RealtyClose", href: "https://realtyclose.com", comingSoon: false },
   ]
 
   const learningCentre = [

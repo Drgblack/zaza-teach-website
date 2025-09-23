@@ -4,9 +4,9 @@ import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
-    "/", "/products", "/pricing", "/blog", "/resources", "/faqs",
-    "/why-not-chatgpt", "/about", "/support", "/privacy", "/terms",
-    "/impressum", "/facts", "/ai-usage"
+    "/", "/pricing", "/blog", "/resources", "/faqs",
+    "/why-not-chatgpt", "/about", "/about-founder", "/support", "/privacy", "/terms",
+    "/impressum", "/contact", "/mission", "/products", "/quote-wall", "/feature-request", "/cookies"
   ];
   
   const now = new Date();
