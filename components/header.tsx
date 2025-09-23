@@ -353,6 +353,14 @@ const Header = () => {
               </AnimatePresence>
             </div>
 
+            {/* Pricing Link */}
+            <Link 
+              href="/pricing" 
+              className="text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
+            >
+              Pricing
+            </Link>
+
             {/* About Us Dropdown */}
             <div className="relative">
               <button
@@ -483,6 +491,17 @@ const Header = () => {
                     {item.name}
                   </Link>
                 ))}
+              </div>
+
+              {/* Mobile Pricing */}
+              <div className="space-y-2">
+                <Link
+                  href="/pricing"
+                  className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors font-semibold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Pricing
+                </Link>
               </div>
 
               {/* Mobile About Us */}

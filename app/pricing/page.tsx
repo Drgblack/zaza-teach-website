@@ -21,19 +21,19 @@ const testimonials = [
     quote: "Zaza Teach gave me my Sundays back. I can finally spend time with my family instead of stressing over lesson plans.",
     author: "Emma T.",
     role: "Primary School Teacher",
-    avatar: "/placeholder-user.jpg"
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
   },
   {
     quote: "I was drowning in admin. Now, with lesson planning done in minutes, I can focus on the fun parts of teaching again.",
     author: "Marcus D.",
     role: "Secondary School Teacher", 
-    avatar: "/placeholder-user.jpg"
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
   },
   {
     quote: "The templates are spot-on and save me hours. Honestly, I feel like a better teacher because I have the energy to be present with my students.",
     author: "Sofia L.",
     role: "Language Teacher",
-    avatar: "/placeholder-user.jpg"
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
   }
 ];
 
@@ -58,7 +58,7 @@ export default function PricingPage() {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20 pt-4">
             {/* Free Plan */}
             <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 p-8 border border-gray-100">
               <div className="text-center">
@@ -109,10 +109,10 @@ export default function PricingPage() {
             </div>
 
             {/* Pro Plan - Most Popular */}
-            <div className="bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 p-8 border-2 border-purple-500 relative overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 p-8 border-2 border-purple-500 relative overflow-visible mt-6">
               {/* Popular Badge */}
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg whitespace-nowrap">
                   Most Popular
                 </span>
               </div>
@@ -266,8 +266,8 @@ export default function PricingPage() {
                   <div className="flex items-center">
                     <img 
                       src={testimonial.avatar} 
-                      alt={testimonial.author}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
+                      alt={`${testimonial.author} - ${testimonial.role}`}
+                      className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-gray-100"
                     />
                     <div>
                       <div className="font-semibold text-gray-900">{testimonial.author}</div>
