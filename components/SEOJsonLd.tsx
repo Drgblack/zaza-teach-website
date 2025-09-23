@@ -110,6 +110,7 @@ export function BlogPostingJsonLd({
   datePublished,
   dateModified,
   tags,
+  author,
   site = "https://zazateach.com"
 }: {
   slug: string;
@@ -119,6 +120,7 @@ export function BlogPostingJsonLd({
   datePublished: string;
   dateModified: string;
   tags: string[];
+  author?: string;
   site?: string;
 }) {
   const data: Thing = {
@@ -130,7 +132,11 @@ export function BlogPostingJsonLd({
     "url": `${site}/blog/${slug}`,
     "datePublished": datePublished,
     "dateModified": dateModified,
-    "author": {
+    "author": author ? {
+      "@type": "Person",
+      "name": author,
+      "url": `${site}/about`
+    } : {
       "@type": "Organization",
       "name": "Zaza Technologies",
       "url": site

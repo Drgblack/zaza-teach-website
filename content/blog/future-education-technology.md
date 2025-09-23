@@ -7,6 +7,7 @@ updated: "2024-12-30"
 image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["EdTech Trends", "Future of Education"]
 readTime: 7
+author: "Dr. Greg Blackburn"
 ---
 
 Education technology is evolving at breakneck speed. From AI tutors to virtual reality classrooms, the next decade promises transformative changes in how we teach and learn.

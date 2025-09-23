@@ -13,6 +13,7 @@ export type PostMeta = {
   image: string;
   tags: string[]; 
   readTime?: number;
+  author?: string;
 };
 
 export type Post = PostMeta & { html: string };
@@ -51,6 +52,7 @@ export function getPost(slug: string): Post | null {
     image: data.image ?? "/images/blog/default.jpg",
     tags: Array.isArray(data.tags) ? data.tags : [],
     readTime: data.readTime ?? undefined,
+    author: data.author ?? undefined,
   };
 
   const htmlStr = remark().use(html).processSync(content).toString();

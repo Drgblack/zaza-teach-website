@@ -62,18 +62,18 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     shortcuts: [
       {
-        name: 'Create New Lesson',
-        short_name: 'New Lesson',
-        description: 'Start planning a new lesson',
-        url: '/create?source=shortcut',
-        icons: [{ src: '/icon-new-lesson.png', sizes: '96x96' }]
+        name: 'Browse Resources',
+        short_name: 'Resources',
+        description: 'Browse teaching resources',
+        url: '/resources?source=shortcut',
+        icons: [{ src: '/favicon-32x32.png', sizes: '32x32' }]
       },
       {
-        name: 'Browse Templates',
-        short_name: 'Templates',
-        description: 'Browse lesson plan templates',
-        url: '/templates?source=shortcut',
-        icons: [{ src: '/icon-templates.png', sizes: '96x96' }]
+        name: 'Read Blog',
+        short_name: 'Blog',
+        description: 'Read educational insights and tips',
+        url: '/blog?source=shortcut',
+        icons: [{ src: '/favicon-32x32.png', sizes: '32x32' }]
       }
     ]
   }

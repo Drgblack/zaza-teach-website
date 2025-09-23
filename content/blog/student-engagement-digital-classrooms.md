@@ -7,6 +7,7 @@ updated: "2024-12-25"
 image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["Digital Learning", "Student Engagement"]
 readTime: 5
+author: "Dr. Greg Blackburn"
 ---
 
 The shift to digital and hybrid learning has challenged traditional notions of student engagement. Without physical presence, teachers must reimagine how to capture attention, foster participation, and build community.

@@ -43,10 +43,10 @@ export default function HomePage() {
     }
   ];
 
-  // Auto-rotate slides every 4 seconds
+  // Auto-rotate slides every 4 seconds (for both hero and testimonial carousels)
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % teachers.length);
+      setCurrentSlide((prev) => (prev + 1) % Math.max(teachers.length, 5));
     }, 4000);
     return () => clearInterval(timer);
   }, [teachers.length]);
@@ -96,10 +96,14 @@ export default function HomePage() {
                   className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
                 >
                   <Sparkles className="h-5 w-5 mr-2" />
-                  Try Free - 5 Lesson Plans/Month
+                  Start Free Today
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </div>
+              
+              <p className="text-[#2C3E35]/60 text-lg text-center lg:text-left">
+                Join 10,000+ teachers who've transformed their planning. Free trial includes 5 lesson plans.
+              </p>
             </motion.div>
 
             {/* Right Column - Teacher Photo Carousel */}
@@ -211,7 +215,7 @@ export default function HomePage() {
           >
             <h3 className="text-3xl font-bold text-[#2C3E35] mb-8">The problem</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
               {[
                 { icon: AlertTriangle, text: "Endless late nights building plans from scratch" },
                 { icon: Battery, text: "Pressure to meet curriculum requirements while staying creative" },
@@ -232,6 +236,30 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
+            
+            {/* Teacher Quote Carousel */}
+            <div className="max-w-3xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-200"
+              >
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-6">
+                    <img
+                      src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80"
+                      alt="Sarah - Middle School Teacher"
+                      className="w-16 h-16 rounded-full object-cover border-3 border-white shadow-lg"
+                    />
+                  </div>
+                  <blockquote className="text-xl text-[#2C3E35] italic mb-6 leading-relaxed">
+                    "I spend my entire Sunday planning lessons. By the time Monday comes, I'm already exhausted before the week even starts."
+                  </blockquote>
+                  <cite className="text-[#2C3E35]/70 font-medium">- Sarah, Middle School Teacher</cite>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -249,32 +277,36 @@ export default function HomePage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
               {[
-                { icon: Zap, text: "5-minute lesson planning - structured, adaptable plans instantly" },
-                { icon: Star, text: "Confidence boost - professional, creative scaffolding at your fingertips" },
-                { icon: CheckCircle, text: "Curriculum-ready - aligned outputs that fit your class needs" },
-                { icon: Heart, text: "Energy reclaimed - more focus for students and for your life outside school" }
+                { icon: Zap, text: "5-minute lesson planning - structured, adaptable plans instantly", iconBg: "bg-yellow-100", iconColor: "text-yellow-600" },
+                { icon: Star, text: "Confidence boost - professional, creative scaffolding at your fingertips", iconBg: "bg-purple-100", iconColor: "text-purple-600" },
+                { icon: CheckCircle, text: "Curriculum-ready - aligned outputs that fit your class needs", iconBg: "bg-blue-100", iconColor: "text-blue-600" },
+                { icon: Heart, text: "Energy reclaimed - more focus for students and for your life outside school", iconBg: "bg-pink-100", iconColor: "text-pink-600" }
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1 }}
-                  className="flex items-center space-x-4 p-4 bg-green-50 rounded-xl border border-green-100"
+                  className="flex items-center space-x-4 p-4 bg-green-50 rounded-xl border border-green-100 hover:shadow-md transition-shadow duration-200"
                 >
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <item.icon className="h-6 w-6 text-green-600" />
+                  <div className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <item.icon className={`h-6 w-6 ${item.iconColor}`} />
                   </div>
                   <p className="text-[#2C3E35] font-medium text-left">{item.text}</p>
                 </motion.div>
               ))}
             </div>
 
-            <Button 
-              size="lg" 
-              className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300"
-            >
-              Start Planning Smarter
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
+              >
+                <Sparkles className="h-5 w-5 mr-2" />
+                Start Planning Smarter
+              </Button>
+              <p className="text-[#2C3E35]/60 text-sm">Free • No credit card required</p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -321,6 +353,12 @@ export default function HomePage() {
                   title: "Multi-language", 
                   description: "Plans in English, German, French, Spanish, Italian",
                   color: "#66B2B2"
+                },
+                { 
+                  icon: CheckCircle, 
+                  title: "Curriculum-Ready", 
+                  description: "Standards-aligned content that meets requirements",
+                  color: "#32CD32"
                 }
               ].map((feature, index) => (
                 <motion.div
@@ -345,6 +383,89 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Trust & Authority Section */}
+      <section className="py-16 px-4 bg-white/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="text-center"
+          >
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">Trusted by teachers worldwide</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+              {[
+                { 
+                  number: "10,000+", 
+                  label: "Teachers using Zaza Teach",
+                  icon: Users,
+                  color: "#66B2B2"
+                },
+                { 
+                  number: "50,000+", 
+                  label: "Lesson plans created",
+                  icon: BookOpen,
+                  color: "#8A2BE2"
+                },
+                { 
+                  number: "95%", 
+                  label: "Report saving 2+ hours weekly",
+                  icon: Clock,
+                  color: "#FFD700"
+                },
+                { 
+                  number: "4.9/5", 
+                  label: "Average user rating",
+                  icon: Star,
+                  color: "#E0115F"
+                }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0 + index * 0.1 }}
+                  className="text-center"
+                >
+                  <div 
+                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                    style={{ backgroundColor: `${stat.color}20` }}
+                  >
+                    <stat.icon className="h-8 w-8" style={{ color: stat.color }} />
+                  </div>
+                  <div className="text-3xl font-bold text-[#2C3E35] mb-2">{stat.number}</div>
+                  <p className="text-[#2C3E35]/70 text-sm">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div className="text-center md:text-left">
+                  <h4 className="text-xl font-bold text-[#2C3E35] mb-2">Created by Dr. Greg Blackburn</h4>
+                  <p className="text-[#2C3E35]/70 mb-4">PhD in Education, 20+ years teaching experience</p>
+                  <div className="flex items-center justify-center md:justify-start space-x-4">
+                    <CheckCircle className="h-5 w-5 text-green-600" />
+                    <span className="text-[#2C3E35]/80 text-sm">Evidence-based pedagogy</span>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-3 border-2 border-white shadow-lg">
+                    <img
+                      src="/images/founder/greg-blackburn-headshot.jpg"
+                      alt="Dr. Greg Blackburn - Founder & CEO, Zaza Technologies"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-[#2C3E35]/60 text-xs">Founder & Lead Educator</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -356,27 +477,93 @@ export default function HomePage() {
           >
             <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">What teachers say</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                "It feels like having a planning partner who never gets tired.",
-                "For the first time in years, I leave school with energy left for my family.",
-                "I don't feel guilty about lesson prep anymore - it's under control."
-              ].map((quote, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.0 + index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
-                >
-                  <div className="flex items-center justify-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-[#FFD700] fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-[#2C3E35] italic text-lg">"{quote}"</p>
-                </motion.div>
-              ))}
+            {/* Testimonial Carousel */}
+            <div className="relative max-w-4xl mx-auto">
+              <div className="overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    initial={{ opacity: 0, x: 300 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -300 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
+                  >
+                    <div className="text-center">
+                      <div className="flex items-center justify-center mb-6">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-6 w-6 text-[#FFD700] fill-current" />
+                        ))}
+                      </div>
+                      
+                      <blockquote className="text-2xl text-[#2C3E35] italic mb-8 leading-relaxed">
+                        "{[
+                          "It feels like having a planning partner who never gets tired.",
+                          "For the first time in years, I leave school with energy left for my family.",
+                          "I don't feel guilty about lesson prep anymore - it's under control.",
+                          "Zaza Teach gave me my Sundays back. I can finally spend time with my family instead of stressing over lesson plans.",
+                          "I was drowning in admin. Now, with lesson planning done in minutes, I can focus on the fun parts of teaching again."
+                        ][currentSlide]}"
+                      </blockquote>
+                      
+                      <div className="flex items-center justify-center space-x-4">
+                        <img
+                          src={[
+                            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+                            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+                            "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+                            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+                            "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                          ][currentSlide]}
+                          alt="Teacher testimonial"
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+                        <div className="text-left">
+                          <p className="font-semibold text-[#2C3E35] text-lg">
+                            {["Maria S.", "David L.", "Jennifer K.", "Emma T.", "Marcus D."][currentSlide]}
+                          </p>
+                          <p className="text-[#2C3E35]/70">
+                            {["Elementary Teacher", "High School Teacher", "Middle School Teacher", "Primary School Teacher", "Secondary School Teacher"][currentSlide]}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Carousel Controls */}
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev - 1 + 5) % 5)}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="h-6 w-6 text-[#2C3E35]" />
+              </button>
+              
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev + 1) % 5)}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="h-6 w-6 text-[#2C3E35]" />
+              </button>
+
+              {/* Slide Indicators */}
+              <div className="flex justify-center mt-8 space-x-3">
+                {[...Array(5)].map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                      index === currentSlide 
+                        ? 'bg-[#66B2B2] scale-125' 
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
@@ -471,17 +658,25 @@ export default function HomePage() {
             transition={{ delay: 1.4 }}
             className="bg-gradient-to-r from-[#66B2B2]/10 to-[#8A2BE2]/10 rounded-2xl p-12"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-6">
-              Zaza Teach helps teachers thrive - by giving back your time, energy, and confidence.
+            <h3 className="text-3xl md:text-4xl font-bold text-[#2C3E35] mb-8 leading-tight">
+              Ready to reclaim your evenings and weekends?
             </h3>
-            <Button 
-              size="lg" 
-              className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105"
-            >
-              <BookOpen className="h-6 w-6 mr-3" />
-              Get Started Free
-              <ArrowRight className="h-6 w-6 ml-3" />
-            </Button>
+            <p className="text-xl text-[#2C3E35]/80 mb-8 max-w-2xl mx-auto">
+              Join thousands of teachers who've transformed their planning process. Start with 5 free lesson plans - no credit card required.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105"
+              >
+                <Sparkles className="h-6 w-6 mr-3" />
+                Start Free Today
+                <ArrowRight className="h-6 w-6 ml-3" />
+              </Button>
+              <p className="text-[#2C3E35]/60 text-sm">
+                ✓ 5 lesson plans included  ✓ No commitment  ✓ Cancel anytime
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

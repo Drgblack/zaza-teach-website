@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -30,7 +30,7 @@ const LessonPlanShowcase = () => {
       subject: "Science",
       status: "Draft",
       statusColor: "#FFD700",
-      icon: "ðŸŒ¿",
+      icon: "🌿",
       description: "Exploring food chains and habitats",
     },
     {

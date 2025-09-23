@@ -1,3 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -7,16 +11,26 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
-    domains: ['raw.githubusercontent.com'],
+    domains: ['raw.githubusercontent.com', 'images.unsplash.com', 'plus.unsplash.com'],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com',
+        pathname: '/**',
+      },
     ],
-    formats: ['image/webp'],
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 31536000, // 1 year
   },
   async redirects() {
     return [
@@ -36,4 +50,4 @@ const nextConfig = {
   }
 }
 
-export default nextConfig
+export default withNextIntl(nextConfig);

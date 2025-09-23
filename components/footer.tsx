@@ -26,6 +26,8 @@ const Footer = () => {
     { name: "Feature Request", href: "/feature-request" },
     { name: "Privacy & Data Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
+    { name: "Cookie Policy", href: "/cookies" },
+    { name: "Impressum", href: "/impressum" },
   ]
 
   const socialLinks = [

@@ -66,6 +66,203 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Enhanced focus styles for accessibility */
+  *:focus {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+  
+  /* Remove default focus outline when using custom focus styles */
+  *:focus:not(.focus-visible) {
+    outline: none;
+  }
+  
+  /* Custom focus styles for interactive elements */
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  
+  /* Skip link styles */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    z-index: 1000;
+    transition: top 0.3s;
+  }
+  
+  .skip-link:focus {
+    top: 6px;
+  }
+}
+
+/* Print styles for resource pages */
+@media print {
+  @page {
+    margin: 0.75in;
+    size: A4;
+  }
+  
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  
+  /* Hide non-essential elements when printing */
+  header,
+  nav,
+  .header,
+  .navigation,
+  .skip-link,
+  .print\\:hidden {
+    display: none !important;
+  }
+  
+  /* Ensure print content is visible */
+  .print\\:block {
+    display: block !important;
+  }
+  
+  .print\\:inline {
+    display: inline !important;
+  }
+  
+  /* Print-specific spacing */
+  .print\\:py-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .print\\:px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .print\\:p-0 {
+    padding: 0 !important;
+  }
+  
+  .print\\:mt-4 {
+    margin-top: 1rem !important;
+  }
+  
+  .print\\:mb-4 {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Better typography for print */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  p, li {
+    orphans: 2;
+    widows: 2;
+  }
+  
+  ul, ol {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Checkbox styling for print */
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    margin-right: 8px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  
+  /* Print-friendly colors */
+  .text-gray-900,
+  .text-gray-800,
+  .text-gray-700 {
+    color: #000 !important;
+  }
+  
+  .text-blue-900,
+  .text-green-900,
+  .text-purple-900,
+  .text-orange-900,
+  .text-red-900,
+  .text-yellow-900,
+  .text-teal-900 {
+    color: #000 !important;
+  }
+  
+  /* Ensure backgrounds print for important sections */
+  .bg-blue-50,
+  .bg-green-50,
+  .bg-purple-50,
+  .bg-orange-50,
+  .bg-red-50,
+  .bg-yellow-50,
+  .bg-teal-50 {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+  }
+  
+  /* Remove shadows and transitions for print */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Links styling for print */
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  /* Don't show URLs for internal navigation links */
+  a[href^="#"]:after,
+  a[href^="/"]:after {
+    content: "";
+  }
+  
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+  
+  .page-break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+  
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
 }
 
 /* Custom gradient utilities */

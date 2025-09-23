@@ -7,6 +7,7 @@ updated: "2025-01-16"
 image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["AI in education", "Teaching Tips"]
 readTime: 5
+author: "Dr. Greg Blackburn"
 ---
 
 Teaching has always been one of the most demanding professions. Between classroom management, grading, parent communications, and administrative tasks, the hours extend far beyond the school day. One of the biggest time drains? Lesson planning.

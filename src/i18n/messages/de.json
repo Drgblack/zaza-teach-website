@@ -1,0 +1,344 @@
+{
+  "nav": {
+    "solutions": "Unsere Lösungen",
+    "learningCentre": "Lernbereich",
+    "pricing": "Preise", 
+    "about": "Über uns",
+    "blog": "Blog",
+    "resources": "Kostenlose Ressourcen",
+    "faqs": "Häufige Fragen",
+    "aboutFounder": "Über den Gründer",
+    "mission": "Vision & Mission",
+    "products": "Zaza Produktliste",
+    "whyNotChatgpt": "Warum nicht einfach ChatGPT nutzen?",
+    "quoteWall": "Zaza Zitate-Wand",
+    "featureRequest": "Zaza Feature-Wunsch",
+    "support": "Support",
+    "contact": "Kontakt",
+    "tryZazaPromptly": "Zaza Promptly testen",
+    "tryZazaTeach": "Zaza Teach testen",
+    "darkMode": "Dunkelmodus umschalten",
+    "selectLanguage": "Sprache auswählen"
+  },
+  "footer": {
+    "description": "KI-Tools, die Pädagogen in ihrem Arbeitsalltag unterstützen. Von Lehrern für Lehrer entwickelt.",
+    "product": "PRODUKT",
+    "features": "Funktionen",
+    "templates": "Vorlagen",
+    "pricing": "Preise",
+    "resources": "Ressourcen",
+    "company": "UNTERNEHMEN",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "legal": "RECHTLICHES",
+    "privacyPolicy": "Datenschutz",
+    "termsOfService": "Nutzungsbedingungen",
+    "cookies": "Cookies",
+    "impressum": "Impressum",
+    "ecosystem": "Zaza Ökosystem",
+    "zazaTechnologies": "Zaza Technologies",
+    "zazaPromptly": "Zaza Promptly",
+    "realtyClose": "RealtyClose",
+    "copyright": "© 2025 Zaza Teach. Alle Rechte vorbehalten."
+  },
+  "home": {
+    "hero": {
+      "title": "Unterrichtspläne in Minuten - nicht in Stunden.",
+      "subtitle": "Lehrer verbringen Abende mit Unterrichtsvorbereitung. Zaza Teach hilft Ihnen, diese Zeit zurückzugewinnen und liefert Ihnen klare, lehrplangerechte Unterrichtspläne mit nur wenigen Klicks.",
+      "cta": "Heute kostenlos starten",
+      "subtext": "Schließen Sie sich über 10.000 Lehrern an, die ihre Planung transformiert haben. Kostenlose Testversion mit 5 Unterrichtsplänen."
+    },
+    "problem": {
+      "title": "Das Problem",
+      "quote": "Ich verbringe meinen ganzen Sonntag mit Unterrichtsplanung. Wenn Montag kommt, bin ich schon erschöpft, bevor die Woche überhaupt anfängt.",
+      "quoteAuthor": "Sarah, Mittelschullehrerin",
+      "points": {
+        "lateNights": "Endlose späte Nächte beim Erstellen von Plänen von Grund auf",
+        "curriculumPressure": "Druck, Lehrplananforderungen zu erfüllen und dabei kreativ zu bleiben", 
+        "adminOverwhelm": "Überforderung durch Verwaltungsaufgaben, die die Lehrenergie aufzehren",
+        "lessTime": "Weniger Zeit für Schüler, Familie und sich selbst"
+      }
+    },
+    "solution": {
+      "title": "Der bessere Weg",
+      "cta": "Intelligenter planen",
+      "subtext": "Kostenlos • Keine Kreditkarte erforderlich",
+      "points": {
+        "fastPlanning": "5-Minuten-Unterrichtsplanung - strukturierte, anpassbare Pläne sofort",
+        "confidence": "Mehr Selbstvertrauen - professionelle, kreative Unterstützung zur Hand",
+        "curriculumReady": "Lehrplanbereit - abgestimmte Ergebnisse für Ihre Klassenanforderungen",
+        "energyReclaimed": "Energie zurückgewonnen - mehr Fokus für Schüler und Ihr Leben außerhalb der Schule"
+      }
+    },
+    "features": {
+      "title": "Für Lehrer entwickelt - nicht für Technik-Experten",
+      "aiPlanner": {
+        "title": "KI-Unterrichtsplaner",
+        "description": "Sofortige Pläne mit Lernzielen, Aktivitäten und Bewertungen"
+      },
+      "creative": {
+        "title": "Kreatives Selbstvertrauen", 
+        "description": "Passen Sie Ton, Tiefe und Unterstützungsebenen an"
+      },
+      "templates": {
+        "title": "Vorlagen-Bibliothek",
+        "description": "Speichern und wiederverwenden Sie Ihre besten Stunden"
+      },
+      "sharing": {
+        "title": "Teilen & Export",
+        "description": "Mit Kollegen teilen oder nach Word/PDF exportieren"
+      },
+      "multilang": {
+        "title": "Mehrsprachig",
+        "description": "Pläne auf Englisch, Deutsch, Französisch, Spanisch, Italienisch"
+      },
+      "curriculumReady": {
+        "title": "Lehrplanbereit",
+        "description": "Standardkonforme Inhalte, die Anforderungen erfüllen"
+      }
+    },
+    "trust": {
+      "title": "Weltweit von Lehrern vertraut",
+      "stats": {
+        "teachers": "Lehrer nutzen Zaza Teach",
+        "plans": "Unterrichtspläne erstellt", 
+        "timeSaved": "Berichten 2+ Stunden wöchentlich gespart",
+        "rating": "Durchschnittliche Nutzerbewertung"
+      },
+      "founder": {
+        "title": "Entwickelt von Dr. Greg Blackburn",
+        "subtitle": "PhD in Pädagogik, 20+ Jahre Lehrerfahrung",
+        "badge": "Evidenzbasierte Pädagogik",
+        "role": "Gründer & Leitender Pädagoge"
+      }
+    },
+    "testimonials": {
+      "title": "Was Lehrer sagen",
+      "quotes": [
+        "Es fühlt sich an, als hätte man einen Planungspartner, der nie müde wird.",
+        "Zum ersten Mal seit Jahren verlasse ich die Schule mit Energie für meine Familie.",
+        "Ich fühle mich nicht mehr schuldig wegen der Unterrichtsvorbereitung - es ist unter Kontrolle.",
+        "Zaza Teach hat mir meine Sonntage zurückgegeben. Endlich kann ich Zeit mit meiner Familie verbringen, anstatt über Unterrichtspläne zu grübeln.",
+        "Ich bin in der Verwaltung fast ertrunken. Jetzt, wo Unterrichtsplanung in Minuten erledigt ist, kann ich mich auf die schönen Seiten des Lehrens konzentrieren."
+      ],
+      "authors": [
+        "Maria S.",
+        "David L.", 
+        "Jennifer K.",
+        "Emma T.",
+        "Marcus D."
+      ],
+      "roles": [
+        "Grundschullehrerin",
+        "Gymnasiallehrerin",
+        "Mittelschullehrerin", 
+        "Grundschullehrerin",
+        "Sekundarschullehrerin"
+      ]
+    },
+    "pricing": {
+      "title": "Einfache Preisgestaltung",
+      "plans": {
+        "free": {
+          "title": "Kostenlos",
+          "price": "€0",
+          "features": ["5 Unterrichtspläne/Monat"],
+          "cta": "Kostenlos starten"
+        },
+        "pro": {
+          "title": "Pro-Paket",
+          "price": "€19.99",
+          "period": "/Monat", 
+          "features": ["Unbegrenzte Pläne", "Vollständige Vorlagen-Bibliothek", "Prioritäts-Support"],
+          "cta": "Pro-Test starten",
+          "popular": "Beliebtester"
+        },
+        "bundle": {
+          "title": "Bundle",
+          "price": "€24.99",
+          "period": "/Monat",
+          "features": ["Zaza Teach + Zaza Promptly", "Alle Pro-Funktionen", "Geräteübergreifende Synchronisation"],
+          "cta": "Bundle holen"
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Bereit, Ihre Abende und Wochenenden zurückzugewinnen?",
+      "subtitle": "Schließen Sie sich Tausenden von Lehrern an, die ihren Planungsprozess transformiert haben. Beginnen Sie mit 5 kostenlosen Unterrichtsplänen - keine Kreditkarte erforderlich.",
+      "cta": "Heute kostenlos starten",
+      "benefits": "✓ 5 Unterrichtspläne inklusive  ✓ Keine Verpflichtung  ✓ Jederzeit kündbar"
+    }
+  },
+  "pricing": {
+    "title": "Wählen Sie den Plan, der Ihnen hilft, Ihre Zeit zurückzugewinnen und als Lehrer zu gedeihen.",
+    "subtitle": "Schließen Sie sich Tausenden von Pädagogen an, die ihr Lehrerlebnis mit intelligenter Unterrichtsplanung transformiert haben.",
+    "plans": {
+      "free": {
+        "title": "Kostenlos",
+        "price": "€0",
+        "period": "/Monat",
+        "cta": "Zeit sparen kostenlos starten",
+        "cancelAnytime": "Jederzeit kündbar",
+        "features": {
+          "saveHours": {
+            "title": "Sparen Sie jeden Monat Stunden mit fertigen Stunden.",
+            "subtitle": "5 Unterrichtspläne pro Monat"
+          },
+          "quickStart": {
+            "title": "Schnellstart-Ideen für den täglichen Unterricht.",
+            "subtitle": "Basis-Vorlagen"
+          },
+          "takeLessons": {
+            "title": "Nehmen Sie Ihre Stunden überall hin mit - drucken oder teilen in Sekunden.",
+            "subtitle": "PDF-Export"
+          },
+          "community": {
+            "title": "Werden Sie Teil einer wachsenden Gemeinschaft von Pädagogen, die sich gegenseitig unterstützen.",
+            "subtitle": "Community-Support"
+          }
+        }
+      },
+      "pro": {
+        "title": "Pro-Paket", 
+        "price": "€19.99",
+        "period": "/Monat",
+        "cta": "Holen Sie sich Ihre Sonntage zurück",
+        "popular": "Beliebtester",
+        "cancelAnytime": "Jederzeit kündbar",
+        "features": {
+          "planEvery": {
+            "title": "Planen Sie jede Stunde in Minuten, stressfrei.",
+            "subtitle": "Unbegrenzte Unterrichtspläne"
+          },
+          "accessAdvanced": {
+            "title": "Zugang zu fortgeschrittenen, lehrplangerechten Lehrressourcen.",
+            "subtitle": "Premium-Vorlagen"
+          },
+          "downloadCustomize": {
+            "title": "Laden und passen Sie Stunden für Kollegiumssitzungen und Eltern an.",
+            "subtitle": "Word & PDF Export"
+          },
+          "getFast": {
+            "title": "Schnelle Antworten, wenn Sie sie am meisten brauchen.",
+            "subtitle": "Prioritäts-Support"
+          },
+          "tailorLessons": {
+            "title": "Passen Sie Stunden an Ihr einzigartiges Klassenzimmer an.",
+            "subtitle": "Erweiterte Anpassung"
+          }
+        }
+      },
+      "bundle": {
+        "title": "Bundle",
+        "price": "€24.99", 
+        "period": "/Monat",
+        "cta": "Intelligenter unterrichten & kommunizieren",
+        "cancelAnytime": "Jederzeit kündbar",
+        "features": {
+          "lessonPlanning": {
+            "title": "Unterrichtsplanung plus Elternkommunikation in einem.",
+            "subtitle": "Zaza Teach + Zaza Promptly"
+          },
+          "everything": {
+            "title": "Alles was Sie brauchen, um intelligenter zu planen.",
+            "subtitle": "Alle Pro-Funktionen"
+          },
+          "seamlessly": {
+            "title": "Nahtlos zwischen Laptop und Handy wechseln.",
+            "subtitle": "Geräteübergreifende Synchronisation"
+          },
+          "smarterSuggestions": {
+            "title": "Intelligentere Vorschläge, schnellere Planung.",
+            "subtitle": "Erweiterte KI-Funktionen"
+          },
+          "connectFavorite": {
+            "title": "Verbinden Sie sich mit Ihren Lieblings-Tools.",
+            "subtitle": "Benutzerdefinierte Integrationen"
+          }
+        }
+      }
+    },
+    "footer": "Alle Pläne beinhalten Zugang zu unseren Kern-Unterrichtsplanungsfunktionen. Jederzeit kündbar. Keine versteckten Gebühren.",
+    "testimonials": {
+      "title": "Lehrer sparen bereits jede Woche Stunden mit Zaza Teach",
+      "items": [
+        {
+          "quote": "Zaza Teach hat mir meine Sonntage zurückgegeben. Endlich kann ich Zeit mit meiner Familie verbringen, anstatt über Unterrichtspläne zu grübeln.",
+          "author": "Emma T.",
+          "role": "Grundschullehrerin"
+        },
+        {
+          "quote": "Ich bin in der Verwaltung fast ertrunken. Jetzt, wo Unterrichtsplanung in Minuten erledigt ist, kann ich mich auf die schönen Seiten des Lehrens konzentrieren.",
+          "author": "Marcus D.",
+          "role": "Sekundarschullehrerin"
+        },
+        {
+          "quote": "Die Vorlagen sind genau richtig und sparen mir Stunden. Ehrlich gesagt fühle ich mich wie eine bessere Lehrerin, weil ich die Energie habe, bei meinen Schülern präsent zu sein.",
+          "author": "Sofia L.",
+          "role": "Sprachlehrerin"
+        }
+      ]
+    },
+    "trust": {
+      "trustedBy": "Vertraut von über 1.000+ Pädagogen weltweit",
+      "backedBy": "Unterstützt von 20+ Jahren Bildungsexpertise", 
+      "designedWith": "Mit Lehrern für Lehrer entwickelt"
+    }
+  },
+  "blog": {
+    "title": "Lehreinblicke und Tipps",
+    "subtitle": "Expertenrat, Strategien und Einblicke für moderne Pädagogen",
+    "searchPlaceholder": "Beiträge nach Titel oder Beschreibung suchen...",
+    "allPosts": "Alle Beiträge",
+    "categories": {
+      "teachingPractice": "Lehrpraxis",
+      "curriculumPlanning": "Lehrplan & Planung", 
+      "aiInnovation": "KI & Innovation",
+      "classroomCulture": "Klassenkultur",
+      "teacherWellbeing": "Lehrer-Wohlbefinden",
+      "professionalGrowth": "Berufliche Entwicklung"
+    },
+    "activeFilter": "Aktiver Filter:",
+    "removeFilter": "Filter entfernen",
+    "noResults": "Keine Beiträge entsprechen Ihrer aktuellen Suche und den Filtern.",
+    "clearFilters": "Alle Filter löschen",
+    "readMore": "Weiterlesen →",
+    "writtenBy": "Geschrieben von",
+    "minRead": "Min Lesezeit",
+    "backToBlog": "← Zurück zum Blog",
+    "moreArticles": "Mehr Artikel →",
+    "tags": "Tags:",
+    "publishedOn": "Veröffentlicht",
+    "updatedOn": "Aktualisiert"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Finden Sie Antworten auf häufige Fragen zu Zaza Teach"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "tryAgain": "Erneut versuchen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "confirm": "Bestätigen",
+    "yes": "Ja",
+    "no": "Nein",
+    "close": "Schließen",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "continue": "Fortfahren",
+    "back": "Zurück",
+    "submit": "Senden",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "clear": "Löschen",
+    "select": "Auswählen",
+    "language": "Sprache",
+    "en": "Englisch",
+    "de": "Deutsch"
+  }
+}

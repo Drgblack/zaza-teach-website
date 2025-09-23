@@ -12,7 +12,6 @@
     "lint:dashes": "node scripts/check-no-dashes.mjs"
   },
   "dependencies": {
-    "@drgblack/shared-ui": "^0.1.1",
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "latest",
@@ -56,6 +55,7 @@
     "input-otp": "latest",
     "lucide-react": "^0.454.0",
     "next": "14.2.16",
+    "next-intl": "^4.3.9",
     "next-themes": "latest",
     "node-fetch": "^3.3.2",
     "react": "18.3.1",

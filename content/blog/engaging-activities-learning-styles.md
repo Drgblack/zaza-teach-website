@@ -7,6 +7,7 @@ updated: "2025-01-05"
 image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["Classroom Strategies", "Differentiation"]
 readTime: 6
+author: "Dr. Greg Blackburn"
 ---
 
 Every classroom is a tapestry of different learning preferences. While learning style theory has evolved, understanding how students process information differently remains valuable for creating inclusive, engaging lessons.
