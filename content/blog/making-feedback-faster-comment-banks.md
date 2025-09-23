@@ -4,7 +4,7 @@ description: "Transform your grading workflow with strategic comment banks that 
 slug: "making-feedback-faster-comment-banks"
 date: "2025-01-22"
 updated: "2025-01-22"
-image: "https://images.unsplash.com/photo-1581726690015-c9861d7ad8f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["Classroom Practice", "Assessment", "Productivity", "Feedback"]
 readTime: 6
 author: "Dr. Greg Blackburn"
