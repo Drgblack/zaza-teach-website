@@ -246,7 +246,13 @@ export default function HomePage() {
                 className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-200"
               >
                 <div className="text-center">
-                  <div className="text-4xl mb-4">💭</div>
+                  <div className="flex items-center justify-center mb-6">
+                    <img
+                      src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80"
+                      alt="Sarah - Middle School Teacher"
+                      className="w-16 h-16 rounded-full object-cover border-3 border-white shadow-lg"
+                    />
+                  </div>
                   <blockquote className="text-xl text-[#2C3E35] italic mb-6 leading-relaxed">
                     "I spend my entire Sunday planning lessons. By the time Monday comes, I'm already exhausted before the week even starts."
                   </blockquote>
