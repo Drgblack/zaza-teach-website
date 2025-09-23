@@ -7,7 +7,7 @@ export default createMiddleware({
   // Used when no locale matches
   defaultLocale: 'en',
 
-  // Always prefix locales for consistency
+  // Always prefix locales for consistency with [locale] structure
   localePrefix: 'always'
 });
 
