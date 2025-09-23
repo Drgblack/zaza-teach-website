@@ -23,7 +23,7 @@ export const metadata = {
 import dynamic from 'next/dynamic';
 import { WebSiteJsonLd, OrgJsonLd, TeachAppJsonLd } from '@/components/SEOJsonLd';
 
-const HomePage = dynamic(() => import('./../components/HomePage'), { ssr: false });
+const HomePage = dynamic(() => import('../../components/HomePage'), { ssr: false });
 
 export default function Page() {
   return (

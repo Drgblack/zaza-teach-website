@@ -1,0 +1,344 @@
+{
+  "nav": {
+    "solutions": "Our Solutions",
+    "learningCentre": "Learning Centre",
+    "pricing": "Pricing", 
+    "about": "About Us",
+    "blog": "Blog",
+    "resources": "Free Resources",
+    "faqs": "FAQs",
+    "aboutFounder": "About the Founder",
+    "mission": "Vision & Mission",
+    "products": "Zaza Product List",
+    "whyNotChatgpt": "Why Not Just Use ChatGPT?",
+    "quoteWall": "Zaza Quote Wall",
+    "featureRequest": "Zaza Feature Request",
+    "support": "Support",
+    "contact": "Contact",
+    "tryZazaPromptly": "Try Zaza Promptly",
+    "tryZazaTeach": "Try Zaza Teach",
+    "darkMode": "Toggle dark mode",
+    "selectLanguage": "Select language"
+  },
+  "footer": {
+    "description": "AI tools that help educators thrive in their daily workflows. Built by educators for educators.",
+    "product": "PRODUCT",
+    "features": "Features",
+    "templates": "Templates",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "company": "COMPANY",
+    "about": "About",
+    "contact": "Contact",
+    "legal": "LEGAL",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookies": "Cookies",
+    "impressum": "Impressum",
+    "ecosystem": "Zaza Ecosystem",
+    "zazaTechnologies": "Zaza Technologies",
+    "zazaPromptly": "Zaza Promptly",
+    "realtyClose": "RealtyClose",
+    "copyright": "© 2025 Zaza Teach. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "Lesson plans done in minutes - not hours.",
+      "subtitle": "Teachers spend evenings buried in planning. Zaza Teach helps you reclaim that time, giving you clear, curriculum-aligned lesson plans in just a few taps.",
+      "cta": "Start Free Today",
+      "subtext": "Join 10,000+ teachers who've transformed their planning. Free trial includes 5 lesson plans."
+    },
+    "problem": {
+      "title": "The problem",
+      "quote": "I spend my entire Sunday planning lessons. By the time Monday comes, I'm already exhausted before the week even starts.",
+      "quoteAuthor": "Sarah, Middle School Teacher",
+      "points": {
+        "lateNights": "Endless late nights building plans from scratch",
+        "curriculumPressure": "Pressure to meet curriculum requirements while staying creative", 
+        "adminOverwhelm": "Overwhelm from admin tasks eating into teaching energy",
+        "lessTime": "Less time for students, family, and yourself"
+      }
+    },
+    "solution": {
+      "title": "The better way",
+      "cta": "Start Planning Smarter",
+      "subtext": "Free • No credit card required",
+      "points": {
+        "fastPlanning": "5-minute lesson planning - structured, adaptable plans instantly",
+        "confidence": "Confidence boost - professional, creative scaffolding at your fingertips",
+        "curriculumReady": "Curriculum-ready - aligned outputs that fit your class needs",
+        "energyReclaimed": "Energy reclaimed - more focus for students and for your life outside school"
+      }
+    },
+    "features": {
+      "title": "Built for teachers - not techies",
+      "aiPlanner": {
+        "title": "AI Lesson Planner",
+        "description": "Instant plans with objectives, activities, and assessments"
+      },
+      "creative": {
+        "title": "Creative Confidence", 
+        "description": "Adjust tone, depth, and scaffolding levels"
+      },
+      "templates": {
+        "title": "Template Library",
+        "description": "Save and reuse your best lessons"
+      },
+      "sharing": {
+        "title": "Sharing & Export",
+        "description": "Share with colleagues or export to Word/PDF"
+      },
+      "multilang": {
+        "title": "Multi-language",
+        "description": "Plans in English, German, French, Spanish, Italian"
+      },
+      "curriculumReady": {
+        "title": "Curriculum-Ready",
+        "description": "Standards-aligned content that meets requirements"
+      }
+    },
+    "trust": {
+      "title": "Trusted by teachers worldwide",
+      "stats": {
+        "teachers": "Teachers using Zaza Teach",
+        "plans": "Lesson plans created", 
+        "timeSaved": "Report saving 2+ hours weekly",
+        "rating": "Average user rating"
+      },
+      "founder": {
+        "title": "Created by Dr. Greg Blackburn",
+        "subtitle": "PhD in Education, 20+ years teaching experience",
+        "badge": "Evidence-based pedagogy",
+        "role": "Founder & Lead Educator"
+      }
+    },
+    "testimonials": {
+      "title": "What teachers say",
+      "quotes": [
+        "It feels like having a planning partner who never gets tired.",
+        "For the first time in years, I leave school with energy left for my family.",
+        "I don't feel guilty about lesson prep anymore - it's under control.",
+        "Zaza Teach gave me my Sundays back. I can finally spend time with my family instead of stressing over lesson plans.",
+        "I was drowning in admin. Now, with lesson planning done in minutes, I can focus on the fun parts of teaching again."
+      ],
+      "authors": [
+        "Maria S.",
+        "David L.", 
+        "Jennifer K.",
+        "Emma T.",
+        "Marcus D."
+      ],
+      "roles": [
+        "Elementary Teacher",
+        "High School Teacher",
+        "Middle School Teacher", 
+        "Primary School Teacher",
+        "Secondary School Teacher"
+      ]
+    },
+    "pricing": {
+      "title": "Simple pricing",
+      "plans": {
+        "free": {
+          "title": "Free Plan",
+          "price": "€0",
+          "features": ["5 lesson plans/month"],
+          "cta": "Get Started Free"
+        },
+        "pro": {
+          "title": "Pro Plan",
+          "price": "€19.99",
+          "period": "/month", 
+          "features": ["Unlimited plans", "Full template library", "Priority support"],
+          "cta": "Start Pro Trial",
+          "popular": "Most Popular"
+        },
+        "bundle": {
+          "title": "Bundle",
+          "price": "€24.99",
+          "period": "/month",
+          "features": ["Zaza Teach + Zaza Promptly", "All Pro features", "Cross-platform sync"],
+          "cta": "Get Bundle"
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Ready to reclaim your evenings and weekends?",
+      "subtitle": "Join thousands of teachers who've transformed their planning process. Start with 5 free lesson plans - no credit card required.",
+      "cta": "Start Free Today",
+      "benefits": "✓ 5 lesson plans included  ✓ No commitment  ✓ Cancel anytime"
+    }
+  },
+  "pricing": {
+    "title": "Choose the plan that helps you reclaim your time and thrive as a teacher.",
+    "subtitle": "Join thousands of educators who've transformed their teaching experience with smart lesson planning.",
+    "plans": {
+      "free": {
+        "title": "Free Plan",
+        "price": "€0",
+        "period": "/month",
+        "cta": "Start Saving Time Free",
+        "cancelAnytime": "Cancel anytime",
+        "features": {
+          "saveHours": {
+            "title": "Save hours every month with ready-to-use lessons.",
+            "subtitle": "5 lesson plans per month"
+          },
+          "quickStart": {
+            "title": "Quick-start ideas for everyday teaching.",
+            "subtitle": "Basic templates"
+          },
+          "takeLessons": {
+            "title": "Take your lessons anywhere - print or share in seconds.",
+            "subtitle": "PDF export"
+          },
+          "community": {
+            "title": "Join a growing community of educators who share and support each other.",
+            "subtitle": "Community support"
+          }
+        }
+      },
+      "pro": {
+        "title": "Pro Plan", 
+        "price": "€19.99",
+        "period": "/month",
+        "cta": "Reclaim Your Sundays",
+        "popular": "Most Popular",
+        "cancelAnytime": "Cancel anytime",
+        "features": {
+          "planEvery": {
+            "title": "Plan every class in minutes, stress-free.",
+            "subtitle": "Unlimited lesson plans"
+          },
+          "accessAdvanced": {
+            "title": "Access advanced, curriculum-aligned teaching resources.",
+            "subtitle": "Premium templates"
+          },
+          "downloadCustomize": {
+            "title": "Download and customize lessons for staff meetings and parents.",
+            "subtitle": "Word & PDF export"
+          },
+          "getFast": {
+            "title": "Get fast answers when you need them most.",
+            "subtitle": "Priority support"
+          },
+          "tailorLessons": {
+            "title": "Tailor lessons to your unique classroom.",
+            "subtitle": "Advanced customization"
+          }
+        }
+      },
+      "bundle": {
+        "title": "Bundle",
+        "price": "€24.99", 
+        "period": "/month",
+        "cta": "Teach & Communicate Smarter",
+        "cancelAnytime": "Cancel anytime",
+        "features": {
+          "lessonPlanning": {
+            "title": "Lesson planning plus parent communication in one.",
+            "subtitle": "Zaza Teach + Zaza Promptly"
+          },
+          "everything": {
+            "title": "Everything you need to plan smarter.",
+            "subtitle": "All Pro features"
+          },
+          "seamlessly": {
+            "title": "Seamlessly switch between laptop and mobile.",
+            "subtitle": "Cross-platform sync"
+          },
+          "smarterSuggestions": {
+            "title": "Smarter suggestions, faster planning.",
+            "subtitle": "Advanced AI features"
+          },
+          "connectFavorite": {
+            "title": "Connect with your favorite tools.",
+            "subtitle": "Custom integrations"
+          }
+        }
+      }
+    },
+    "footer": "All plans include access to our core lesson planning features. Cancel anytime. No hidden fees.",
+    "testimonials": {
+      "title": "Teachers are already saving hours every week with Zaza Teach",
+      "items": [
+        {
+          "quote": "Zaza Teach gave me my Sundays back. I can finally spend time with my family instead of stressing over lesson plans.",
+          "author": "Emma T.",
+          "role": "Primary School Teacher"
+        },
+        {
+          "quote": "I was drowning in admin. Now, with lesson planning done in minutes, I can focus on the fun parts of teaching again.",
+          "author": "Marcus D.",
+          "role": "Secondary School Teacher"
+        },
+        {
+          "quote": "The templates are spot-on and save me hours. Honestly, I feel like a better teacher because I have the energy to be present with my students.",
+          "author": "Sofia L.",
+          "role": "Language Teacher"
+        }
+      ]
+    },
+    "trust": {
+      "trustedBy": "Trusted by over 1,000+ educators worldwide",
+      "backedBy": "Backed by 20+ years of education expertise", 
+      "designedWith": "Designed with teachers, for teachers"
+    }
+  },
+  "blog": {
+    "title": "Teaching insights and tips",
+    "subtitle": "Expert advice, strategies, and insights for modern educators",
+    "searchPlaceholder": "Search posts by title or description...",
+    "allPosts": "All Posts",
+    "categories": {
+      "teachingPractice": "Teaching Practice",
+      "curriculumPlanning": "Curriculum & Planning", 
+      "aiInnovation": "AI & Innovation",
+      "classroomCulture": "Classroom Culture",
+      "teacherWellbeing": "Teacher Wellbeing",
+      "professionalGrowth": "Professional Growth"
+    },
+    "activeFilter": "Active filter:",
+    "removeFilter": "Remove filter",
+    "noResults": "No posts match your current search and filters.",
+    "clearFilters": "Clear all filters",
+    "readMore": "Read More →",
+    "writtenBy": "Written by",
+    "minRead": "min read",
+    "backToBlog": "← Back to Blog",
+    "moreArticles": "More Articles →",
+    "tags": "Tags:",
+    "publishedOn": "Published",
+    "updatedOn": "Updated"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about Zaza Teach"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try again",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "continue": "Continue",
+    "back": "Back",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "clear": "Clear",
+    "select": "Select",
+    "language": "Language",
+    "en": "English",
+    "de": "German"
+  }
+}

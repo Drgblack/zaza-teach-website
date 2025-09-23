@@ -5,21 +5,40 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ChevronDown, Menu, X, Moon, Sun, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import { useRouter, usePathname } from 'next/navigation'
 import OptimizedImage from "@/components/OptimizedImage"
+import { useTranslations, useLocale } from 'next-intl'
 
 const Header = () => {
+  const t = useTranslations()
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(false)
-  const [currentLanguage, setCurrentLanguage] = useState("EN")
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false)
 
+  // Get current path without locale prefix for switching
+  const pathWithoutLocale = pathname.startsWith('/en') ? pathname.slice(3) : 
+                           pathname.startsWith('/de') ? pathname.slice(3) : pathname
+
   const languages = [
-    { code: "EN", label: "English", href: "/" },
-    { code: "DE", label: "German", href: "/de" },
-    { code: "ES", label: "Spanish", href: "/es" },
-    { code: "FR", label: "French", href: "/fr" },
+    { 
+      code: "EN", 
+      label: t('common.en'), 
+      href: pathWithoutLocale || "/",
+      locale: "en"
+    },
+    { 
+      code: "DE", 
+      label: t('common.de'), 
+      href: `/de${pathWithoutLocale || "/"}`,
+      locale: "de"
+    },
   ]
+
+  const currentLanguage = locale === 'de' ? 'DE' : 'EN'
 
   const solutionsMenuRef = useRef(null)
   const learningMenuRef = useRef(null)
@@ -56,20 +75,20 @@ const Header = () => {
   ]
 
   const learningCentre = [
-    { name: "Blog", href: "/blog" },
-    { name: "Free Resources", href: "/resources" },
-    { name: "FAQs", href: "/faqs" },
+    { name: t('nav.blog'), href: "/blog" },
+    { name: t('nav.resources'), href: "/resources" },
+    { name: t('nav.faqs'), href: "/faqs" },
   ]
 
   const aboutUs = [
-    { name: "About the Founder", href: "/about-founder" },
-    { name: "Vision & Mission", href: "/mission" },
-    { name: "Zaza Product List", href: "/products" },
-    { name: "Why Not Just Use ChatGPT?", href: "/why-not-chatgpt" },
-    { name: "Zaza Quote Wall", href: "/quote-wall" },
-    { name: "Zaza Feature Request", href: "/feature-request" },
-    { name: "Support", href: "/support" },
-    { name: "Contact", href: "/contact" },
+    { name: t('nav.aboutFounder'), href: "/about-founder" },
+    { name: t('nav.mission'), href: "/mission" },
+    { name: t('nav.products'), href: "/products" },
+    { name: t('nav.whyNotChatgpt'), href: "/why-not-chatgpt" },
+    { name: t('nav.quoteWall'), href: "/quote-wall" },
+    { name: t('nav.featureRequest'), href: "/feature-request" },
+    { name: t('nav.support'), href: "/support" },
+    { name: t('nav.contact'), href: "/contact" },
   ]
 
   const handleDropdownToggle = (dropdown) => {
@@ -160,7 +179,7 @@ const Header = () => {
             }
           }}
           onKeyDown={handleLanguageSwitcherKeyDown}
-          aria-label="Select language"
+          aria-label={t('nav.selectLanguage')}
           aria-haspopup="menu"
           aria-expanded={isOpen}
           aria-controls="language-menu"
@@ -195,9 +214,9 @@ const Header = () => {
                   key={lang.code}
                   href={lang.href}
                   onClick={() => {
-                    setCurrentLanguage(lang.code)
                     setIsOpen(false)
                     if (isMobile) setMobileMenuOpen(false)
+                    router.push(lang.href)
                   }}
                   role="menuitem"
                   tabIndex={0}
@@ -258,7 +277,7 @@ const Header = () => {
                 aria-controls="solutions-menu"
                 className="flex items-center space-x-1 text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
               >
-                <span>Our Solutions</span>
+                <span>{t('nav.solutions')}</span>
                 <ChevronDown
                   className={`h-4 w-4 transition-transform ${activeDropdown === "solutions" ? "rotate-180" : ""}`}
                 />
@@ -315,7 +334,7 @@ const Header = () => {
                 aria-controls="learning-menu"
                 className="flex items-center space-x-1 text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
               >
-                <span>Learning Centre</span>
+                <span>{t('nav.learningCentre')}</span>
                 <ChevronDown
                   className={`h-4 w-4 transition-transform ${activeDropdown === "learning" ? "rotate-180" : ""}`}
                 />
@@ -358,7 +377,7 @@ const Header = () => {
               href="/pricing" 
               className="text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
             >
-              Pricing
+              {t('nav.pricing')}
             </Link>
 
             {/* About Us Dropdown */}
@@ -372,7 +391,7 @@ const Header = () => {
                 aria-controls="about-menu"
                 className="flex items-center space-x-1 text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
               >
-                <span>About Us</span>
+                <span>{t('nav.about')}</span>
                 <ChevronDown
                   className={`h-4 w-4 transition-transform ${activeDropdown === "about" ? "rotate-180" : ""}`}
                 />
@@ -418,11 +437,11 @@ const Header = () => {
                 variant="outline"
                 className="bg-gradient-to-r from-[#E0115F] to-[#8A2BE2] hover:from-[#E0115F]/90 hover:to-[#8A2BE2]/90 text-white border-0 font-medium"
               >
-                Try Zaza Promptly
+{t('nav.tryZazaPromptly')}
               </Button>
             </a>
             <Link href="/">
-              <Button className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white font-medium">Try Zaza Teach</Button>
+              <Button className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white font-medium">{t('nav.tryZazaTeach')}</Button>
             </Link>
 
             {/* Dark Mode Toggle */}
@@ -430,7 +449,7 @@ const Header = () => {
               onClick={toggleDarkMode}
               aria-pressed={!!isDarkMode}
               className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle dark mode"
+              aria-label={t('nav.darkMode')}
             >
               {isDarkMode ? <Sun className="h-5 w-5 text-yellow-500" /> : <Moon className="h-5 w-5 text-gray-600" />}
             </button>
@@ -460,7 +479,7 @@ const Header = () => {
             >
               {/* Mobile Solutions */}
               <div className="space-y-2">
-                <h3 className="font-semibold text-slate-800 dark:text-white px-4">Our Solutions</h3>
+                <h3 className="font-semibold text-slate-800 dark:text-white px-4">{t('nav.solutions')}</h3>
                 {solutions.map((solution) => (
                   <Link
                     key={solution.name}
@@ -480,7 +499,7 @@ const Header = () => {
 
               {/* Mobile Learning Centre */}
               <div className="space-y-2">
-                <h3 className="font-semibold text-slate-800 dark:text-white px-4">Learning Centre</h3>
+                <h3 className="font-semibold text-slate-800 dark:text-white px-4">{t('nav.learningCentre')}</h3>
                 {learningCentre.map((item) => (
                   <Link
                     key={item.name}
@@ -500,13 +519,13 @@ const Header = () => {
                   className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors font-semibold"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Pricing
+                  {t('nav.pricing')}
                 </Link>
               </div>
 
               {/* Mobile About Us */}
               <div className="space-y-2">
-                <h3 className="font-semibold text-slate-800 dark:text-white px-4">About Us</h3>
+                <h3 className="font-semibold text-slate-800 dark:text-white px-4">{t('nav.about')}</h3>
                 {aboutUs.map((item) => (
                   <Link
                     key={item.name}
@@ -526,7 +545,7 @@ const Header = () => {
                     className="w-full bg-gradient-to-r from-[#E0115F] to-[#8A2BE2] hover:from-[#E0115F]/90 hover:to-[#8A2BE2]/90 text-white font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Try Zaza Promptly
+    {t('nav.tryZazaPromptly')}
                   </Button>
                 </a>
                 <Link href="/" className="block">
@@ -534,7 +553,7 @@ const Header = () => {
                     className="w-full bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Try Zaza Teach
+                    {t('nav.tryZazaTeach')}
                   </Button>
                 </Link>
 
@@ -544,7 +563,7 @@ const Header = () => {
                     onClick={toggleDarkMode}
                     aria-pressed={!!isDarkMode}
                     className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    aria-label="Toggle dark mode"
+                    aria-label={t('nav.darkMode')}
                   >
                     {isDarkMode ? (
                       <Sun className="h-5 w-5 text-yellow-500" />
@@ -557,7 +576,7 @@ const Header = () => {
 
               {/* Mobile Language Switcher */}
               <div className="px-4 pt-2 border-t border-gray-200/50 dark:border-gray-700/50">
-                <h3 className="font-semibold text-slate-800 dark:text-white mb-2 text-center">Language</h3>
+                <h3 className="font-semibold text-slate-800 dark:text-white mb-2 text-center">{t('common.language')}</h3>
                 <LanguageSwitcher isMobile={true} />
               </div>
             </motion.div>

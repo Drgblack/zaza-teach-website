@@ -3,6 +3,7 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import { useTranslations } from 'next-intl';
 import type { PostMeta } from "@/lib/blog";
 
 type BlogSearchProps = {
@@ -16,35 +17,38 @@ type CategoryConfig = {
   defaultOpen?: boolean;
 };
 
-const CATEGORIES: Record<string, CategoryConfig> = {
+// This will be moved inside the component so it can access translations
+const getCategoriesConfig = (t: any): Record<string, CategoryConfig> => ({
   "teaching-practice": {
-    label: "Teaching Practice",
+    label: t('blog.categories.teachingPractice'),
     tags: ["Classroom Management", "Classroom Practice", "Student Engagement", "Assessment", "Feedback", "Differentiation", "Components", "Teaching Tips"],
     defaultOpen: true
   },
   "curriculum-planning": {
-    label: "Curriculum & Planning",
+    label: t('blog.categories.curriculumPlanning'),
     tags: ["Lesson Planning", "Grading", "Curriculum Standards", "Educational Innovation"]
   },
   "ai-innovation": {
-    label: "AI & Innovation",
+    label: t('blog.categories.aiInnovation'),
     tags: ["AI in Education", "AI Teaching Assistants", "Educational Technology", "Digital Teacher Assistants", "Future Classroom 2035", "EdTech Trends", "Robots in Classroom"]
   },
   "classroom-culture": {
-    label: "Classroom Culture",
+    label: t('blog.categories.classroomCulture'),
     tags: ["Classroom Culture", "Positive Environment", "Collaboration", "Classroom Strategies", "Creating Joy"]
   },
   "teacher-wellbeing": {
-    label: "Teacher Wellbeing",
+    label: t('blog.categories.teacherWellbeing'),
     tags: ["Stress Management", "Teacher Wellbeing", "Work-Life Balance", "Self Care", "Teacher Efficiency"]
   },
   "professional-growth": {
-    label: "Professional Growth",
+    label: t('blog.categories.professionalGrowth'),
     tags: ["Productivity", "Teaching Innovation", "Future of Education"]
   }
-};
+});
 
 export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
+  const t = useTranslations();
+  const CATEGORIES = getCategoriesConfig(t);
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [openCategories, setOpenCategories] = useState<Set<string>>(
@@ -114,7 +118,7 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search posts by title or description..."
+          placeholder={t('blog.searchPlaceholder')}
           className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
         />
       </div>
@@ -131,7 +135,7 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
                 : "bg-white text-gray-600 border border-gray-300 hover:bg-purple-50 hover:text-purple-600"
             }`}
           >
-            All Posts
+{t('blog.allPosts')}
           </button>
         </div>
 
@@ -194,13 +198,13 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
         {/* Active Filter Display */}
         {activeTag && (
           <div className="mt-4 flex items-center gap-2">
-            <span className="text-sm text-gray-600">Active filter:</span>
+            <span className="text-sm text-gray-600">{t('blog.activeFilter')}</span>
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
               {activeTag}
               <button
                 onClick={() => setActiveTag(null)}
                 className="ml-1 hover:text-purple-600"
-                aria-label="Remove filter"
+                aria-label={t('blog.removeFilter')}
               >
                 ×
               </button>
@@ -236,7 +240,7 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
                       ))}
                     </div>
                     <span className="text-sm text-gray-500">
-                      {post.readTime ? `${post.readTime} min read` : "5 min read"}
+{post.readTime ? `${post.readTime} ${t('blog.minRead')}` : `5 ${t('blog.minRead')}`}
                     </span>
                   </div>
 
@@ -250,7 +254,7 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
 
                   {post.author && (
                     <p className="text-sm text-gray-500 mb-4">
-                      Written by {post.author}
+{t('blog.writtenBy')} {post.author}
                     </p>
                   )}
 
@@ -263,7 +267,7 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
                       })}
                     </span>
                     <span className="text-purple-600 hover:text-purple-700 font-medium text-sm">
-                      Read More →
+{t('blog.readMore')}
                     </span>
                   </div>
                 </div>
@@ -274,7 +278,7 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
       ) : (
         <div className="text-center py-12">
           <p className="text-gray-500 text-lg mb-4">
-            No posts match your current search and filters.
+{t('blog.noResults')}
           </p>
           <button
             onClick={() => {
@@ -283,7 +287,7 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
             }}
             className="text-purple-600 hover:text-purple-700 font-medium"
           >
-            Clear all filters
+{t('blog.clearFilters')}
           </button>
         </div>
       )}
