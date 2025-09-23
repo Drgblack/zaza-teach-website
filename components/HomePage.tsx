@@ -451,8 +451,12 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#66B2B2] to-[#8A2BE2] rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-white text-2xl font-bold">GB</span>
+                  <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-3 border-2 border-white shadow-lg">
+                    <img
+                      src="/images/founder/greg-blackburn-headshot.jpg"
+                      alt="Dr. Greg Blackburn - Founder & CEO, Zaza Technologies"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <p className="text-[#2C3E35]/60 text-xs">Founder & Lead Educator</p>
                 </div>
