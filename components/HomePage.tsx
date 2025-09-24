@@ -214,14 +214,14 @@ export default function HomePage() {
             transition={{ delay: 0.2 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-8">The problem</h3>
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-8">{t('home.problem.title')}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
               {[
-                { icon: AlertTriangle, text: "Endless late nights building plans from scratch" },
-                { icon: Battery, text: "Pressure to meet curriculum requirements while staying creative" },
-                { icon: Coffee, text: "Overwhelm from admin tasks eating into teaching energy" },
-                { icon: Heart, text: "Less time for students, family, and yourself" }
+                { icon: AlertTriangle, text: t('home.problem.points.lateNights') },
+                { icon: Battery, text: t('home.problem.points.curriculumPressure') },
+                { icon: Coffee, text: t('home.problem.points.adminOverwhelm') },
+                { icon: Heart, text: t('home.problem.points.lessTime') }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -255,9 +255,9 @@ export default function HomePage() {
                     />
                   </div>
                   <blockquote className="text-xl text-[#2C3E35] italic mb-6 leading-relaxed">
-                    "I spend my entire Sunday planning lessons. By the time Monday comes, I'm already exhausted before the week even starts."
+                    "{t('home.problem.quote')}"
                   </blockquote>
-                  <cite className="text-[#2C3E35]/70 font-medium">- Sarah, Middle School Teacher</cite>
+                  <cite className="text-[#2C3E35]/70 font-medium">- {t('home.problem.quoteAuthor')}</cite>
                 </div>
               </motion.div>
             </div>
@@ -274,14 +274,14 @@ export default function HomePage() {
             transition={{ delay: 0.4 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-8">The better way</h3>
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-8">{t('home.solution.title')}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
               {[
-                { icon: Zap, text: "5-minute lesson planning - structured, adaptable plans instantly", iconBg: "bg-yellow-100", iconColor: "text-yellow-600" },
-                { icon: Star, text: "Confidence boost - professional, creative scaffolding at your fingertips", iconBg: "bg-purple-100", iconColor: "text-purple-600" },
-                { icon: CheckCircle, text: "Curriculum-ready - aligned outputs that fit your class needs", iconBg: "bg-blue-100", iconColor: "text-blue-600" },
-                { icon: Heart, text: "Energy reclaimed - more focus for students and for your life outside school", iconBg: "bg-pink-100", iconColor: "text-pink-600" }
+                { icon: Zap, text: t('home.solution.points.fastPlanning'), iconBg: "bg-yellow-100", iconColor: "text-yellow-600" },
+                { icon: Star, text: t('home.solution.points.confidence'), iconBg: "bg-purple-100", iconColor: "text-purple-600" },
+                { icon: CheckCircle, text: t('home.solution.points.curriculumReady'), iconBg: "bg-blue-100", iconColor: "text-blue-600" },
+                { icon: Heart, text: t('home.solution.points.energyReclaimed'), iconBg: "bg-pink-100", iconColor: "text-pink-600" }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -304,9 +304,9 @@ export default function HomePage() {
                 className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
               >
                 <Sparkles className="h-5 w-5 mr-2" />
-                Start Planning Smarter
+                {t('home.solution.cta')}
               </Button>
-              <p className="text-[#2C3E35]/60 text-sm">Free • No credit card required</p>
+              <p className="text-[#2C3E35]/60 text-sm">{t('home.solution.subtext')}</p>
             </div>
           </motion.div>
         </div>
@@ -321,44 +321,44 @@ export default function HomePage() {
             transition={{ delay: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">Built for teachers - not techies</h3>
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">{t('home.features.title')}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { 
                   icon: BookOpen, 
-                  title: "AI Lesson Planner", 
-                  description: "Instant plans with objectives, activities, and assessments",
+                  title: t('home.features.aiPlanner.title'), 
+                  description: t('home.features.aiPlanner.description'),
                   color: "#66B2B2"
                 },
                 { 
                   icon: Sparkles, 
-                  title: "Creative Confidence", 
-                  description: "Adjust tone, depth, and scaffolding levels",
+                  title: t('home.features.creative.title'), 
+                  description: t('home.features.creative.description'),
                   color: "#8A2BE2"
                 },
                 { 
                   icon: FileText, 
-                  title: "Template Library", 
-                  description: "Save and reuse your best lessons",
+                  title: t('home.features.templates.title'), 
+                  description: t('home.features.templates.description'),
                   color: "#FFD700"
                 },
                 { 
                   icon: Share2, 
-                  title: "Sharing & Export", 
-                  description: "Share with colleagues or export to Word/PDF",
+                  title: t('home.features.sharing.title'), 
+                  description: t('home.features.sharing.description'),
                   color: "#E0115F"
                 },
                 { 
                   icon: Globe, 
-                  title: "Multi-language", 
-                  description: "Plans in English, German, French, Spanish, Italian",
+                  title: t('home.features.multilang.title'), 
+                  description: t('home.features.multilang.description'),
                   color: "#66B2B2"
                 },
                 { 
                   icon: CheckCircle, 
-                  title: "Curriculum-Ready", 
-                  description: "Standards-aligned content that meets requirements",
+                  title: t('home.features.curriculumReady.title'), 
+                  description: t('home.features.curriculumReady.description'),
                   color: "#32CD32"
                 }
               ].map((feature, index) => (
@@ -393,7 +393,7 @@ export default function HomePage() {
             transition={{ delay: 0.8 }}
             className="text-center"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">Trusted by teachers worldwide</h3>
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">{t('home.trust.title')}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
               {[
@@ -476,7 +476,7 @@ export default function HomePage() {
             transition={{ delay: 0.8 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">What teachers say</h3>
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">{t('home.testimonials.title')}</h3>
             
             {/* Testimonial Carousel */}
             <div className="relative max-w-4xl mx-auto">
@@ -579,7 +579,7 @@ export default function HomePage() {
             transition={{ delay: 1.0 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">Simple pricing</h3>
+            <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">{t('home.pricing.title')}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
