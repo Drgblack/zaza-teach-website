@@ -1,22 +1,23 @@
 import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
+// Import messages statically for better Vercel compatibility
+import enMessages from './messages/en.json';
+import deMessages from './messages/de.json';
+
+const messages = {
+  en: enMessages,
+  de: deMessages
+};
+
 // Can be imported from a shared config
-const locales = ['en', 'de'];
+const locales = ['en', 'de'] as const;
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as any)) notFound();
 
-  let messages;
-  try {
-    messages = (await import(`./messages/${locale}.json`)).default;
-  } catch (error) {
-    console.error(`Failed to load messages for locale ${locale}:`, error);
-    notFound();
-  }
-
   return {
-    messages
+    messages: messages[locale as keyof typeof messages] || messages.en
   };
 });
