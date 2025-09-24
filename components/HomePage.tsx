@@ -6,8 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { BookOpen, Clock, Users, Sparkles, ArrowRight, Star, CheckCircle, X, Zap, FileText, Share2, Globe, Heart, Coffee, AlertTriangle, Battery, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AIOptimizedContent, SchemaEnhancedText, EDUCATION_SEMANTIC_KEYWORDS, AI_EDUCATION_TOPICS } from './AIOptimizedContent';
+import { useTranslations } from './LocaleProvider';
 
 export default function HomePage() {
+  const t = useTranslations();
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const teachers = [
@@ -82,12 +84,11 @@ export default function HomePage() {
               </div>
               
               <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E35] mb-6 leading-tight">
-                Lesson plans done in minutes - not hours.
+                {t('home.hero.title')}
               </h2>
               
               <p className="text-xl text-[#2C3E35]/80 mb-8 leading-relaxed">
-                Teachers spend evenings buried in planning. Zaza Teach helps you reclaim that time, 
-                giving you clear, curriculum-aligned lesson plans in just a few taps.
+                {t('home.hero.subtitle')}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
@@ -96,13 +97,13 @@ export default function HomePage() {
                   className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
                 >
                   <Sparkles className="h-5 w-5 mr-2" />
-                  Start Free Today
+                  {t('home.hero.cta')}
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </div>
               
               <p className="text-[#2C3E35]/60 text-lg text-center lg:text-left">
-                Join 10,000+ teachers who've transformed their planning. Free trial includes 5 lesson plans.
+                {t('home.hero.subtext')}
               </p>
             </motion.div>
 
