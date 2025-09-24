@@ -399,25 +399,25 @@ export default function HomePage() {
               {[
                 { 
                   number: "10,000+", 
-                  label: "Teachers using Zaza Teach",
+                  label: t('home.trust.stats.teachers'),
                   icon: Users,
                   color: "#66B2B2"
                 },
                 { 
                   number: "50,000+", 
-                  label: "Lesson plans created",
+                  label: t('home.trust.stats.plans'),
                   icon: BookOpen,
                   color: "#8A2BE2"
                 },
                 { 
                   number: "95%", 
-                  label: "Report saving 2+ hours weekly",
+                  label: t('home.trust.stats.timeSaved'),
                   icon: Clock,
                   color: "#FFD700"
                 },
                 { 
                   number: "4.9/5", 
-                  label: "Average user rating",
+                  label: t('home.trust.stats.rating'),
                   icon: Star,
                   color: "#E0115F"
                 }
@@ -444,11 +444,11 @@ export default function HomePage() {
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
               <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                 <div className="text-center md:text-left">
-                  <h4 className="text-xl font-bold text-[#2C3E35] mb-2">Created by Dr. Greg Blackburn</h4>
-                  <p className="text-[#2C3E35]/70 mb-4">PhD in Education, 20+ years teaching experience</p>
+                  <h4 className="text-xl font-bold text-[#2C3E35] mb-2">{t('home.trust.founder.title')}</h4>
+                  <p className="text-[#2C3E35]/70 mb-4">{t('home.trust.founder.subtitle')}</p>
                   <div className="flex items-center justify-center md:justify-start space-x-4">
                     <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-[#2C3E35]/80 text-sm">Evidence-based pedagogy</span>
+                    <span className="text-[#2C3E35]/80 text-sm">{t('home.trust.founder.badge')}</span>
                   </div>
                 </div>
                 <div className="text-center">
@@ -459,7 +459,7 @@ export default function HomePage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <p className="text-[#2C3E35]/60 text-xs">Founder & Lead Educator</p>
+                  <p className="text-[#2C3E35]/60 text-xs">{t('home.trust.founder.role')}</p>
                 </div>
               </div>
             </div>
@@ -498,13 +498,7 @@ export default function HomePage() {
                       </div>
                       
                       <blockquote className="text-2xl text-[#2C3E35] italic mb-8 leading-relaxed">
-                        "{[
-                          "It feels like having a planning partner who never gets tired.",
-                          "For the first time in years, I leave school with energy left for my family.",
-                          "I don't feel guilty about lesson prep anymore - it's under control.",
-                          "Zaza Teach gave me my Sundays back. I can finally spend time with my family instead of stressing over lesson plans.",
-                          "I was drowning in admin. Now, with lesson planning done in minutes, I can focus on the fun parts of teaching again."
-                        ][currentSlide]}"
+                        "{t('home.testimonials.quotes')[currentSlide]}"
                       </blockquote>
                       
                       <div className="flex items-center justify-center space-x-4">
@@ -521,10 +515,10 @@ export default function HomePage() {
                         />
                         <div className="text-left">
                           <p className="font-semibold text-[#2C3E35] text-lg">
-                            {["Maria S.", "David L.", "Jennifer K.", "Emma T.", "Marcus D."][currentSlide]}
+                            {t('home.testimonials.authors')[currentSlide]}
                           </p>
                           <p className="text-[#2C3E35]/70">
-                            {["Elementary Teacher", "High School Teacher", "Middle School Teacher", "Primary School Teacher", "Secondary School Teacher"][currentSlide]}
+                            {t('home.testimonials.roles')[currentSlide]}
                           </p>
                         </div>
                       </div>
@@ -584,26 +578,27 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {[
                 {
-                  title: "Free Plan",
-                  price: "€0",
-                  features: ["5 lesson plans/month"],
-                  cta: "Get Started Free",
+                  title: t('home.pricing.plans.free.title'),
+                  price: t('home.pricing.plans.free.price'),
+                  features: t('home.pricing.plans.free.features'),
+                  cta: t('home.pricing.plans.free.cta'),
                   popular: false
                 },
                 {
-                  title: "Pro Plan", 
-                  price: "€19.99",
-                  period: "/month",
-                  features: ["Unlimited plans", "Full template library", "Priority support"],
-                  cta: "Start Pro Trial",
-                  popular: true
+                  title: t('home.pricing.plans.pro.title'), 
+                  price: t('home.pricing.plans.pro.price'),
+                  period: t('home.pricing.plans.pro.period'),
+                  features: t('home.pricing.plans.pro.features'),
+                  cta: t('home.pricing.plans.pro.cta'),
+                  popular: true,
+                  popularText: t('home.pricing.plans.pro.popular')
                 },
                 {
-                  title: "Bundle",
-                  price: "€24.99", 
-                  period: "/month",
-                  features: ["Zaza Teach + Zaza Promptly", "All Pro features", "Cross-platform sync"],
-                  cta: "Get Bundle",
+                  title: t('home.pricing.plans.bundle.title'),
+                  price: t('home.pricing.plans.bundle.price'), 
+                  period: t('home.pricing.plans.bundle.period'),
+                  features: t('home.pricing.plans.bundle.features'),
+                  cta: t('home.pricing.plans.bundle.cta'),
                   popular: false
                 }
               ].map((plan, index) => (
@@ -618,7 +613,7 @@ export default function HomePage() {
                 >
                   {plan.popular && (
                     <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#66B2B2] text-white">
-                      Most Popular
+                      {plan.popularText}
                     </Badge>
                   )}
                   <h4 className="text-xl font-bold text-[#2C3E35] mb-2">{plan.title}</h4>
@@ -660,10 +655,10 @@ export default function HomePage() {
             className="bg-gradient-to-r from-[#66B2B2]/10 to-[#8A2BE2]/10 rounded-2xl p-12"
           >
             <h3 className="text-3xl md:text-4xl font-bold text-[#2C3E35] mb-8 leading-tight">
-              Ready to reclaim your evenings and weekends?
+              {t('home.finalCta.title')}
             </h3>
             <p className="text-xl text-[#2C3E35]/80 mb-8 max-w-2xl mx-auto">
-              Join thousands of teachers who've transformed their planning process. Start with 5 free lesson plans - no credit card required.
+              {t('home.finalCta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
@@ -671,11 +666,11 @@ export default function HomePage() {
                 className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105"
               >
                 <Sparkles className="h-6 w-6 mr-3" />
-                Start Free Today
+                {t('home.finalCta.cta')}
                 <ArrowRight className="h-6 w-6 ml-3" />
               </Button>
               <p className="text-[#2C3E35]/60 text-sm">
-                ✓ 5 lesson plans included  ✓ No commitment  ✓ Cancel anytime
+                {t('home.finalCta.benefits')}
               </p>
             </div>
           </motion.div>
