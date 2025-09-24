@@ -3,7 +3,7 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '../../../components/LocaleProvider';
 import type { PostMeta } from "@/lib/blog";
 
 type BlogSearchProps = {

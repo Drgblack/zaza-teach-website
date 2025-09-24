@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ChevronDown, Menu, X, Moon, Sun, CheckCircle } from "lucide-react"
 import Link from "next/link"
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import OptimizedImage from "@/components/OptimizedImage"
-import { useTranslations, useLocale } from 'next-intl'
+import { useTranslations, useLocale, usePathname } from '../components/LocaleProvider'
 
 const Header = () => {
   const t = useTranslations()

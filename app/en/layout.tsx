@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
+import { LocaleProvider } from '../../components/LocaleProvider';
 import SiteFooter from "../../components/SiteFooter";
 import Header from '../../components/header';
 import { SkipLink } from '../../components/SkipLink';
@@ -89,7 +89,7 @@ export default async function EnglishLayout({
         <meta name="color-scheme" content="light dark" />
       </head>
       <body className="min-h-screen flex flex-col">
-        <NextIntlClientProvider messages={messages}>
+        <LocaleProvider locale={locale} messages={messages}>
           <GoogleAnalytics trackingId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
           <SkipLink />
           <Header />
@@ -97,7 +97,7 @@ export default async function EnglishLayout({
             {children}
           </main>
           <SiteFooter />
-        </NextIntlClientProvider>
+        </LocaleProvider>
       </body>
     </html>
   );
