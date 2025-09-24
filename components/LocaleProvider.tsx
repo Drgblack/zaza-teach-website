@@ -1,5 +1,5 @@
 'use client'
-import { createContext, useContext } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 
 interface LocaleContextType {
   locale: string
@@ -22,8 +22,15 @@ export function useTranslations() {
 }
 
 export function usePathname() {
-  if (typeof window === 'undefined') return ''
-  return window.location.pathname
+  const [pathname, setPathname] = useState('')
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setPathname(window.location.pathname)
+    }
+  }, [])
+  
+  return pathname
 }
 
 interface LocaleProviderProps {
@@ -33,7 +40,14 @@ interface LocaleProviderProps {
 }
 
 export function LocaleProvider({ locale, messages, children }: LocaleProviderProps) {
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : ''
+  const [pathname, setPathname] = useState('')
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setPathname(window.location.pathname)
+    }
+  }, [])
+  
   const pathWithoutLocale = pathname.startsWith('/en') ? pathname.slice(3) : 
                            pathname.startsWith('/de') ? pathname.slice(3) : pathname
 
