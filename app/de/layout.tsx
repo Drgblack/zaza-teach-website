@@ -1,18 +1,12 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
 import SiteFooter from "../../components/SiteFooter";
 import Header from '../../components/header';
 import { SkipLink } from '../../components/SkipLink';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
 import { siteUrl } from '@/lib/site';
 
-const locales = ['en', 'de'];
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+// German layout - no params needed
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -76,18 +70,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function LocaleLayout({
-  children,
-  params: { locale }
+export default async function GermanLayout({
+  children
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
-  // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as any)) notFound();
-
-  // Providing all messages to the client side is the easiest way to get started
-  const messages = await getMessages();
+  const locale = 'de';
+  
+  // Import German messages directly
+  const messages = (await import('../../src/i18n/messages/de.json')).default;
 
   return (
     <html lang={locale}>
