@@ -399,6 +399,123 @@
       "exploreTemplates": "Explore lesson plan templates"
     }
   },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy | Zaza Teach",
+      "description": "How Zaza Teach collects, uses, and protects personal data.",
+      "pageTitle": "Privacy Policy",
+      "lastUpdated": "Last updated: September 22, 2025",
+      "overview": {
+        "title": "Overview",
+        "content": "Your privacy is our priority. Learn how we protect your personal information and ensure better data security in compliance with global privacy regulations."
+      },
+      "accountInfo": {
+        "title": "Account Information",
+        "content": "When you create an account, we collect your name, email address, school/organization name, and role to provide you access to our educational tools and services."
+      },
+      "usageData": {
+        "title": "Usage Data",
+        "content": "We collect information about how you use our service, including features used, time spent, and usage patterns to improve our product and user experience."
+      },
+      "studentData": {
+        "title": "Student Data Protected",
+        "content": "We take extreme care with any student information that may be uploaded. No student personal information is shared, sold, or used for any purpose other than the educational services you've consented to."
+      },
+      "communication": {
+        "title": "Communication",
+        "content": "We use your contact information to send product updates, support responses, and service-related communications. You can opt out of marketing communications at any time."
+      },
+      "dataStorage": {
+        "title": "Data Storage and Security",
+        "items": [
+          "All data is encrypted in transit and at rest",
+          "We use industry-standard security measures to protect your information",
+          "Access to your data is strictly limited to authorized personnel",
+          "Regular security audits and monitoring ensure ongoing protection"
+        ]
+      },
+      "cookies": {
+        "title": "Cookies and Tracking",
+        "content": "We use essential cookies for authentication, session management, and site functionality. Optional analytics cookies help us understand usage patterns to improve our service."
+      },
+      "thirdParty": {
+        "title": "Third-Party Integrations",
+        "content": "When you connect third-party services (like Google Classroom), we only access data necessary for the integration to function. We do not store unnecessary data from these services."
+      },
+      "dataRetention": {
+        "title": "Data Retention",
+        "items": [
+          "Account data: Retained while your account is active",
+          "Usage analytics: Aggregated data retained for product improvement",
+          "Support communications: Retained for customer service purposes",
+          "Deleted accounts: Data removed within 30 days of account deletion"
+        ]
+      },
+      "yourRights": {
+        "title": "Your Rights",
+        "intro": "Under GDPR and other privacy regulations, you have the following rights:",
+        "items": [
+          "Right to Access: Receive a copy of your personal data",
+          "Right to Rectification: Correct inaccurate personal data",
+          "Right to Erasure: Request deletion of your personal data",
+          "Right to Portability: Export your data in machine-readable format",
+          "Right to Object: Object to processing of your personal data",
+          "Right to Restrict: Request restriction of processing"
+        ]
+      },
+      "internationalTransfers": {
+        "title": "International Data Transfers",
+        "content": "Your data may be processed outside the EU/UK if necessary for service delivery. We ensure appropriate safeguards are in place for international transfers."
+      },
+      "childrensPrivacy": {
+        "title": "Children's Privacy",
+        "content": "Our services are designed for use by educators. We do not knowingly collect personal information from children under 13 without appropriate consent and safeguards."
+      },
+      "policyChanges": {
+        "title": "Changes to This Policy",
+        "content": "We may update this privacy policy to reflect changes in our practices, technology, or legal requirements. We will notify users of significant changes."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "intro": "For privacy-related questions or to exercise your rights, contact us at:",
+        "email": "support@zazateach.com",
+        "address": "Gumbertstraße 150, 40229 Düsseldorf, Deutschland"
+      },
+      "dataController": {
+        "title": "Data Controller",
+        "company": "Zaza Technologies UG (haftungsbeschränkt)",
+        "address": "Gumbertstraße 150, 40229 Düsseldorf, Deutschland"
+      }
+    },
+    "terms": {
+      "title": "Terms of Service | Zaza Teach",
+      "description": "The terms that govern your use of Zaza Teach.",
+      "pageTitle": "Terms of Service", 
+      "lastUpdated": "Last updated: September 22, 2025",
+      "overview": {
+        "title": "Overview",
+        "content": "These Terms of Service ('Terms') govern your use of Zaza Teach services. By using our service, you agree to be bound by these terms and our Privacy Policy."
+      },
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By accessing or using Zaza Teach, you acknowledge that you have read, understood, and agree to be legally bound by these Terms. If you do not agree, please discontinue use immediately."
+      }
+    },
+    "cookies": {
+      "title": "Cookie Policy | Zaza Teach",
+      "description": "How Zaza Teach uses cookies and similar technologies.",
+      "pageTitle": "Cookie Policy",
+      "lastUpdated": "Last updated: September 22, 2025",
+      "overview": {
+        "title": "Overview",
+        "content": "Learn about how we use cookies and similar technologies to improve your experience, ensure security, and provide our educational services effectively."
+      },
+      "whatAreCookies": {
+        "title": "What Are Cookies",
+        "content": "Cookies are small text files that websites place on your device. They help websites remember your preferences and settings to enhance your experience."
+      }
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",

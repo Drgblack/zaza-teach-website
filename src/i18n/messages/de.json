@@ -399,6 +399,123 @@
       "exploreTemplates": "Unterrichtsplan-Vorlagen erkunden"
     }
   },
+  "legal": {
+    "privacy": {
+      "title": "Datenschutzrichtlinie | Zaza Teach",
+      "description": "Wie Zaza Teach personenbezogene Daten erfasst, verwendet und schützt.",
+      "pageTitle": "Datenschutzrichtlinie",
+      "lastUpdated": "Zuletzt aktualisiert: 22. September 2025",
+      "overview": {
+        "title": "Überblick",
+        "content": "Ihr Datenschutz ist unsere Priorität. Erfahren Sie, wie wir Ihre persönlichen Informationen schützen und bessere Datensicherheit in Übereinstimmung mit globalen Datenschutzbestimmungen gewährleisten."
+      },
+      "accountInfo": {
+        "title": "Kontoinformationen",
+        "content": "Wenn Sie ein Konto erstellen, sammeln wir Ihren Namen, E-Mail-Adresse, Schul-/Organisationsname und Rolle, um Ihnen Zugang zu unseren Bildungstools und -diensten zu gewähren."
+      },
+      "usageData": {
+        "title": "Nutzungsdaten",
+        "content": "Wir sammeln Informationen darüber, wie Sie unseren Service nutzen, einschließlich verwendeter Funktionen, verbrachter Zeit und Nutzungsmustern, um unser Produkt und die Benutzererfahrung zu verbessern."
+      },
+      "studentData": {
+        "title": "Schülerdaten geschützt",
+        "content": "Wir gehen äußerst vorsichtig mit Schülerinformationen um, die möglicherweise hochgeladen werden. Keine persönlichen Schülerinformationen werden geteilt, verkauft oder für andere Zwecke als die von Ihnen zugestimmten Bildungsdienste verwendet."
+      },
+      "communication": {
+        "title": "Kommunikation",
+        "content": "Wir verwenden Ihre Kontaktinformationen, um Produktupdates, Support-Antworten und servicebezogene Mitteilungen zu senden. Sie können sich jederzeit von Marketing-Mitteilungen abmelden."
+      },
+      "dataStorage": {
+        "title": "Datenspeicherung und Sicherheit",
+        "items": [
+          "Alle Daten sind während der Übertragung und im Ruhezustand verschlüsselt",
+          "Wir verwenden branchenübliche Sicherheitsmaßnahmen zum Schutz Ihrer Informationen",
+          "Der Zugang zu Ihren Daten ist streng auf autorisiertes Personal beschränkt",
+          "Regelmäßige Sicherheitsaudits und Überwachung gewährleisten anhaltenden Schutz"
+        ]
+      },
+      "cookies": {
+        "title": "Cookies und Tracking",
+        "content": "Wir verwenden essentielle Cookies für Authentifizierung, Session-Management und Site-Funktionalität. Optionale Analytics-Cookies helfen uns, Nutzungsmuster zu verstehen, um unseren Service zu verbessern."
+      },
+      "thirdParty": {
+        "title": "Drittanbieter-Integrationen",
+        "content": "Wenn Sie Drittanbieter-Services (wie Google Classroom) verbinden, greifen wir nur auf Daten zu, die für das Funktionieren der Integration erforderlich sind. Wir speichern keine unnötigen Daten von diesen Services."
+      },
+      "dataRetention": {
+        "title": "Datenaufbewahrung",
+        "items": [
+          "Kontodaten: Aufbewahrt, solange Ihr Konto aktiv ist",
+          "Nutzungsanalysen: Aggregierte Daten für Produktverbesserung aufbewahrt",
+          "Support-Kommunikation: Für Kundendienst-Zwecke aufbewahrt",
+          "Gelöschte Konten: Daten werden innerhalb von 30 Tagen nach Kontolöschung entfernt"
+        ]
+      },
+      "yourRights": {
+        "title": "Ihre Rechte",
+        "intro": "Unter DSGVO und anderen Datenschutzbestimmungen haben Sie folgende Rechte:",
+        "items": [
+          "Recht auf Zugang: Erhalten Sie eine Kopie Ihrer personenbezogenen Daten",
+          "Recht auf Berichtigung: Korrigieren Sie unrichtige personenbezogene Daten",
+          "Recht auf Löschung: Beantragen Sie die Löschung Ihrer personenbezogenen Daten",
+          "Recht auf Datenübertragbarkeit: Exportieren Sie Ihre Daten in maschinenlesbarem Format",
+          "Widerspruchsrecht: Widersprechen Sie der Verarbeitung Ihrer personenbezogenen Daten",
+          "Recht auf Einschränkung: Beantragen Sie die Einschränkung der Verarbeitung"
+        ]
+      },
+      "internationalTransfers": {
+        "title": "Internationale Datenübertragungen",
+        "content": "Ihre Daten können außerhalb der EU/UK verarbeitet werden, falls dies für die Servicebereitstellung erforderlich ist. Wir stellen sicher, dass angemessene Schutzmaßnahmen für internationale Übertragungen vorhanden sind."
+      },
+      "childrensPrivacy": {
+        "title": "Datenschutz für Kinder",
+        "content": "Unsere Services sind für die Nutzung durch Pädagogen konzipiert. Wir sammeln wissentlich keine persönlichen Informationen von Kindern unter 13 Jahren ohne angemessene Zustimmung und Schutzmaßnahmen."
+      },
+      "policyChanges": {
+        "title": "Änderungen an dieser Richtlinie",
+        "content": "Wir können diese Datenschutzrichtlinie aktualisieren, um Änderungen in unseren Praktiken, Technologien oder rechtlichen Anforderungen zu reflektieren. Wir werden Nutzer über wesentliche Änderungen benachrichtigen."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "intro": "Für datenschutzbezogene Fragen oder zur Ausübung Ihrer Rechte kontaktieren Sie uns unter:",
+        "email": "support@zazateach.com",
+        "address": "Gumbertstraße 150, 40229 Düsseldorf, Deutschland"
+      },
+      "dataController": {
+        "title": "Datenverantwortlicher",
+        "company": "Zaza Technologies UG (haftungsbeschränkt)",
+        "address": "Gumbertstraße 150, 40229 Düsseldorf, Deutschland"
+      }
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen | Zaza Teach",
+      "description": "Die Bedingungen, die Ihre Nutzung von Zaza Teach regeln.",
+      "pageTitle": "Nutzungsbedingungen",
+      "lastUpdated": "Zuletzt aktualisiert: 22. September 2025",
+      "overview": {
+        "title": "Überblick",
+        "content": "Diese Nutzungsbedingungen ('Bedingungen') regeln Ihre Nutzung der Zaza Teach Services. Durch die Nutzung unseres Services stimmen Sie zu, an diese Bedingungen und unsere Datenschutzrichtlinie gebunden zu sein."
+      },
+      "acceptance": {
+        "title": "Annahme der Bedingungen",
+        "content": "Durch den Zugriff auf oder die Nutzung von Zaza Teach bestätigen Sie, dass Sie diese Bedingungen gelesen, verstanden und zugestimmt haben, rechtlich daran gebunden zu sein. Wenn Sie nicht zustimmen, stellen Sie die Nutzung bitte sofort ein."
+      }
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie | Zaza Teach", 
+      "description": "Wie Zaza Teach Cookies und ähnliche Technologien verwendet.",
+      "pageTitle": "Cookie-Richtlinie",
+      "lastUpdated": "Zuletzt aktualisiert: 22. September 2025",
+      "overview": {
+        "title": "Überblick",
+        "content": "Erfahren Sie, wie wir Cookies und ähnliche Technologien verwenden, um Ihre Erfahrung zu verbessern, Sicherheit zu gewährleisten und unsere Bildungsdienste effektiv bereitzustellen."
+      },
+      "whatAreCookies": {
+        "title": "Was sind Cookies",
+        "content": "Cookies sind kleine Textdateien, die Websites auf Ihrem Gerät platzieren. Sie helfen Websites, sich Ihre Präferenzen und Einstellungen zu merken, um Ihre Erfahrung zu verbessern."
+      }
+    }
+  },
   "common": {
     "loading": "Laden...",
     "error": "Ein Fehler ist aufgetreten",
