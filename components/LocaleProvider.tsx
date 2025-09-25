@@ -60,7 +60,8 @@ export function LocaleProvider({ locale, messages, children }: LocaleProviderPro
       if (value === undefined) return key
     }
     
-    return typeof value === 'string' ? value : key
+    // Return the actual value (string, array, object) or the key as fallback
+    return value !== undefined ? value : key
   }
 
   const value = {

@@ -12,6 +12,12 @@ export default function HomePage() {
   const t = useTranslations();
   const [currentSlide, setCurrentSlide] = useState(0);
   
+  // Safe array access with fallbacks
+  const getTranslationArray = (key: string, fallback: string[] = []): string[] => {
+    const result = t(key);
+    return Array.isArray(result) ? result : fallback;
+  };
+  
   const teachers = [
     {
       name: "Ms. Elena Rodriguez",
@@ -498,7 +504,13 @@ export default function HomePage() {
                       </div>
                       
                       <blockquote className="text-2xl text-[#2C3E35] italic mb-8 leading-relaxed">
-                        "{t('home.testimonials.quotes')[currentSlide]}"
+                        "{getTranslationArray('home.testimonials.quotes', [
+                          "It feels like having a planning partner who never gets tired.",
+                          "For the first time in years, I leave school with energy left for my family.",
+                          "I don't feel guilty about lesson prep anymore - it's under control.",
+                          "Zaza Teach gave me my Sundays back. I can finally spend time with my family instead of stressing over lesson plans.",
+                          "I was drowning in admin. Now, with lesson planning done in minutes, I can focus on the fun parts of teaching again."
+                        ])[currentSlide]}"
                       </blockquote>
                       
                       <div className="flex items-center justify-center space-x-4">
@@ -515,10 +527,10 @@ export default function HomePage() {
                         />
                         <div className="text-left">
                           <p className="font-semibold text-[#2C3E35] text-lg">
-                            {t('home.testimonials.authors')[currentSlide]}
+                            {getTranslationArray('home.testimonials.authors', ["Maria S.", "David L.", "Jennifer K.", "Emma T.", "Marcus D."])[currentSlide]}
                           </p>
                           <p className="text-[#2C3E35]/70">
-                            {t('home.testimonials.roles')[currentSlide]}
+                            {getTranslationArray('home.testimonials.roles', ["Elementary Teacher", "High School Teacher", "Middle School Teacher", "Primary School Teacher", "Secondary School Teacher"])[currentSlide]}
                           </p>
                         </div>
                       </div>
@@ -580,7 +592,7 @@ export default function HomePage() {
                 {
                   title: t('home.pricing.plans.free.title'),
                   price: t('home.pricing.plans.free.price'),
-                  features: t('home.pricing.plans.free.features'),
+                  features: getTranslationArray('home.pricing.plans.free.features', ["5 lesson plans/month"]),
                   cta: t('home.pricing.plans.free.cta'),
                   popular: false
                 },
@@ -588,7 +600,7 @@ export default function HomePage() {
                   title: t('home.pricing.plans.pro.title'), 
                   price: t('home.pricing.plans.pro.price'),
                   period: t('home.pricing.plans.pro.period'),
-                  features: t('home.pricing.plans.pro.features'),
+                  features: getTranslationArray('home.pricing.plans.pro.features', ["Unlimited plans", "Full template library", "Priority support"]),
                   cta: t('home.pricing.plans.pro.cta'),
                   popular: true,
                   popularText: t('home.pricing.plans.pro.popular')
@@ -597,7 +609,7 @@ export default function HomePage() {
                   title: t('home.pricing.plans.bundle.title'),
                   price: t('home.pricing.plans.bundle.price'), 
                   period: t('home.pricing.plans.bundle.period'),
-                  features: t('home.pricing.plans.bundle.features'),
+                  features: getTranslationArray('home.pricing.plans.bundle.features', ["Zaza Teach + Zaza Promptly", "All Pro features", "Cross-platform sync"]),
                   cta: t('home.pricing.plans.bundle.cta'),
                   popular: false
                 }
