@@ -1,8 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations, useLocale } from './LocaleProvider';
 
 export default function SiteFooter() {
+  const t = useTranslations();
+  const locale = useLocale();
+  
+  // Helper function to add locale prefix to internal links
+  const localizeHref = (href: string) => {
+    if (href.startsWith('http') || href.startsWith('/')) {
+      return href.startsWith('http') ? href : `/${locale}${href}`
+    }
+    return href
+  }
   return (
     <footer className="w-full border-t border-white/10 bg-[#0e1420] text-white">
       <div className="mx-auto max-w-7xl px-6 py-14">
@@ -11,40 +22,39 @@ export default function SiteFooter() {
           <div>
             <div className="text-lg font-semibold">Zaza Teach</div>
             <p className="mt-3 text-sm text-white/70">
-              AI tools that help educators thrive in their daily workflows.
-              Built by educators for educators.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Product */}
           <div>
-            <div className="text-sm font-semibold uppercase tracking-wide text-white/70">Product</div>
+            <div className="text-sm font-semibold uppercase tracking-wide text-white/70">{t('footer.product')}</div>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link href="/" className="hover:underline">Features</Link></li>
-              <li><Link href="/resources/lesson-plan-template" className="hover:underline">Templates</Link></li>
-              <li><Link href="/pricing" className="hover:underline">Pricing</Link></li>
-              <li><Link href="/resources" className="hover:underline">Resources</Link></li>
+              <li><Link href={localizeHref("/")} className="hover:underline">{t('footer.features')}</Link></li>
+              <li><Link href={localizeHref("/resources/lesson-plan-template")} className="hover:underline">{t('footer.templates')}</Link></li>
+              <li><Link href={localizeHref("/pricing")} className="hover:underline">{t('footer.pricing')}</Link></li>
+              <li><Link href={localizeHref("/resources")} className="hover:underline">{t('footer.resources')}</Link></li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <div className="text-sm font-semibold uppercase tracking-wide text-white/70">Company</div>
+            <div className="text-sm font-semibold uppercase tracking-wide text-white/70">{t('footer.company')}</div>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link href="/about" className="hover:underline">About</Link></li>
-              <li><Link href="/contact" className="hover:underline">Contact</Link></li>
+              <li><Link href={localizeHref("/about-founder")} className="hover:underline">{t('footer.about')}</Link></li>
+              <li><Link href={localizeHref("/contact")} className="hover:underline">{t('footer.contact')}</Link></li>
               {/* No Careers link by policy */}
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <div className="text-sm font-semibold uppercase tracking-wide text-white/70">Legal</div>
+            <div className="text-sm font-semibold uppercase tracking-wide text-white/70">{t('footer.legal')}</div>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link href="/privacy" className="hover:underline">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:underline">Terms of Service</Link></li>
-              <li><Link href="/cookies" className="hover:underline">Cookies</Link></li>
-              <li><Link href="/impressum" className="hover:underline">Impressum</Link></li>
+              <li><Link href={localizeHref("/privacy")} className="hover:underline">{t('footer.privacyPolicy')}</Link></li>
+              <li><Link href={localizeHref("/terms")} className="hover:underline">{t('footer.termsOfService')}</Link></li>
+              <li><Link href={localizeHref("/cookies")} className="hover:underline">{t('footer.cookies')}</Link></li>
+              <li><Link href={localizeHref("/impressum")} className="hover:underline">{t('footer.impressum')}</Link></li>
             </ul>
           </div>
         </div>
@@ -55,19 +65,19 @@ export default function SiteFooter() {
         {/* Bottom line */}
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="text-xs text-white/60">
-            © {new Date().getFullYear()} Zaza Teach. All rights reserved.
+            {t('footer.copyright').replace('{year}', new Date().getFullYear().toString())}
           </div>
           <div className="flex items-center gap-4 text-xs text-white/70">
             <a href="https://zazatechnologies.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
-              Zaza Technologies
+              {t('footer.zazaTechnologies')}
             </a>
             <span aria-hidden>•</span>
             <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
-              Zaza Promptly
+              {t('footer.zazaPromptly')}
             </a>
             <span aria-hidden>•</span>
             <a href="https://realtyclose.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
-              RealtyClose
+              {t('footer.realtyClose')}
             </a>
           </div>
         </div>
