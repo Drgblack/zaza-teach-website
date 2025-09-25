@@ -3,7 +3,7 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { useTranslations } from '../../../components/LocaleProvider';
+import { useTranslations, useLocale } from '../../../components/LocaleProvider';
 import type { PostMeta } from "@/lib/blog";
 
 type BlogSearchProps = {
@@ -48,6 +48,7 @@ const getCategoriesConfig = (t: any): Record<string, CategoryConfig> => ({
 
 export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
   const t = useTranslations();
+  const locale = useLocale();
   const CATEGORIES = getCategoriesConfig(t);
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
@@ -221,7 +222,7 @@ export default function BlogSearch({ posts, allTags }: BlogSearchProps) {
               key={post.slug}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <Link href={`/blog/${post.slug}`} className="block">
+              <Link href={`/${locale}/blog/${post.slug}`} className="block">
                 <img
                   src={post.image}
                   alt={post.title}

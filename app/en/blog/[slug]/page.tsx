@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug);
+  const locale = 'en'; // Since this is in /en folder
   
   if (!post) {
     return (
@@ -44,7 +45,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <div className="container mx-auto max-w-3xl px-4 text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Post Not Found</h1>
           <p className="text-gray-600 mb-6">The blog post you're looking for doesn't exist.</p>
-          <Link href="/blog" className="text-purple-600 hover:text-purple-700 font-medium">
+          <Link href={`/${locale}/blog`} className="text-purple-600 hover:text-purple-700 font-medium">
             ← Back to Blog
           </Link>
         </div>
@@ -69,7 +70,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <div className="container mx-auto max-w-4xl px-4">
           {/* Breadcrumb */}
           <nav className="mb-8">
-            <Link href="/blog" className="text-purple-600 hover:text-purple-700 font-medium">
+            <Link href={`/${locale}/blog`} className="text-purple-600 hover:text-purple-700 font-medium">
               ← Back to Blog
             </Link>
           </nav>
@@ -151,7 +152,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               </div>
               
               <Link
-                href="/blog"
+                href={`/${locale}/blog`}
                 className="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors font-medium"
               >
                 More Articles →

@@ -14,7 +14,7 @@ const resources = [
   {
     title: 'Lesson Plan Template',
     description: 'A comprehensive template for creating structured lesson plans with all essential components.',
-    viewUrl: '/resources/lesson-plan-template',
+    viewUrl: '/en/resources/lesson-plan-template',
     icon: FileText,
     category: 'Planning',
     color: 'from-blue-500 to-blue-600'
@@ -22,7 +22,7 @@ const resources = [
   {
     title: 'Assessment Rubric Guide',
     description: 'Guidelines for creating effective assessment rubrics that measure student learning.',
-    viewUrl: '/resources/assessment-rubric-guide',
+    viewUrl: '/en/resources/assessment-rubric-guide',
     icon: CheckSquare,
     category: 'Assessment',
     color: 'from-green-500 to-green-600'
@@ -30,7 +30,7 @@ const resources = [
   {
     title: 'Classroom Management Tips',
     description: 'Practical strategies for effective classroom management and positive behavior support.',
-    viewUrl: '/resources/classroom-management-tips',
+    viewUrl: '/en/resources/classroom-management-tips',
     icon: Users,
     category: 'Management',
     color: 'from-purple-500 to-purple-600'
@@ -38,7 +38,7 @@ const resources = [
   {
     title: 'Student Engagement Activities',
     description: 'Creative activities to boost student participation and make learning interactive.',
-    viewUrl: '/resources/student-engagement-activities',
+    viewUrl: '/en/resources/student-engagement-activities',
     icon: BookOpen,
     category: 'Activities',
     color: 'from-orange-500 to-orange-600'
@@ -46,7 +46,7 @@ const resources = [
   {
     title: 'AI Teaching Prompts Pack',
     description: 'Ready-to-use AI prompts for lesson planning, assessment creation, and content generation.',
-    viewUrl: '/resources/ai-teaching-prompts',
+    viewUrl: '/en/resources/ai-teaching-prompts',
     icon: Zap,
     category: 'AI Tools',
     color: 'from-pink-500 to-pink-600'
@@ -54,7 +54,7 @@ const resources = [
   {
     title: 'Time-Saving Teacher Checklist',
     description: 'Weekly and daily checklists to streamline your workflow and maximize efficiency.',
-    viewUrl: '/resources/time-saving-checklist',
+    viewUrl: '/en/resources/time-saving-checklist',
     icon: Clock,
     category: 'Productivity',
     color: 'from-teal-500 to-teal-600'
@@ -62,6 +62,7 @@ const resources = [
 ];
 
 export default function ResourcesPage() {
+  const locale = 'en'; // Since this is in the /en folder
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950 dark:to-slate-900 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4">
@@ -149,14 +150,14 @@ export default function ResourcesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/pricing"
+              href={`/${locale}/pricing`}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
             >
               <Zap className="w-4 h-4" />
               Start Free Trial
             </a>
             <a
-              href="/contact"
+              href={`/${locale}/contact`}
               className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-700 px-8 py-3 rounded-xl font-semibold transition-colors duration-200"
             >
               Contact Us
