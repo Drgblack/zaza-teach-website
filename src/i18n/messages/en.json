@@ -318,6 +318,11 @@
   "aboutFounder": {
     "title": "About the Founder - Zaza Teach",
     "description": "Meet Dr. Greg Blackburn, founder of Zaza Technologies. PhD in Professional Education, former CLO, and published researcher building AI tools that help teachers thrive.",
+    "hero": {
+      "title": "About the Founder",
+      "subtitle": "Dr. Greg Blackburn - Founder & CEO, Zaza Technologies",
+      "altText": "Photo of Dr. Greg Blackburn, Founder of Zaza Technologies"
+    },
     "greeting": "Hi, I'm Greg.",
     "intro": {
       "paragraph1": "I came to education the long way around - starting my career in operations and strategy before dedicating the last two decades to professional learning and EdTech.",
@@ -325,6 +330,67 @@
       "quote1": "Helping teachers thrive by giving them back their time.",
       "paragraph3": "I built Zaza Teach to give teachers back time, reduce Sunday stress, and bring the joy back to planning. The goal is simple - let teachers just teach.",
       "quote2": "Blending pedagogy, business, and AI into tools that actually work."
+    },
+    "credentials": {
+      "title": "Credentials",
+      "items": [
+        "PhD in Professional Education - City, University of London",
+        "MBA - University of Queensland",
+        "First-Class Honours - Information Systems",
+        "Former Chief Learning Officer - Communardo (EU)",
+        "Corporate experience - 6 years at Telstra",
+        "Published researcher - eLearning and digital pedagogy"
+      ]
+    },
+    "transparency": {
+      "title": "Transparency",
+      "q1": {
+        "question": "Were you a teacher",
+        "answer": "No - my background is professional learning and EdTech. I work closely with teachers and school leaders to make AI useful, safe, and time-saving."
+      },
+      "q2": {
+        "question": "What guides product decisions",
+        "answer": "Learning science, classroom reality, and measurable time savings for teachers."
+      }
+    },
+    "timeline": {
+      "title": "My Path",
+      "steps": [
+        {
+          "title": "Operations and strategy beginnings",
+          "body": "Early career in corporate operations and strategy, including six years at Telstra."
+        },
+        {
+          "title": "Academic research",
+          "body": "PhD in Professional Education. Focus on critical thinking and digital learning."
+        },
+        {
+          "title": "Zaza founder",
+          "body": "Created Zaza to give teachers back time and build AI tools that feel human."
+        }
+      ]
+    },
+    "pressRecognition": {
+      "title": "Press & Recognition",
+      "items": [
+        {
+          "title": "Featured expertise",
+          "text": "Published internationally on critical thinking and digital learning."
+        },
+        {
+          "title": "Leadership",
+          "text": "Former CLO leading large-scale learning programs in Europe."
+        },
+        {
+          "title": "Impact",
+          "text": "Building AI tools that reduce workload and increase teacher confidence."
+        },
+        {
+          "title": "Coming soon",
+          "text": "Press features, awards, and partnerships."
+        }
+      ],
+      "featuredIn": "Featured in"
     },
     "cta": {
       "title": "Ready to reclaim your time?",

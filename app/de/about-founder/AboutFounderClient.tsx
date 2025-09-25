@@ -3,10 +3,10 @@
 import { useTranslations, useLocale } from '../../../components/LocaleProvider';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { FounderHero } from "@/components/founder/FounderHero";
-import { FounderCreds } from "@/components/founder/FounderCreds";
-import { PressRecognition } from "@/components/founder/PressRecognition";
-import { FounderTimeline } from "@/components/founder/FounderTimeline";
+import { FounderHeroClient } from "@/components/founder/FounderHeroClient";
+import { FounderCredsClient } from "@/components/founder/FounderCredsClient";
+import { PressRecognitionClient } from "@/components/founder/PressRecognitionClient";
+import { FounderTimelineClient } from "@/components/founder/FounderTimelineClient";
 
 export default function AboutFounderClient() {
   const t = useTranslations();
@@ -14,7 +14,7 @@ export default function AboutFounderClient() {
 
   return (
     <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 space-y-10 md:space-y-14">
-      <FounderHero />
+      <FounderHeroClient />
 
       {/* Intro Card */}
       <section className="rounded-2xl border bg-background shadow-lg p-8 md:p-10 space-y-6">
@@ -42,12 +42,12 @@ export default function AboutFounderClient() {
         </div>
       </section>
 
-      <FounderCreds />
+      <FounderCredsClient />
 
       {/* Optional mini timeline */}
-      <FounderTimeline />
+      <FounderTimelineClient />
 
-      <PressRecognition />
+      <PressRecognitionClient />
 
       {/* CTA band */}
       <section className="rounded-2xl p-8 md:p-10 bg-gradient-to-br from-muted/40 to-transparent border shadow-lg text-center space-y-4">

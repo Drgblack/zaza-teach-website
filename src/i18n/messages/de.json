@@ -318,6 +318,11 @@
   "aboutFounder": {
     "title": "Über den Gründer - Zaza Teach",
     "description": "Lernen Sie Dr. Greg Blackburn kennen, Gründer von Zaza Technologies. PhD in Berufspädagogik, ehemaliger CLO und veröffentlichter Forscher, der KI-Tools entwickelt, die Lehrern helfen zu gedeihen.",
+    "hero": {
+      "title": "Über den Gründer",
+      "subtitle": "Dr. Greg Blackburn - Gründer & CEO, Zaza Technologies",
+      "altText": "Foto von Dr. Greg Blackburn, Gründer von Zaza Technologies"
+    },
     "greeting": "Hallo, ich bin Greg.",
     "intro": {
       "paragraph1": "Ich kam auf Umwegen zur Bildung - begann meine Laufbahn in Operations und Strategie, bevor ich die letzten zwei Jahrzehnte der beruflichen Weiterbildung und EdTech widmete.",
@@ -325,6 +330,67 @@
       "quote1": "Lehrern helfen zu gedeihen, indem ich ihnen ihre Zeit zurückgebe.",
       "paragraph3": "Ich habe Zaza Teach entwickelt, um Lehrern Zeit zurückzugeben, den Sonntagsstress zu reduzieren und die Freude an der Planung zurückzubringen. Das Ziel ist einfach - Lehrer einfach unterrichten lassen.",
       "quote2": "Pädagogik, Business und KI zu Tools verbinden, die tatsächlich funktionieren."
+    },
+    "credentials": {
+      "title": "Qualifikationen",
+      "items": [
+        "PhD in Berufspädagogik - City, University of London",
+        "MBA - University of Queensland",
+        "Erste Klasse Auszeichnung - Informationssysteme",
+        "Ehemaliger Chief Learning Officer - Communardo (EU)",
+        "Unternehmenserfahrung - 6 Jahre bei Telstra",
+        "Veröffentlichter Forscher - eLearning und digitale Pädagogik"
+      ]
+    },
+    "transparency": {
+      "title": "Transparenz",
+      "q1": {
+        "question": "Waren Sie Lehrer?",
+        "answer": "Nein - mein Hintergrund ist berufliches Lernen und EdTech. Ich arbeite eng mit Lehrern und Schulleitern zusammen, um KI nützlich, sicher und zeitsparend zu machen."
+      },
+      "q2": {
+        "question": "Was leitet Produktentscheidungen?",
+        "answer": "Lernwissenschaft, Klassenzimmer-Realität und messbare Zeitersparnis für Lehrer."
+      }
+    },
+    "timeline": {
+      "title": "Mein Weg",
+      "steps": [
+        {
+          "title": "Operations- und Strategieanfänge",
+          "body": "Frühe Karriere in Unternehmensoperationen und -strategie, einschließlich sechs Jahren bei Telstra."
+        },
+        {
+          "title": "Akademische Forschung",
+          "body": "PhD in Berufspädagogik. Fokus auf kritisches Denken und digitales Lernen."
+        },
+        {
+          "title": "Zaza-Gründer",
+          "body": "Erschuf Zaza, um Lehrern ihre Zeit zurückzugeben und KI-Tools zu entwickeln, die menschlich wirken."
+        }
+      ]
+    },
+    "pressRecognition": {
+      "title": "Presse & Anerkennung",
+      "items": [
+        {
+          "title": "Anerkannte Expertise",
+          "text": "International veröffentlicht zu kritischem Denken und digitalem Lernen."
+        },
+        {
+          "title": "Führung",
+          "text": "Ehemaliger CLO, der groß angelegte Lernprogramme in Europa leitete."
+        },
+        {
+          "title": "Wirkung",
+          "text": "Entwicklung von KI-Tools, die Arbeitsbelastung reduzieren und Lehrervertrauen stärken."
+        },
+        {
+          "title": "Bald verfügbar",
+          "text": "Presseberichte, Auszeichnungen und Partnerschaften."
+        }
+      ],
+      "featuredIn": "Vorgestellt in"
     },
     "cta": {
       "title": "Bereit, Ihre Zeit zurückzugewinnen?",
