@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import PageShell from "@/components/PageShell";
+import TermsClient from "@/components/legal/TermsClient";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Zaza Teach",
-  description: "The terms that govern your use of Zaza Teach.",
+  title: "Nutzungsbedingungen | Zaza Teach",
+  description: "Die Bedingungen, die Ihre Nutzung von Zaza Teach regeln.",
 };
 
 export default function TermsPage() {
-  return (
-    <PageShell title="Terms of Service">
-      <p><em>Last updated: September 22, 2025</em></p>
-
-      <h2>Overview</h2>
-      <p>
+  return <TermsClient />;
+}
         These Terms of Service ("Terms") govern your use of Zaza Teach services. By using our service,
         you agree to be bound by these terms and our Privacy Policy.
       </p>
