@@ -315,6 +315,24 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to common questions about Zaza Teach"
   },
+  "aboutFounder": {
+    "title": "About the Founder - Zaza Teach",
+    "description": "Meet Dr. Greg Blackburn, founder of Zaza Technologies. PhD in Professional Education, former CLO, and published researcher building AI tools that help teachers thrive.",
+    "greeting": "Hi, I'm Greg.",
+    "intro": {
+      "paragraph1": "I came to education the long way around - starting my career in operations and strategy before dedicating the last two decades to professional learning and EdTech.",
+      "paragraph2": "I hold a PhD in Professional Education from City, University of London. My work focuses on critical thinking, problem-solving, and making digital learning feel human.",
+      "quote1": "Helping teachers thrive by giving them back their time.",
+      "paragraph3": "I built Zaza Teach to give teachers back time, reduce Sunday stress, and bring the joy back to planning. The goal is simple - let teachers just teach.",
+      "quote2": "Blending pedagogy, business, and AI into tools that actually work."
+    },
+    "cta": {
+      "title": "Ready to reclaim your time?",
+      "description": "Join educators discovering 5-minute lesson planning with Zaza Teach.",
+      "tryFree": "Try Zaza Teach Free",
+      "exploreTemplates": "Explore lesson plan templates"
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
