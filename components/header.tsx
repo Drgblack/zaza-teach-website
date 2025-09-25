@@ -69,26 +69,34 @@ const Header = () => {
   }
 
   const solutions = [
-    { name: "Zaza Teach", href: "/", comingSoon: false },
+    { name: "Zaza Teach", href: `/${locale}`, comingSoon: false },
     { name: "Zaza Promptly", href: "https://zazapromptly.com", comingSoon: false },
     { name: "RealtyClose", href: "https://realtyclose.com", comingSoon: false },
   ]
 
+  // Helper function to add locale prefix to internal links
+  const localizeHref = (href: string) => {
+    if (href.startsWith('http') || href.startsWith('/')) {
+      return href.startsWith('http') ? href : `/${locale}${href}`
+    }
+    return href
+  }
+
   const learningCentre = [
-    { name: t('nav.blog'), href: "/blog" },
-    { name: t('nav.resources'), href: "/resources" },
-    { name: t('nav.faqs'), href: "/faqs" },
+    { name: t('nav.blog'), href: localizeHref("/blog") },
+    { name: t('nav.resources'), href: localizeHref("/resources") },
+    { name: t('nav.faqs'), href: localizeHref("/faqs") },
   ]
 
   const aboutUs = [
-    { name: t('nav.aboutFounder'), href: "/about-founder" },
-    { name: t('nav.mission'), href: "/mission" },
-    { name: t('nav.products'), href: "/products" },
-    { name: t('nav.whyNotChatgpt'), href: "/why-not-chatgpt" },
-    { name: t('nav.quoteWall'), href: "/quote-wall" },
-    { name: t('nav.featureRequest'), href: "/feature-request" },
-    { name: t('nav.support'), href: "/support" },
-    { name: t('nav.contact'), href: "/contact" },
+    { name: t('nav.aboutFounder'), href: localizeHref("/about-founder") },
+    { name: t('nav.mission'), href: localizeHref("/mission") },
+    { name: t('nav.products'), href: localizeHref("/products") },
+    { name: t('nav.whyNotChatgpt'), href: localizeHref("/why-not-chatgpt") },
+    { name: t('nav.quoteWall'), href: localizeHref("/quote-wall") },
+    { name: t('nav.featureRequest'), href: localizeHref("/feature-request") },
+    { name: t('nav.support'), href: localizeHref("/support") },
+    { name: t('nav.contact'), href: localizeHref("/contact") },
   ]
 
   const handleDropdownToggle = (dropdown) => {
@@ -248,7 +256,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Left Section - Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href={`/${locale}`} className="flex items-center space-x-3 group">
             <motion.div whileHover={{ scale: 1.05 }}>
               <OptimizedImage
                 src="/zaza_z_logo.png"
@@ -374,7 +382,7 @@ const Header = () => {
 
             {/* Pricing Link */}
             <Link 
-              href="/pricing" 
+              href={localizeHref("/pricing")} 
               className="text-slate-800 dark:text-white hover:text-[#E0115F] transition-colors font-medium"
             >
               {t('nav.pricing')}
@@ -440,7 +448,7 @@ const Header = () => {
 {t('nav.tryZazaPromptly')}
               </Button>
             </a>
-            <Link href="/">
+            <Link href={`/${locale}`}>
               <Button className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white font-medium">{t('nav.tryZazaTeach')}</Button>
             </Link>
 
@@ -515,7 +523,7 @@ const Header = () => {
               {/* Mobile Pricing */}
               <div className="space-y-2">
                 <Link
-                  href="/pricing"
+                  href={localizeHref("/pricing")}
                   className="block px-4 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors font-semibold"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -548,7 +556,7 @@ const Header = () => {
     {t('nav.tryZazaPromptly')}
                   </Button>
                 </a>
-                <Link href="/" className="block">
+                <Link href={`/${locale}`} className="block">
                   <Button
                     className="w-full bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white font-medium"
                     onClick={() => setMobileMenuOpen(false)}
