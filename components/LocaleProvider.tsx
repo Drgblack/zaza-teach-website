@@ -45,8 +45,15 @@ export function LocaleProvider({ locale, messages, children }: LocaleProviderPro
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setPathname(window.location.pathname)
+      console.log('LocaleProvider Debug:', {
+        locale,
+        pathname: window.location.pathname,
+        privacyPolicy: messages?.footer?.privacyPolicy,
+        termsOfService: messages?.footer?.termsOfService,
+        cookies: messages?.footer?.cookies
+      });
     }
-  }, [])
+  }, [locale, messages])
   
   const pathWithoutLocale = pathname.startsWith('/en') ? pathname.slice(3) : 
                            pathname.startsWith('/de') ? pathname.slice(3) : pathname
