@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
+import PrimaryCTA from './PrimaryCTA';
+import LiftCard from './ui/LiftCard';
 import { BookOpen, Clock, Users, Sparkles, ArrowRight, Star, CheckCircle, X, Zap, FileText, Share2, Globe, Heart, Coffee, AlertTriangle, Battery, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AIOptimizedContent, SchemaEnhancedText, EDUCATION_SEMANTIC_KEYWORDS, AI_EDUCATION_TOPICS } from './AIOptimizedContent';
 import { useTranslations } from './LocaleProvider';
@@ -98,14 +100,11 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
-                <Button 
-                  size="lg" 
-                  className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
-                >
-                  <Sparkles className="h-5 w-5 mr-2" />
-                  {t('home.hero.cta')}
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
+                <PrimaryCTA
+                  label={t('home.hero.cta')}
+                  ariaLabel="Start your free Zaza Teach trial from homepage hero"
+                  from="home_hero"
+                />
               </div>
               
               <p className="text-[#2C3E35]/60 text-lg text-center lg:text-left">
@@ -212,7 +211,7 @@ export default function HomePage() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-16 px-4 bg-white/50">
+      <section className="py-16 px-4 bg-rose-50/40">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -234,12 +233,17 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 + index * 0.1 }}
-                  className="flex items-center space-x-4 p-4 bg-red-50 rounded-xl border border-red-100"
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${0.4 + index * 0.1}s` }}
                 >
-                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <item.icon className="h-6 w-6 text-red-600" />
-                  </div>
-                  <p className="text-[#2C3E35] font-medium text-left">{item.text}</p>
+                  <LiftCard className="border-rose-100 bg-rose-50/60">
+                    <div className="flex items-center space-x-4 p-4">
+                      <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:animate-icon-float">
+                        <item.icon className="h-6 w-6 text-rose-600" />
+                      </div>
+                      <p className="text-[#2C3E35] font-medium text-left">{item.text}</p>
+                    </div>
+                  </LiftCard>
                 </motion.div>
               ))}
             </div>
@@ -272,7 +276,7 @@ export default function HomePage() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-emerald-50/50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -294,24 +298,28 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1 }}
-                  className="flex items-center space-x-4 p-4 bg-green-50 rounded-xl border border-green-100 hover:shadow-md transition-shadow duration-200"
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                 >
-                  <div className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center flex-shrink-0`}>
-                    <item.icon className={`h-6 w-6 ${item.iconColor}`} />
-                  </div>
-                  <p className="text-[#2C3E35] font-medium text-left">{item.text}</p>
+                  <LiftCard className="border-emerald-100 bg-emerald-50/60">
+                    <div className="flex items-center space-x-4 p-4">
+                      <div className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:animate-icon-float`}>
+                        <item.icon className={`h-6 w-6 ${item.iconColor}`} />
+                      </div>
+                      <p className="text-[#2C3E35] font-medium text-left">{item.text}</p>
+                    </div>
+                  </LiftCard>
                 </motion.div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
-              >
-                <Sparkles className="h-5 w-5 mr-2" />
-                {t('home.solution.cta')}
-              </Button>
+              <PrimaryCTA
+                label={t('home.solution.cta')}
+                ariaLabel="Start planning smarter with Zaza Teach from solution section"
+                from="home_solution"
+                className="bg-gradient-to-r from-violet-600 to-purple-600"
+              />
               <p className="text-[#2C3E35]/60 text-sm">{t('home.solution.subtext')}</p>
             </div>
           </motion.div>
@@ -673,14 +681,12 @@ export default function HomePage() {
               {t('home.finalCta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-12 py-4 rounded-full text-xl font-medium transition-all duration-300 transform hover:scale-105"
-              >
-                <Sparkles className="h-6 w-6 mr-3" />
-                {t('home.finalCta.cta')}
-                <ArrowRight className="h-6 w-6 ml-3" />
-              </Button>
+              <PrimaryCTA
+                label={t('home.finalCta.cta')}
+                ariaLabel="Start your free Zaza Teach trial from final call-to-action"
+                from="home_final_cta"
+                className="px-12 py-4 text-xl"
+              />
               <p className="text-[#2C3E35]/60 text-sm">
                 {t('home.finalCta.benefits')}
               </p>

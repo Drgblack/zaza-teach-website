@@ -20,6 +20,8 @@
 
 ## Env Vars (set in Vercel)
 - NEXT_PUBLIC_SITE_URL=https://zazateach.com  (or preview URL)
+- NEXT_PUBLIC_SIGNUP_URL=https://app.zazateach.com/signup  (CTA destination URL)
+- NEXT_TELEMETRY_DISABLED=1  (optional, disables Next.js telemetry)
 - (add any API keys the app actually uses)
 
 ## Domains
