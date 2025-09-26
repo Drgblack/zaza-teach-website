@@ -1208,6 +1208,124 @@
         "tryFree": "Zaza Teach kostenlos testen",
         "learnMore": "Mehr über unsere Features erfahren"
       }
+    },
+    "resources": {
+      "title": "Kostenlose Lehrressourcen",
+      "description": "Laden Sie kostenlose Lehrressourcen, Unterrichtsplan-Vorlagen und Bildungs-PDFs von Zaza Teach herunter.",
+      "hero": {
+        "badge": "Kostenlose Ressourcen",
+        "title": "Lehrressourcen",
+        "subtitle": "Professionelle Vorlagen und Leitfäden, die Ihnen Zeit sparen und Ihre Unterrichtseffektivität steigern",
+        "note": "Klicken Sie auf eine beliebige Ressource, um sie als PDF anzuzeigen und zu drucken"
+      },
+      "categories": {
+        "planning": "Planung",
+        "assessment": "Bewertung",
+        "management": "Verwaltung",
+        "activities": "Aktivitäten",
+        "aiTools": "KI-Tools",
+        "productivity": "Produktivität"
+      },
+      "items": {
+        "lessonPlan": {
+          "title": "Unterrichtsplan-Vorlage",
+          "description": "Eine umfassende Vorlage für die Erstellung strukturierter Unterrichtspläne mit allen wesentlichen Komponenten."
+        },
+        "assessmentRubric": {
+          "title": "Bewertungsraster-Leitfaden",
+          "description": "Richtlinien für die Erstellung effektiver Bewertungsraster, die das Lernen der Schüler messen."
+        },
+        "classroomManagement": {
+          "title": "Klassenführungs-Tipps",
+          "description": "Praktische Strategien für effektive Klassenführung und positive Verhaltensunterstützung."
+        },
+        "studentEngagement": {
+          "title": "Schüleraktivierungs-Aktivitäten",
+          "description": "Kreative Aktivitäten zur Steigerung der Schülerbeteiligung und interaktiven Gestaltung des Lernens."
+        },
+        "aiPrompts": {
+          "title": "KI-Lehr-Prompts-Paket",
+          "description": "Sofort einsetzbare KI-Prompts für Unterrichtsplanung, Bewertungserstellung und Inhaltsgenerierung."
+        },
+        "timeSaving": {
+          "title": "Zeitsparende Lehrer-Checkliste",
+          "description": "Wöchentliche und tägliche Checklisten zur Rationalisierung Ihres Arbeitsablaufs und Maximierung der Effizienz."
+        }
+      },
+      "viewPrint": "Anzeigen & Drucken",
+      "bottomCta": {
+        "title": "Benötigen Sie mehr Ressourcen?",
+        "description": "Treten Sie Zaza Teach bei, um Zugang zu unserer vollständigen Bibliothek von KI-gestützten Unterrichtsplanungstools und Premium-Ressourcen zu erhalten.",
+        "startTrial": "Kostenlose Testversion starten",
+        "contactUs": "Kontaktieren Sie uns"
+      }
+    },
+    "lessonPlanTemplate": {
+      "title": "Unterrichtsplan-Vorlage | Kostenlose Lehrressourcen",
+      "description": "Herunterladbare Unterrichtsplan-Vorlage für Lehrer",
+      "header": {
+        "title": "Unterrichtsplan-Vorlage",
+        "instruction": "Verwenden Sie Strg+P (Cmd+P auf Mac) zum Drucken oder Speichern als PDF"
+      },
+      "template": {
+        "title": "UNTERRICHTSPLAN-VORLAGE",
+        "subtitle": "Kostenlose Ressource von Zaza Teach",
+        "fields": {
+          "subject": "Fach:",
+          "gradeLevel": "Klassenstufe:",
+          "date": "Datum:",
+          "duration": "Dauer:"
+        },
+        "sections": {
+          "objectives": {
+            "title": "LERNZIELE",
+            "subtitle": "Die Schüler werden in der Lage sein..."
+          },
+          "materials": {
+            "title": "BENÖTIGTE MATERIALIEN"
+          },
+          "structure": {
+            "title": "UNTERRICHTSSTRUKTUR",
+            "opening": {
+              "title": "Eröffnung (5-10 Minuten)",
+              "hook": "Einstieg/Aufwärmung:",
+              "review": "Wiederholung vorherigen Lernens:"
+            },
+            "mainActivity": {
+              "title": "Hauptaktivität (20-30 Minuten)",
+              "instruction": "Direkter Unterricht:",
+              "guided": "Geführte Praxis:",
+              "independent": "Selbstständige Arbeit:"
+            },
+            "closing": {
+              "title": "Abschluss (5-10 Minuten)",
+              "summary": "Zusammenfassung/Wiederholung:",
+              "exitTicket": "Exit-Ticket:"
+            }
+          },
+          "assessment": {
+            "title": "BEWERTUNG",
+            "formative": "Formativ:",
+            "summative": "Summativ:"
+          },
+          "differentiation": {
+            "title": "DIFFERENZIERUNG",
+            "struggling": "Für schwächere Lernende:",
+            "advanced": "Für fortgeschrittene Lernende:",
+            "ell": "Für DaZ-Schüler:"
+          },
+          "homework": {
+            "title": "HAUSAUFGABEN/ERWEITERUNG"
+          },
+          "reflection": {
+            "title": "REFLEXIONSNOTIZEN",
+            "worked": "Was gut funktioniert hat:",
+            "improve": "Was zu verbessern ist:",
+            "engagement": "Schülerbeteiligung:"
+          }
+        },
+        "footer": "Kostenlose Ressource von Zaza Teach • Besuchen Sie zazateach.com für weitere Ressourcen"
+      }
     }
   }
 }
