@@ -9,7 +9,10 @@
     "lint": "next lint",
     "start": "next start",
     "fix:dashes": "node scripts/replace-dashes.mjs",
-    "lint:dashes": "node scripts/check-no-dashes.mjs"
+    "lint:dashes": "node scripts/check-no-dashes.mjs",
+    "check:i18n": "tsx scripts/check-i18n.ts",
+    "validate:i18n": "tsx scripts/validate-i18n-setup.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

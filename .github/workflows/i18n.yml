@@ -1,0 +1,191 @@
+name: i18n Translation Check
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths: 
+      - 'src/i18n/**'
+      - 'app/**'
+      - 'components/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/i18n/**'
+      - 'app/**'  
+      - 'components/**'
+
+jobs:
+  translation-check:
+    name: Translation Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run i18n validation
+        run: npm run check:i18n
+        
+      - name: Check translation coverage
+        run: |
+          echo "📊 Translation Coverage Report"
+          echo "=============================="
+          
+          # Count translation keys in each locale
+          en_keys=$(cat src/i18n/messages/en.json | jq -r 'paths(scalars) as $p | $p | join(".")' | wc -l)
+          de_keys=$(cat src/i18n/messages/de.json | jq -r 'paths(scalars) as $p | $p | join(".")' | wc -l)
+          
+          echo "English translations: $en_keys keys"
+          echo "German translations: $de_keys keys"
+          
+          # Calculate coverage percentage
+          if [ $en_keys -gt 0 ]; then
+            coverage=$(( (de_keys * 100) / en_keys ))
+            echo "German coverage: $coverage%"
+            
+            if [ $coverage -lt 95 ]; then
+              echo "⚠️ German translation coverage below 95%"
+              exit 1
+            else
+              echo "✅ Good translation coverage"
+            fi
+          fi
+          
+      - name: Validate German content
+        run: |
+          echo "🇩🇪 Validating German content..."
+          
+          # Check for common German translation issues
+          german_issues=()
+          
+          # Check for English words that shouldn't be in German translations
+          english_words=("Hello" "Welcome" "Login" "Sign up" "Save" "Cancel" "Submit" "Loading")
+          
+          for word in "${english_words[@]}"; do
+            if grep -q "\"$word\"" src/i18n/messages/de.json; then
+              german_issues+=("Found English word '$word' in German translations")
+            fi
+          done
+          
+          # Check for proper German quotation marks
+          if grep -q '"[^"]*"[^"]*"' src/i18n/messages/de.json; then
+            if ! grep -q '„[^"]*"' src/i18n/messages/de.json; then
+              german_issues+=("Consider using German quotation marks („ ") instead of English quotes")
+            fi
+          fi
+          
+          # Report issues
+          if [ ${#german_issues[@]} -gt 0 ]; then
+            echo "⚠️ German translation issues found:"
+            for issue in "${german_issues[@]}"; do
+              echo "  - $issue"
+            done
+          else
+            echo "✅ German translations look good"
+          fi
+          
+      - name: Check for missing blog translations
+        run: |
+          echo "📝 Checking blog translation completeness..."
+          
+          en_blogs=$(find content/blog/en -name "*.md" 2>/dev/null | wc -l || echo 0)
+          de_blogs=$(find content/blog/de -name "*.md" 2>/dev/null | wc -l || echo 0)
+          
+          echo "English blog posts: $en_blogs"
+          echo "German blog posts: $de_blogs"
+          
+          if [ $en_blogs -gt $de_blogs ]; then
+            missing=$(( en_blogs - de_blogs ))
+            echo "⚠️ $missing German blog translations missing"
+            
+            # List missing translations
+            if [ -d "content/blog/en" ] && [ -d "content/blog/de" ]; then
+              echo "Missing German translations:"
+              for en_file in content/blog/en/*.md; do
+                filename=$(basename "$en_file")
+                if [ ! -f "content/blog/de/$filename" ]; then
+                  echo "  - $filename"
+                fi
+              done
+            fi
+          else
+            echo "✅ Blog translation coverage is complete"
+          fi
+
+  locale-routing-test:
+    name: Test Locale Routing
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build application
+        run: npm run build
+        
+      - name: Check locale routes exist
+        run: |
+          echo "🌐 Checking locale route generation..."
+          
+          # Check if German routes were generated
+          if [ -d ".next/server/app/de" ]; then
+            echo "✅ German routes generated successfully"
+            
+            # Count generated German pages
+            de_pages=$(find .next/server/app/de -name "page.js" | wc -l)
+            echo "Generated German pages: $de_pages"
+            
+          else
+            echo "❌ German routes not found in build output"
+            exit 1
+          fi
+          
+          # Check if English routes were generated  
+          if [ -d ".next/server/app/en" ]; then
+            echo "✅ English routes generated successfully"
+            
+            # Count generated English pages
+            en_pages=$(find .next/server/app/en -name "page.js" | wc -l)
+            echo "Generated English pages: $en_pages"
+            
+          else
+            echo "❌ English routes not found in build output"
+            exit 1
+          fi
+          
+      - name: Verify hreflang implementation
+        run: |
+          echo "🔗 Checking hreflang implementation..."
+          
+          # Check if SEO utilities exist
+          if [ -f "lib/seo.ts" ]; then
+            echo "✅ SEO utilities found"
+            
+            # Check for hreflang functions
+            if grep -q "hreflang" lib/seo.ts; then
+              echo "✅ hreflang implementation found"
+            else
+              echo "⚠️ hreflang implementation not found in SEO utilities"
+            fi
+          else
+            echo "❌ SEO utilities file not found"
+            exit 1
+          fi

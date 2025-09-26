@@ -1,0 +1,154 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test & Build
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Type checking
+        run: npm run typecheck
+        
+      - name: Lint code
+        run: npm run lint
+        
+      - name: Check dash usage
+        run: npm run lint:dashes
+        
+      - name: Check internationalization
+        run: npm run check:i18n
+        
+      - name: Build application
+        run: npm run build
+        
+      - name: Check build output
+        run: |
+          if [ ! -d ".next" ]; then
+            echo "Build failed - .next directory not found"
+            exit 1
+          fi
+          echo "Build successful"
+
+  i18n-validation:
+    name: i18n Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Validate translation files
+        run: |
+          echo "Validating translation file structure..."
+          
+          # Check if translation files exist
+          if [ ! -f "src/i18n/messages/en.json" ]; then
+            echo "❌ English translation file missing"
+            exit 1
+          fi
+          
+          if [ ! -f "src/i18n/messages/de.json" ]; then
+            echo "❌ German translation file missing"
+            exit 1
+          fi
+          
+          # Check if files are valid JSON
+          cat src/i18n/messages/en.json | jq . > /dev/null
+          if [ $? -ne 0 ]; then
+            echo "❌ English translation file is not valid JSON"
+            exit 1
+          fi
+          
+          cat src/i18n/messages/de.json | jq . > /dev/null
+          if [ $? -ne 0 ]; then
+            echo "❌ German translation file is not valid JSON"
+            exit 1
+          fi
+          
+          echo "✅ Translation files are valid JSON"
+        
+      - name: Run comprehensive i18n check
+        run: npm run check:i18n
+
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run npm audit
+        run: npm audit --audit-level high
+        continue-on-error: true
+        
+      - name: Check for sensitive files
+        run: |
+          echo "Checking for sensitive files..."
+          
+          # Check for common sensitive files
+          sensitive_files=(
+            ".env"
+            ".env.local"
+            ".env.production"
+            "*.key"
+            "*.pem"
+            "*.p12"
+            "config/database.yml"
+            "id_rsa"
+            "id_dsa"
+          )
+          
+          found_sensitive=false
+          for pattern in "${sensitive_files[@]}"; do
+            if find . -name "$pattern" -not -path "./node_modules/*" -not -path "./.git/*" | grep -q .; then
+              echo "❌ Found sensitive file pattern: $pattern"
+              found_sensitive=true
+            fi
+          done
+          
+          if [ "$found_sensitive" = true ]; then
+            exit 1
+          fi
+          
+          echo "✅ No sensitive files found"

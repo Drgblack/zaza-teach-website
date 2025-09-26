@@ -1,9 +1,13 @@
 'use client';
 
 import { useTranslations } from './LocaleProvider';
+import { usePathname } from 'next/navigation';
 
 export default function ContactClient() {
   const t = useTranslations();
+  const pathname = usePathname();
+  const isGerman = pathname.startsWith('/de');
+  const localePrefix = isGerman ? '/de' : '';
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-12">
@@ -217,7 +221,7 @@ export default function ContactClient() {
                 {t('contact.faq.description')}
               </p>
               <a
-                href="/faqs"
+                href={`${localePrefix}/faqs`}
                 className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors"
               >
                 {t('contact.faq.button')}
@@ -232,7 +236,7 @@ export default function ContactClient() {
                 {t('contact.featureIdea.description')}
               </p>
               <a
-                href="/feature-request"
+                href={`${localePrefix}/feature-request`}
                 className="text-orange-600 hover:text-orange-800 font-medium"
               >
                 {t('contact.featureIdea.button')}

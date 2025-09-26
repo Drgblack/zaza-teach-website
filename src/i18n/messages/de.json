@@ -1074,5 +1074,140 @@
       "startTrial": "Kostenlose Testversion starten",
       "contactTeam": "Mit unserem Team sprechen"
     }
+  },
+  "featureRequest": {
+    "title": "Feature-Anfrage | Zaza Teach - Helfen Sie uns zu verbessern",
+    "description": "Senden Sie Feature-Anfragen und Vorschläge, um uns zu helfen, Zaza Teach noch besser für Pädagogen zu machen. Ihr Input prägt unsere Entwicklungs-Roadmap.",
+    "pageTitle": "Feature-Anfrage",
+    "subtitle": "Helfen Sie uns, die Lehrwerkzeuge zu entwickeln, die Sie brauchen. Ihre Ideen treiben unsere Innovation an.",
+    "form": {
+      "title": "Neue Funktion anfragen",
+      "name": "Ihr Name",
+      "namePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "ihre.email@schule.de",
+      "role": "Ihre Rolle",
+      "roleOptions": {
+        "select": "Wählen Sie Ihre Rolle",
+        "teacher": "Lehrer",
+        "administrator": "Administrator",
+        "curriculumCoordinator": "Lehrplan-Koordinator",
+        "instructionalCoach": "Unterrichtscoach",
+        "substituteTeacher": "Vertretungslehrer",
+        "other": "Andere"
+      },
+      "gradeLevel": "Klassenstufe/Fach (falls zutreffend)",
+      "gradeLevelPlaceholder": "z.B. 3. Klasse, Gymnasium Mathematik, K-5",
+      "featureTitle": "Feature-Titel",
+      "featureTitlePlaceholder": "Kurzer, beschreibender Titel für Ihre Feature-Idee",
+      "priority": "Prioritätsstufe",
+      "priorityOptions": {
+        "select": "Priorität wählen",
+        "low": "Wäre schön zu haben",
+        "medium": "Wäre hilfreich",
+        "high": "Brauche das wirklich",
+        "critical": "Kann nicht ohne arbeiten"
+      },
+      "description": "Detaillierte Beschreibung",
+      "descriptionPlaceholder": "Beschreiben Sie die Funktion, die Sie gerne sehen möchten. Welches Problem würde sie lösen? Wie würden Sie sie nutzen?",
+      "useCase": "Anwendungsfall-Beispiel",
+      "useCasePlaceholder": "Führen Sie uns durch ein spezifisches Szenario, in dem Sie diese Funktion nutzen würden",
+      "currentWorkaround": "Wie handhaben Sie das derzeit? (Optional)",
+      "currentWorkaroundPlaceholder": "Was ist Ihr aktueller Prozess oder Workaround für diesen Bedarf?",
+      "submit": "Feature-Anfrage senden"
+    },
+    "guidelines": {
+      "title": "Was eine großartige Feature-Anfrage ausmacht",
+      "items": [
+        "Klare Problembeschreibung",
+        "Spezifische Anwendungsfall-Beispiele",
+        "Erklärung aktueller Problempunkte",
+        "Ideen, wie es funktionieren könnte"
+      ]
+    },
+    "process": {
+      "title": "Unser Entwicklungsprozess",
+      "items": [
+        "Wir überprüfen alle Anfragen innerhalb von 48 Stunden",
+        "Beliebte Features werden priorisiert",
+        "Sie erhalten Updates zum Entwicklungsfortschritt",
+        "Beta-Test-Möglichkeiten für Mitwirkende"
+      ]
+    },
+    "discuss": {
+      "title": "Möchten Sie Ihre Idee zuerst besprechen?",
+      "description": "Manchmal hilft es, Ihre Idee zu durchzusprechen, bevor Sie eine formelle Anfrage stellen.",
+      "cta": "Unser Team kontaktieren"
+    }
+  },
+  "whyNotChatgpt": {
+    "title": "Warum nicht einfach ChatGPT? | Zaza Teach - Der Unterschied",
+    "description": "Entdecken Sie, warum Zaza Teach speziell für Pädagogen entwickelte KI-Tools bietet, die über allgemeine Chatbots wie ChatGPT hinausgehen.",
+    "pageTitle": "Warum nicht einfach ChatGPT?",
+    "subtitle": "Eine häufige Frage von Lehrern, die KI-Tools erkunden. Hier ist, warum spezialisierte Bildungstools einen Unterschied machen.",
+    "sections": {
+      "chatgptLimitations": {
+        "title": "ChatGPT-Beschränkungen für Lehrer",
+        "items": [
+          "Erfordert Expertise im Prompt-Engineering",
+          "Keine Lehrplan-Abstimmung oder Standards-Mapping",
+          "Keine bildungsspezifischen Vorlagen oder Strukturen",
+          "Kein Verständnis für pädagogische Best Practices",
+          "Begrenzte Formatierungs- und Export-Optionen",
+          "Keine Integration mit Schulsystemen",
+          "Datenschutz- und Sicherheitsbedenken für Bildungseinrichtungen"
+        ]
+      },
+      "zazaAdvantages": {
+        "title": "Zaza Teach Vorteile",
+        "items": [
+          "Für Pädagogen entwickelt, mit Lehrern getestet",
+          "Automatische Lehrplan-Standards-Abstimmung",
+          "Vorgefertigte Unterrichtsplan-Vorlagen und -Strukturen",
+          "Pädagogische Expertise in jeden Algorithmus eingebaut",
+          "Professionelle Export-Formate (Word, PDF) bereit für den Klassenzimmer-Einsatz",
+          "FERPA-konforme Sicherheit und Datenschutz",
+          "Nahtlose Integration mit Bildungstools"
+        ]
+      },
+      "comparison": {
+        "title": "Direkter Vergleich",
+        "chatgpt": "Mit ChatGPT",
+        "zaza": "Mit Zaza Teach",
+        "items": [
+          {
+            "task": "Unterrichtsplan erstellen",
+            "chatgpt": "30+ Minuten des Prompt-Engineerings und Formatierens",
+            "zaza": "2-3 Minuten mit professionellen Vorlagen"
+          },
+          {
+            "task": "Standards-Abstimmung",
+            "chatgpt": "Manuelle Recherche und Zuordnung erforderlich",
+            "zaza": "Automatisch mit Ihrer Lehrplan-Auswahl abgestimmt"
+          },
+          {
+            "task": "Unterrichtsplan-Format",
+            "chatgpt": "Einfacher Text, erfordert erhebliche Nachbearbeitung",
+            "zaza": "Professionelle, druckfertige Formate"
+          },
+          {
+            "task": "Pädagogische Genauigkeit",
+            "chatgpt": "Trefferquote, erfordert Expertenwissen zur Überprüfung",
+            "zaza": "Auf bewährte Lehrpraktiken und Bildungstheorie aufgebaut"
+          }
+        ]
+      },
+      "realTeacher": {
+        "title": "Echte Lehrer-Erfahrung",
+        "quote": "Ich habe monatelang versucht, ChatGPT für die Unterrichtsplanung zu nutzen. Es war frustrierend - ich verbrachte mehr Zeit damit, die KI zu trainieren, als wenn ich den Plan selbst geschrieben hätte. Zaza Teach versteht einfach, was Lehrer brauchen.",
+        "author": "Sarah M., Grundschullehrerin"
+      },
+      "cta": {
+        "title": "Bereit, den Unterschied selbst zu erleben?",
+        "description": "Sehen Sie, warum Tausende von Lehrern von allgemeinen KI-Tools zu Zaza Teach gewechselt sind - der einzigen KI-Plattform, die speziell für Bildung entwickelt wurde.",
+        "tryFree": "Zaza Teach kostenlos testen",
+        "learnMore": "Mehr über unsere Features erfahren"
+      }
+    }
   }
 }

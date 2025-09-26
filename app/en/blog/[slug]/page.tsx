@@ -1,6 +1,7 @@
 import { getAllSlugs, getPost } from "@/lib/blog-locale";
-import { canonical } from "@/lib/site";
+import { generateSEOMetadata } from "@/lib/seo";
 import { BlogPostingJsonLd } from "@/components/SEOJsonLd";
+import { siteUrl } from "@/lib/site";
 import Link from "next/link";
 
 const locale = 'en';
@@ -13,28 +14,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const post = getPost(params.slug, locale);
   if (!post) return {};
   
-  return {
+  return generateSEOMetadata({
     title: `${post.title} | Zaza Teach Blog`,
     description: post.description,
-    alternates: { canonical: canonical(`/blog/${post.slug}`) },
-    openGraph: {
-      url: canonical(`/blog/${post.slug}`),
-      title: post.title,
-      description: post.description,
-      images: [canonical(post.image)],
-      type: "article",
-      publishedTime: post.date,
-      modifiedTime: post.updated ?? post.date,
-      section: "Education",
-      tags: post.tags,
-    },
-    twitter: { 
-      card: "summary_large_image",
-      title: post.title,
-      description: post.description,
-      images: [canonical(post.image)]
-    }
-  };
+    keywords: post.tags,
+    locale: 'en',
+    path: `blog/${post.slug}`,
+    type: 'article',
+    image: post.image,
+    publishedTime: post.date,
+    modifiedTime: post.updated ?? post.date,
+    author: post.author,
+    tags: post.tags,
+  });
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
@@ -60,7 +52,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         slug={post.slug}
         title={post.title}
         description={post.description}
-        image={canonical(post.image)}
+        image={post.image.startsWith('http') ? post.image : `${siteUrl}${post.image}`}
         datePublished={post.date}
         dateModified={post.updated ?? post.date}
         tags={post.tags}
