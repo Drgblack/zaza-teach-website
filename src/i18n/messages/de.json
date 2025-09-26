@@ -624,6 +624,113 @@
       "button": "Feature-Wunsch einreichen →"
     }
   },
+  "faq": {
+    "title": "Häufig gestellte Fragen | Zaza Teach",
+    "description": "Finden Sie Antworten auf häufige Fragen zu Zaza Teach, unserem KI-gestützten Unterrichtsplanungs-Tool für Pädagogen.",
+    "pageTitle": "Häufig gestellte Fragen",
+    "subtitle": "Alles was Sie über Zaza Teach wissen müssen. Können Sie nicht finden, was Sie suchen?",
+    "contactSupport": "Kontaktieren Sie unser Support-Team",
+    "searchPlaceholder": "FAQs durchsuchen...",
+    "questions": "Fragen",
+    "question": "Frage",
+    "noResults": {
+      "title": "Keine Ergebnisse gefunden",
+      "description": "Versuchen Sie es mit anderen Suchbegriffen oder durchsuchen Sie unsere Kategorien oben.",
+      "clearSearch": "Suche löschen"
+    },
+    "stillHaveQuestions": {
+      "title": "Haben Sie noch Fragen?",
+      "description": "Unser Support-Team hilft Ihnen dabei, das Beste aus Zaza Teach herauszuholen.",
+      "contactSupport": "Support kontaktieren",
+      "visitHelpCenter": "Hilfe-Center besuchen"
+    },
+    "categories": {
+      "gettingStarted": {
+        "title": "Erste Schritte",
+        "faqs": [
+          {
+            "q": "Was ist Zaza Teach?",
+            "a": "Zaza Teach ist ein KI-gestütztes Unterrichtsplanungs-Tool, das Lehrern hilft, lehrplangerechte Lektionen in Minuten zu erstellen, mit Export-Optionen zu Word und PDF."
+          },
+          {
+            "q": "Wie funktioniert Zaza Teach?",
+            "a": "Geben Sie einfach Ihre Lernziele, Klassenstufe und das Fachgebiet ein. Unsere KI generiert einen vollständigen Unterrichtsplan, den Sie anpassen und exportieren können."
+          },
+          {
+            "q": "Ist Zaza Teach kostenlos nutzbar?",
+            "a": "Ja, Zaza Teach bietet eine kostenlose Version mit grundlegenden Unterrichtsplanungsfunktionen. Premium-Funktionen sind mit unseren kostenpflichtigen Plänen verfügbar."
+          },
+          {
+            "q": "Benötige ich spezielle Software für Zaza Teach?",
+            "a": "Nein, Zaza Teach ist eine webbasierte Anwendung, die in jedem modernen Browser funktioniert. Keine Downloads oder Installationen erforderlich."
+          }
+        ]
+      },
+      "featuresAndFunctionality": {
+        "title": "Funktionen & Features",
+        "faqs": [
+          {
+            "q": "Welche Klassenstufen unterstützt Zaza Teach?",
+            "a": "Zaza Teach unterstützt alle Klassenstufen von der Grundschule bis zur Oberstufe, mit für jede Altersgruppe angepassten Inhalten."
+          },
+          {
+            "q": "Kann ich meine Unterrichtspläne exportieren?",
+            "a": "Ja, Sie können Ihre Unterrichtspläne als Word-Dokumente oder PDF-Dateien exportieren für einfaches Drucken und Teilen."
+          },
+          {
+            "q": "Welche Fächer deckt Zaza Teach ab?",
+            "a": "Zaza Teach deckt alle Hauptfächer ab, einschließlich Mathematik, Naturwissenschaften, Deutsch, Sozialwissenschaften und mehr."
+          },
+          {
+            "q": "Kann ich die generierten Unterrichtspläne anpassen?",
+            "a": "Absolut! Alle Unterrichtspläne sind vollständig anpassbar, sodass Sie Inhalte, Aktivitäten und Bewertungen nach Bedarf ändern können."
+          },
+          {
+            "q": "Wie genau sind die KI-generierten Unterrichtspläne?",
+            "a": "Unsere KI ist auf bewährte pädagogische Praktiken und Lehrplanstandards trainiert, um hochwertige, genaue Unterrichtspläne zu gewährleisten."
+          },
+          {
+            "q": "Welche Sprachen unterstützt Zaza Teach?",
+            "a": "Zaza Teach ist auf Englisch, Deutsch, Französisch, Spanisch und Italienisch verfügbar, weitere Sprachen folgen bald."
+          }
+        ]
+      },
+      "collaborationAndSupport": {
+        "title": "Zusammenarbeit & Support",
+        "faqs": [
+          {
+            "q": "Kann ich mit anderen Lehrern zusammenarbeiten?",
+            "a": "Ja, Zaza Teach bietet Kollaborationsfunktionen, mit denen Sie Unterrichtspläne teilen und mit Kollegen zusammenarbeiten können."
+          },
+          {
+            "q": "Kann ich Zaza Teach für Homeschooling verwenden?",
+            "a": "Ja, Zaza Teach ist perfekt für Homeschool-Pädagogen, die strukturierte, lehrplangerechte Unterrichtspläne möchten."
+          },
+          {
+            "q": "Welcher Support ist verfügbar, wenn ich Hilfe brauche?",
+            "a": "Wir bieten umfassenden Support einschließlich Dokumentation, Video-Tutorials und direkten Kundensupport über unser Hilfe-Center."
+          },
+          {
+            "q": "Kann ich Zaza Teach in das LMS meiner Schule integrieren?",
+            "a": "Wir arbeiten an Integrationen mit beliebten Lernmanagementsystemen. Kontaktieren Sie uns für aktuelle Integrationsoptionen."
+          }
+        ]
+      },
+      "securityAndPrivacy": {
+        "title": "Sicherheit & Datenschutz",
+        "faqs": [
+          {
+            "q": "Sind meine Daten bei Zaza Teach sicher?",
+            "a": "Absolut. Wir priorisieren Datensicherheit und Datenschutz mit robusten Verschlüsselungs- und strengen Datenschutzrichtlinien."
+          },
+          {
+            "q": "Wie oft wird Zaza Teach aktualisiert?",
+            "a": "Wir verbessern Zaza Teach kontinuierlich mit regelmäßigen Updates, neuen Funktionen und erweiterten KI-Fähigkeiten basierend auf Nutzerfeedback."
+          }
+        ]
+      }
+    }
+  },
   "common": {
     "loading": "Laden...",
     "error": "Ein Fehler ist aufgetreten",
