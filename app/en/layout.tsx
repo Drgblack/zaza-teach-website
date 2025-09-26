@@ -7,6 +7,7 @@ import { SkipLink } from '../../components/SkipLink';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
 import { generateSEOMetadata } from '@/lib/seo';
 import { HrefLangLinks } from '../../components/HrefLangLinks';
+import { brandConfig } from '@/src/config/brand';
 
 // English layout with proper SEO and hreflang
 
@@ -33,7 +34,7 @@ export default async function EnglishLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#66B2B2" />
+        <meta name="theme-color" content={brandConfig.colors.primary} />
         <meta name="color-scheme" content="light dark" />
         <HrefLangLinks path="" />
       </head>

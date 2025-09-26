@@ -1,4 +1,5 @@
 import { siteUrl } from './site';
+import { getFaviconPath, brandAssets } from '@/src/config/brand';
 
 export type Locale = 'en' | 'de';
 
@@ -119,9 +120,23 @@ export function generateSEOMetadata(config: SEOConfig) {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
     },
     icons: {
-      icon: '/favicon.ico',
-      shortcut: '/favicon-16x16.png',
-      apple: '/apple-touch-icon.png',
+      icon: brandAssets.favicons.ico,
+      shortcut: brandAssets.favicons.sizes['16x16'],
+      apple: brandAssets.favicons.sizes['180x180'],
+      other: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '32x32',
+          url: brandAssets.favicons.sizes['32x32'],
+        },
+        {
+          rel: 'icon',
+          type: 'image/png', 
+          sizes: '16x16',
+          url: brandAssets.favicons.sizes['16x16'],
+        },
+      ],
     },
     manifest: '/manifest.json',
     openGraph: {

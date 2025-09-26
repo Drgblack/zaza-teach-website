@@ -1,15 +1,16 @@
 import { MetadataRoute } from 'next'
 import { siteUrl } from '@/lib/site'
+import { brandAssets, brandConfig } from '@/src/config/brand'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Zaza Teach - AI Lesson Planning for Educators',
-    short_name: 'Zaza Teach',
+    name: `${brandConfig.name} - ${brandConfig.tagline}`,
+    short_name: brandConfig.shortName,
     description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#66B2B2',
+    theme_color: brandConfig.colors.primary,
     orientation: 'portrait-primary',
     scope: '/',
     lang: 'en',
@@ -17,29 +18,29 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ['education', 'productivity', 'tools'],
     icons: [
       {
-        src: '/android-chrome-192x192.png',
+        src: brandAssets.favicons.sizes['192x192'],
         sizes: '192x192',
         type: 'image/png',
         purpose: 'maskable'
       },
       {
-        src: '/android-chrome-512x512.png',
+        src: brandAssets.favicons.sizes['512x512'],
         sizes: '512x512',
         type: 'image/png',
         purpose: 'maskable'
       },
       {
-        src: '/apple-touch-icon.png',
+        src: brandAssets.favicons.sizes['180x180'],
         sizes: '180x180',
         type: 'image/png'
       },
       {
-        src: '/favicon-32x32.png',
+        src: brandAssets.favicons.sizes['32x32'],
         sizes: '32x32',
         type: 'image/png'
       },
       {
-        src: '/favicon-16x16.png',
+        src: brandAssets.favicons.sizes['16x16'],
         sizes: '16x16',
         type: 'image/png'
       }
@@ -66,14 +67,14 @@ export default function manifest(): MetadataRoute.Manifest {
         short_name: 'Resources',
         description: 'Browse teaching resources',
         url: '/resources?source=shortcut',
-        icons: [{ src: '/favicon-32x32.png', sizes: '32x32' }]
+        icons: [{ src: brandAssets.favicons.sizes['32x32'], sizes: '32x32' }]
       },
       {
         name: 'Read Blog',
         short_name: 'Blog',
         description: 'Read educational insights and tips',
         url: '/blog?source=shortcut',
-        icons: [{ src: '/favicon-32x32.png', sizes: '32x32' }]
+        icons: [{ src: brandAssets.favicons.sizes['32x32'], sizes: '32x32' }]
       }
     ]
   }

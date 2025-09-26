@@ -8,6 +8,7 @@ import Link from "next/link"
 import { useRouter } from 'next/navigation'
 import OptimizedImage from "@/components/OptimizedImage"
 import { useTranslations, useLocale, usePathname } from '../components/LocaleProvider'
+import { getLogoPath, brandConfig } from '@/src/config/brand'
 
 const Header = () => {
   const t = useTranslations()
@@ -259,10 +260,10 @@ const Header = () => {
           <Link href={`/${locale}`} className="flex items-center space-x-3 group">
             <motion.div whileHover={{ scale: 1.05 }}>
               <OptimizedImage
-                src="/zaza_z_logo.png"
-                alt="Zaza Z Logo"
-                width={32}
-                height={32}
+                src={getLogoPath('primary')}
+                alt={`${brandConfig.name} Logo`}
+                width={brandConfig.logoSizes.header.width}
+                height={brandConfig.logoSizes.header.height}
                 className="h-8 w-8 transition-transform group-hover:scale-105"
                 priority={true}
               />
