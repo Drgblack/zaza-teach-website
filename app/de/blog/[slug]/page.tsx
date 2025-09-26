@@ -1,22 +1,24 @@
-import { getAllSlugs, getPost } from "@/lib/blog";
+import { getAllSlugs, getPost } from "@/lib/blog-locale";
 import { canonical } from "@/lib/site";
 import { BlogPostingJsonLd } from "@/components/SEOJsonLd";
 import Link from "next/link";
 
+const locale = 'de';
+
 export async function generateStaticParams() {
-  return getAllSlugs().map(slug => ({ slug }));
+  return getAllSlugs(locale).map(slug => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = getPost(params.slug);
+  const post = getPost(params.slug, locale);
   if (!post) return {};
   
   return {
     title: `${post.title} | Zaza Teach Blog`,
     description: post.description,
-    alternates: { canonical: canonical(`/blog/${post.slug}`) },
+    alternates: { canonical: canonical(`/de/blog/${post.slug}`) },
     openGraph: {
-      url: canonical(`/blog/${post.slug}`),
+      url: canonical(`/de/blog/${post.slug}`),
       title: post.title,
       description: post.description,
       images: [canonical(post.image)],
@@ -36,17 +38,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPost(params.slug);
-  const locale = 'de'; // Since this is in /de folder
+  const post = getPost(params.slug, locale);
   
   if (!post) {
     return (
       <div className="min-h-screen bg-gray-50 pt-24 pb-12">
         <div className="container mx-auto max-w-3xl px-4 text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Post Not Found</h1>
-          <p className="text-gray-600 mb-6">The blog post you're looking for doesn't exist.</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Beitrag nicht gefunden</h1>
+          <p className="text-gray-600 mb-6">Der gesuchte Blog-Beitrag existiert nicht.</p>
           <Link href={`/${locale}/blog`} className="text-purple-600 hover:text-purple-700 font-medium">
-            ← Back to Blog
+            ← Zurück zum Blog
           </Link>
         </div>
       </div>
@@ -71,7 +72,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Breadcrumb */}
           <nav className="mb-8">
             <Link href={`/${locale}/blog`} className="text-purple-600 hover:text-purple-700 font-medium">
-              ← Back to Blog
+              ← Zurück zum Blog
             </Link>
           </nav>
 
@@ -100,7 +101,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             
             <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
               <span>
-                Published {new Date(post.date).toLocaleDateString("en-US", {
+                Veröffentlicht {new Date(post.date).toLocaleDateString("de-DE", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -108,7 +109,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               </span>
               {post.updated && post.updated !== post.date && (
                 <span>
-                  Updated {new Date(post.updated).toLocaleDateString("en-US", {
+                  Aktualisiert {new Date(post.updated).toLocaleDateString("de-DE", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
@@ -116,12 +117,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 </span>
               )}
               <span>•</span>
-              <span>{post.readTime ? `${post.readTime} min read` : "5 min read"}</span>
+              <span>{post.readTime ? `${post.readTime} Min Lesezeit` : "5 Min Lesezeit"}</span>
             </div>
             
             {post.author && (
               <div className="text-sm text-gray-700 dark:text-gray-300 mb-6">
-                <span className="font-medium">Written by {post.author}</span>
+                <span className="font-medium">Geschrieben von {post.author}</span>
               </div>
             )}
           </header>
@@ -155,7 +156,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 href={`/${locale}/blog`}
                 className="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors font-medium"
               >
-                More Articles →
+                Weitere Artikel →
               </Link>
             </div>
           </footer>

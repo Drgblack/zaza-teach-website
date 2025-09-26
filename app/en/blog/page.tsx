@@ -1,6 +1,6 @@
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog-locale";
 import { canonical } from "@/lib/site";
-import BlogSearch from "./BlogSearch";
+import BlogClient from "@/components/BlogClient";
 
 export const metadata = {
   title: "Teaching insights and tips | Zaza Teach",
@@ -11,23 +11,8 @@ export const metadata = {
 };
 
 export default function BlogIndex() {
-  const posts = getAllPosts();
+  const posts = getAllPosts('en');
   const tags = Array.from(new Set(posts.flatMap(p => p.tags))).sort();
 
-  return (
-    <main className="min-h-screen bg-gray-50 pt-24 pb-12">
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Teaching insights and tips
-          </h1>
-          <p className="text-xl text-gray-600">
-            Expert advice, strategies, and insights for modern educators
-          </p>
-        </div>
-
-        <BlogSearch posts={posts} allTags={tags} />
-      </div>
-    </main>
-  );
+  return <BlogClient posts={posts} allTags={tags} />;
 }

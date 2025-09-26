@@ -1,14 +1,16 @@
-import { getAllSlugs, getPost } from "@/lib/blog";
+import { getAllSlugs, getPost } from "@/lib/blog-locale";
 import { canonical } from "@/lib/site";
 import { BlogPostingJsonLd } from "@/components/SEOJsonLd";
 import Link from "next/link";
 
+const locale = 'en';
+
 export async function generateStaticParams() {
-  return getAllSlugs().map(slug => ({ slug }));
+  return getAllSlugs(locale).map(slug => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = getPost(params.slug);
+  const post = getPost(params.slug, locale);
   if (!post) return {};
   
   return {
@@ -36,8 +38,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPost(params.slug);
-  const locale = 'en'; // Since this is in /en folder
+  const post = getPost(params.slug, locale);
   
   if (!post) {
     return (
