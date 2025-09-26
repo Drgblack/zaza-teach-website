@@ -3,10 +3,14 @@ import { canonical } from '@/lib/site';
 import AboutClient from './AboutClient';
 
 export const metadata: Metadata = {
-  title: 'About | Zaza Teach - Made by Teachers, for Teachers',
-  description: 'Learn about Zaza Teach\'s mission to help teachers reclaim their time and energy through AI-powered lesson planning.',
-  alternates: { canonical: canonical('/about') },
-  openGraph: { url: canonical('/about'), title: 'About | Zaza Teach - Made by Teachers, for Teachers' },
+  title: 'Über Zaza Teach | Zaza Teach - Von Lehrern für Lehrer',
+  description: 'Erfahren Sie mehr über Zaza Teach - von Lehrern für Lehrer entwickelt, um Zeit, Energie und Leidenschaft für das Wichtigste zurückzugewinnen: Ihre Schüler.',
+  alternates: { canonical: canonical('/de/about') },
+  openGraph: { 
+    url: canonical('/de/about'), 
+    title: 'Über Zaza Teach | Zaza Teach - Von Lehrern für Lehrer',
+    description: 'Erfahren Sie mehr über Zaza Teach - von Lehrern für Lehrer entwickelt, um Zeit, Energie und Leidenschaft für das Wichtigste zurückzugewinnen: Ihre Schüler.'
+  },
   twitter: { card: 'summary_large_image' }
 };
 

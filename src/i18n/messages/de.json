@@ -756,5 +756,323 @@
     "language": "Sprache",
     "en": "Englisch",
     "de": "Deutsch"
+  },
+  "products": {
+    "title": "Unsere Produkte",
+    "subtitle": "KI-gestützte Tools für moderne Pädagogen",
+    "zazaTeach": {
+      "title": "Zaza Teach",
+      "description": "Unser Flagship-KI-Unterrichtsplaner-Tool hilft Lehrern, lehrplangerechte Unterrichtspläne in Minuten zu erstellen. Exportieren Sie nach Word oder PDF mit praktischen Datenschutzoptionen für Schulen.",
+      "features": {
+        "aiGeneration": "KI-gestützte Unterrichtserstellung",
+        "curriculumAlignment": "Lehrplankonformität", 
+        "export": "Export nach Word/PDF",
+        "multiLanguage": "Mehrsprachige Unterstützung",
+        "privacy": "Datenschutzorientiertes Design"
+      },
+      "cta": "Zaza Teach testen"
+    },
+    "zazaPromptly": {
+      "title": "Zaza Promptly",
+      "description": "Erweiterte Prompt-Engineering-Tool für Pädagogen, die maßgeschneiderte KI-Interaktionen für ihre spezifischen Lehrbedürfnisse erstellen möchten.",
+      "features": {
+        "customPrompts": "Benutzerdefinierte Prompt-Erstellung",
+        "templateLibrary": "Vorlagen-Bibliothek",
+        "advancedAi": "Erweiterte KI-Interaktionen",
+        "educatorFocus": "Pädagogen-orientierte Funktionen",
+        "integration": "Integrationsmöglichkeiten"
+      },
+      "comingSoon": "Demnächst verfügbar"
+    },
+    "resourcesLibrary": {
+      "title": "Teach Resources Library", 
+      "description": "Kuratierte Sammlung von Lehrressourcen, Vorlagen und Bildungsmaterialien, erstellt von Pädagogen für Pädagogen.",
+      "features": {
+        "lessonTemplates": "Unterrichtsplan-Vorlagen",
+        "assessmentTools": "Bewertungstools",
+        "classroomActivities": "Klassenraumaktivitäten", 
+        "worksheets": "Lernarbeitsblätter",
+        "bestPractices": "Best-Practice-Leitfäden"
+      },
+      "cta": "Ressourcen durchsuchen"
+    },
+    "teachAssess": {
+      "title": "Teach Assess",
+      "description": "KI-gestütztes Bewertungserstellungs-Tool, das Lehrern hilft, effektive Tests, Prüfungen und Bewertungsraster zu entwickeln, die auf Lernziele abgestimmt sind.",
+      "features": {
+        "autoQuizzes": "Automatische Quiz-Erstellung",
+        "rubricCreation": "Bewertungsraster-Erstellung",
+        "questionBank": "Fragenkatalog-Verwaltung",
+        "objectiveAlignment": "Lernziel-Abstimmung",
+        "analytics": "Leistungsanalytik"
+      },
+      "comingSoon": "Demnächst verfügbar"
+    }
+  },
+  "support": {
+    "title": "Support Center",
+    "subtitle": "Erhalten Sie die Hilfe, die Sie brauchen, um das Beste aus Zaza Teach herauszuholen",
+    "immediateHelp": {
+      "title": "Benötigen Sie sofortige Hilfe?",
+      "description": "Wählen Sie die beste Möglichkeit, Support je nach Ihren Bedürfnissen zu erhalten",
+      "contactSupport": "Support-Team kontaktieren",
+      "browseFaqs": "Alle FAQs durchsuchen"
+    },
+    "categories": {
+      "gettingStarted": {
+        "title": "Erste Schritte",
+        "description": "Neu bei Zaza Teach? Lernen Sie die Grundlagen",
+        "links": {
+          "quickStart": "Schnellstart-Anleitung",
+          "videoTutorials": "Video-Tutorials",
+          "accountSetup": "Konto-Einrichtung"
+        }
+      },
+      "lessonPlanning": {
+        "title": "Unterrichtsplanung",
+        "description": "Meistern Sie die Kunst der KI-unterstützten Planung",
+        "links": {
+          "firstLesson": "Ihre erste Lektion erstellen",
+          "curriculumAlignment": "Lehrplan-Abstimmung",
+          "customizationTips": "Anpassungs-Tipps"
+        }
+      },
+      "technicalHelp": {
+        "title": "Technische Hilfe",
+        "description": "Fehlerbehebung und technische Probleme",
+        "links": {
+          "browserRequirements": "Browser-Anforderungen",
+          "exportIssues": "Export-Probleme",
+          "performanceTips": "Leistungs-Tipps"
+        }
+      },
+      "accountBilling": {
+        "title": "Konto & Abrechnung",
+        "description": "Verwalten Sie Ihr Konto und Abonnement",
+        "links": {
+          "billingInfo": "Abrechnungsinformationen",
+          "upgradeDowngrade": "Upgrade/Downgrade",
+          "accountSettings": "Konto-Einstellungen"
+        }
+      }
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "questions": {
+        "gettingStarted": {
+          "question": "Wie fange ich mit Zaza Teach an?",
+          "answer": "Besuchen Sie einfach unsere Startseite und klicken Sie auf 'Zaza Teach kostenlos testen'. Sie können sofort mit der Erstellung von Lektionen beginnen, ohne dass eine Einrichtung erforderlich ist."
+        },
+        "dataSecurity": {
+          "question": "Sind meine Unterrichtsplan-Daten sicher und privat?",
+          "answer": "Ja, absolut. Wir sind FERPA- und COPPA-konform. Ihre Unterrichtspläne und Daten bleiben privat und werden niemals zum Trainieren unserer KI-Modelle verwendet."
+        },
+        "export": {
+          "question": "Kann ich meine Unterrichtspläne exportieren?",
+          "answer": "Ja! Sie können Ihre Unterrichtspläne in Word-Dokumente oder PDF-Dateien exportieren, um sie einfach zu drucken und mit Kollegen zu teilen."
+        },
+        "curriculum": {
+          "question": "Welche Lehrplanstandards unterstützt Zaza Teach?",
+          "answer": "Wir unterstützen Common Core State Standards, landesspezifische Standards und internationale Lehrpläne. Unsere KI richtet Lektionen automatisch an Ihren ausgewählten Standards aus."
+        },
+        "pricing": {
+          "question": "Was kostet Zaza Teach?",
+          "answer": "Wir bieten einen kostenlosen Tarif für den Einstieg, mit Premium-Features über unsere Abonnement-Pläne verfügbar. Besuchen Sie unsere Preisseite für detaillierte Informationen."
+        }
+      },
+      "viewAll": "Alle FAQs anzeigen"
+    },
+    "contactOptions": {
+      "email": {
+        "title": "E-Mail-Support",
+        "description": "Erhalten Sie detaillierte Hilfe per E-Mail. Wir antworten innerhalb von 24 Stunden.",
+        "cta": "E-Mail senden"
+      },
+      "liveChat": {
+        "title": "Live-Chat",
+        "description": "Chatten Sie während der Geschäftszeiten mit unserem Support-Team.",
+        "cta": "Chat starten"
+      },
+      "featureRequest": {
+        "title": "Feature-Anfrage",
+        "description": "Haben Sie eine Idee für eine neue Funktion? Wir würden sie gerne hören!",
+        "cta": "Idee einreichen"
+      }
+    },
+    "supportHours": {
+      "title": "Support-Zeiten",
+      "email": {
+        "title": "E-Mail-Support",
+        "hours": "24/7 - Wir antworten innerhalb von 24 Stunden"
+      },
+      "chat": {
+        "title": "Live-Chat",
+        "hours": "Montag - Freitag, 9:00 - 18:00 MEZ"
+      }
+    }
+  },
+  "quoteWall": {
+    "title": "Zaza Zitate-Wand",
+    "subtitle": "Erfahren Sie von Pädagogen, die ihren Unterricht mit Zaza Teach transformieren",
+    "quotes": [
+      {
+        "text": "Zaza Teach hat völlig verändert, wie ich an die Unterrichtsplanung herangehe. Was früher Stunden gedauert hat, dauert jetzt Minuten, und die Qualität ist gleichbleibend exzellent.",
+        "author": "Sarah Müller",
+        "role": "5. Klasse Lehrerin",
+        "school": "Grundschule am Park"
+      },
+      {
+        "text": "Die Lehrplan-Abstimmungs-Funktion ist ein Game-Changer. Ich weiß, dass jede Lektion den Bildungsstandards entspricht, ohne alles manuell überprüfen zu müssen.",
+        "author": "Michael Weber",
+        "role": "Gymnasium Naturwissenschaftslehrer",
+        "school": "Heinrich-Heine-Gymnasium"
+      },
+      {
+        "text": "Als neue Lehrerin gab mir Zaza Teach Selbstvertrauen in meiner Unterrichtsplanung. Die KI versteht pädagogische Best Practices besser als ich erwartet hatte.",
+        "author": "Emily Schmidt",
+        "role": "2. Klasse Lehrerin",
+        "school": "Waldgrundschule"
+      },
+      {
+        "text": "Ich kann mich endlich auf das konzentrieren, was ich am Unterrichten am meisten liebe - die Verbindung mit meinen Schülern - anstatt Wochenenden mit dem Schreiben von Unterrichtsplänen zu verbringen.",
+        "author": "David Fischer",
+        "role": "Realschule Deutschlehrer",
+        "school": "Geschwister-Scholl-Realschule"
+      },
+      {
+        "text": "Die differenzierten Unterrichts-Optionen haben mir geholfen, jeden Schüler in meiner vielfältigen Klasse zu erreichen. Zaza Teach versteht Bildung wirklich.",
+        "author": "Lisa Hoffmann",
+        "role": "Sonderpädagogin",
+        "school": "Inklusive Schule am See"
+      },
+      {
+        "text": "Ich war skeptisch gegenüber KI in der Bildung, aber Zaza Teach bewies mir das Gegenteil. Es verstärkt mein Lehren, anstatt meine Expertise zu ersetzen.",
+        "author": "Robert Klein",
+        "role": "Geschichtslehrer",
+        "school": "Goethe-Gymnasium"
+      }
+    ],
+    "community": {
+      "title": "Treten Sie unserer Pädagogen-Gemeinschaft bei",
+      "description": "Bereit, Ihre Lehrerfahrung zu transformieren? Treten Sie Tausenden von Pädagogen bei, die bereits die Macht der KI-unterstützten Unterrichtsplanung entdeckt haben.",
+      "tryFree": "Zaza Teach kostenlos testen",
+      "shareStory": "Teilen Sie Ihre Geschichte"
+    }
+  },
+  "mission": {
+    "title": "Unsere Mission | Zaza Teach - Pädagogen stärken",
+    "description": "Erfahren Sie mehr über Zaza Teachs Mission, die Bildung durch KI-gestützte Tools zu transformieren, die Lehrern helfen, ihre Zeit und Leidenschaft für das Unterrichten zurückzugewinnen.",
+    "hero": {
+      "title": "Unterrichten ist inspirierend - aber die Arbeitsbelastung ist überwältigend",
+      "subtitle": "Zu viele Lehrer verbringen Abende und Wochenenden mit Unterrichtsvorbereitung. Zaza Teach hilft Ihnen, diese Zeit zurückzugewinnen, damit Sie sich auf das konzentrieren können, was wirklich zählt - Ihre Schüler."
+    },
+    "empathy": {
+      "paragraph1": "Wir alle haben es gesehen: Lehrer korrigieren um Mitternacht, planen sonntags und jonglieren mit endloser Verwaltung, anstatt Schüler zu inspirieren. Das ist nicht nachhaltig.",
+      "paragraph2": "Zaza Teach wurde gebaut, um das zu ändern. Wir geben Lehrern ihre Abende, ihre Wochenenden und ihre Freude zurück - denn wenn Pädagogen gedeihen, gedeihen auch die Schüler."
+    },
+    "quote": {
+      "text": "Zum ersten Mal seit Jahren hatte ich ein Sonntagsessen mit meiner Familie anstatt Unterrichtspläne zu erstellen.",
+      "author": "Lehrerin der 6. Klasse"
+    },
+    "values": {
+      "title": "Wofür wir stehen",
+      "teacherCentered": {
+        "title": "Lehrerorientiertes Design",
+        "description": "Jede Funktion ist darauf ausgelegt, Stunden von Ihrer Vorbereitungszeit zu sparen. Echte Klassenzimmer-Bedürfnisse leiten unser Design, damit Sie weniger Zeit mit Planung und mehr Zeit mit Unterrichten verbringen."
+      },
+      "qualityEducation": {
+        "title": "Qualitätsbildung",
+        "description": "KI-unterstützt, nicht KI-ersetzt. Ihre Expertise führt, Technologie unterstützt. Wir verstärken menschliche Kreativität und Pädagogik, ersetzen sie niemals."
+      },
+      "privacySecurity": {
+        "title": "Datenschutz & Sicherheit",
+        "description": "Ihre Unterrichtspläne und Schülerdaten gehören Ihnen. Immer privat, immer sicher."
+      },
+      "accessibilityForAll": {
+        "title": "Zugänglichkeit für alle",
+        "description": "Großartige Tools sollten nicht vom Budget oder technischen Know-how abhängen. Zaza Teach ist einfach, erschwinglich und für jeden Pädagogen gemacht."
+      }
+    },
+    "vision": {
+      "title": "Unsere Vision für die Zukunft",
+      "paragraph1": "Wir stellen uns eine Welt vor, in der Lehrer um 16 Uhr schuldgefrei nach Hause gehen, Sonntage mit der Familie verbringen und montags erfrischt zurückkehren.",
+      "paragraph2": "Wenn Lehrer gedeihen, gedeihen Schüler. Das ist die Zukunft, die wir mit Zaza Teach aufbauen."
+    },
+    "cta": {
+      "title": "Holen Sie sich Ihre Zeit zurück",
+      "subtitle": "Testen Sie Zaza Teach heute kostenlos und erleben Sie, wie es sich anfühlt, Unterrichtspläne in Minuten statt Stunden zu erstellen.",
+      "startFree": "Kostenlos starten",
+      "exploreResources": "Ressourcen erkunden"
+    }
+  },
+  "about": {
+    "title": "Über Zaza Teach | Zaza Teach - Von Lehrern für Lehrer",
+    "description": "Erfahren Sie mehr über Zaza Teach - von Lehrern für Lehrer entwickelt, um Zeit, Energie und Leidenschaft für das Wichtigste zurückzugewinnen: Ihre Schüler.",
+    "breadcrumbs": {
+      "home": "Startseite",
+      "about": "Über uns"
+    },
+    "hero": {
+      "title": "Über Zaza Teach",
+      "subtitle": "Von Lehrern für Lehrer entwickelt. Zeit, Energie und Leidenschaft für das zurückgewinnen, was am wichtigsten ist."
+    },
+    "mission": {
+      "title": "Unsere Mission",
+      "paragraph1": "Jeden Sonntagabend sitzen Lehrer auf der ganzen Welt an ihren Küchentischen, Laptops geöffnet, der Kaffee wird kalt, während sie versuchen, Lehrplanstandards in ansprechende Lektionen zu verwandeln. Es ist 2 Uhr morgens, und sie basteln immer noch an differenzierten Aktivitäten, suchen nach den richtigen Ressourcen und fragen sich, ob genug Zeit da ist, um allem gerecht zu werden.",
+      "paragraph2": "Wir kennen diese Geschichte, weil wir sie selbst erlebt haben. Zaza Teach existiert, um das zu ändern.",
+      "promise": {
+        "title": "Unser Versprechen",
+        "content": "Wir glauben, dass Unterrichten ein kreativer, zutiefst menschlicher Beruf ist, der bessere Werkzeuge verdient. Unsere KI-gestützte Unterrichtsplanung gibt Ihnen Ihre Abende, Ihre Wochenenden und Ihre Energie für das zurück, was wirklich zählt: Schüler zu inspirieren."
+      }
+    },
+    "story": {
+      "title": "Unsere Geschichte",
+      "paragraph1": "Zaza Teach entstand aus einer einfachen Beobachtung: Die besten Lehrer verbringen zu viel Zeit mit Logistik und nicht genug Zeit mit dem, was sie außergewöhnlich macht. Nach unzähligen Gesprächen mit Pädagogen, die von administrativen Aufgaben ausgebrannt waren, erkannten wir, dass Technologie die Brillanz der Lehrer verstärken könnte, anstatt sie zu ersetzen.",
+      "quote": {
+        "text": "Früher verbrachte ich jeden Sonntag 4-5 Stunden mit der Planung meiner Woche. Jetzt verbringe ich 30 Minuten damit, KI-generierte Lektionen zu überprüfen und zu personalisieren. Ich habe endlich wieder Zeit, über meine Schüler als Individuen nachzudenken.",
+        "author": "Lehrerin der 4. Klasse, Birmingham"
+      },
+      "paragraph2": "Durch die Kombination von tiefem pädagogischem Verständnis mit modernster KI haben wir Werkzeuge geschaffen, die verstehen, was Lehrer wirklich brauchen: lehrplanausgerichtete Inhalte, die einfach anpassbar sind, zeitsparend ohne Qualitätsverlust und darauf ausgelegt, die menschliche Verbindung im Herzen großartigen Unterrichts zu verstärken, nicht zu vermindern."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "teacherCentered": {
+        "title": "Lehrerorientiertes Design",
+        "description": "Jede Funktion wird mit echten Klassenzimmerbedürfnissen im Kopf entwickelt. Wir fragen Lehrer nicht nur, was sie wollen - wir beobachten, wie sie arbeiten, und bauen Werkzeuge, die natürlich in ihren Arbeitsablauf passen."
+      },
+      "privacyFirst": {
+        "title": "Datenschutz zuerst",
+        "description": "Ihre Unterrichtspläne, Schülerdaten und Unterrichtseinsichten bleiben privat und sicher. Wir glauben, dass geistiges Eigentum von Lehrern den höchsten Schutz verdient."
+      },
+      "aiAssisted": {
+        "title": "KI-unterstützt, nicht KI-ersetzt",
+        "description": "Technologie sollte menschliche Expertise verstärken, nicht ersetzen. Unsere KI übernimmt die schwere Arbeit, damit sich Lehrer auf die unersetzlichen menschlichen Elemente der Bildung konzentrieren können."
+      },
+      "accessibleExcellence": {
+        "title": "Zugängliche Exzellenz",
+        "description": "Leistungsstarke Lehrwerkzeuge sollten keine Luxusartikel sein. Wir sind verpflichtet, weltklasse Unterrichtsplanung für Pädagogen überall zugänglich zu machen."
+      },
+      "inPractice": {
+        "title": "In der Praxis",
+        "content": "Das bedeutet keine Herstellerbindung, transparente Preise und Werkzeuge, die funktionieren, egal ob Sie in einem gut finanzierten Bezirk sind oder jede Ressource strecken, um Ihren Schülern zu dienen."
+      }
+    },
+    "founder": {
+      "title": "Lernen Sie unseren Gründer kennen",
+      "name": "Dr. Greg Blackburn",
+      "role": "Gründer & CEO",
+      "bio": "Dr. Blackburn bringt jahrelange Klassenzimmererfahrung und Expertise in Bildungstechnologie zu Zaza Teach mit. Seine Vision ist einfach: Technologie schaffen, die die Effektivität von Lehrern verstärkt, während die unersetzliche menschliche Verbindung erhalten bleibt, die großartige Bildung möglich macht.",
+      "quote": {
+        "text": "Die besten Lehrer, die ich kenne, sind kreative Problemlöser, die Potenzial in jedem Schüler sehen. Unser Job ist es, ihnen die Zeit und Werkzeuge zu geben, um diese Vision umzusetzen.",
+        "author": "Dr. Greg Blackburn"
+      },
+      "readMore": "Vollständige Geschichte lesen"
+    },
+    "cta": {
+      "title": "Bereit, Ihre Zeit zurückzugewinnen?",
+      "subtitle": "Schließen Sie sich Tausenden von Lehrern an, die entdeckt haben, wie es sich anfühlt, ihre Wochenenden zurückzubekommen und gleichzeitig bessere Lektionen als je zuvor zu liefern.",
+      "startTrial": "Kostenlose Testversion starten",
+      "contactTeam": "Mit unserem Team sprechen"
+    }
   }
 }

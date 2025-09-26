@@ -541,5 +541,121 @@
     "language": "Language",
     "en": "English",
     "de": "German"
+  },
+  "mission": {
+    "title": "Our Mission | Zaza Teach - Empowering Educators",
+    "description": "Learn about Zaza Teach's mission to transform education through AI-powered tools that help teachers reclaim their time and passion for teaching.",
+    "hero": {
+      "title": "Teaching is inspiring - but the workload is overwhelming",
+      "subtitle": "Too many teachers spend nights and weekends buried in lesson prep. Zaza Teach helps you take that time back so you can focus on what really matters - your students."
+    },
+    "empathy": {
+      "paragraph1": "We've all seen it: teachers marking at midnight, planning on Sundays, and juggling endless admin instead of inspiring students. That's not sustainable.",
+      "paragraph2": "Zaza Teach was built to change this. We give teachers back their evenings, their weekends, and their joy - because when educators thrive, students thrive too."
+    },
+    "quote": {
+      "text": "For the first time in years, I had a Sunday dinner with my family instead of lesson planning.",
+      "author": "Year 6 Teacher"
+    },
+    "values": {
+      "title": "What We Stand For",
+      "teacherCentered": {
+        "title": "Teacher-Centered Design",
+        "description": "Every feature is designed to cut hours off your prep time. Real classroom needs guide our design so you spend less time planning and more time teaching."
+      },
+      "qualityEducation": {
+        "title": "Quality Education",
+        "description": "AI-assisted, not AI-replaced. Your expertise leads, technology supports. We enhance human creativity and pedagogy, never replace them."
+      },
+      "privacySecurity": {
+        "title": "Privacy & Security",
+        "description": "Your lesson plans and student data are yours. Always private, always secure."
+      },
+      "accessibilityForAll": {
+        "title": "Accessibility for All",
+        "description": "Great tools shouldn't depend on budget or technical know-how. Zaza Teach is simple, affordable, and made for every educator."
+      }
+    },
+    "vision": {
+      "title": "Our Vision for the Future",
+      "paragraph1": "We imagine a world where teachers walk out at 4pm guilt-free, spend Sundays with family, and return on Monday refreshed.",
+      "paragraph2": "When teachers thrive, students thrive. That's the future we're building with Zaza Teach."
+    },
+    "cta": {
+      "title": "Take back your time",
+      "subtitle": "Try Zaza Teach free today and see how it feels to plan lessons in minutes instead of hours.",
+      "startFree": "Start Free",
+      "exploreResources": "Explore Resources"
+    }
+  },
+  "about": {
+    "title": "About Zaza Teach | Zaza Teach - Made by Teachers, for Teachers",
+    "description": "Learn about Zaza Teach - made by teachers, for teachers. Reclaiming time, energy, and passion for what matters most: your students.",
+    "breadcrumbs": {
+      "home": "Home",
+      "about": "About"
+    },
+    "hero": {
+      "title": "About Zaza Teach",
+      "subtitle": "Made by teachers, for teachers. Reclaiming time, energy, and passion for what matters most."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "paragraph1": "Every Sunday night, teachers across the world sit at their kitchen tables, laptops open, coffee growing cold, trying to turn curriculum standards into engaging lessons. It's 2 AM, and they're still crafting differentiated activities, searching for just the right resources, wondering if there's enough time to do it all justice.",
+      "paragraph2": "We know this story because we've lived it. Zaza Teach exists to change it.",
+      "promise": {
+        "title": "Our Promise",
+        "content": "We believe teaching is a creative, deeply human profession that deserves better tools. Our AI-powered lesson planning gives you back your evenings, your weekends, and your energy for what truly matters: inspiring students."
+      }
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "Zaza Teach was born from a simple observation: the best teachers spend too much time on logistics and not enough time on what makes them exceptional. After countless conversations with educators burned out by administrative overhead, we realized technology could amplify teacher brilliance instead of replacing it.",
+      "quote": {
+        "text": "I used to spend 4-5 hours every Sunday planning my week. Now I spend 30 minutes reviewing and personalizing AI-generated lessons. I finally have time to think about my students as individuals again.",
+        "author": "Year 4 teacher, Birmingham"
+      },
+      "paragraph2": "By combining deep pedagogical understanding with cutting-edge AI, we've created tools that understand what teachers actually need: curriculum-aligned content that's easily customizable, time-saving without sacrificing quality, and designed to enhance rather than diminish the human connection at the heart of great teaching."
+    },
+    "values": {
+      "title": "Our Values",
+      "teacherCentered": {
+        "title": "Teacher-Centered Design",
+        "description": "Every feature is designed with real classroom needs in mind. We don't just ask teachers what they want - we observe how they work and build tools that fit naturally into their workflow."
+      },
+      "privacyFirst": {
+        "title": "Privacy First",
+        "description": "Your lesson plans, student data, and teaching insights remain private and secure. We believe teacher intellectual property deserves the highest protection."
+      },
+      "aiAssisted": {
+        "title": "AI-Assisted, Not AI-Replaced",
+        "description": "Technology should amplify human expertise, not replace it. Our AI handles the heavy lifting so teachers can focus on the irreplaceable human elements of education."
+      },
+      "accessibleExcellence": {
+        "title": "Accessible Excellence",
+        "description": "Powerful teaching tools shouldn't be luxury items. We're committed to making world-class lesson planning accessible to educators everywhere."
+      },
+      "inPractice": {
+        "title": "In Practice",
+        "content": "This means no vendor lock-in, transparent pricing, and tools that work whether you're in a well-funded district or stretching every resource to serve your students."
+      }
+    },
+    "founder": {
+      "title": "Meet Our Founder",
+      "name": "Dr. Greg Blackburn",
+      "role": "Founder & CEO",
+      "bio": "Dr. Blackburn brings years of classroom experience and educational technology expertise to Zaza Teach. His vision is simple: create technology that amplifies teacher effectiveness while preserving the irreplaceable human connection that makes great education possible.",
+      "quote": {
+        "text": "The best teachers I know are creative problem-solvers who see potential in every student. Our job is to give them the time and tools to act on that vision.",
+        "author": "Dr. Greg Blackburn"
+      },
+      "readMore": "Read full story"
+    },
+    "cta": {
+      "title": "Ready to Reclaim Your Time?",
+      "subtitle": "Join thousands of teachers who've discovered what it feels like to have their weekends back while delivering better lessons than ever before.",
+      "startTrial": "Start Your Free Trial",
+      "contactTeam": "Talk to Our Team"
+    }
   }
 }

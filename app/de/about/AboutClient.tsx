@@ -7,11 +7,7 @@ import Callout from '@/components/Callout';
 import PullQuote from '@/components/PullQuote';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-
-const breadcrumbs = [
-  { name: 'Home', item: canonical('/') },
-  { name: 'About', item: canonical('/about') }
-];
+import { useTranslations } from '@/components/LocaleProvider';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -33,6 +29,7 @@ const staggerItem = {
 };
 
 export default function AboutClient() {
+  const t = useTranslations();
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
@@ -53,6 +50,11 @@ export default function AboutClient() {
     }
   };
 
+  const breadcrumbs = [
+    { name: t('about.breadcrumbs.home'), item: canonical('/') },
+    { name: t('about.breadcrumbs.about'), item: canonical('/about') }
+  ];
+
   return (
     <>
       <BreadcrumbsJsonLd items={breadcrumbs} />
@@ -65,67 +67,60 @@ export default function AboutClient() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              About Zaza Teach
+              {t('about.hero.title')}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-[72ch] mx-auto">
-              Made by teachers, for teachers. Reclaiming time, energy, and passion for what matters most.
+              {t('about.hero.subtitle')}
             </p>
           </motion.div>
 
           <div className="space-y-8">
             {/* Mission Section */}
             <SectionCard>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                {t('about.mission.title')}
+              </h2>
               <div className="prose prose-lg prose-slate dark:prose-invert max-w-[72ch]">
                 <p className="text-lg leading-relaxed">
-                  Every Sunday night, teachers across the world sit at their kitchen tables, laptops open, 
-                  coffee growing cold, trying to turn curriculum standards into engaging lessons. It's 2 AM, 
-                  and they're still crafting differentiated activities, searching for just the right resources, 
-                  wondering if there's enough time to do it all justice.
+                  {t('about.mission.paragraph1')}
                 </p>
                 <p className="text-lg leading-relaxed">
-                  We know this story because we've lived it. Zaza Teach exists to change it.
+                  {t('about.mission.paragraph2')}
                 </p>
               </div>
               
-              <Callout tone="mint" title="Our Promise">
-                We believe teaching is a creative, deeply human profession that deserves better tools. 
-                Our AI-powered lesson planning gives you back your evenings, your weekends, 
-                and your energy for what truly matters: inspiring students.
+              <Callout tone="mint" title={t('about.mission.promise.title')}>
+                {t('about.mission.promise.content')}
               </Callout>
             </SectionCard>
 
             {/* Story Section */}
             <SectionCard>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Our Story</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                {t('about.story.title')}
+              </h2>
               <div className="prose prose-lg prose-slate dark:prose-invert max-w-[72ch]">
                 <p className="text-lg leading-relaxed">
-                  Zaza Teach was born from a simple observation: the best teachers spend too much time 
-                  on logistics and not enough time on what makes them exceptional. After countless 
-                  conversations with educators burned out by administrative overhead, we realized 
-                  technology could amplify teacher brilliance instead of replacing it.
+                  {t('about.story.paragraph1')}
                 </p>
               </div>
 
-              <PullQuote cite="Year 4 teacher, Birmingham">
-                I used to spend 4-5 hours every Sunday planning my week. Now I spend 30 minutes 
-                reviewing and personalizing AI-generated lessons. I finally have time to think 
-                about my students as individuals again.
+              <PullQuote cite={t('about.story.quote.author')}>
+                {t('about.story.quote.text')}
               </PullQuote>
 
               <div className="prose prose-lg prose-slate dark:prose-invert max-w-[72ch]">
                 <p className="text-lg leading-relaxed">
-                  By combining deep pedagogical understanding with cutting-edge AI, we've created 
-                  tools that understand what teachers actually need: curriculum-aligned content 
-                  that's easily customizable, time-saving without sacrificing quality, and designed 
-                  to enhance rather than diminish the human connection at the heart of great teaching.
+                  {t('about.story.paragraph2')}
                 </p>
               </div>
             </SectionCard>
 
             {/* Values Section */}
             <SectionCard>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Our Values</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                {t('about.values.title')}
+              </h2>
               <motion.div 
                 className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 variants={staggerContainer}
@@ -134,44 +129,49 @@ export default function AboutClient() {
                 viewport={{ once: true, margin: "-10%" }}
               >
                 <motion.div variants={staggerItem} className="space-y-3">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Teacher-Centered Design</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {t('about.values.teacherCentered.title')}
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Every feature is designed with real classroom needs in mind. We don't just ask teachers 
-                    what they want - we observe how they work and build tools that fit naturally into their workflow.
+                    {t('about.values.teacherCentered.description')}
                   </p>
                 </motion.div>
                 <motion.div variants={staggerItem} className="space-y-3">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Privacy First</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {t('about.values.privacyFirst.title')}
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Your lesson plans, student data, and teaching insights remain private and secure. 
-                    We believe teacher intellectual property deserves the highest protection.
+                    {t('about.values.privacyFirst.description')}
                   </p>
                 </motion.div>
                 <motion.div variants={staggerItem} className="space-y-3">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">AI-Assisted, Not AI-Replaced</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {t('about.values.aiAssisted.title')}
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Technology should amplify human expertise, not replace it. Our AI handles the 
-                    heavy lifting so teachers can focus on the irreplaceable human elements of education.
+                    {t('about.values.aiAssisted.description')}
                   </p>
                 </motion.div>
                 <motion.div variants={staggerItem} className="space-y-3">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Accessible Excellence</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {t('about.values.accessibleExcellence.title')}
+                  </h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Powerful teaching tools shouldn't be luxury items. We're committed to making 
-                    world-class lesson planning accessible to educators everywhere.
+                    {t('about.values.accessibleExcellence.description')}
                   </p>
                 </motion.div>
               </motion.div>
 
-              <Callout tone="lavender" title="In Practice" className="mt-8">
-                This means no vendor lock-in, transparent pricing, and tools that work whether 
-                you're in a well-funded district or stretching every resource to serve your students.
+              <Callout tone="lavender" title={t('about.values.inPractice.title')} className="mt-8">
+                {t('about.values.inPractice.content')}
               </Callout>
             </SectionCard>
 
             {/* Founder Section */}
             <SectionCard>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Meet Our Founder</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                {t('about.founder.title')}
+              </h2>
               <div className="flex flex-col md:flex-row items-start gap-8">
                 <OptimizedImage
                   src="/images/founder/greg-blackburn-headshot.jpg"
@@ -183,21 +183,22 @@ export default function AboutClient() {
                 />
                 <div className="flex-1 space-y-4">
                   <div>
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Dr. Greg Blackburn</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-lg">Founder & CEO</p>
+                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+                      {t('about.founder.name')}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-lg">
+                      {t('about.founder.role')}
+                    </p>
                   </div>
                   
                   <div className="prose prose-lg prose-slate dark:prose-invert max-w-[72ch]">
                     <p className="text-lg leading-relaxed">
-                      Dr. Blackburn brings years of classroom experience and educational technology expertise 
-                      to Zaza Teach. His vision is simple: create technology that amplifies teacher effectiveness 
-                      while preserving the irreplaceable human connection that makes great education possible.
+                      {t('about.founder.bio')}
                     </p>
                   </div>
 
-                  <PullQuote cite="Dr. Greg Blackburn">
-                    The best teachers I know are creative problem-solvers who see potential in every student. 
-                    Our job is to give them the time and tools to act on that vision.
+                  <PullQuote cite={t('about.founder.quote.author')}>
+                    {t('about.founder.quote.text')}
                   </PullQuote>
 
                   <div className="pt-4">
@@ -209,7 +210,7 @@ export default function AboutClient() {
                       whileHover={{ scale: prefersReducedMotion ? 1 : 1.02 }}
                       whileTap={{ scale: prefersReducedMotion ? 1 : 0.98 }}
                     >
-                      Read full story
+                      {t('about.founder.readMore')}
                       <motion.span
                         animate={{ x: prefersReducedMotion ? 0 : [0, 4, 0] }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -257,10 +258,11 @@ export default function AboutClient() {
             {/* CTA Section */}
             <SectionCard>
               <div className="text-center space-y-6">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Ready to Reclaim Your Time?</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  {t('about.cta.title')}
+                </h2>
                 <p className="text-lg text-gray-700 dark:text-gray-300 max-w-[72ch] mx-auto leading-relaxed">
-                  Join thousands of teachers who've discovered what it feels like to have their weekends back 
-                  while delivering better lessons than ever before.
+                  {t('about.cta.subtitle')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <motion.a
@@ -269,7 +271,7 @@ export default function AboutClient() {
                     whileHover={{ scale: prefersReducedMotion ? 1 : 1.05 }}
                     whileTap={{ scale: prefersReducedMotion ? 1 : 0.95 }}
                   >
-                    Start Your Free Trial
+                    {t('about.cta.startTrial')}
                   </motion.a>
                   <motion.a
                     href="/contact"
@@ -277,7 +279,7 @@ export default function AboutClient() {
                     whileHover={{ scale: prefersReducedMotion ? 1 : 1.05 }}
                     whileTap={{ scale: prefersReducedMotion ? 1 : 0.95 }}
                   >
-                    Talk to Our Team
+                    {t('about.cta.contactTeam')}
                   </motion.a>
                 </div>
               </div>

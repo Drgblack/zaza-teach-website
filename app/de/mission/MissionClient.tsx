@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Clock, BookOpen, Lock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useTranslations } from '@/components/LocaleProvider';
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 20 },
@@ -34,6 +35,7 @@ const staggerItem = {
 };
 
 export default function MissionClient() {
+  const t = useTranslations();
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -49,26 +51,26 @@ export default function MissionClient() {
   const values = [
     {
       icon: Clock,
-      title: "Teacher-Centered Design",
-      description: "Every feature is designed to cut hours off your prep time. Real classroom needs guide our design so you spend less time planning and more time teaching.",
+      title: t('mission.values.teacherCentered.title'),
+      description: t('mission.values.teacherCentered.description'),
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: BookOpen,
-      title: "Quality Education",
-      description: "AI-assisted, not AI-replaced. Your expertise leads, technology supports. We enhance human creativity and pedagogy, never replace them.",
+      title: t('mission.values.qualityEducation.title'),
+      description: t('mission.values.qualityEducation.description'),
       color: "from-green-500 to-green-600"
     },
     {
       icon: Lock,
-      title: "Privacy & Security",
-      description: "Your lesson plans and student data are yours. Always private, always secure.",
+      title: t('mission.values.privacySecurity.title'),
+      description: t('mission.values.privacySecurity.description'),
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Users,
-      title: "Accessibility for All",
-      description: "Great tools shouldn't depend on budget or technical know-how. Zaza Teach is simple, affordable, and made for every educator.",
+      title: t('mission.values.accessibilityForAll.title'),
+      description: t('mission.values.accessibilityForAll.description'),
       color: "from-orange-500 to-orange-600"
     }
   ];
@@ -85,10 +87,10 @@ export default function MissionClient() {
           variants={fadeUpVariant}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Teaching is inspiring - but the workload is overwhelming
+            {t('mission.hero.title')}
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Too many teachers spend nights and weekends buried in lesson prep. Zaza Teach helps you take that time back so you can focus on what really matters - your students.
+            {t('mission.hero.subtitle')}
           </p>
         </motion.div>
 
@@ -103,10 +105,10 @@ export default function MissionClient() {
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 md:p-12 border border-gray-100 dark:border-slate-700">
             <div className="prose prose-lg prose-slate dark:prose-invert max-w-none">
               <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200 mb-6">
-                We've all seen it: teachers marking at midnight, planning on Sundays, and juggling endless admin instead of inspiring students. That's not sustainable.
+                {t('mission.empathy.paragraph1')}
               </p>
               <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200">
-                Zaza Teach was built to change this. We give teachers back their evenings, their weekends, and their joy - because when educators thrive, students thrive too.
+                {t('mission.empathy.paragraph2')}
               </p>
             </div>
           </div>
@@ -123,10 +125,10 @@ export default function MissionClient() {
           <figure className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 md:p-12 border-l-4 border-l-primary shadow-lg">
               <blockquote className="text-2xl md:text-3xl italic font-medium text-gray-900 dark:text-white leading-relaxed mb-6">
-                "For the first time in years, I had a Sunday dinner with my family instead of lesson planning."
+                "{t('mission.quote.text')}"
               </blockquote>
               <figcaption className="text-gray-600 dark:text-gray-400 font-medium">
-                Year 6 Teacher
+                {t('mission.quote.author')}
               </figcaption>
             </div>
           </figure>
@@ -144,7 +146,7 @@ export default function MissionClient() {
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
             variants={staggerItem}
           >
-            What We Stand For
+            {t('mission.values.title')}
           </motion.h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -185,14 +187,14 @@ export default function MissionClient() {
         >
           <div className="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-2xl p-8 md:p-12 border border-purple-200 dark:border-purple-800">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-              Our Vision for the Future
+              {t('mission.vision.title')}
             </h2>
             <div className="prose prose-lg prose-slate dark:prose-invert max-w-none text-center">
               <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200 mb-6">
-                We imagine a world where teachers walk out at 4pm guilt-free, spend Sundays with family, and return on Monday refreshed.
+                {t('mission.vision.paragraph1')}
               </p>
               <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200 font-medium">
-                When teachers thrive, students thrive. That's the future we're building with Zaza Teach.
+                {t('mission.vision.paragraph2')}
               </p>
             </div>
           </div>
@@ -208,17 +210,17 @@ export default function MissionClient() {
         >
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 md:p-12 border border-gray-100 dark:border-slate-700">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              Take back your time
+              {t('mission.cta.title')}
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Try Zaza Teach free today and see how it feels to plan lessons in minutes instead of hours.
+              {t('mission.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild size="lg" className="w-full sm:w-auto px-8 py-4 text-lg">
-                <Link href="/pricing">Start Free</Link>
+                <Link href="/pricing">{t('mission.cta.startFree')}</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="w-full sm:w-auto px-8 py-4 text-lg">
-                <Link href="/resources">Explore Resources</Link>
+                <Link href="/resources">{t('mission.cta.exploreResources')}</Link>
               </Button>
             </div>
           </div>
