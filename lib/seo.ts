@@ -119,9 +119,14 @@ export function generateSEOMetadata(config: SEOConfig) {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
     },
     icons: {
-      icon: '/favicon.ico',
-      shortcut: '/favicon-16x16.png',
-      apple: '/apple-touch-icon.png',
+      icon: [
+        { url: '/favicon.ico' },
+        { url: '/icon.png', sizes: '512x512', type: 'image/png' }
+      ],
+      apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
+      other: [
+        { rel: 'mask-icon', url: '/brand/zaza-z-mark.svg', color: '#7C3AED' }
+      ]
     },
     manifest: '/manifest.json',
     openGraph: {

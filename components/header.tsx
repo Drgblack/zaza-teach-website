@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { ChevronDown, Menu, X, Moon, Sun, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
-import OptimizedImage from "@/components/OptimizedImage"
+import { BrandMark } from "@/components/BrandMark"
 import { useTranslations, useLocale, usePathname } from '../components/LocaleProvider'
 
 const Header = () => {
@@ -256,21 +256,14 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Left Section - Logo */}
-          <Link href={`/${locale}`} className="flex items-center space-x-3 group">
+          <div className="flex items-center space-x-3 group">
             <motion.div whileHover={{ scale: 1.05 }}>
-              <OptimizedImage
-                src="/zaza_z_logo.png"
-                alt="Zaza Z Logo"
-                width={32}
-                height={32}
-                className="h-8 w-8 transition-transform group-hover:scale-105"
-                priority={true}
-              />
+              <BrandMark size={32} locale={locale} />
             </motion.div>
             <span className="text-xl font-bold text-slate-800 dark:text-white group-hover:underline transition-all duration-200">
               Zaza Teach
             </span>
-          </Link>
+          </div>
 
           {/* Center Navigation - Desktop */}
           <nav className="hidden lg:flex items-center space-x-8">
