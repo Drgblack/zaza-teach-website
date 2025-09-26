@@ -548,6 +548,82 @@
       "contactUsText": "Für Fragen zu unserer Cookie-Richtlinie kontaktieren Sie uns unter:"
     }
   },
+  "contact": {
+    "title": "Kontaktieren Sie uns | Zaza Teach - Kontakt aufnehmen",
+    "description": "Kontaktieren Sie das Zaza Teach Team. Erhalten Sie Support, stellen Sie Fragen oder teilen Sie Feedback zu unseren KI-gestützten Lehrtools mit.",
+    "pageTitle": "Kontaktieren Sie uns",
+    "subtitle": "Wir würden gerne von Ihnen hören. Senden Sie uns eine Nachricht und wir antworten so schnell wie möglich.",
+    "form": {
+      "title": "Senden Sie uns eine Nachricht",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail-Adresse",
+      "role": "Ihre Rolle",
+      "roleOptions": {
+        "select": "Wählen Sie Ihre Rolle",
+        "teacher": "Lehrer",
+        "administrator": "Administrator",
+        "curriculumCoordinator": "Lehrplan-Koordinator",
+        "instructionalCoach": "Unterrichtscoach",
+        "substituteTeacher": "Vertretungslehrer",
+        "parent": "Elternteil",
+        "student": "Schüler",
+        "researcher": "Forscher",
+        "other": "Andere"
+      },
+      "school": "Schule/Organisation (Optional)",
+      "subject": "Betreff",
+      "subjectOptions": {
+        "select": "Wählen Sie einen Betreff",
+        "generalInquiry": "Allgemeine Anfrage",
+        "technicalSupport": "Technischer Support",
+        "billingQuestion": "Abrechnungsfrage",
+        "featureRequest": "Feature-Anfrage",
+        "partnership": "Partnerschaftsmöglichkeit",
+        "mediaInquiry": "Medienanfrage",
+        "feedback": "Feedback",
+        "other": "Andere"
+      },
+      "message": "Nachricht",
+      "newsletter": "Ich möchte Updates über neue Funktionen und Bildungsressourcen von Zaza Teach erhalten",
+      "sendButton": "Nachricht senden",
+      "placeholders": {
+        "firstName": "Max",
+        "lastName": "Mustermann",
+        "email": "max.mustermann@schule.de",
+        "school": "Grundschule Musterstadt",
+        "message": "Erzählen Sie uns, wie wir Ihnen helfen können..."
+      }
+    },
+    "info": {
+      "getInTouch": "Kontakt aufnehmen",
+      "email": {
+        "title": "E-Mail",
+        "address": "support@zazateach.com",
+        "response": "Wir antworten innerhalb von 24 Stunden"
+      },
+      "chat": {
+        "title": "Live-Chat",
+        "availability": "Verfügbar auf unserer Website",
+        "hours": "Montag - Freitag, 9:00 - 18:00 MEZ"
+      },
+      "responseTime": {
+        "title": "Antwortzeit",
+        "email": "E-Mail: Innerhalb von 24 Stunden",
+        "chat": "Chat: Sofort während der Geschäftszeiten"
+      }
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "description": "Bevor Sie uns kontaktieren, finden Sie Ihre Antwort möglicherweise in unserem umfassenden FAQ-Bereich.",
+      "button": "FAQ besuchen"
+    },
+    "featureIdea": {
+      "title": "🚀 Haben Sie eine Feature-Idee?",
+      "description": "Helfen Sie uns, Zaza Teach zu verbessern, indem Sie Ihre Feature-Wünsche und Vorschläge mit uns teilen.",
+      "button": "Feature-Wunsch einreichen →"
+    }
+  },
   "common": {
     "loading": "Laden...",
     "error": "Ein Fehler ist aufgetreten",
