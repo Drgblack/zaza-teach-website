@@ -3,7 +3,7 @@ title: "KI-Unterrichtsplanung: Revolution für gestresste Lehrer"
 description: "Entdecken Sie, wie KI-gestützte Unterrichtsplanung Ihren Lehreralltag transformieren kann. Von stundenlanger Vorbereitung zu effizienten 5-Minuten-Plänen."
 date: "2025-01-26"
 updated: "2025-01-26"
-image: "/images/blog/ai-lesson-planning-de.jpg"
+image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 tags: ["AI in Education", "Lesson Planning", "Teacher Efficiency", "Educational Technology"]
 readTime: 8
 author: "Dr. Greg Blackburn"
