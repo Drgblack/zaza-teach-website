@@ -499,7 +499,25 @@
       "acceptance": {
         "title": "Annahme der Bedingungen",
         "content": "Durch den Zugriff auf oder die Nutzung von Zaza Teach bestätigen Sie, dass Sie diese Bedingungen gelesen, verstanden und zugestimmt haben, rechtlich daran gebunden zu sein. Wenn Sie nicht zustimmen, stellen Sie die Nutzung bitte sofort ein."
-      }
+      },
+      "serviceDescription": "Servicebeschreibung",
+      "serviceDescriptionText": "Zaza Teach bietet KI-gestützte Unterrichtsplanungstools und Bildungsressourcen für Lehrer und Bildungseinrichtungen. Unser Service umfasst Unterrichtsplangenerierung, Lehrplanausrichtung und Bildungsinhaltsverwaltung.",
+      "userAccount": "Benutzerkonto",
+      "userAccountText": "Sie sind verantwortlich für die Vertraulichkeit Ihrer Kontodaten und für alle Aktivitäten, die unter Ihrem Konto auftreten. Benachrichtigen Sie uns sofort bei unbefugter Nutzung.",
+      "acceptableUse": "Akzeptable Nutzung",
+      "acceptableUseText": "Sie stimmen zu, nicht:",
+      "acceptableUseItems": [
+        "Den Service für rechtswidrige Zwecke oder unter Verletzung dieser Bedingungen zu nutzen",
+        "Zu versuchen, unbefugten Zugang zu unseren Systemen oder anderen Benutzerkonten zu erlangen",
+        "Den Service oder die mit dem Service verbundenen Server zu stören oder zu unterbrechen",
+        "Inhalte hochzuladen, die Urheberrechte verletzen"
+      ],
+      "intellectualProperty": "Geistiges Eigentum",
+      "intellectualPropertyText": "Sie behalten das Eigentum an Inhalten, die Sie erstellen. Wir behalten Rechte an unserer Plattform, Algorithmen und generierten Inhaltsvorlagen. Sie gewähren uns eine Lizenz zur Nutzung Ihrer Inhalte zur Bereitstellung des Service.",
+      "termination": "Kündigung",
+      "terminationText": "Jede Partei kann dieses Abkommen jederzeit kündigen. Nach der Kündigung endet Ihr Zugang, aber diese Bedingungen gelten weiterhin für Ihre vorherige Nutzung des Service.",
+      "contact": "Kontakt",
+      "contactText": "Für Fragen zu diesen Bedingungen kontaktieren Sie uns unter:"
     },
     "cookies": {
       "title": "Cookie-Richtlinie | Zaza Teach", 
@@ -513,7 +531,21 @@
       "whatAreCookies": {
         "title": "Was sind Cookies",
         "content": "Cookies sind kleine Textdateien, die Websites auf Ihrem Gerät platzieren. Sie helfen Websites, sich Ihre Präferenzen und Einstellungen zu merken, um Ihre Erfahrung zu verbessern."
-      }
+      },
+      "essentialCookies": "Essentielle Cookies",
+      "essentialCookiesText": "Erforderlich für grundlegende Website-Funktionalität, Sicherheit und Benutzerauthentifizierung.",
+      "analyticsCookies": "Analyse-Cookies",
+      "analyticsCookiesText": "Helfen uns zu verstehen, wie Sie unsere Website nutzen, um die Benutzererfahrung zu verbessern.",
+      "marketingCookies": "Marketing-Cookies",
+      "marketingCookiesText": "Werden verwendet, um relevante Inhalte zu liefern und die Wirksamkeit von Marketingkampagnen zu verfolgen.",
+      "cookieManagement": "Cookie-Verwaltung",
+      "cookieManagementText": "Sie können Cookie-Einstellungen über Ihre Browser-Einstellungen kontrollieren. Beachten Sie, dass das Deaktivieren von essentiellen Cookies die Website-Funktionalität beeinträchtigen kann.",
+      "thirdPartyCookies": "Drittanbieter-Cookies",
+      "thirdPartyCookiesText": "Wir nutzen vertrauenswürdige Drittanbieter-Services, die möglicherweise ihre eigenen Cookies setzen:",
+      "policyUpdates": "Aktualisierungen der Cookie-Richtlinie",
+      "policyUpdatesText": "Wir können diese Cookie-Richtlinie aktualisieren, um Änderungen in unseren Praktiken oder rechtlichen Anforderungen zu reflektieren. Die fortgesetzte Nutzung unserer Website zeigt die Akzeptanz aller Änderungen an.",
+      "contactUs": "Kontakt",
+      "contactUsText": "Für Fragen zu unserer Cookie-Richtlinie kontaktieren Sie uns unter:"
     }
   },
   "common": {
