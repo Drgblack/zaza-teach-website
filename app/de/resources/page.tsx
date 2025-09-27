@@ -1,10 +1,17 @@
 import { generateSEOMetadata } from '@/lib/seo';
 import { TeachAppJsonLd, BreadcrumbsJsonLd } from '@/components/SEOJsonLd';
 import { siteUrl } from '@/lib/site';
-import ResourcesClient from './ResourcesClient';
+import { Suspense } from 'react';
 
-// Mark as dynamic to avoid SSG issues with translations
-export const dynamic = 'force-dynamic';
+// Dynamic import to avoid SSR issues
+import dynamic from 'next/dynamic';
+
+const ResourcesClient = dynamic(() => import('./ResourcesClient'), {
+  ssr: false,
+  loading: () => <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-600"></div>
+  </div>
+});
 
 export const metadata = generateSEOMetadata({
   title: 'Kostenlose Lehrressourcen | Zaza Teach',
@@ -25,7 +32,13 @@ export default function ResourcesPage() {
     <>
       <TeachAppJsonLd pageUrl={`${siteUrl}/de/resources`} />
       <BreadcrumbsJsonLd items={breadcrumbs} />
-      <ResourcesClient />
+      <Suspense fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-600"></div>
+        </div>
+      }>
+        <ResourcesClient />
+      </Suspense>
     </>
   );
 }
