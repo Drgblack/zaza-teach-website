@@ -10,6 +10,7 @@ export default function ResourcesClient() {
   const isGerman = pathname.startsWith('/de');
   const localePrefix = isGerman ? '/de' : '';
 
+
   const resources = [
     {
       title: t('resources.items.lessonPlan.title'),
