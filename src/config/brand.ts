@@ -8,10 +8,12 @@
 export const brandAssets = {
   // Main logos
   logos: {
-    // Rounded square gradient Z logo (pink to purple)
+    // Real circular gradient Z logo (blue to purple)
     primary: '/zaza_z_logo.png',
-    // Circular gradient Z logo (blue to purple) 
+    // Alternative circular logo
     circular: '/logo.png',
+    // SVG version for scalability
+    svg: '/logo-real.svg',
     // For backwards compatibility
     default: '/zaza_z_logo.png'
   },
@@ -41,12 +43,12 @@ export const brandConfig = {
   shortName: 'Zaza',
   tagline: 'AI Lesson Planning for Educators',
   
-  // Theme colors
+  // Theme colors (based on real Zaza brand)
   colors: {
     primary: '#66B2B2',
     gradient: {
-      from: '#E0115F', // Deep pink
-      to: '#8A2BE2'    // Blue violet
+      from: '#5B9BD5', // Blue (real brand start)
+      to: '#8E44AD'    // Purple (real brand end)
     }
   },
   
