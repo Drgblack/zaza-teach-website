@@ -8,11 +8,11 @@
 export const brandAssets = {
   // Main logos
   logos: {
-    // Real circular gradient Z logo (blue to purple)
+    // Real square gradient Z logo (pink to purple)
     primary: '/zaza_z_logo.png',
-    // Alternative circular logo
-    circular: '/logo.png',
-    // SVG version for scalability
+    // Alternative logo
+    secondary: '/logo.png',
+    // SVG version for scalability (deprecated)
     svg: '/logo-real.svg',
     // For backwards compatibility
     default: '/zaza_z_logo.png'
@@ -47,8 +47,8 @@ export const brandConfig = {
   colors: {
     primary: '#66B2B2',
     gradient: {
-      from: '#5B9BD5', // Blue (real brand start)
-      to: '#8E44AD'    // Purple (real brand end)
+      from: '#FF4081', // Pink (real brand start)
+      to: '#9C27B0'    // Purple (real brand end)
     }
   },
   
