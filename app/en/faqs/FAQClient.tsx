@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-import { ChevronDown, Search, MessageCircle, Book, Shield, Users } from 'lucide-react';
+import { ChevronDown, Search, MessageCircle, Book, Shield, Users, UserCheck } from 'lucide-react';
 
 const iconMap = {
   Book,
   MessageCircle,
   Users,
-  Shield
+  Shield,
+  UserCheck
 };
 
 interface FAQ {
@@ -63,9 +64,10 @@ const FAQItem = ({ faq, isOpen, onClick, itemId }: { faq: FAQ, isOpen: boolean, 
         aria-labelledby={`faq-question-${itemId}`}
       >
         <div className="px-6 pb-5 bg-gray-50">
-          <p className="text-gray-700 leading-relaxed">
-            {faq.a}
-          </p>
+          <div 
+            className="text-gray-700 leading-relaxed prose prose-sm max-w-none prose-a:text-purple-600 prose-a:hover:text-purple-800 prose-a:no-underline hover:prose-a:underline"
+            dangerouslySetInnerHTML={{ __html: faq.a }}
+          />
         </div>
       </div>
     </div>
@@ -137,7 +139,7 @@ export default function FAQClient({ faqCategories }: FAQClientProps) {
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
           {faqCategories.map((category, index) => {
             const Icon = iconMap[category.icon as keyof typeof iconMap];
             return (

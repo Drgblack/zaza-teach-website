@@ -103,6 +103,17 @@ const faqCategories = [
         a: 'We continuously improve Zaza Teach with regular updates, new features, and enhanced AI capabilities based on user feedback.'
       }
     ]
+  },
+  {
+    category: 'About Zaza & the Founder',
+    icon: 'UserCheck',
+    color: 'purple',
+    faqs: [
+      {
+        q: 'Who is behind Zaza Teach, and why should educators trust it?',
+        a: 'Zaza Teach is led by <strong>Dr. Greg Blackburn</strong>, an education and learning-technology specialist with over 20 years\' experience. Greg holds a PhD in Professional Education (City, University of London), an MBA (University of Queensland), and a Bachelor of Information Systems (Honours) (University of Tasmania). He has published research on critical thinking and student-centred e-learning and currently serves as Chief Learning Officer at Communardo in Germany.<br><br>Zaza is built on a pedagogy-first approach: privacy-respecting design, human-in-the-loop controls, transparent AI prompts, and curriculum-aligned outputs. Our goal is simple-help teachers thrive by saving time without compromising professional quality.<br><br>Learn more on our <a href="/about">About page</a> and see how we handle data on our <a href="/privacy">Privacy page</a>.'
+      }
+    ]
   }
 ];
 
