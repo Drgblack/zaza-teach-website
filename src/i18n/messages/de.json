@@ -112,6 +112,35 @@
         "role": "Gründer & Leitender Pädagoge"
       }
     },
+    "carousel": {
+      "teachers": [
+        {
+          "name": "Fr. Elena Rodriguez",
+          "subject": "Grundschul-Mathematik",
+          "quote": "Zaza Teach gibt mir meine Abende zurück und hält meinen Unterricht interessant"
+        },
+        {
+          "name": "Hr. David Chen",
+          "subject": "Gymnasium Naturwissenschaften",
+          "quote": "Von 3 Stunden auf 5 Minuten - dieses Tool verändert alles"
+        },
+        {
+          "name": "Fr. Aisha Thompson",
+          "subject": "Mittelschul-Englisch",
+          "quote": "Endlich Unterrichtsplanung, die Kreativität fördert statt sie zu töten"
+        },
+        {
+          "name": "Fr. Rebecca Walsh",
+          "subject": "Grundschul-Kunst & Musik",
+          "quote": "Meine Schüler bekommen kreativere Stunden und ich bekomme mein Wochenende zurück"
+        },
+        {
+          "name": "Hr. James Foster",
+          "subject": "Gymnasium Geschichte",
+          "quote": "Professionelle Unterrichtsstunden ohne nächtlichen Stress"
+        }
+      ]
+    },
     "testimonials": {
       "title": "Was Lehrer sagen",
       "quotes": [

@@ -20,38 +20,58 @@ export default function HomePage() {
     return Array.isArray(result) ? result : fallback;
   };
   
-  const teachers = [
-    {
-      name: "Ms. Elena Rodriguez",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-      subject: "Elementary Mathematics",
-      quote: "Zaza Teach gives me my evenings back while keeping my lessons engaging"
-    },
-    {
-      name: "Mr. David Chen", 
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-      subject: "High School Science",
-      quote: "From 3 hours to 5 minutes - this tool is a game changer"
-    },
-    {
-      name: "Ms. Aisha Thompson",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80", 
-      subject: "Middle School English",
-      quote: "Finally, lesson planning that sparks creativity instead of killing it"
-    },
-    {
-      name: "Ms. Rebecca Walsh",
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-      subject: "Elementary Art & Music",
-      quote: "My students get more creative lessons, and I get my weekend back"
-    },
-    {
-      name: "Mr. James Foster",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-      subject: "High School History",
-      quote: "Professional-quality lessons without the late-night stress"
+  // Get teachers from translations with fallback to English
+  const getTeachers = () => {
+    const carouselTeachers = t('home.carousel.teachers');
+    if (Array.isArray(carouselTeachers) && carouselTeachers.length > 0) {
+      return carouselTeachers.map((teacher, index) => ({
+        ...teacher,
+        image: [
+          "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+          "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+          "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+        ][index]
+      }));
     }
-  ];
+    
+    // Fallback to English
+    return [
+      {
+        name: "Ms. Elena Rodriguez",
+        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        subject: "Elementary Mathematics",
+        quote: "Zaza Teach gives me my evenings back while keeping my lessons engaging"
+      },
+      {
+        name: "Mr. David Chen", 
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        subject: "High School Science",
+        quote: "From 3 hours to 5 minutes - this tool is a game changer"
+      },
+      {
+        name: "Ms. Aisha Thompson",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80", 
+        subject: "Middle School English",
+        quote: "Finally, lesson planning that sparks creativity instead of killing it"
+      },
+      {
+        name: "Ms. Rebecca Walsh",
+        image: "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        subject: "Elementary Art & Music",
+        quote: "My students get more creative lessons, and I get my weekend back"
+      },
+      {
+        name: "Mr. James Foster",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+        subject: "High School History",
+        quote: "Professional-quality lessons without the late-night stress"
+      }
+    ];
+  };
+
+  const teachers = getTeachers();
 
   // Auto-rotate slides every 4 seconds (for both hero and testimonial carousels)
   useEffect(() => {
