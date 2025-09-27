@@ -21,7 +21,8 @@ export default function WhyNotChatGPTClient() {
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <div className="prose prose-lg max-w-none text-gray-700">
             <p className="text-lg mb-8">
-              Es ist eine berechtigte Frage! ChatGPT und andere allgemeine KI-Tools sind beeindruckend, aber sie wurden nicht speziell für Pädagogen entwickelt. Hier ist, warum Zaza Teach etwas grundlegend Anderes bietet:
+              It's a fair question! ChatGPT and other general AI tools are impressive, but they weren't designed 
+              specifically for educators. Here's why Zaza Teach offers something fundamentally different:
             </p>
 
             {/* ChatGPT Limitations */}
@@ -61,7 +62,7 @@ export default function WhyNotChatGPTClient() {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="bg-gray-100">
-                      <th className="border p-3 text-left">Aufgabe</th>
+                      <th className="border p-3 text-left">Task</th>
                       <th className="border p-3 text-left">{t('whyNotChatgpt.sections.comparison.chatgpt')}</th>
                       <th className="border p-3 text-left">{t('whyNotChatgpt.sections.comparison.zaza')}</th>
                     </tr>
@@ -104,13 +105,13 @@ export default function WhyNotChatGPTClient() {
               </p>
               <div className="space-x-4">
                 <Link 
-                  href="/de"
+                  href="/en"
                   className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors"
                 >
                   {t('whyNotChatgpt.sections.cta.tryFree')}
                 </Link>
                 <Link 
-                  href="/de/products"
+                  href="/en/products"
                   className="inline-block bg-purple-100 text-purple-700 px-6 py-3 rounded-lg font-medium hover:bg-purple-200 transition-colors"
                 >
                   {t('whyNotChatgpt.sections.cta.learnMore')}

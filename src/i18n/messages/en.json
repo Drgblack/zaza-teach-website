@@ -832,5 +832,75 @@
       "description": "Sometimes it helps to talk through your idea before submitting a formal request.",
       "cta": "Contact Our Team"
     }
+  },
+  "whyNotChatgpt": {
+    "title": "Why Not ChatGPT? | Zaza Teach - Built for Educators",
+    "description": "Discover why Zaza Teach is purpose-built for teachers, offering curriculum alignment, educational expertise, and privacy that generic AI tools lack.",
+    "pageTitle": "Why Not Just Use ChatGPT?",
+    "subtitle": "Understanding the difference between generic AI and purpose-built educational tools",
+    "sections": {
+      "chatgptLimitations": {
+        "title": "ChatGPT Limitations for Teachers",
+        "items": [
+          "Requires prompt engineering expertise",
+          "No curriculum alignment or standards mapping",
+          "No education-specific templates or structures",
+          "No understanding of pedagogical best practices",
+          "Limited formatting and export options",
+          "No integration with school systems",
+          "Privacy and security concerns for educational institutions"
+        ]
+      },
+      "zazaAdvantages": {
+        "title": "Zaza Teach Advantages",
+        "items": [
+          "Built for educators, tested with teachers",
+          "Automatic curriculum standards alignment",
+          "Pre-built lesson plan templates and structures",
+          "Pedagogical expertise built into every algorithm",
+          "Professional export formats (Word, PDF) ready for classroom use",
+          "FERPA-compliant security and privacy",
+          "Seamless integration with educational tools"
+        ]
+      },
+      "comparison": {
+        "title": "Direct Comparison",
+        "chatgpt": "With ChatGPT",
+        "zaza": "With Zaza Teach",
+        "items": [
+          {
+            "task": "Create lesson plan",
+            "chatgpt": "30+ minutes of prompt engineering and formatting",
+            "zaza": "2-3 minutes with professional templates"
+          },
+          {
+            "task": "Standards alignment",
+            "chatgpt": "Manual research and mapping required",
+            "zaza": "Automatically aligned with your curriculum selection"
+          },
+          {
+            "task": "Lesson plan format",
+            "chatgpt": "Plain text, requires significant post-processing",
+            "zaza": "Professional, print-ready formats"
+          },
+          {
+            "task": "Pedagogical accuracy",
+            "chatgpt": "Hit-or-miss, requires expert knowledge to verify",
+            "zaza": "Built on proven teaching practices and educational theory"
+          }
+        ]
+      },
+      "realTeacher": {
+        "title": "Real Teacher Experience",
+        "quote": "I tried using ChatGPT for lesson planning for months. It was frustrating - I spent more time training the AI than I would have writing the plan myself. Zaza Teach just understands what teachers need.",
+        "author": "Sarah M., Elementary Teacher"
+      },
+      "cta": {
+        "title": "Ready to Experience the Difference Yourself?",
+        "description": "See why thousands of teachers have switched from generic AI tools to Zaza Teach - the only AI platform purpose-built for education.",
+        "tryFree": "Try Zaza Teach Free",
+        "learnMore": "Learn More About Our Features"
+      }
+    }
   }
 }
