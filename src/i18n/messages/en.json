@@ -767,5 +767,70 @@
       "startTrial": "Start Your Free Trial",
       "contactTeam": "Talk to Our Team"
     }
+  },
+  "featureRequest": {
+    "title": "Feature Request | Zaza Teach - Help Us Improve",
+    "description": "Submit feature requests and suggestions to help us make Zaza Teach even better for educators. Your input shapes our development roadmap.",
+    "pageTitle": "Feature Request",
+    "subtitle": "Help us build the teaching tools you need. Your ideas drive our innovation.",
+    "form": {
+      "title": "Request a New Feature",
+      "name": "Your Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@school.edu",
+      "role": "Your Role",
+      "roleOptions": {
+        "select": "Select your role",
+        "teacher": "Teacher",
+        "administrator": "Administrator",
+        "curriculumCoordinator": "Curriculum Coordinator",
+        "instructionalCoach": "Instructional Coach",
+        "substituteTeacher": "Substitute Teacher",
+        "other": "Other"
+      },
+      "gradeLevel": "Grade Level/Subject (if applicable)",
+      "gradeLevelPlaceholder": "e.g., 3rd Grade, High School Math, K-5",
+      "featureTitle": "Feature Title",
+      "featureTitlePlaceholder": "Brief, descriptive title for your feature idea",
+      "priority": "Priority Level",
+      "priorityOptions": {
+        "select": "Select priority",
+        "low": "Nice to have",
+        "medium": "Would be helpful",
+        "high": "Really need this",
+        "critical": "Can't work without it"
+      },
+      "description": "Detailed Description",
+      "descriptionPlaceholder": "Describe the feature you'd like to see. What problem would it solve? How would you use it?",
+      "useCase": "Use Case Example",
+      "useCasePlaceholder": "Walk us through a specific scenario where you'd use this feature",
+      "currentWorkaround": "How do you currently handle this? (Optional)",
+      "currentWorkaroundPlaceholder": "What's your current process or workaround for this need?",
+      "submit": "Submit Feature Request"
+    },
+    "guidelines": {
+      "title": "What Makes a Great Feature Request",
+      "items": [
+        "Clear problem description",
+        "Specific use case examples",
+        "Explanation of current pain points",
+        "Ideas for how it might work"
+      ]
+    },
+    "process": {
+      "title": "Our Development Process",
+      "items": [
+        "We review all requests within 48 hours",
+        "Popular features get prioritized",
+        "You'll get updates on development progress",
+        "Beta testing opportunities for contributors"
+      ]
+    },
+    "discuss": {
+      "title": "Want to Discuss Your Idea First?",
+      "description": "Sometimes it helps to talk through your idea before submitting a formal request.",
+      "cta": "Contact Our Team"
+    }
   }
 }

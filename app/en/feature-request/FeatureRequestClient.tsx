@@ -59,13 +59,13 @@ export default function FeatureRequestClient() {
                 name="role"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               >
-                <option value="">{t('featureRequest.form.role.options.select')}</option>
-                <option value="teacher">{t('featureRequest.form.role.options.teacher')}</option>
-                <option value="administrator">{t('featureRequest.form.role.options.administrator')}</option>
-                <option value="curriculum-coordinator">{t('featureRequest.form.role.options.curriculumCoordinator')}</option>
-                <option value="instructional-coach">{t('featureRequest.form.role.options.instructionalCoach')}</option>
-                <option value="substitute-teacher">{t('featureRequest.form.role.options.substituteTeacher')}</option>
-                <option value="other">{t('featureRequest.form.role.options.other')}</option>
+                <option value="">{t('featureRequest.form.roleOptions.select')}</option>
+                <option value="teacher">{t('featureRequest.form.roleOptions.teacher')}</option>
+                <option value="administrator">{t('featureRequest.form.roleOptions.administrator')}</option>
+                <option value="curriculum-coordinator">{t('featureRequest.form.roleOptions.curriculumCoordinator')}</option>
+                <option value="instructional-coach">{t('featureRequest.form.roleOptions.instructionalCoach')}</option>
+                <option value="substitute-teacher">{t('featureRequest.form.roleOptions.substituteTeacher')}</option>
+                <option value="other">{t('featureRequest.form.roleOptions.other')}</option>
               </select>
             </div>
 
@@ -104,11 +104,11 @@ export default function FeatureRequestClient() {
                 name="priority"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               >
-                <option value="">{t('featureRequest.form.priority.options.select')}</option>
-                <option value="low">{t('featureRequest.form.priority.options.low')}</option>
-                <option value="medium">{t('featureRequest.form.priority.options.medium')}</option>
-                <option value="high">{t('featureRequest.form.priority.options.high')}</option>
-                <option value="critical">{t('featureRequest.form.priority.options.critical')}</option>
+                <option value="">{t('featureRequest.form.priorityOptions.select')}</option>
+                <option value="low">{t('featureRequest.form.priorityOptions.low')}</option>
+                <option value="medium">{t('featureRequest.form.priorityOptions.medium')}</option>
+                <option value="high">{t('featureRequest.form.priorityOptions.high')}</option>
+                <option value="critical">{t('featureRequest.form.priorityOptions.critical')}</option>
               </select>
             </div>
 
@@ -194,7 +194,7 @@ export default function FeatureRequestClient() {
             {t('featureRequest.discuss.description')}
           </p>
           <Link
-            href="/de/contact"
+            href="/en/contact"
             className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors"
           >
             {t('featureRequest.discuss.cta')}
