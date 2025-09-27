@@ -312,8 +312,118 @@
     "updatedOn": "Updated"
   },
   "faq": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Find answers to common questions about Zaza Teach"
+    "pageTitle": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about Zaza Teach. Can't find what you're looking for?",
+    "contactSupport": "Contact our support team",
+    "searchPlaceholder": "Search FAQs...",
+    "question": "question",
+    "questions": "questions",
+    "noResults": {
+      "title": "No results found",
+      "description": "Try searching with different keywords or browse our categories above.",
+      "clearSearch": "Clear Search"
+    },
+    "stillHaveQuestions": {
+      "title": "Still have questions?",
+      "description": "Our support team is here to help you get the most out of Zaza Teach.",
+      "contactSupport": "Contact Support",
+      "visitHelpCenter": "Visit Help Center"
+    },
+    "categories": {
+      "gettingStarted": {
+        "title": "Getting Started",
+        "faqs": [
+          {
+            "q": "What is Zaza Teach?",
+            "a": "Zaza Teach is an AI-powered lesson planning tool designed specifically for educators. It helps teachers create curriculum-aligned lesson plans in minutes, not hours, while maintaining high quality and educational standards."
+          },
+          {
+            "q": "How does Zaza Teach work?",
+            "a": "Simply input your teaching requirements like subject, grade level, and learning objectives. Our AI generates a complete lesson plan with activities, assessments, and resources. You can customize and export everything to fit your exact needs."
+          },
+          {
+            "q": "Is there a free version?",
+            "a": "Yes! We offer a free tier that includes 5 lesson plans per month. This lets you experience the power of AI lesson planning before upgrading to unlimited access."
+          },
+          {
+            "q": "What do I need to get started?",
+            "a": "Just an internet connection and web browser. Zaza Teach is completely web-based - no downloads or installations required. Create your account and start planning lessons immediately."
+          }
+        ]
+      },
+      "featuresAndFunctionality": {
+        "title": "Features & Functionality",
+        "faqs": [
+          {
+            "q": "What grade levels does Zaza Teach support?",
+            "a": "Zaza Teach supports all grade levels from early childhood (K-2) through high school (9-12). Our AI is trained on curriculum standards for each level to ensure age-appropriate content and activities."
+          },
+          {
+            "q": "Can I export my lesson plans?",
+            "a": "Absolutely! Export your lesson plans as PDF, Word documents, or copy directly to your preferred platform. All formatting is preserved and ready for classroom use or sharing with colleagues."
+          },
+          {
+            "q": "Which subjects are supported?",
+            "a": "We support all core subjects including Mathematics, English Language Arts, Science, Social Studies, plus specialized areas like Arts, Physical Education, and Foreign Languages. New subjects are added regularly."
+          },
+          {
+            "q": "How customizable are the lesson plans?",
+            "a": "Highly customizable! Adjust learning objectives, modify activities, change assessment methods, and add your own resources. The AI provides a strong foundation that you can tailor to your teaching style and student needs."
+          },
+          {
+            "q": "How accurate is the AI?",
+            "a": "Our AI is trained on curriculum standards and pedagogical best practices. While highly accurate, we always recommend teacher review and customization. You maintain full control over the final lesson plan."
+          },
+          {
+            "q": "Is Zaza Teach available in multiple languages?",
+            "a": "Currently available in English and German, with more languages planned. The interface and generated content can be customized for different educational systems and cultural contexts."
+          }
+        ]
+      },
+      "collaborationAndSupport": {
+        "title": "Collaboration & Support",
+        "faqs": [
+          {
+            "q": "Can I share lesson plans with other teachers?",
+            "a": "Yes! Share lesson plans directly with colleagues, export to common formats, or contribute to our community library. Collaboration features help departments and grade-level teams work together more effectively."
+          },
+          {
+            "q": "Does Zaza Teach work for homeschooling parents?",
+            "a": "Absolutely! Many homeschooling families use Zaza Teach to create structured, curriculum-aligned lessons. The tool is designed to be intuitive for educators at all levels, including parents teaching at home."
+          },
+          {
+            "q": "What support options are available?",
+            "a": "We offer comprehensive support including video tutorials, detailed documentation, email support, and live chat during business hours. Premium users get priority support and one-on-one onboarding sessions."
+          },
+          {
+            "q": "Does Zaza Teach integrate with LMS platforms?",
+            "a": "Yes! We integrate with popular Learning Management Systems like Google Classroom, Canvas, and Blackboard. Export lesson plans directly to your LMS or use our API for custom integrations."
+          }
+        ]
+      },
+      "securityAndPrivacy": {
+        "title": "Security & Privacy",
+        "faqs": [
+          {
+            "q": "How secure is my data?",
+            "a": "We use enterprise-grade security including SSL encryption, secure cloud hosting, and regular security audits. Your lesson plans and personal information are protected with the same standards used by major educational institutions."
+          },
+          {
+            "q": "How often is content updated?",
+            "a": "Our AI models and curriculum databases are updated quarterly to reflect the latest educational standards, teaching practices, and subject matter developments. You always have access to current, relevant content."
+          }
+        ]
+      },
+      "aboutFounderAndCompany": {
+        "title": "About Zaza & the Founder",
+        "faqs": [
+          {
+            "q": "Who is behind Zaza Teach, and why should educators trust it?",
+            "a": "Zaza Teach is led by <strong>Dr. Greg Blackburn</strong>, an education and learning-technology specialist with over 20 years' experience. Greg holds a PhD in Professional Education (City, University of London), an MBA (University of Queensland), and a Bachelor of Information Systems (Honours) (University of Tasmania). He has published research on critical thinking and student-centred e-learning and currently serves as Chief Learning Officer at Communardo in Germany.<br><br>Zaza is built on a pedagogy-first approach: privacy-respecting design, human-in-the-loop controls, transparent AI prompts, and curriculum-aligned outputs. Our goal is simple—help teachers thrive by saving time without compromising professional quality.<br><br>Learn more on our <a href=\"/about\">About page</a> and see how we handle data on our <a href=\"/privacy\">Privacy page</a>."
+          }
+        ]
+      }
+    }
   },
   "aboutFounder": {
     "title": "About the Founder - Zaza Teach",
