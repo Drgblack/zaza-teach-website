@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { LocaleProvider } from '../../components/LocaleProvider';
 import { ErrorBoundary } from '../../components/ErrorBoundary';
-import SiteFooter from "../../components/SiteFooter";
+import Footer from "../../components/Footer";
 import Header from '../../components/header';
 import { SkipLink } from '../../components/SkipLink';
 import GoogleAnalytics from '../../components/GoogleAnalytics';
@@ -49,7 +49,7 @@ export default async function EnglishLayout({
                 {children}
               </ErrorBoundary>
             </main>
-            <SiteFooter />
+            <Footer variant="teach" />
           </LocaleProvider>
         </ErrorBoundary>
       </body>
