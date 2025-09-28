@@ -902,5 +902,51 @@
         "learnMore": "Learn More About Our Features"
       }
     }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find the page you're looking for. But don't worry, there's plenty of great content to explore!",
+    "popularResources": {
+      "title": "Popular Resources",
+      "description": "Check out our most popular teaching resources",
+      "lessonPlanTemplates": {
+        "title": "→ Lesson Plan Templates",
+        "description": "Ready-to-use templates for any subject"
+      },
+      "aiTeachingPrompts": {
+        "title": "→ AI Teaching Prompts",
+        "description": "Smart prompts for educational AI tools"
+      },
+      "assessmentRubrics": {
+        "title": "→ Assessment Rubrics",
+        "description": "Fair and comprehensive grading guides"
+      }
+    },
+    "latestBlogPosts": {
+      "title": "Latest Blog Posts",
+      "description": "Discover insights and tips from our blog",
+      "teachingBlog": {
+        "title": "→ Teaching Blog",
+        "description": "Latest articles on modern teaching methods"
+      },
+      "aboutMission": {
+        "title": "→ About Our Mission",
+        "description": "Learn how we're revolutionizing education"
+      },
+      "teacherSuccessStories": {
+        "title": "→ Teacher Success Stories",
+        "description": "Inspiring quotes from our community"
+      }
+    },
+    "buttons": {
+      "goHome": "Go Home",
+      "browseResources": "Browse Resources",
+      "contactSupport": "Contact Support",
+      "goBack": "Go Back"
+    },
+    "searchMessage": "Looking for something specific? Try our",
+    "searchFeature": "search feature",
+    "or": "or",
+    "getInTouch": "get in touch"
   }
 }

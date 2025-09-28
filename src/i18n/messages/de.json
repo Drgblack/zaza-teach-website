@@ -340,7 +340,7 @@
     "publishedOn": "Veröffentlicht",
     "updatedOn": "Aktualisiert"
   },
-  "faq": {
+  "faqSection": {
     "title": "Häufig gestellte Fragen",
     "subtitle": "Finden Sie Antworten auf häufige Fragen zu Zaza Teach"
   },
@@ -1249,23 +1249,23 @@
     }
   },
   "resources": {
-      "title": "Kostenlose Lehrressourcen",
-      "description": "Laden Sie kostenlose Lehrressourcen, Unterrichtsplan-Vorlagen und Bildungs-PDFs von Zaza Teach herunter.",
-      "hero": {
+    "title": "Kostenlose Lehrressourcen",
+    "description": "Laden Sie kostenlose Lehrressourcen, Unterrichtsplan-Vorlagen und Bildungs-PDFs von Zaza Teach herunter.",
+    "hero": {
         "badge": "Kostenlose Ressourcen",
         "title": "Lehrressourcen",
         "subtitle": "Professionelle Vorlagen und Leitfäden, die Ihnen Zeit sparen und Ihre Unterrichtseffektivität steigern",
         "note": "Klicken Sie auf eine beliebige Ressource, um sie als PDF anzuzeigen und zu drucken"
-      },
-      "categories": {
+    },
+    "categories": {
         "planning": "Planung",
         "assessment": "Bewertung",
         "management": "Verwaltung",
         "activities": "Aktivitäten",
         "aiTools": "KI-Tools",
         "productivity": "Produktivität"
-      },
-      "items": {
+    },
+    "items": {
         "lessonPlan": {
           "title": "Unterrichtsplan-Vorlage",
           "description": "Eine umfassende Vorlage für die Erstellung strukturierter Unterrichtspläne mit allen wesentlichen Komponenten."
@@ -1290,9 +1290,9 @@
           "title": "Zeitsparende Lehrer-Checkliste",
           "description": "Wöchentliche und tägliche Checklisten zur Rationalisierung Ihres Arbeitsablaufs und Maximierung der Effizienz."
         }
-      },
-      "viewPrint": "Anzeigen & Drucken",
-      "bottomCta": {
+    },
+    "viewPrint": "Anzeigen & Drucken",
+    "bottomCta": {
         "title": "Benötigen Sie mehr Ressourcen?",
         "description": "Treten Sie Zaza Teach bei, um Zugang zu unserer vollständigen Bibliothek von KI-gestützten Unterrichtsplanungstools und Premium-Ressourcen zu erhalten.",
         "startTrial": "Kostenlose Testversion starten",
@@ -1365,5 +1365,51 @@
         },
         "footer": "Kostenlose Ressource von Zaza Teach • Besuchen Sie zazateach.com für weitere Ressourcen"
       }
-    }
+    },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Entschuldigung, wir konnten die gesuchte Seite nicht finden. Aber keine Sorge, es gibt viele großartige Inhalte zu entdecken!",
+    "popularResources": {
+      "title": "Beliebte Ressourcen",
+      "description": "Schauen Sie sich unsere beliebtesten Lehrressourcen an",
+      "lessonPlanTemplates": {
+        "title": "→ Unterrichtsplan-Vorlagen",
+        "description": "Sofort einsetzbare Vorlagen für jedes Fach"
+      },
+      "aiTeachingPrompts": {
+        "title": "→ KI-Lehr-Prompts",
+        "description": "Intelligente Prompts für Bildungs-KI-Tools"
+      },
+      "assessmentRubrics": {
+        "title": "→ Bewertungsraster",
+        "description": "Faire und umfassende Bewertungsleitfäden"
+      }
+    },
+    "latestBlogPosts": {
+      "title": "Neueste Blog-Beiträge",
+      "description": "Entdecken Sie Einblicke und Tipps aus unserem Blog",
+      "teachingBlog": {
+        "title": "→ Lehr-Blog",
+        "description": "Neueste Artikel zu modernen Lehrmethoden"
+      },
+      "aboutMission": {
+        "title": "→ Über unsere Mission",
+        "description": "Erfahren Sie, wie wir die Bildung revolutionieren"
+      },
+      "teacherSuccessStories": {
+        "title": "→ Lehrer-Erfolgsgeschichten",
+        "description": "Inspirierende Zitate aus unserer Gemeinschaft"
+      }
+    },
+    "buttons": {
+      "goHome": "Zur Startseite",
+      "browseResources": "Ressourcen durchsuchen",
+      "contactSupport": "Support kontaktieren",
+      "goBack": "Zurück"
+    },
+    "searchMessage": "Suchen Sie nach etwas Bestimmtem? Probieren Sie unsere",
+    "searchFeature": "Suchfunktion",
+    "or": "oder",
+    "getInTouch": "kontaktieren Sie uns"
   }
+}

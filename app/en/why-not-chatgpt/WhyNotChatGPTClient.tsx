@@ -91,7 +91,7 @@ export default function WhyNotChatGPTClient() {
                 "{t('whyNotChatgpt.sections.realTeacher.quote')}"
               </blockquote>
               <p className="text-blue-700 text-sm">
-                — {t('whyNotChatgpt.sections.realTeacher.author')}
+                - {t('whyNotChatgpt.sections.realTeacher.author')}
               </p>
             </div>
 
