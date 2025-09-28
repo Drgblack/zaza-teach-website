@@ -40,7 +40,18 @@ export default function CallToActionSection({
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     // Redirect to signup with email pre-filled
-    window.location.href = `/signup${email ? `?email=${encodeURIComponent(email)}` : ''}`;
+    const signupUrl = process.env.NEXT_PUBLIC_SIGNUP_URL || 'https://app.zazateach.com/signup';
+    const params = new URLSearchParams({
+      utm_source: 'marketing',
+      utm_medium: 'cta_section',
+      utm_campaign: 'email_signup'
+    });
+    
+    if (email) {
+      params.set('email', email);
+    }
+    
+    window.location.href = `${signupUrl}?${params.toString()}`;
   };
 
   const renderHeroVariant = () => (

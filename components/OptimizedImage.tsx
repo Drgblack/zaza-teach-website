@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -9,11 +10,12 @@ interface OptimizedImageProps {
   height?: number;
   className?: string;
   priority?: boolean;
-  loading?: 'lazy' | 'eager';
   sizes?: string;
   quality?: number;
   onLoad?: () => void;
   onError?: (e: any) => void;
+  fill?: boolean;
+  style?: React.CSSProperties;
 }
 
 export default function OptimizedImage({
@@ -23,50 +25,14 @@ export default function OptimizedImage({
   height,
   className = '',
   priority = false,
-  loading = 'lazy',
   sizes,
   quality = 75,
   onLoad,
-  onError
+  onError,
+  fill = false,
+  style
 }: OptimizedImageProps) {
-  const [isIntersecting, setIsIntersecting] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [imageSrc, setImageSrc] = useState<string | undefined>();
-
-  // Use native lazy loading for modern browsers
-  const shouldUseLazyLoading = !priority && loading === 'lazy';
-
-  useEffect(() => {
-    if (priority || loading === 'eager') {
-      setImageSrc(src);
-      return;
-    }
-
-    // Fallback for browsers that don't support native lazy loading
-    if (!('loading' in HTMLImageElement.prototype)) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsIntersecting(true);
-            setImageSrc(src);
-            observer.disconnect();
-          }
-        },
-        {
-          rootMargin: '50px'
-        }
-      );
-
-      if (imgRef.current) {
-        observer.observe(imgRef.current);
-      }
-
-      return () => observer.disconnect();
-    } else {
-      setImageSrc(src);
-    }
-  }, [src, priority, loading]);
 
   const handleError = (e: any) => {
     setHasError(true);
@@ -77,20 +43,8 @@ export default function OptimizedImage({
     onLoad?.();
   };
 
-  // For external URLs (like GitHub), use the original src
+  // For external URLs (like GitHub), use unoptimized
   const isExternal = src.startsWith('http://') || src.startsWith('https://');
-  const finalSrc = isExternal ? src : imageSrc;
-
-  // Generate srcSet for different screen densities if not external
-  const generateSrcSet = () => {
-    if (isExternal || !imageSrc) return undefined;
-    
-    return `${imageSrc} 1x, ${imageSrc} 2x`;
-  };
-
-  // Add aspect ratio to prevent layout shift
-  const aspectRatio = width && height ? width / height : undefined;
-  const paddingBottom = aspectRatio ? `${(1 / aspectRatio) * 100}%` : undefined;
 
   if (hasError) {
     return (
@@ -99,42 +53,65 @@ export default function OptimizedImage({
         style={{ 
           width: width || '100%', 
           height: height || 'auto',
-          aspectRatio: aspectRatio ? `${width}/${height}` : undefined
+          ...style
         }}
       >
-        <span className="text-gray-400">Failed to load image</span>
+        <span className="text-gray-400 text-sm">Failed to load image</span>
       </div>
     );
   }
 
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{
-        width: width || '100%',
-        maxWidth: width || '100%',
-        paddingBottom: height && !width ? paddingBottom : undefined
-      }}
-    >
-      <img
-        ref={imgRef}
-        src={finalSrc}
+  // If using fill prop
+  if (fill) {
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={className}
+        priority={priority}
+        sizes={sizes}
+        quality={quality}
+        onLoad={handleLoad}
+        onError={handleError}
+        unoptimized={isExternal}
+        style={style}
+      />
+    );
+  }
+
+  // If width and height are provided
+  if (width && height) {
+    return (
+      <Image
+        src={src}
         alt={alt}
         width={width}
         height={height}
         className={className}
-        loading={shouldUseLazyLoading ? 'lazy' : 'eager'}
-        decoding={priority ? 'sync' : 'async'}
-        onError={handleError}
-        onLoad={handleLoad}
-        srcSet={generateSrcSet()}
+        priority={priority}
         sizes={sizes}
-        style={{
-          aspectRatio: aspectRatio ? `${width}/${height}` : undefined,
-          maxWidth: '100%',
-          height: 'auto'
-        }}
+        quality={quality}
+        onLoad={handleLoad}
+        onError={handleError}
+        unoptimized={isExternal}
+        style={style}
       />
-    </div>
+    );
+  }
+
+  // Fallback to regular img for cases where Next.js Image can't be used
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      loading={priority ? 'eager' : 'lazy'}
+      onError={handleError}
+      onLoad={handleLoad}
+      style={style}
+    />
   );
 }

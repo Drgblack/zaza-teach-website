@@ -255,19 +255,23 @@ function EnhancedHeaderInner() {
               </AnimatePresence>
             </div>
 
-            <Link
-              href="/login"
+            <a
+              href={`${process.env.NEXT_PUBLIC_SIGNUP_URL || 'https://app.zazateach.com/signup'}?utm_source=marketing&utm_medium=header&utm_campaign=signin`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-700 hover:text-[#66B2B2] font-medium transition-colors duration-200"
             >
               Sign In
-            </Link>
+            </a>
             
-            <Link
-              href="/signup"
+            <a
+              href={`${process.env.NEXT_PUBLIC_SIGNUP_URL || 'https://app.zazateach.com/signup'}?utm_source=marketing&utm_medium=header&utm_campaign=cta`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Try Free
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -345,20 +349,24 @@ function EnhancedHeaderInner() {
                 ))}
                 
                 <div className="pt-4 border-t border-gray-100 space-y-2">
-                  <Link
-                    href="/login"
+                  <a
+                    href={`${process.env.NEXT_PUBLIC_SIGNUP_URL || 'https://app.zazateach.com/signup'}?utm_source=marketing&utm_medium=mobile_menu&utm_campaign=signin`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-2 text-gray-700 font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     Sign In
-                  </Link>
-                  <Link
-                    href="/signup"
+                  </a>
+                  <a
+                    href={`${process.env.NEXT_PUBLIC_SIGNUP_URL || 'https://app.zazateach.com/signup'}?utm_source=marketing&utm_medium=mobile_menu&utm_campaign=cta`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block bg-[#66B2B2] text-white px-4 py-2 rounded-full font-medium text-center"
                     onClick={() => setIsOpen(false)}
                   >
                     Try Free
-                  </Link>
+                  </a>
                 </div>
               </nav>
             </motion.div>

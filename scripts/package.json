@@ -1,0 +1,16 @@
+{
+  "name": "zaza-teach-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Audit and validation scripts for Zaza Teach website",
+  "scripts": {
+    "i18n-check": "node i18n-check.mjs",
+    "crawl-check": "node crawl-check.mjs",
+    "crawl-check:external": "node crawl-check.mjs --external",
+    "crawl-check:verbose": "node crawl-check.mjs --verbose",
+    "audit": "npm run i18n-check && npm run crawl-check"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
