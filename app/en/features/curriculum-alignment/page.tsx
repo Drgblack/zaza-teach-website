@@ -41,12 +41,12 @@ export default function CurriculumAlignmentPage() {
         <div className="bg-blue-50 rounded-lg p-8 text-center mb-8">
           <h2 className="text-2xl font-bold text-blue-900 mb-4">Why Standards Matter</h2>
           <p className="text-blue-800 mb-6">Curriculum alignment ensures your lessons meet educational requirements while maintaining academic rigor and consistency across your classroom.</p>
-          <Link href="/en/faqs" className="text-blue-600 hover:text-blue-800 font-medium">Learn More About Our Standards →</Link>
+          <Link href="/en/standards" className="text-blue-600 hover:text-blue-800 font-medium">View All Supported Standards →</Link>
         </div>
 
         <div className="text-center">
-          <Link href="/en/pricing" className="bg-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
-            Try Standards Alignment
+          <Link href="/en/standards" className="bg-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
+            View Supported Standards
           </Link>
         </div>
       </div>
