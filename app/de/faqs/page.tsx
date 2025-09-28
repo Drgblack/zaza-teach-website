@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { canonical } from '@/lib/site';
 import { FAQJsonLd } from '@/components/SEOJsonLd';
-import FAQClient from '@/components/FAQClient';
+import FAQClient from './FAQClient';
 
 export const metadata: Metadata = {
   title: 'Häufig gestellte Fragen | Zaza Teach',
@@ -15,6 +15,8 @@ export const metadata: Metadata = {
 const faqCategories = [
   {
     category: 'Erste Schritte',
+    icon: 'Book',
+    color: 'purple',
     faqs: [
       {
         q: 'Was ist Zaza Teach?',
@@ -36,6 +38,8 @@ const faqCategories = [
   },
   {
     category: 'Funktionen & Features',
+    icon: 'MessageCircle',
+    color: 'blue',
     faqs: [
       {
         q: 'Welche Klassenstufen unterstützt Zaza Teach?',
@@ -65,6 +69,8 @@ const faqCategories = [
   },
   {
     category: 'Zusammenarbeit & Support',
+    icon: 'Users',
+    color: 'green',
     faqs: [
       {
         q: 'Kann ich mit anderen Lehrern zusammenarbeiten?',
@@ -86,6 +92,8 @@ const faqCategories = [
   },
   {
     category: 'Sicherheit & Datenschutz',
+    icon: 'Shield',
+    color: 'orange',
     faqs: [
       {
         q: 'Sind meine Daten bei Zaza Teach sicher?',
@@ -99,10 +107,12 @@ const faqCategories = [
   },
   {
     category: 'Über Zaza & den Gründer',
+    icon: 'UserCheck',
+    color: 'purple',
     faqs: [
       {
         q: 'Wer steckt hinter Zaza Teach - und warum können Lehrkräfte der Lösung vertrauen?',
-        a: 'Zaza Teach wird von Dr. Greg Blackburn geleitet, einem Spezialisten für Bildung und Learning Technologies mit über 20 Jahren Erfahrung. Greg hat einen PhD in Professional Education (City, University of London), einen MBA (University of Queensland) und einen Bachelor of Information Systems (Honours) (University of Tasmania). Er hat zu kritischem Denken und lernendenzentriertem E-Learning publiziert und ist derzeit Chief Learning Officer bei Communardo in Deutschland. Zaza folgt einem Didaktik-zuerst-Ansatz: datenschutzfreundliches Design, human-in-the-loop-Kontrollen, transparente AI-Prompts und lehrplan-konforme Ergebnisse. Unser Ziel ist klar - Lehrkräften Zeit zurückgeben, ohne die professionelle Qualität zu gefährden.'
+        a: 'Zaza Teach wird von <strong>Dr. Greg Blackburn</strong> geleitet, einem Spezialisten für Bildung und Learning Technologies mit über 20 Jahren Erfahrung. Greg hat einen PhD in Professional Education (City, University of London), einen MBA (University of Queensland) und einen Bachelor of Information Systems (Honours) (University of Tasmania). Er hat zu kritischem Denken und lernendenzentriertem E-Learning publiziert und ist derzeit Chief Learning Officer bei Communardo in Deutschland.<br><br>Zaza folgt einem Didaktik-zuerst-Ansatz: datenschutzfreundliches Design, human-in-the-loop-Kontrollen, transparente AI-Prompts und lehrplan-konforme Ergebnisse. Unser Ziel ist klar - Lehrkräften Zeit zurückgeben, ohne die professionelle Qualität zu gefährden.<br><br>Erfahren Sie mehr auf unserer <a href="/de/about">Über uns-Seite</a> und sehen Sie, wie wir mit Daten umgehen auf unserer <a href="/de/privacy">Datenschutz-Seite</a>.'
       }
     ]
   }
@@ -115,7 +125,7 @@ export default function FAQsPage() {
   return (
     <>
       <FAQJsonLd faqs={allFaqs} />
-      <FAQClient />
+      <FAQClient faqCategories={faqCategories} />
     </>
   );
 }

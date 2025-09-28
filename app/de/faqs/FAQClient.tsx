@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-import { ChevronDown, Search, MessageCircle, Book, Shield, Users } from 'lucide-react';
+import { ChevronDown, Search, MessageCircle, Book, Shield, Users, UserCheck } from 'lucide-react';
 
 const iconMap = {
   Book,
   MessageCircle,
   Users,
-  Shield
+  Shield,
+  UserCheck
 };
 
 interface FAQ {
@@ -63,9 +64,10 @@ const FAQItem = ({ faq, isOpen, onClick, itemId }: { faq: FAQ, isOpen: boolean, 
         aria-labelledby={`faq-question-${itemId}`}
       >
         <div className="px-6 pb-5 bg-gray-50">
-          <p className="text-gray-700 leading-relaxed">
-            {faq.a}
-          </p>
+          <div 
+            className="text-gray-700 leading-relaxed prose prose-sm max-w-none prose-a:text-purple-600 prose-a:hover:text-purple-800 prose-a:no-underline hover:prose-a:underline"
+            dangerouslySetInnerHTML={{ __html: faq.a }}
+          />
         </div>
       </div>
     </div>
@@ -112,12 +114,12 @@ export default function FAQClient({ faqCategories }: FAQClientProps) {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked Questions
+            Häufig gestellte Fragen
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Everything you need to know about Zaza Teach. Can't find what you're looking for? 
-            <a href="/contact" className="text-purple-600 hover:text-purple-800 font-medium ml-1">
-              Contact our support team
+            Alles, was Sie über Zaza Teach wissen müssen. Können Sie nicht finden, was Sie suchen? 
+            <a href="/de/contact" className="text-purple-600 hover:text-purple-800 font-medium ml-1">
+              Kontaktieren Sie unser Support-Team
             </a>
           </p>
         </div>
@@ -128,7 +130,7 @@ export default function FAQClient({ faqCategories }: FAQClientProps) {
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Search FAQs..."
+              placeholder="FAQs durchsuchen..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white shadow-sm text-lg"
@@ -161,7 +163,7 @@ export default function FAQClient({ faqCategories }: FAQClientProps) {
                 <p className={`text-xs ${
                   activeCategory === category.category ? 'opacity-80' : 'text-gray-500'
                 }`}>
-                  {category.faqs.length} questions
+                  {category.faqs.length} Fragen
                 </p>
               </div>
             );
@@ -188,7 +190,7 @@ export default function FAQClient({ faqCategories }: FAQClientProps) {
                       {category.category}
                     </h2>
                     <p className="text-gray-600">
-                      {category.faqs.length} question{category.faqs.length !== 1 ? 's' : ''}
+                      {category.faqs.length} Frage{category.faqs.length !== 1 ? 'n' : ''}
                     </p>
                   </div>
                 </div>
@@ -216,16 +218,16 @@ export default function FAQClient({ faqCategories }: FAQClientProps) {
               <Search className="w-16 h-16 mx-auto" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              No results found
+              Keine Ergebnisse gefunden
             </h3>
             <p className="text-gray-600 mb-6">
-              Try searching with different keywords or browse our categories above.
+              Versuchen Sie andere Suchbegriffe oder durchsuchen Sie unsere Kategorien oben.
             </p>
             <button
               onClick={() => setSearchTerm('')}
               className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors"
             >
-              Clear Search
+              Suche löschen
             </button>
           </div>
         )}
@@ -233,23 +235,23 @@ export default function FAQClient({ faqCategories }: FAQClientProps) {
         {/* Contact CTA */}
         <div className="mt-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center text-white">
           <h3 className="text-2xl font-bold mb-4">
-            Still have questions?
+            Haben Sie noch Fragen?
           </h3>
           <p className="text-lg mb-6 opacity-90">
-            Our support team is here to help you get the most out of Zaza Teach.
+            Unser Support-Team hilft Ihnen gerne dabei, das Beste aus Zaza Teach herauszuholen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact"
+              href="/de/contact"
               className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Contact Support
+              Support kontaktieren
             </a>
             <a
-              href="/support"
+              href="/de/support"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors"
             >
-              Visit Help Center
+              Hilfe-Center besuchen
             </a>
           </div>
         </div>
