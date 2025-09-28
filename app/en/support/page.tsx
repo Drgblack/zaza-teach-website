@@ -40,9 +40,9 @@ export default function SupportPage() {
       icon: "🚀",
       description: "New to Zaza Teach? Learn the basics",
       links: [
-        { name: "Quick Start Guide", href: "/blog" },
-        { name: "Video Tutorials", href: "/blog" },
-        { name: "Account Setup", href: "/blog" }
+        { name: "Quick Start Guide", href: "/en/blog" },
+        { name: "Video Tutorials", href: "/en/blog" },
+        { name: "Account Setup", href: "/en/contact" }
       ]
     },
     {
@@ -50,9 +50,9 @@ export default function SupportPage() {
       icon: "📚",
       description: "Master the art of AI-assisted planning",
       links: [
-        { name: "Creating Your First Lesson", href: "/blog" },
-        { name: "Curriculum Alignment", href: "/blog" },
-        { name: "Customization Tips", href: "/blog" }
+        { name: "Creating Your First Lesson", href: "/en/blog" },
+        { name: "Curriculum Alignment", href: "/en/blog" },
+        { name: "Customization Tips", href: "/en/blog" }
       ]
     },
     {
@@ -60,9 +60,9 @@ export default function SupportPage() {
       icon: "🔧",
       description: "Troubleshooting and technical issues",
       links: [
-        { name: "Browser Requirements", href: "/blog" },
-        { name: "Export Issues", href: "/blog" },
-        { name: "Performance Tips", href: "/blog" }
+        { name: "Browser Requirements", href: "/en/blog" },
+        { name: "Export Issues", href: "/en/contact" },
+        { name: "Performance Tips", href: "/en/blog" }
       ]
     },
     {
@@ -70,9 +70,9 @@ export default function SupportPage() {
       icon: "💳",
       description: "Manage your account and subscription",
       links: [
-        { name: "Billing Information", href: "/blog" },
-        { name: "Upgrade/Downgrade", href: "/blog" },
-        { name: "Account Settings", href: "/blog" }
+        { name: "Billing Information", href: "/en/pricing" },
+        { name: "Upgrade/Downgrade", href: "/en/pricing" },
+        { name: "Account Settings", href: "/en/contact" }
       ]
     }
   ];
@@ -100,13 +100,13 @@ export default function SupportPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href="/en/contact"
                 className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors"
               >
                 Contact Support Team
               </Link>
               <Link
-                href="/faqs"
+                href="/en/faqs"
                 className="bg-white text-purple-600 border-2 border-purple-600 px-6 py-3 rounded-lg font-medium hover:bg-purple-50 transition-colors"
               >
                 Browse All FAQs
@@ -159,7 +159,7 @@ export default function SupportPage() {
           </div>
           <div className="text-center mt-8">
             <Link
-              href="/faqs"
+              href="/en/faqs"
               className="text-purple-600 hover:text-purple-800 font-medium"
             >
               View All FAQs →
@@ -177,7 +177,7 @@ export default function SupportPage() {
               Get detailed help via email. We respond within 24 hours.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="text-blue-600 hover:text-blue-800 font-medium"
             >
               Send Email →
@@ -204,7 +204,7 @@ export default function SupportPage() {
               Have an idea for a new feature? We'd love to hear it!
             </p>
             <Link
-              href="/feature-request"
+              href="/en/feature-request"
               className="text-purple-600 hover:text-purple-800 font-medium"
             >
               Submit Idea →

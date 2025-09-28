@@ -12,9 +12,9 @@ export default function SupportClient() {
       icon: "🚀",
       description: t('support.categories.gettingStarted.description'),
       links: [
-        { name: t('support.categories.gettingStarted.links.quickStart'), href: "/de/blog" },
-        { name: t('support.categories.gettingStarted.links.videoTutorials'), href: "/de/blog" },
-        { name: t('support.categories.gettingStarted.links.accountSetup'), href: "/de/blog" }
+        { name: t('support.categories.gettingStarted.links.quickStart'), href: "/de/pricing" },
+        { name: t('support.categories.gettingStarted.links.videoTutorials'), href: "/de/contact" },
+        { name: t('support.categories.gettingStarted.links.accountSetup'), href: "/de/pricing" }
       ]
     },
     {
@@ -22,9 +22,9 @@ export default function SupportClient() {
       icon: "📚",
       description: t('support.categories.lessonPlanning.description'),
       links: [
-        { name: t('support.categories.lessonPlanning.links.firstLesson'), href: "/de/blog" },
-        { name: t('support.categories.lessonPlanning.links.curriculumAlignment'), href: "/de/blog" },
-        { name: t('support.categories.lessonPlanning.links.customizationTips'), href: "/de/blog" }
+        { name: t('support.categories.lessonPlanning.links.firstLesson'), href: "/de/features/ai-lesson-planner" },
+        { name: t('support.categories.lessonPlanning.links.curriculumAlignment'), href: "/de/features/curriculum-alignment" },
+        { name: t('support.categories.lessonPlanning.links.customizationTips'), href: "/de/features/smart-templates" }
       ]
     },
     {
@@ -32,9 +32,9 @@ export default function SupportClient() {
       icon: "🔧",
       description: t('support.categories.technicalHelp.description'),
       links: [
-        { name: t('support.categories.technicalHelp.links.browserRequirements'), href: "/de/blog" },
-        { name: t('support.categories.technicalHelp.links.exportIssues'), href: "/de/blog" },
-        { name: t('support.categories.technicalHelp.links.performanceTips'), href: "/de/blog" }
+        { name: t('support.categories.technicalHelp.links.browserRequirements'), href: "/de/faqs" },
+        { name: t('support.categories.technicalHelp.links.exportIssues'), href: "/de/contact" },
+        { name: t('support.categories.technicalHelp.links.performanceTips'), href: "/de/faqs" }
       ]
     },
     {
@@ -42,9 +42,9 @@ export default function SupportClient() {
       icon: "💳",
       description: t('support.categories.accountBilling.description'),
       links: [
-        { name: t('support.categories.accountBilling.links.billingInfo'), href: "/de/blog" },
-        { name: t('support.categories.accountBilling.links.upgradeDowngrade'), href: "/de/blog" },
-        { name: t('support.categories.accountBilling.links.accountSettings'), href: "/de/blog" }
+        { name: t('support.categories.accountBilling.links.billingInfo'), href: "/de/pricing" },
+        { name: t('support.categories.accountBilling.links.upgradeDowngrade'), href: "/de/pricing" },
+        { name: t('support.categories.accountBilling.links.accountSettings'), href: "/de/contact" }
       ]
     }
   ];

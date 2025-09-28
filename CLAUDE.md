@@ -34,27 +34,21 @@
 3) Open PR → auto checks must pass
 4) Merge to main → Production deploy
 
-## Footer Specification
+## Footer – Canonical Policy
 
-### Unified Zaza Footer (components/Footer.tsx)
-
-**Canonical social links:**
+**Socials:**
 - LinkedIn: https://www.linkedin.com/company/zaza-technologies
-- X/Twitter: https://x.com/zazateachapp  
+- X: https://x.com/zazateachapp
 - TikTok: https://www.tiktok.com/@zazatechnologies
 
-**Suite links (external):**
-- Zaza Teach → https://zazateach.com
-- Zaza Promptly → https://zazapromptly.com
-- Zaza Technologies → https://zazatechnologies.com
-- RealtyClose → https://realtyclose.com
+**Suite links:**
+- https://zazateach.com
+- https://zazapromptly.com
+- https://zazatechnologies.com
+- https://realtyclose.com
 
-**Variant configuration:**
-- Current variant: "teach"
-- Support email: support@zazateach.com
-- All internal links are locale-aware (prefix /en or /de automatically)
+**This repo's variant:** teach
 
-**Important:**
-- Don't introduce products not approved in this spec
-- Footer automatically detects current locale and prefixes internal links correctly
-- External suite links and social links remain consistent across all variants
+**Support email:** support@zazateach.com
+
+**Rules:** do not invent product claims, keep placeholders noindex until real copy is provided, do not add products or links outside this spec without written approval.

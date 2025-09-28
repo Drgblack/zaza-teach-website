@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 type Variant = "teach" | "promptly" | "technologies" | "realtyclose";
 
@@ -42,8 +41,8 @@ const PRODUCT_CONFIG: Record<Variant, {
       { name: "About Us", href: "/about" },
       { name: "Pricing", href: "/pricing" },
       { name: "Blog", href: "/blog" },
-      { name: "Our Founder", href: "/about-founder" },
-      { name: "FAQ", href: "/faqs" },
+      { name: "Our Founder", href: "/founder" },
+      { name: "FAQ", href: "/faq" },
       { name: "Contact", href: "/contact" },
     ],
     legal: [
@@ -57,7 +56,7 @@ const PRODUCT_CONFIG: Record<Variant, {
   },
   promptly: {
     brand: "Zaza Promptly",
-    tagline: "AI-powered assistant that helps teachers write stress-free parent messages - polished, professional, empathetic. Part of Zaza Technologies.",
+    tagline: "AI-powered assistant that helps teachers write stress-free parent messages, polished and empathetic. Part of Zaza Technologies.",
     featureLabel: "Features",
     features: [
       { name: "Comment Agent", href: "/features/comment-agent" },
@@ -70,8 +69,8 @@ const PRODUCT_CONFIG: Record<Variant, {
       { name: "About Us", href: "/about" },
       { name: "Pricing", href: "/pricing" },
       { name: "Blog", href: "/blog" },
-      { name: "Our Founder", href: "/about-founder" },
-      { name: "FAQ", href: "/faqs" },
+      { name: "Our Founder", href: "/founder" },
+      { name: "FAQ", href: "/faq" },
       { name: "Contact", href: "/contact" },
     ],
     legal: [
@@ -99,7 +98,7 @@ const PRODUCT_CONFIG: Record<Variant, {
       { name: "Pricing", href: "/pricing" },
       { name: "Blog", href: "/blog" },
       { name: "Features", href: "/features" },
-      { name: "FAQ", href: "/faqs" },
+      { name: "FAQ", href: "/faq" },
       { name: "Contact", href: "/contact" },
     ],
     legal: [
@@ -127,7 +126,7 @@ const PRODUCT_CONFIG: Record<Variant, {
       { name: "Pricing", href: "/pricing" },
       { name: "Blog", href: "/blog" },
       { name: "Features", href: "/features" },
-      { name: "FAQ", href: "/faqs" },
+      { name: "FAQ", href: "/faq" },
       { name: "Contact", href: "/contact" },
     ],
     legal: [
@@ -143,18 +142,6 @@ const PRODUCT_CONFIG: Record<Variant, {
 
 export default function Footer({ variant = "teach" }: { variant?: Variant }) {
   const cfg = PRODUCT_CONFIG[variant];
-  const pathname = usePathname();
-  const locale = pathname.startsWith('/de') ? 'de' : 'en';
-  const localePrefix = locale === 'en' ? '/en' : '/de';
-  
-  // Helper function to add locale prefix to internal links
-  const localizeHref = (href: string) => {
-    if (href.startsWith('http') || href.startsWith('mailto:')) {
-      return href;
-    }
-    return `${localePrefix}${href}`;
-  };
-
   return (
     <footer className="mt-20 border-t border-white/10 bg-[#0B1220] text-white">
       <div className="mx-auto w-full max-w-7xl px-6 py-12 grid grid-cols-1 gap-10 md:grid-cols-4">
@@ -186,7 +173,7 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
           <h4 className="text-sm font-semibold uppercase tracking-wide">{cfg.featureLabel}</h4>
           <ul className="mt-3 space-y-2 text-sm">
             {cfg.features.map((i) => (
-              <li key={i.name}><Link href={localizeHref(i.href)} className="hover:underline">{i.name}</Link></li>
+              <li key={i.name}><Link href={i.href} className="hover:underline">{i.name}</Link></li>
             ))}
           </ul>
         </div>
@@ -195,7 +182,7 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
           <h4 className="text-sm font-semibold uppercase tracking-wide">Company</h4>
           <ul className="mt-3 space-y-2 text-sm">
             {cfg.company.map((i) => (
-              <li key={i.name}><Link href={localizeHref(i.href)} className="hover:underline">{i.name}</Link></li>
+              <li key={i.name}><Link href={i.href} className="hover:underline">{i.name}</Link></li>
             ))}
           </ul>
         </div>
@@ -204,13 +191,13 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-4 px-6 py-6 text-xs text-white/70 md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-3">
-            <Link href={localizeHref(cfg.legal[0].href)} className="hover:underline">{cfg.legal[0].name}</Link>
+            <Link href={cfg.legal[0].href} className="hover:underline">{cfg.legal[0].name}</Link>
             <span>•</span>
-            <Link href={localizeHref(cfg.legal[1].href)} className="hover:underline">{cfg.legal[1].name}</Link>
+            <Link href={cfg.legal[1].href} className="hover:underline">{cfg.legal[1].name}</Link>
             <span>•</span>
-            <Link href={localizeHref(cfg.legal[2].href)} className="hover:underline">{cfg.legal[2].name}</Link>
+            <Link href={cfg.legal[2].href} className="hover:underline">{cfg.legal[2].name}</Link>
             <span>•</span>
-            <Link href={localizeHref(cfg.legal[3].href)} className="hover:underline">{cfg.legal[3].name}</Link>
+            <Link href={cfg.legal[3].href} className="hover:underline">{cfg.legal[3].name}</Link>
           </div>
           <div className="flex items-center gap-3">
             <span>Support:</span>
