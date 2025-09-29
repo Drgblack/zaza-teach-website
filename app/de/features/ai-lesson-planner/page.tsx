@@ -160,7 +160,6 @@ export default function AILessonPlannerPageDE() {
           </div>
         </div>
       </div>
-      </div>
     </div>
   );
 }
