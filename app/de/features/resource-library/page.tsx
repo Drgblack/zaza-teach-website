@@ -167,7 +167,6 @@ export default function ResourceLibraryPageDE() {
           </div>
         </div>
       </div>
-      </div>
     </div>
   );
 }
