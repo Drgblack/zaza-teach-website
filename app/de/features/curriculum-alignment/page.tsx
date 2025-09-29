@@ -45,7 +45,7 @@ export default function CurriculumAlignmentPageDE() {
         </div>
 
         <div className="text-center">
-          <Link href="/de/pricing" className="bg-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
+          <Link href="/de/standards" className="bg-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
             Standards-Alignment testen
           </Link>
         </div>

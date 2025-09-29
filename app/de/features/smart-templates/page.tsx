@@ -37,7 +37,7 @@ export default function SmartTemplatesPageDE() {
         </div>
 
         <div className="text-center">
-          <Link href="/de/pricing" className="bg-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
+          <Link href="/de/templates" className="bg-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
             Vorlagen erkunden
           </Link>
         </div>
