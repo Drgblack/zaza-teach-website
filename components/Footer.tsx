@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useLocale, useTranslations } from "./LocaleProvider";
 
 type Variant = "teach" | "promptly" | "technologies" | "realtyclose";
 
@@ -141,13 +142,28 @@ const PRODUCT_CONFIG: Record<Variant, {
 };
 
 export default function Footer({ variant = "teach" }: { variant?: Variant }) {
+  const locale = useLocale();
+  const t = useTranslations();
   const cfg = PRODUCT_CONFIG[variant];
+  
+  // Helper function to add locale prefix to internal links
+  const localizeHref = (href: string) => {
+    if (href.startsWith('http') || href.startsWith('mailto')) {
+      return href;
+    }
+    return `/${locale}${href}`;
+  };
   return (
     <footer className="mt-20 border-t border-white/10 bg-[#0B1220] text-white">
       <div className="mx-auto w-full max-w-7xl px-6 py-12 grid grid-cols-1 gap-10 md:grid-cols-4">
         <div>
           <h3 className="text-xl font-semibold">{cfg.brand}</h3>
-          <p className="mt-3 text-sm text-white/80">{cfg.tagline}</p>
+          <p className="mt-3 text-sm text-white/80">
+            {locale === 'de' ? 
+              'KI-Tools, die Pädagogen in ihrem Arbeitsalltag unterstützen. Von Lehrern für Lehrer entwickelt. Teil von Zaza Technologies.' : 
+              cfg.tagline
+            }
+          </p>
           <div className="mt-5 flex items-center gap-3">
             {SOCIALS.map((s) => (
               <a key={s.name} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name}
@@ -159,7 +175,7 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide">Suite</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wide">{locale === 'de' ? 'Zaza Ökosystem' : 'Suite'}</h4>
           <ul className="mt-3 space-y-2 text-sm">
             {SUITE.map((i) => (
               <li key={i.name}>
@@ -170,20 +186,39 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide">{cfg.featureLabel}</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wide">{locale === 'de' ? 'Funktionen' : cfg.featureLabel}</h4>
           <ul className="mt-3 space-y-2 text-sm">
-            {cfg.features.map((i) => (
-              <li key={i.name}><Link href={i.href} className="hover:underline">{i.name}</Link></li>
-            ))}
+            {cfg.features.map((i) => {
+              const localizedName = locale === 'de' && variant === 'teach' ? 
+                i.name === 'AI Lesson Planner' ? 'KI-Unterrichtsplaner' :
+                i.name === 'Smart Templates' ? 'Intelligente Vorlagen' :
+                i.name === 'Resource Library' ? 'Ressourcen-Bibliothek' :
+                i.name === 'Curriculum Alignment' ? 'Lehrplan-Ausrichtung' :
+                i.name === 'Teacher Support' ? 'Lehrer-Support' : i.name
+                : i.name;
+              return (
+                <li key={i.name}><Link href={localizeHref(i.href)} className="hover:underline">{localizedName}</Link></li>
+              );
+            })}
           </ul>
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide">Company</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wide">{locale === 'de' ? 'Unternehmen' : 'Company'}</h4>
           <ul className="mt-3 space-y-2 text-sm">
-            {cfg.company.map((i) => (
-              <li key={i.name}><Link href={i.href} className="hover:underline">{i.name}</Link></li>
-            ))}
+            {cfg.company.map((i) => {
+              const localizedName = locale === 'de' && variant === 'teach' ? 
+                i.name === 'About Us' ? 'Über uns' :
+                i.name === 'Pricing' ? 'Preise' :
+                i.name === 'Blog' ? 'Blog' :
+                i.name === 'Our Founder' ? 'Unser Gründer' :
+                i.name === 'FAQ' ? 'FAQ' :
+                i.name === 'Contact' ? 'Kontakt' : i.name
+                : i.name;
+              return (
+                <li key={i.name}><Link href={localizeHref(i.href)} className="hover:underline">{localizedName}</Link></li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -191,21 +226,24 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-between gap-4 px-6 py-6 text-xs text-white/70 md:flex-row md:items-center">
           <div className="flex flex-wrap items-center gap-3">
-            <Link href={cfg.legal[0].href} className="hover:underline">{cfg.legal[0].name}</Link>
+            <Link href={localizeHref(cfg.legal[0].href)} className="hover:underline">{cfg.legal[0].name}</Link>
             <span>•</span>
-            <Link href={cfg.legal[1].href} className="hover:underline">{cfg.legal[1].name}</Link>
+            <Link href={localizeHref(cfg.legal[1].href)} className="hover:underline">{locale === 'de' ? 'Datenschutz' : cfg.legal[1].name}</Link>
             <span>•</span>
-            <Link href={cfg.legal[2].href} className="hover:underline">{cfg.legal[2].name}</Link>
+            <Link href={localizeHref(cfg.legal[2].href)} className="hover:underline">{locale === 'de' ? 'Nutzungsbedingungen' : cfg.legal[2].name}</Link>
             <span>•</span>
-            <Link href={cfg.legal[3].href} className="hover:underline">{cfg.legal[3].name}</Link>
+            <Link href={localizeHref(cfg.legal[3].href)} className="hover:underline">{locale === 'de' ? 'Cookies' : cfg.legal[3].name}</Link>
           </div>
           <div className="flex items-center gap-3">
-            <span>Support:</span>
+            <span>{locale === 'de' ? 'Support:' : 'Support:'}</span>
             <a href={`mailto:${cfg.supportEmail}`} className="hover:underline">{cfg.supportEmail}</a>
           </div>
         </div>
         <div className="mx-auto w-full max-w-7xl px-6 pb-8 text-xs text-white/60">
-          {cfg.copyright}
+          {locale === 'de' ? 
+            `© ${new Date().getFullYear()} Zaza Teach (Teil von Zaza Technologies UG). Alle Rechte vorbehalten.` : 
+            cfg.copyright
+          }
         </div>
       </div>
     </footer>
