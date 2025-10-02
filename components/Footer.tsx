@@ -12,7 +12,7 @@ const SOCIALS = [
 
 const SUITE = [
   { name: "Zaza Teach", href: "https://zazateach.com" },
-  { name: "Zaza Promptly", href: "https://zazapromptly.com" },
+  { name: "Zaza Draft (formerly Promptly)", href: "https://zazapromptly.com" },
   { name: "Zaza Technologies", href: "https://zazatechnologies.com" },
   { name: "RealtyClose", href: "https://realtyclose.com" },
 ];
@@ -197,6 +197,12 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
               </li>
             ))}
           </ul>
+          <div className="mt-6 p-4 bg-white/10 rounded-lg">
+            <p className="text-sm font-medium mb-2">{locale === 'de' ? 'Brauchen Sie Hilfe bei E-Mails und Berichten?' : 'Need help with emails and reports?'}</p>
+            <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer" className="text-[#66B2B2] hover:text-[#66B2B2]/80 text-sm font-medium inline-flex items-center gap-1">
+              {locale === 'de' ? 'Zaza Draft ausprobieren' : 'Try Zaza Draft'} →
+            </a>
+          </div>
         </div>
 
         <div>

@@ -119,13 +119,17 @@ export default function HomePage() {
                 {t('home.hero.subtitle')}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-4">
                 <PrimaryCTA
                   label={t('home.hero.cta')}
                   ariaLabel="Start your free Zaza Teach trial from homepage hero"
                   from="home_hero"
                 />
               </div>
+              
+              <p className="text-[#2C3E35]/70 text-base mb-2 text-center lg:text-left">
+                {t('home.hero.crossSell')}
+              </p>
               
               <p className="text-[#2C3E35]/60 text-lg text-center lg:text-left">
                 {t('home.hero.subtext')}
@@ -346,6 +350,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Cross-Sell CTA Section */}
+      <section className="py-8 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <p className="text-[#2C3E35] text-lg font-medium">
+              {t('home.crossSell.text')}
+            </p>
+            <Button
+              asChild
+              className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white px-6 py-2"
+            >
+              <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer">
+                {t('home.crossSell.cta')} <ArrowRight className="inline-block ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-16 px-4 bg-white/50">
         <div className="max-w-6xl mx-auto">
@@ -361,8 +389,8 @@ export default function HomePage() {
               {[
                 { 
                   icon: BookOpen, 
-                  title: t('home.features.aiPlanner.title'), 
-                  description: t('home.features.aiPlanner.description'),
+                  title: t('home.features.smartPlanner.title'), 
+                  description: t('home.features.smartPlanner.description'),
                   color: "#66B2B2"
                 },
                 { 

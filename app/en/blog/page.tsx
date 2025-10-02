@@ -3,10 +3,11 @@ import { canonical } from "@/lib/site";
 import BlogClient from "@/components/BlogClient";
 
 export const metadata = {
-  title: "Teaching insights and tips | Zaza Teach",
-  description: "Expert advice, strategies, and insights for teachers using AI and modern educational technology.",
+  title: "Teacher Productivity Tips & Classroom Strategies | Zaza Teach",
+  description: "Save time, reduce stress, and boost confidence with expert teaching strategies. Your lesson planning partner for smarter classroom management.",
+  keywords: "teacher productivity tips, lesson planning partner, classroom wellbeing strategies, teaching confidence, time-saving strategies for teachers",
   alternates: { canonical: canonical("/blog") },
-  openGraph: { url: canonical("/blog"), title: "Teaching insights and tips | Zaza Teach" },
+  openGraph: { url: canonical("/blog"), title: "Teacher Productivity Tips & Classroom Strategies | Zaza Teach" },
   twitter: { card: "summary_large_image" }
 };
 

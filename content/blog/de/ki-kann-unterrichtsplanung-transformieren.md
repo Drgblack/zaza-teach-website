@@ -1,5 +1,5 @@
 ---
-title: "Wie KI die Unterrichtsplanung transformieren kann"
+title: "Intelligentere Unterrichtsplanung: Ein ruhiges, wiederholbares System"
 description: "Ein ruhiges, wiederholbares System, um die nächste Woche in einer halben Stunde zu planen."
 slug: "ki-kann-unterrichtsplanung-transformieren"
 date: "2025-01-15"

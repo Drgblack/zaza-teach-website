@@ -1,5 +1,5 @@
 ---
-title: "How AI can transform lesson planning"
+title: "Smarter Lesson Planning: A calm, repeatable system"
 description: "A calm, repeatable system to plan next week in half an hour."
 slug: "ai-lesson-planning"
 date: "2025-01-15"

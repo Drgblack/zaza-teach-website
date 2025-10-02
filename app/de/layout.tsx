@@ -12,9 +12,9 @@ import { brandConfig } from '@/src/config/brand';
 // German layout with proper SEO and hreflang
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Zaza Teach | KI-Unterrichtsplanung für Pädagogen',
-  description: 'Planen Sie Lektionen schneller mit Zaza Teach, dem KI-gestützten Tool für Lehrer. Erstellen, anpassen und teilen Sie lehrplangerechte Lektionen in Minuten.',
-  keywords: ['KI Unterrichtsplanung', 'Lehrer Tools', 'Lehrplan Design', 'Bildungstechnologie', 'Unterrichtsplan Generator', 'Lehr-Assistent', 'Bildungs-KI'],
+  title: 'Zaza Teach | Der Unterrichtsplanungspartner für Lehrer',
+  description: 'Planen Sie schneller, personalisieren Sie einfach und konzentrieren Sie sich wieder aufs Unterrichten mit Zaza Teach. Erstellen Sie lehrplangerechte Lektionen in Minuten, nicht Stunden.',
+  keywords: ['Unterrichtsplanungspartner für Lehrer', 'Lehrer Produktivitätstool', 'Unterrichtsplanungs-App für Lehrer', 'Lehrplan Design', 'Bildungstechnologie', 'Unterrichtsplan Generator', 'Lehr-Assistent', 'zeitsparende Tools für Lehrer'],
   locale: 'de',
   path: '',
 });

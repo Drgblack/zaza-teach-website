@@ -150,6 +150,25 @@ export default function BlogClient({ posts, allTags }: BlogClientProps) {
           />
         </div>
 
+        {/* Cross-Product CTA Banner */}
+        <div className="mb-8 bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-center sm:text-left">
+              <p className="text-gray-700 font-medium text-lg">
+                {t('blog.crossSell.text')}
+              </p>
+            </div>
+            <a 
+              href="https://zazapromptly.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors"
+            >
+              {t('blog.crossSell.cta')} →
+            </a>
+          </div>
+        </div>
+
         {/* Category Filters */}
         <div className="mb-8" ref={containerRef}>
           {/* All Posts Button */}

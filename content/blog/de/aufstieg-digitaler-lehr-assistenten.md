@@ -1,6 +1,6 @@
 ---
-title: "Der Aufstieg digitaler Lehr-Assistenten"
-description: "Entdecken Sie, wie KI-gestützte digitale Assistenten das Unterrichten transformieren, indem sie Routineaufgaben übernehmen, Einblicke bieten und Pädagogen befreien, sich auf Inspiration und Verbindung zu konzentrieren."
+title: "Intelligente Lehr-Assistenten: Gewinnen Sie Zeit für das Wesentliche zurück"
+description: "Entdecken Sie, wie digitale Assistenten das Unterrichten transformieren, indem sie Routineaufgaben übernehmen, Einblicke bieten und Pädagogen befreien, sich auf Inspiration und Verbindung zu konzentrieren."
 slug: "aufstieg-digitaler-lehr-assistenten"
 date: "2025-01-22"
 updated: "2025-01-22"

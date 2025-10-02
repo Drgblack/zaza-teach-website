@@ -3,10 +3,11 @@ import { canonical } from "@/lib/site";
 import BlogClient from "@/components/BlogClient";
 
 export const metadata = {
-  title: "Lehreinblicke und Tipps | Zaza Teach",
-  description: "Expertenrat, Strategien und Einblicke für Lehrer, die KI und moderne Bildungstechnologie nutzen.",
+  title: "Lehrer Produktivitätstipps & Klassenzimmer-Strategien | Zaza Teach",
+  description: "Zeit sparen, Stress reduzieren und Vertrauen stärken mit Experten-Lehrstrategien. Ihr Unterrichtsplanungspartner für intelligenteres Klassenzimmer-Management.",
+  keywords: "Lehrer Produktivitätstipps, Unterrichtsplanungspartner, Klassenzimmer Wohlbefinden Strategien, Lehrvertrauen, zeitsparende Strategien für Lehrer",
   alternates: { canonical: canonical("/de/blog") },
-  openGraph: { url: canonical("/de/blog"), title: "Lehreinblicke und Tipps | Zaza Teach" },
+  openGraph: { url: canonical("/de/blog"), title: "Lehrer Produktivitätstipps & Klassenzimmer-Strategien | Zaza Teach" },
   twitter: { card: "summary_large_image" }
 };
 

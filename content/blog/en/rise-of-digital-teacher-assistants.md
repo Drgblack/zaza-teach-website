@@ -1,6 +1,6 @@
 ---
-title: "The Rise of Digital Teacher's Assistants"
-description: "Discover how AI-powered digital assistants are transforming teaching by handling routine tasks, providing insights, and freeing educators to focus on inspiration and connection."
+title: "Smart Teaching Assistants: Reclaim Your Time for What Matters"
+description: "Discover how digital assistants are transforming teaching by handling routine tasks, providing insights, and freeing educators to focus on inspiration and connection."
 slug: "rise-of-digital-teacher-assistants"
 date: "2025-01-22"
 updated: "2025-01-22"

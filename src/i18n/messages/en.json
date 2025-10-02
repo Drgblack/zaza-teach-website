@@ -15,7 +15,7 @@
     "featureRequest": "Zaza Feature Request",
     "support": "Support",
     "contact": "Contact",
-    "tryZazaPromptly": "Try Zaza Promptly",
+    "tryZazaPromptly": "Try Zaza Draft (formerly Promptly)",
     "tryZazaTeach": "Try Zaza Teach",
     "darkMode": "Toggle dark mode",
     "selectLanguage": "Select language"
@@ -37,15 +37,16 @@
     "impressum": "Impressum",
     "ecosystem": "Zaza Ecosystem",
     "zazaTechnologies": "Zaza Technologies",
-    "zazaPromptly": "Zaza Promptly",
+    "zazaPromptly": "Zaza Draft (formerly Promptly)",
     "realtyClose": "RealtyClose",
     "copyright": "© {year} Zaza Teach (part of Zaza Technologies). All rights reserved."
   },
   "home": {
     "hero": {
-      "title": "Lesson plans done in minutes - not hours.",
-      "subtitle": "Teachers spend evenings buried in planning. Zaza Teach helps you reclaim that time, giving you clear, curriculum-aligned lesson plans in just a few taps.",
+      "title": "The lesson planning partner for teachers.",
+      "subtitle": "Plan faster, personalise easily, and get back to teaching.",
       "cta": "Start Free Today",
+      "crossSell": "Even better with Zaza Draft – together they remove 80% of teacher admin.",
       "subtext": "Join 10,000+ teachers who've transformed their planning. Free trial includes 5 lesson plans."
     },
     "problem": {
@@ -58,6 +59,10 @@
         "adminOverwhelm": "Overwhelm from admin tasks eating into teaching energy",
         "lessTime": "Less time for students, family, and yourself"
       }
+    },
+    "crossSell": {
+      "text": "Need help with emails and reports?",
+      "cta": "Try Zaza Draft"
     },
     "solution": {
       "title": "The better way",
@@ -72,9 +77,9 @@
     },
     "features": {
       "title": "Built for teachers - not techies",
-      "aiPlanner": {
-        "title": "AI Lesson Planner",
-        "description": "Instant plans with objectives, activities, and assessments"
+      "smartPlanner": {
+        "title": "Smart Lesson Planner",
+        "description": "Instant plans with objectives, activities, and assessments. Powered by safe AI, built for education."
       },
       "creative": {
         "title": "Creative Confidence", 
@@ -157,7 +162,7 @@
           "title": "Bundle",
           "price": "€24.99",
           "period": "/month",
-          "features": ["Zaza Teach + Zaza Promptly", "All Pro features", "Cross-platform sync"],
+          "features": ["Zaza Teach + Zaza Draft", "All Pro features", "Cross-platform sync"],
           "cta": "Get Bundle"
         }
       }
@@ -237,7 +242,7 @@
         "features": {
           "lessonPlanning": {
             "title": "Lesson planning plus parent communication in one.",
-            "subtitle": "Zaza Teach + Zaza Promptly"
+            "subtitle": "Zaza Teach + Zaza Draft"
           },
           "everything": {
             "title": "Everything you need to plan smarter.",
@@ -292,11 +297,12 @@
     "allPosts": "All Posts",
     "categories": {
       "teachingPractice": "Teaching Practice",
-      "curriculumPlanning": "Curriculum & Planning", 
-      "aiInnovation": "AI & Innovation",
+      "curriculumPlanning": "Curriculum-Ready Planning", 
+      "aiInnovation": "Smart Teaching Tools",
       "classroomCulture": "Classroom Culture",
       "teacherWellbeing": "Teacher Wellbeing",
-      "professionalGrowth": "Professional Growth"
+      "professionalGrowth": "Professional Growth",
+      "futureOfTeaching": "Future of Teaching"
     },
     "activeFilter": "Active filter:",
     "removeFilter": "Remove filter",
@@ -304,6 +310,10 @@
     "clearFilters": "Clear all filters",
     "readMore": "Read More →",
     "writtenBy": "Written by",
+    "crossSell": {
+      "text": "Tired of parent emails and reports?",
+      "cta": "Try Zaza Draft (formerly Promptly)"
+    },
     "minRead": "min read",
     "backToBlog": "← Back to Blog",
     "moreArticles": "More Articles →",

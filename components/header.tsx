@@ -28,7 +28,7 @@ const Header = () => {
     { 
       code: "EN", 
       label: t('common.en'), 
-      href: pathWithoutLocale || "/",
+      href: `/en${pathWithoutLocale || "/"}`,
       locale: "en"
     },
     { 

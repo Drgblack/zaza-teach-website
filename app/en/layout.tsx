@@ -12,9 +12,9 @@ import { brandConfig } from '@/src/config/brand';
 // English layout with proper SEO and hreflang
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Zaza Teach | AI Lesson Planning for Educators',
-  description: 'Plan lessons faster with Zaza Teach, the AI-powered tool for teachers. Create, customize, and share curriculum-aligned lessons in minutes.',
-  keywords: ['AI lesson planning', 'teacher tools', 'curriculum design', 'educational technology', 'lesson plan generator', 'teaching assistant', 'education AI'],
+  title: 'Zaza Teach | The Lesson Planning Partner for Teachers',
+  description: 'Plan faster, personalise easily, and get back to teaching with Zaza Teach. Create curriculum-aligned lessons in minutes, not hours.',
+  keywords: ['lesson planning partner for teachers', 'teacher productivity tool', 'lesson planning app for teachers', 'curriculum design', 'educational technology', 'lesson plan generator', 'teaching assistant', 'teacher time-saving tools'],
   locale: 'en',
   path: '',
 });

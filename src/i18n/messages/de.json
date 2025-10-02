@@ -15,7 +15,7 @@
     "featureRequest": "Zaza Feature-Wunsch",
     "support": "Support",
     "contact": "Kontakt",
-    "tryZazaPromptly": "Zaza Promptly testen",
+    "tryZazaPromptly": "Zaza Draft (ehemals Promptly) testen",
     "tryZazaTeach": "Zaza Teach testen",
     "darkMode": "Dunkelmodus umschalten",
     "selectLanguage": "Sprache auswählen"
@@ -37,15 +37,16 @@
     "impressum": "Impressum",
     "ecosystem": "Zaza Ökosystem",
     "zazaTechnologies": "Zaza Technologies",
-    "zazaPromptly": "Zaza Promptly",
+    "zazaPromptly": "Zaza Draft (ehemals Promptly)",
     "realtyClose": "RealtyClose",
     "copyright": "© {year} Zaza Teach (Teil von Zaza Technologies). Alle Rechte vorbehalten."
   },
   "home": {
     "hero": {
-      "title": "Unterrichtspläne in Minuten - nicht in Stunden.",
-      "subtitle": "Lehrer verbringen Abende mit Unterrichtsvorbereitung. Zaza Teach hilft Ihnen, diese Zeit zurückzugewinnen und liefert Ihnen klare, lehrplangerechte Unterrichtspläne mit nur wenigen Klicks.",
+      "title": "Der Unterrichtsplanungspartner für Lehrer.",
+      "subtitle": "Planen Sie schneller, personalisieren Sie einfach und konzentrieren Sie sich wieder aufs Unterrichten.",
       "cta": "Heute kostenlos starten",
+      "crossSell": "Noch besser mit Zaza Draft – zusammen entfernen sie 80% der Lehreradministration.",
       "subtext": "Schließen Sie sich über 10.000 Lehrern an, die ihre Planung transformiert haben. Kostenlose Testversion mit 5 Unterrichtsplänen."
     },
     "problem": {
@@ -58,6 +59,10 @@
         "adminOverwhelm": "Überforderung durch Verwaltungsaufgaben, die die Lehrenergie aufzehren",
         "lessTime": "Weniger Zeit für Schüler, Familie und sich selbst"
       }
+    },
+    "crossSell": {
+      "text": "Brauchen Sie Hilfe bei E-Mails und Berichten?",
+      "cta": "Zaza Draft ausprobieren"
     },
     "solution": {
       "title": "Der bessere Weg",
@@ -72,9 +77,9 @@
     },
     "features": {
       "title": "Für Lehrer entwickelt - nicht für Technik-Experten",
-      "aiPlanner": {
-        "title": "KI-Unterrichtsplaner",
-        "description": "Sofortige Pläne mit Lernzielen, Aktivitäten und Bewertungen"
+      "smartPlanner": {
+        "title": "Intelligenter Unterrichtsplaner",
+        "description": "Sofortige Pläne mit Lernzielen, Aktivitäten und Bewertungen. Angetrieben von sicherer KI, entwickelt für Bildung."
       },
       "creative": {
         "title": "Kreatives Selbstvertrauen", 
@@ -186,7 +191,7 @@
           "title": "Bundle",
           "price": "€24.99",
           "period": "/Monat",
-          "features": ["Zaza Teach + Zaza Promptly", "Alle Pro-Funktionen", "Geräteübergreifende Synchronisation"],
+          "features": ["Zaza Teach + Zaza Draft", "Alle Pro-Funktionen", "Geräteübergreifende Synchronisation"],
           "cta": "Bundle holen"
         }
       }
@@ -266,7 +271,7 @@
         "features": {
           "lessonPlanning": {
             "title": "Unterrichtsplanung plus Elternkommunikation in einem.",
-            "subtitle": "Zaza Teach + Zaza Promptly"
+            "subtitle": "Zaza Teach + Zaza Draft"
           },
           "everything": {
             "title": "Alles was Sie brauchen, um intelligenter zu planen.",
@@ -321,11 +326,12 @@
     "allPosts": "Alle Beiträge",
     "categories": {
       "teachingPractice": "Lehrpraxis",
-      "curriculumPlanning": "Lehrplan & Planung", 
-      "aiInnovation": "KI & Innovation",
+      "curriculumPlanning": "Lehrplan-gerechte Planung", 
+      "aiInnovation": "Intelligente Lehrwerkzeuge",
       "classroomCulture": "Klassenkultur",
       "teacherWellbeing": "Lehrer-Wohlbefinden",
-      "professionalGrowth": "Berufliche Entwicklung"
+      "professionalGrowth": "Berufliche Entwicklung",
+      "futureOfTeaching": "Zukunft des Unterrichts"
     },
     "activeFilter": "Aktiver Filter:",
     "removeFilter": "Filter entfernen",
@@ -333,6 +339,10 @@
     "clearFilters": "Alle Filter löschen",
     "readMore": "Weiterlesen →",
     "writtenBy": "Geschrieben von",
+    "crossSell": {
+      "text": "Genervt von Eltern-E-Mails und Berichten?",
+      "cta": "Probiere Zaza Draft (früher Promptly)"
+    },
     "minRead": "Min Lesezeit",
     "backToBlog": "← Zurück zum Blog",
     "moreArticles": "Mehr Artikel →",

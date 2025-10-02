@@ -1,6 +1,6 @@
 ---
-title: "Die Zukunft der Unterrichtsplanung: KI, die Lehrpläne versteht"
-description: "Entdecken Sie, wie KI die Unterrichtsplanung revolutioniert, indem sie Lehrplanstandards tiefgreifend versteht, ausgerichtete Inhalte erstellt und Lehrern unzählige Stunden der Vorbereitung spart."
+title: "Lehrplan-gerechte Unterrichtsplanung: Zeit sparen und Standards erfüllen"
+description: "Entdecken Sie, wie intelligente Tools die Unterrichtsplanung revolutionieren, indem sie Lehrplanstandards tiefgreifend verstehen, ausgerichtete Inhalte erstellen und Lehrern unzählige Stunden der Vorbereitung sparen."
 slug: "zukunft-der-unterrichtsplanung-ki-lehrplan"
 date: "2025-01-22"
 updated: "2025-01-22"

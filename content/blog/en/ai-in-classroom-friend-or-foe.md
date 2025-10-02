@@ -1,6 +1,6 @@
 ---
-title: "AI in the Classroom: Friend or Foe?"
-description: "Explore the real opportunities and challenges of artificial intelligence in education. Learn how teachers can harness AI as a powerful ally while maintaining human connection."
+title: "Technology in the Classroom: Friend or Foe?"
+description: "Explore the real opportunities and challenges of modern technology in education. Learn how teachers can harness smart tools as powerful allies while maintaining human connection."
 slug: "ai-in-classroom-friend-or-foe"
 date: "2025-01-22"
 updated: "2025-01-22"

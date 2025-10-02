@@ -1,6 +1,6 @@
 ---
-title: "KI im Klassenzimmer: Freund oder Feind?"
-description: "Erkunden Sie die echten Möglichkeiten und Herausforderungen der künstlichen Intelligenz in der Bildung. Lernen Sie, wie Lehrer KI als mächtigen Verbündeten nutzen können, während sie die menschliche Verbindung bewahren."
+title: "Technologie im Klassenzimmer: Freund oder Feind?"
+description: "Erkunden Sie die echten Möglichkeiten und Herausforderungen moderner Technologie in der Bildung. Lernen Sie, wie Lehrer intelligente Tools als mächtige Verbündete nutzen können, während sie die menschliche Verbindung bewahren."
 slug: "ki-im-klassenzimmer-freund-oder-feind"
 date: "2025-01-22"
 updated: "2025-01-22"
