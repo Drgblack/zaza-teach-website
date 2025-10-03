@@ -19,7 +19,7 @@ const faqCategories = [
     faqs: [
       {
         q: 'What is Zaza Teach?',
-        a: 'Zaza Teach is an AI-powered lesson planning tool that helps teachers create curriculum-aligned lessons in minutes, with export options to Word and PDF.'
+        a: 'Zaza Teach helps teachers create curriculum-aligned lesson plans in minutes, with export options to Word and PDF. Powered by safe technology built for education.'
       },
       {
         q: 'How does Zaza Teach work?',
@@ -58,7 +58,7 @@ const faqCategories = [
       },
       {
         q: 'How accurate are the AI-generated lesson plans?',
-        a: 'Our AI is trained on educational best practices and curriculum standards to ensure high-quality, accurate lesson plans.'
+        a: 'Lesson plans are based on educational best practice and curriculum standards to ensure high-quality outputs. You always have full control to review and adapt.'
       },
       {
         q: 'What languages does Zaza Teach support?',
@@ -111,7 +111,18 @@ const faqCategories = [
     faqs: [
       {
         q: 'Who is behind Zaza Teach, and why should educators trust it?',
-        a: 'Zaza Teach is led by <strong>Dr. Greg Blackburn</strong>, an education and learning-technology specialist with over 20 years\' experience. Greg holds a PhD in Professional Education (City, University of London), an MBA (University of Queensland), and a Bachelor of Information Systems (Honours) (University of Tasmania). He has published research on critical thinking and student-centred e-learning and currently serves as Chief Learning Officer at Communardo in Germany.<br><br>Zaza is built on a pedagogy-first approach: privacy-respecting design, human-in-the-loop controls, transparent AI prompts, and curriculum-aligned outputs. Our goal is simple-help teachers thrive by saving time without compromising professional quality.<br><br>Learn more on our <a href="/en/about">About page</a> and see how we handle data on our <a href="/en/privacy">Privacy page</a>.'
+        a: 'Zaza Teach is led by <strong>Dr. Greg Blackburn</strong>, an education and learning-technology specialist with over 20 years\' experience. He founded Zaza to reduce teacher workload safely and give teachers back more time.<br><br>Learn more on our <a href="/en/about">About page</a> and see how we handle data on our <a href="/en/privacy">Privacy page</a>.'
+      }
+    ]
+  },
+  {
+    category: 'Cross-Product Help',
+    icon: 'MessageCircle',
+    color: 'blue',
+    faqs: [
+      {
+        q: 'What if I also need help with emails and reports?',
+        a: 'That\'s where Zaza Draft comes in. It helps you create safe first drafts for parent communication and reports. Learn more at <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer">Zaza Draft</a>.'
       }
     ]
   }

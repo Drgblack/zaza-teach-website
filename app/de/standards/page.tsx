@@ -101,7 +101,7 @@ export default function StandardsPageDE() {
               Unterstützte Standards
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
-              Umfassende Unterstützung für Bildungsstandards weltweit. Von deutschen Bildungsstandards bis hin zu internationalen Lehrplänen – sorgen Sie dafür, dass Ihre Lektionen alle Anforderungen mit automatischer Ausrichtung und Verfolgung erfüllen.
+              Umfassende Unterstützung für Bildungsstandards weltweit. Von deutschen Bildungsstandards bis hin zu internationalen Lehrplänen - sorgen Sie dafür, dass Ihre Lektionen alle Anforderungen mit automatischer Ausrichtung und Verfolgung erfüllen.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
               <div className="flex items-center space-x-2">

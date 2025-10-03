@@ -7,8 +7,8 @@ import WhyNotChatGPTClient from './WhyNotChatGPTClient';
 export const dynamic = 'force-dynamic';
 
 export const metadata = generateSEOMetadata({
-  title: 'Warum nicht einfach ChatGPT? | Zaza Teach - Der Unterschied',
-  description: 'Entdecken Sie, warum Zaza Teach speziell für Lehrkräfte entwickelt wurde und Lehrplanausrichtung, pädagogische Expertise und Datenschutz bietet.',
+  title: 'Warum Lehrkräfte Zaza Teach vertrauen - statt generischer KI-Tools | Zaza Teach',
+  description: 'Generische KI-Tools wurden nicht für den Unterricht entwickelt. Entdecken Sie, warum Lehrkräfte Zaza Teach mit Schutzmaßnahmen und Standards wählen.',
   keywords: ['Zaza Teach vs ChatGPT', 'Bildungs-KI', 'Lehrer Tools', 'KI für Schulen', 'Datenschutz Bildung'],
   locale: 'de',
   path: 'why-not-chatgpt',
@@ -17,7 +17,7 @@ export const metadata = generateSEOMetadata({
 
 const breadcrumbs = [
   { name: 'Startseite', item: `${siteUrl}/de` },
-  { name: 'Warum nicht ChatGPT?', item: `${siteUrl}/de/why-not-chatgpt` }
+  { name: 'Warum Lehrkräfte Zaza Teach vertrauen', item: `${siteUrl}/de/why-not-chatgpt` }
 ];
 
 export default function WhyNotChatGPTPage() {

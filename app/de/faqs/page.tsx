@@ -20,7 +20,7 @@ const faqCategories = [
     faqs: [
       {
         q: 'Was ist Zaza Teach?',
-        a: 'Zaza Teach ist ein KI-gestütztes Unterrichtsplanungs-Tool, das Lehrern hilft, lehrplangerechte Lektionen in Minuten zu erstellen, mit Export-Optionen zu Word und PDF.'
+        a: 'Zaza Teach unterstützt Lehrkräfte dabei, in wenigen Minuten curriculum-konforme Unterrichtspläne zu erstellen - mit Exportoptionen nach Word und PDF. Unterstützt durch sichere Technologie, die speziell für den Bildungsbereich entwickelt wurde.'
       },
       {
         q: 'Wie funktioniert Zaza Teach?',
@@ -59,7 +59,7 @@ const faqCategories = [
       },
       {
         q: 'Wie genau sind die KI-generierten Unterrichtspläne?',
-        a: 'Unsere KI ist auf bewährte pädagogische Praktiken und Lehrplanstandards trainiert, um hochwertige, genaue Unterrichtspläne zu gewährleisten.'
+        a: 'Die Unterrichtspläne basieren auf bewährten pädagogischen Praktiken und Lehrplanstandards, um qualitativ hochwertige Ergebnisse zu gewährleisten. Du behältst jederzeit die volle Kontrolle zur Überprüfung und Anpassung.'
       },
       {
         q: 'Welche Sprachen unterstützt Zaza Teach?',
@@ -112,7 +112,18 @@ const faqCategories = [
     faqs: [
       {
         q: 'Wer steckt hinter Zaza Teach - und warum können Lehrkräfte der Lösung vertrauen?',
-        a: 'Zaza Teach wird von <strong>Dr. Greg Blackburn</strong> geleitet, einem Spezialisten für Bildung und Learning Technologies mit über 20 Jahren Erfahrung. Greg hat einen PhD in Professional Education (City, University of London), einen MBA (University of Queensland) und einen Bachelor of Information Systems (Honours) (University of Tasmania). Er hat zu kritischem Denken und lernendenzentriertem E-Learning publiziert und ist derzeit Chief Learning Officer bei Communardo in Deutschland.<br><br>Zaza folgt einem Didaktik-zuerst-Ansatz: datenschutzfreundliches Design, human-in-the-loop-Kontrollen, transparente AI-Prompts und lehrplan-konforme Ergebnisse. Unser Ziel ist klar - Lehrkräften Zeit zurückgeben, ohne die professionelle Qualität zu gefährden.<br><br>Erfahren Sie mehr auf unserer <a href="/de/about">Über uns-Seite</a> und sehen Sie, wie wir mit Daten umgehen auf unserer <a href="/de/privacy">Datenschutz-Seite</a>.'
+        a: 'Zaza Teach wird von <strong>Dr. Greg Blackburn</strong> geleitet, einem Spezialisten für Bildung und Lerntechnologien mit über 20 Jahren Erfahrung. Er gründete Zaza, um die Arbeitsbelastung von Lehrkräften sicher zu reduzieren und ihnen mehr Zeit zurückzugeben.<br><br>Erfahren Sie mehr auf unserer <a href="/de/about">Über uns-Seite</a> und sehen Sie, wie wir mit Daten umgehen auf unserer <a href="/de/privacy">Datenschutz-Seite</a>.'
+      }
+    ]
+  },
+  {
+    category: 'Produktübergreifende Hilfe',
+    icon: 'MessageCircle',
+    color: 'blue',
+    faqs: [
+      {
+        q: 'Was, wenn ich auch Hilfe bei E-Mails und Berichten brauche?',
+        a: 'Dafür gibt es Zaza Draft. Es erstellt sichere Entwürfe für Elternkommunikation und Berichte. Erfahre mehr unter <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer">Zaza Draft</a>.'
       }
     ]
   }

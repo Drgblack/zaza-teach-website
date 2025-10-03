@@ -56,22 +56,16 @@ export default function MissionClient() {
       color: "from-blue-500 to-blue-600"
     },
     {
-      icon: BookOpen,
-      title: t('mission.values.qualityEducation.title'),
-      description: t('mission.values.qualityEducation.description'),
-      color: "from-green-500 to-green-600"
-    },
-    {
       icon: Lock,
-      title: t('mission.values.privacySecurity.title'),
-      description: t('mission.values.privacySecurity.description'),
+      title: t('mission.values.safeTrusted.title'),
+      description: t('mission.values.safeTrusted.description'),
       color: "from-purple-500 to-purple-600"
     },
     {
-      icon: Users,
-      title: t('mission.values.accessibilityForAll.title'),
-      description: t('mission.values.accessibilityForAll.description'),
-      color: "from-orange-500 to-orange-600"
+      icon: BookOpen,
+      title: t('mission.values.timeRestored.title'),
+      description: t('mission.values.timeRestored.description'),
+      color: "from-green-500 to-green-600"
     }
   ];
 

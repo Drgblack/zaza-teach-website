@@ -71,8 +71,7 @@ const Header = () => {
 
   const solutions = [
     { name: "Zaza Teach", href: `/${locale}`, comingSoon: false },
-    { name: "Zaza Promptly", href: "https://zazapromptly.com", comingSoon: false },
-    { name: "RealtyClose", href: "https://realtyclose.com", comingSoon: false },
+    { name: "Zaza Draft", href: "https://zazadraft.com", comingSoon: false },
   ]
 
   // Helper function to add locale prefix to internal links
@@ -307,26 +306,39 @@ const Header = () => {
                     onMouseLeave={closeDropdown}
                     onKeyDown={handleMenuKeyDown}
                   >
-                    {solutions.map((solution, index) => (
-                      <Link
-                        key={solution.name}
-                        href={solution.href}
-                        role="menuitem"
-                        tabIndex={0}
-                        className="flex items-center justify-between px-4 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors"
-                        onClick={closeDropdown}
-                      >
-                        <span className="font-medium">{solution.name}</span>
-                        {solution.comingSoon && (
-                          <Badge
-                            variant="outline"
-                            className="text-xs bg-[#FFD700]/20 text-[#8A2BE2] border-[#8A2BE2]/30"
-                          >
-                            Coming Soon
-                          </Badge>
-                        )}
-                      </Link>
-                    ))}
+                    {solutions.map((solution, index) => {
+                      const isExternal = solution.href.startsWith('http');
+                      const LinkComponent = isExternal ? 'a' : Link;
+                      const linkProps = isExternal ? 
+                        { 
+                          href: solution.href,
+                          target: "_blank", 
+                          rel: "noopener noreferrer",
+                          "aria-label": `Open ${solution.name} (new tab)`
+                        } : 
+                        { href: solution.href };
+                      
+                      return (
+                        <LinkComponent
+                          key={solution.name}
+                          {...linkProps}
+                          role="menuitem"
+                          tabIndex={0}
+                          className="flex items-center justify-between px-4 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors"
+                          onClick={closeDropdown}
+                        >
+                          <span className="font-medium">{solution.name}</span>
+                          {solution.comingSoon && (
+                            <Badge
+                              variant="outline"
+                              className="text-xs bg-[#FFD700]/20 text-[#8A2BE2] border-[#8A2BE2]/30"
+                            >
+                              Coming Soon
+                            </Badge>
+                          )}
+                        </LinkComponent>
+                      );
+                    })}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -441,12 +453,12 @@ const Header = () => {
 
           {/* Right Section - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer" aria-label="Open Zaza Draft (new tab)">
               <Button
                 variant="outline"
                 className="bg-gradient-to-r from-[#E0115F] to-[#8A2BE2] hover:from-[#E0115F]/90 hover:to-[#8A2BE2]/90 text-white border-0 font-medium"
               >
-{t('nav.tryZazaPromptly')}
+{t('nav.tryZazaDraft')}
               </Button>
             </a>
             <Link href={`/${locale}`}>
@@ -489,21 +501,34 @@ const Header = () => {
               {/* Mobile Solutions */}
               <div className="space-y-2">
                 <h3 className="font-semibold text-slate-800 dark:text-white px-4">{t('nav.solutions')}</h3>
-                {solutions.map((solution) => (
-                  <Link
-                    key={solution.name}
-                    href={solution.href}
-                    className="flex items-center justify-between px-6 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span>{solution.name}</span>
-                    {solution.comingSoon && (
-                      <Badge variant="outline" className="text-xs bg-[#FFD700]/20 text-[#8A2BE2] border-[#8A2BE2]/30">
-                        Coming Soon
-                      </Badge>
-                    )}
-                  </Link>
-                ))}
+                {solutions.map((solution) => {
+                  const isExternal = solution.href.startsWith('http');
+                  const LinkComponent = isExternal ? 'a' : Link;
+                  const linkProps = isExternal ? 
+                    { 
+                      href: solution.href,
+                      target: "_blank", 
+                      rel: "noopener noreferrer",
+                      "aria-label": `${solution.name} öffnen (neuer Tab)`
+                    } : 
+                    { href: solution.href };
+                  
+                  return (
+                    <LinkComponent
+                      key={solution.name}
+                      {...linkProps}
+                      className="flex items-center justify-between px-6 py-2 text-slate-800 dark:text-white hover:bg-[#E8E6F5] dark:hover:bg-gray-800 hover:text-[#E0115F] transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span>{solution.name}</span>
+                      {solution.comingSoon && (
+                        <Badge variant="outline" className="text-xs bg-[#FFD700]/20 text-[#8A2BE2] border-[#8A2BE2]/30">
+                          Coming Soon
+                        </Badge>
+                      )}
+                    </LinkComponent>
+                  );
+                })}
               </div>
 
               {/* Mobile Learning Centre */}
@@ -549,12 +574,12 @@ const Header = () => {
 
               {/* Mobile CTA Buttons and Dark Mode Toggle */}
               <div className="px-4 pt-4 space-y-3 border-t border-gray-200/50 dark:border-gray-700/50">
-                <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer" className="block">
+                <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer" aria-label="Open Zaza Draft (new tab)" className="block">
                   <Button
                     className="w-full bg-gradient-to-r from-[#E0115F] to-[#8A2BE2] hover:from-[#E0115F]/90 hover:to-[#8A2BE2]/90 text-white font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-    {t('nav.tryZazaPromptly')}
+    {t('nav.tryZazaDraft')}
                   </Button>
                 </a>
                 <Link href={`/${locale}`} className="block">

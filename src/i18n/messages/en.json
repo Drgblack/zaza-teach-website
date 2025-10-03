@@ -10,12 +10,12 @@
     "aboutFounder": "About the Founder",
     "mission": "Vision & Mission",
     "products": "Zaza Product List",
-    "whyNotChatgpt": "Why Not Just Use ChatGPT?",
+    "whyNotChatgpt": "Why Teachers Trust Zaza Teach Over Generic AI",
     "quoteWall": "Zaza Quote Wall",
     "featureRequest": "Zaza Feature Request",
     "support": "Support",
     "contact": "Contact",
-    "tryZazaPromptly": "Try Zaza Draft (formerly Promptly)",
+    "tryZazaDraft": "Try Zaza Draft",
     "tryZazaTeach": "Try Zaza Teach",
     "darkMode": "Toggle dark mode",
     "selectLanguage": "Select language"
@@ -37,8 +37,7 @@
     "impressum": "Impressum",
     "ecosystem": "Zaza Ecosystem",
     "zazaTechnologies": "Zaza Technologies",
-    "zazaPromptly": "Zaza Draft (formerly Promptly)",
-    "realtyClose": "RealtyClose",
+    "zazaDraft": "Zaza Draft",
     "copyright": "© {year} Zaza Teach (part of Zaza Technologies). All rights reserved."
   },
   "home": {
@@ -182,7 +181,7 @@
         "title": "Free Plan",
         "price": "€0",
         "period": "/month",
-        "cta": "Start Saving Time Free",
+        "cta": "Start free with 5 lesson plans/month",
         "cancelAnytime": "Cancel anytime",
         "features": {
           "saveHours": {
@@ -207,7 +206,7 @@
         "title": "Pro Plan", 
         "price": "€19.99",
         "period": "/month",
-        "cta": "Reclaim Your Sundays",
+        "cta": "Reclaim your time every week",
         "popular": "Most Popular",
         "cancelAnytime": "Cancel anytime",
         "features": {
@@ -234,14 +233,14 @@
         }
       },
       "bundle": {
-        "title": "Bundle",
+        "title": "Teach & Write Smarter",
         "price": "€24.99", 
         "period": "/month",
-        "cta": "Teach & Communicate Smarter",
+        "cta": "Teach & Write Smarter",
         "cancelAnytime": "Cancel anytime",
         "features": {
           "lessonPlanning": {
-            "title": "Lesson planning plus parent communication in one.",
+            "title": "Lesson planning plus all your school writing tasks in one. Together, Teach + Draft remove 80% of teacher admin.",
             "subtitle": "Zaza Teach + Zaza Draft"
           },
           "everything": {
@@ -287,7 +286,8 @@
     "trust": {
       "trustedBy": "Trusted by over 1,000+ educators worldwide",
       "backedBy": "Backed by 20+ years of education expertise", 
-      "designedWith": "Designed with teachers, for teachers"
+      "designedWith": "Designed with teachers, for teachers",
+      "createdBy": "Created by a PhD educator to reduce teacher workload safely"
     }
   },
   "blog": {
@@ -312,7 +312,7 @@
     "writtenBy": "Written by",
     "crossSell": {
       "text": "Tired of parent emails and reports?",
-      "cta": "Try Zaza Draft (formerly Promptly)"
+      "cta": "Try Zaza Draft"
     },
     "minRead": "min read",
     "backToBlog": "← Back to Blog",
@@ -449,7 +449,7 @@
       "paragraph2": "I hold a PhD in Professional Education from City, University of London. My work focuses on critical thinking, problem-solving, and making digital learning feel human.",
       "quote1": "Helping teachers thrive by giving them back their time.",
       "paragraph3": "I built Zaza Teach to give teachers back time, reduce Sunday stress, and bring the joy back to planning. The goal is simple - let teachers just teach.",
-      "quote2": "Blending pedagogy, business, and AI into tools that actually work."
+      "quote2": "Blending pedagogy, business, and safe technology into tools that actually work."
     },
     "credentials": {
       "title": "Credentials",
@@ -486,7 +486,7 @@
         },
         {
           "title": "Zaza founder",
-          "body": "Created Zaza to give teachers back time and build AI tools that feel human."
+          "body": "Created Zaza to give teachers back time and build safe, teacher-first tools that feel human."
         }
       ]
     },
@@ -503,7 +503,7 @@
         },
         {
           "title": "Impact",
-          "text": "Building AI tools that reduce workload and increase teacher confidence."
+          "text": "Building trusted tools that reduce workload and increase teacher confidence."
         },
         {
           "title": "Coming soon",
@@ -844,10 +844,10 @@
     }
   },
   "whyNotChatgpt": {
-    "title": "Why Not ChatGPT? | Zaza Teach - Built for Educators",
-    "description": "Discover why Zaza Teach is purpose-built for teachers, offering curriculum alignment, educational expertise, and privacy that generic AI tools lack.",
-    "pageTitle": "Why Not Just Use ChatGPT?",
-    "subtitle": "Understanding the difference between generic AI and purpose-built educational tools",
+    "title": "Why Teachers Trust Zaza Teach Over Generic AI | Zaza Teach",
+    "description": "Generic AI tools weren't designed for classrooms. Discover why teachers choose Zaza Teach with its safeguards, standards, and educational expertise.",
+    "pageTitle": "Why Teachers Trust Zaza Teach Over Generic AI",
+    "subtitle": "Generic AI tools weren't designed for classrooms. Zaza Teach was built from the ground up for teachers — with safeguards, standards, and structures you can rely on.",
     "sections": {
       "chatgptLimitations": {
         "title": "ChatGPT Limitations for Teachers",
@@ -924,8 +924,8 @@
         "description": "Ready-to-use templates for any subject"
       },
       "aiTeachingPrompts": {
-        "title": "→ AI Teaching Prompts",
-        "description": "Smart prompts for educational AI tools"
+        "title": "→ Teaching Prompts",
+        "description": "Smart prompts for educational tools"
       },
       "assessmentRubrics": {
         "title": "→ Assessment Rubrics",
@@ -958,5 +958,139 @@
     "searchFeature": "search feature",
     "or": "or",
     "getInTouch": "get in touch"
+  },
+  "resources": {
+    "hero": {
+      "badge": "Free Resources",
+      "title": "Teaching Resources",
+      "subtitle": "Professional templates and guides designed to save you time and enhance your teaching effectiveness",
+      "note": "Click any resource to view and print as PDF"
+    },
+    "categories": {
+      "planning": "Planning",
+      "assessment": "Assessment",
+      "management": "Management",
+      "activities": "Activities",
+      "aiTools": "Smart Teaching Tools",
+      "productivity": "Productivity"
+    },
+    "items": {
+      "lessonPlan": {
+        "title": "Lesson Plan Template",
+        "description": "A comprehensive template for creating structured lesson plans with all essential components."
+      },
+      "assessmentRubric": {
+        "title": "Assessment Rubric Guide",
+        "description": "Guidelines for creating effective assessment rubrics that measure student learning."
+      },
+      "classroomManagement": {
+        "title": "Classroom Management Tips",
+        "description": "Practical strategies for effective classroom management and positive behavior support."
+      },
+      "studentEngagement": {
+        "title": "Student Engagement Activities",
+        "description": "Creative activities to boost student participation and make learning interactive."
+      },
+      "aiPrompts": {
+        "title": "Teaching Prompts Pack",
+        "description": "Ready-to-use prompts for lesson planning, assessment creation, and content generation. Powered by safe AI."
+      },
+      "timeSaving": {
+        "title": "Time-Saving Teacher Checklist",
+        "description": "Weekly and daily checklists to streamline your workflow and maximize efficiency."
+      }
+    },
+    "viewPrint": "View & Print",
+    "bottomCta": {
+      "title": "Need More Resources?",
+      "description": "Join Zaza Teach to access our full library of smart lesson planning tools and premium resources.",
+      "startTrial": "Start Free Trial",
+      "contactUs": "Contact Us"
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "subtitle": "We'll reply within 24 hours. Real humans, clear answers.",
+    "form": {
+      "title": "Send us a Message",
+      "firstName": "First Name",
+      "lastName": "Last Name", 
+      "email": "Email Address",
+      "role": "Your Role",
+      "school": "School/Organization (Optional)",
+      "topic": "Topic",
+      "priority": "Priority",
+      "message": "Message",
+      "consent": "I agree to the processing of my data according to the Privacy Policy.",
+      "marketingOptIn": "Send me occasional updates about new features and resources.",
+      "sendButton": "Send Message",
+      "sending": "Sending...",
+      "placeholders": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@school.edu",
+        "school": "Lincoln Elementary School",
+        "message": "Tell us how we can help you..."
+      },
+      "roleOptions": {
+        "select": "Select your role",
+        "primaryTeacher": "Primary/Elementary Teacher",
+        "secondaryTeacher": "Secondary Teacher",
+        "specialEducationTeacher": "Special Education Teacher",
+        "departmentHead": "Department Head",
+        "administrator": "School Leader / Administrator",
+        "itAdmin": "IT / Admin",
+        "other": "Other"
+      },
+      "topicOptions": {
+        "select": "What do you need help with?",
+        "accountBilling": "Account & Billing",
+        "technicalIssue": "Technical Issue",
+        "lessonPlanningHelp": "Lesson Planning Help",
+        "salesPartnerships": "Sales & Partnerships",
+        "pressMedia": "Press & Media",
+        "dataPrivacy": "Data & Privacy",
+        "featureRequest": "Feature Request"
+      },
+      "priorityOptions": {
+        "select": "How urgent is this?",
+        "low": "Low - General question",
+        "normal": "Normal - Need help but not urgent",
+        "high": "High - Blocking my work"
+      },
+      "featureRequestNote": {
+        "text": "Submit a feature idea instead",
+        "link": "/en/feature-request"
+      },
+      "success": {
+        "title": "Thanks! We've received your message and will reply within 24 hours.",
+        "subtitle": "If you need immediate assistance, try our live chat during business hours.",
+        "backButton": "Back to Contact",
+        "homeButton": "Return Home"
+      }
+    },
+    "aside": {
+      "getInTouch": {
+        "title": "Get in Touch",
+        "emailLabel": "Email",
+        "emailValue": "help@zazatechnologies.com",
+        "emailNote": "We reply within 24 hours.",
+        "chatLabel": "Live Chat",
+        "chatNote": "Available on our website",
+        "hoursTitle": "Response Time",
+        "hoursEmail": "Email: within 24 hours",
+        "hoursChat": "Chat: immediate during business hours"
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "body": "Before reaching out, you might find your answer in our comprehensive FAQ section.",
+        "cta": "Visit FAQ"
+      },
+      "feature": {
+        "title": "Have a Feature Idea?",
+        "body": "Help us improve Zaza Teach by sharing your feature requests and suggestions.",
+        "cta": "Submit Feature Request"
+      }
+    }
   }
 }
