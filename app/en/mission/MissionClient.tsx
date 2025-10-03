@@ -50,26 +50,20 @@ export default function MissionClient() {
     {
       icon: Clock,
       title: "Teacher-Centered Design",
-      description: "Every feature is designed to cut hours off your prep time. Real classroom needs guide our design so you spend less time planning and more time teaching.",
+      description: "Every feature is designed around teacher time.",
       color: "from-blue-500 to-blue-600"
     },
     {
-      icon: BookOpen,
-      title: "Quality Education",
-      description: "AI-assisted, not AI-replaced. Your expertise leads, technology supports. We enhance human creativity and pedagogy, never replace them.",
-      color: "from-green-500 to-green-600"
-    },
-    {
       icon: Lock,
-      title: "Privacy & Security",
-      description: "Your lesson plans and student data are yours. Always private, always secure.",
+      title: "Safe & Trusted",
+      description: "GDPR-compliant, hallucination-resistant, you stay in control.",
       color: "from-purple-500 to-purple-600"
     },
     {
-      icon: Users,
-      title: "Accessibility for All",
-      description: "Great tools shouldn't depend on budget or technical know-how. Zaza Teach is simple, affordable, and made for every educator.",
-      color: "from-orange-500 to-orange-600"
+      icon: BookOpen,
+      title: "Time Restored",
+      description: "Tools that give back evenings, weekends, and energy.",
+      color: "from-green-500 to-green-600"
     }
   ];
 
@@ -189,7 +183,7 @@ export default function MissionClient() {
             </h2>
             <div className="prose prose-lg prose-slate dark:prose-invert max-w-none text-center">
               <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200 mb-6">
-                We imagine a world where teachers walk out at 4pm guilt-free, spend Sundays with family, and return on Monday refreshed.
+                We imagine a world where teachers walk out at 4pm guilt-free, spend Sundays with family, and return on Monday refreshed - supported by safe, teacher-first tools that make this possible.
               </p>
               <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200 font-medium">
                 When teachers thrive, students thrive. That's the future we're building with Zaza Teach.
@@ -211,7 +205,7 @@ export default function MissionClient() {
               Take back your time
             </h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Try Zaza Teach free today and see how it feels to plan lessons in minutes instead of hours.
+              Try Zaza Teach free today and see how it feels to plan lessons in minutes instead of hours. Pair it with Zaza Draft to cut report writing and emails too.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild size="lg" className="w-full sm:w-auto px-8 py-4 text-lg">

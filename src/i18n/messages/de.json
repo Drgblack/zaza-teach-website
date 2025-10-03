@@ -10,12 +10,12 @@
     "aboutFounder": "Über den Gründer",
     "mission": "Vision & Mission",
     "products": "Zaza Produktliste",
-    "whyNotChatgpt": "Warum nicht einfach ChatGPT nutzen?",
+    "whyNotChatgpt": "Warum Lehrkräfte Zaza Teach vertrauen – statt generischer KI-Tools",
     "quoteWall": "Zaza Zitate-Wand",
     "featureRequest": "Zaza Feature-Wunsch",
     "support": "Support",
     "contact": "Kontakt",
-    "tryZazaPromptly": "Zaza Draft (ehemals Promptly) testen",
+    "tryZazaDraft": "Zaza Draft testen",
     "tryZazaTeach": "Zaza Teach testen",
     "darkMode": "Dunkelmodus umschalten",
     "selectLanguage": "Sprache auswählen"
@@ -37,8 +37,7 @@
     "impressum": "Impressum",
     "ecosystem": "Zaza Ökosystem",
     "zazaTechnologies": "Zaza Technologies",
-    "zazaPromptly": "Zaza Draft (ehemals Promptly)",
-    "realtyClose": "RealtyClose",
+    "zazaDraft": "Zaza Draft",
     "copyright": "© {year} Zaza Teach (Teil von Zaza Technologies). Alle Rechte vorbehalten."
   },
   "home": {
@@ -211,7 +210,7 @@
         "title": "Kostenlos",
         "price": "€0",
         "period": "/Monat",
-        "cta": "Zeit sparen kostenlos starten",
+        "cta": "Starte kostenlos mit 5 Unterrichtsplänen pro Monat",
         "cancelAnytime": "Jederzeit kündbar",
         "features": {
           "saveHours": {
@@ -236,7 +235,7 @@
         "title": "Pro-Paket", 
         "price": "€19.99",
         "period": "/Monat",
-        "cta": "Holen Sie sich Ihre Sonntage zurück",
+        "cta": "Gewinne jede Woche wertvolle Zeit zurück",
         "popular": "Beliebtester",
         "cancelAnytime": "Jederzeit kündbar",
         "features": {
@@ -263,14 +262,14 @@
         }
       },
       "bundle": {
-        "title": "Bundle",
+        "title": "Unterrichten & Schreiben – einfacher",
         "price": "€24.99", 
         "period": "/Monat",
-        "cta": "Intelligenter unterrichten & kommunizieren",
+        "cta": "Unterrichten & Schreiben – einfacher",
         "cancelAnytime": "Jederzeit kündbar",
         "features": {
           "lessonPlanning": {
-            "title": "Unterrichtsplanung plus Elternkommunikation in einem.",
+            "title": "Unterrichtsplanung plus alle schulischen Schreibaufgaben in einem. Gemeinsam reduzieren Teach + Draft 80% der administrativen Arbeit.",
             "subtitle": "Zaza Teach + Zaza Draft"
           },
           "everything": {
@@ -316,7 +315,8 @@
     "trust": {
       "trustedBy": "Vertraut von über 1.000+ Pädagogen weltweit",
       "backedBy": "Unterstützt von 20+ Jahren Bildungsexpertise", 
-      "designedWith": "Mit Lehrern für Lehrer entwickelt"
+      "designedWith": "Mit Lehrern für Lehrer entwickelt",
+      "createdBy": "Entwickelt von einem promovierten Pädagogen, um die Arbeitsbelastung von Lehrkräften sicher zu reduzieren"
     }
   },
   "blog": {
@@ -341,7 +341,7 @@
     "writtenBy": "Geschrieben von",
     "crossSell": {
       "text": "Genervt von Eltern-E-Mails und Berichten?",
-      "cta": "Probiere Zaza Draft (früher Promptly)"
+      "cta": "Probiere Zaza Draft"
     },
     "minRead": "Min Lesezeit",
     "backToBlog": "← Zurück zum Blog",
@@ -368,7 +368,7 @@
       "paragraph2": "Ich habe einen PhD in Berufspädagogik von der City, University of London. Meine Arbeit konzentriert sich auf kritisches Denken, Problemlösung und darauf, digitales Lernen menschlich zu gestalten.",
       "quote1": "Lehrern helfen zu gedeihen, indem ich ihnen ihre Zeit zurückgebe.",
       "paragraph3": "Ich habe Zaza Teach entwickelt, um Lehrern Zeit zurückzugeben, den Sonntagsstress zu reduzieren und die Freude an der Planung zurückzubringen. Das Ziel ist einfach - Lehrer einfach unterrichten lassen.",
-      "quote2": "Pädagogik, Business und KI zu Tools verbinden, die tatsächlich funktionieren."
+      "quote2": "Pädagogik, Business und sichere Technologie zu Tools verbinden, die tatsächlich funktionieren."
     },
     "credentials": {
       "title": "Qualifikationen",
@@ -405,7 +405,7 @@
         },
         {
           "title": "Zaza-Gründer",
-          "body": "Erschuf Zaza, um Lehrern ihre Zeit zurückzugeben und KI-Tools zu entwickeln, die menschlich wirken."
+          "body": "Erschuf Zaza, um Lehrern ihre Zeit zurückzugeben und sichere, lehrerfreundliche Tools zu entwickeln, die menschlich wirken."
         }
       ]
     },
@@ -422,7 +422,7 @@
         },
         {
           "title": "Wirkung",
-          "text": "Entwicklung von KI-Tools, die Arbeitsbelastung reduzieren und Lehrervertrauen stärken."
+          "text": "Entwicklung vertrauensvoller Tools, die Arbeitsbelastung reduzieren und Lehrervertrauen stärken."
         },
         {
           "title": "Bald verfügbar",
@@ -820,18 +820,6 @@
       },
       "cta": "Zaza Teach testen"
     },
-    "zazaPromptly": {
-      "title": "Zaza Promptly",
-      "description": "Erweiterte Prompt-Engineering-Tool für Pädagogen, die maßgeschneiderte KI-Interaktionen für ihre spezifischen Lehrbedürfnisse erstellen möchten.",
-      "features": {
-        "customPrompts": "Benutzerdefinierte Prompt-Erstellung",
-        "templateLibrary": "Vorlagen-Bibliothek",
-        "advancedAi": "Erweiterte KI-Interaktionen",
-        "educatorFocus": "Pädagogen-orientierte Funktionen",
-        "integration": "Integrationsmöglichkeiten"
-      },
-      "comingSoon": "Demnächst verfügbar"
-    },
     "resourcesLibrary": {
       "title": "Teach Resources Library", 
       "description": "Kuratierte Sammlung von Lehrressourcen, Vorlagen und Bildungsmaterialien, erstellt von Pädagogen für Pädagogen.",
@@ -1025,30 +1013,26 @@
     "values": {
       "title": "Wofür wir stehen",
       "teacherCentered": {
-        "title": "Lehrerorientiertes Design",
-        "description": "Jede Funktion ist darauf ausgelegt, Stunden von Ihrer Vorbereitungszeit zu sparen. Echte Klassenzimmer-Bedürfnisse leiten unser Design, damit Sie weniger Zeit mit Planung und mehr Zeit mit Unterrichten verbringen."
+        "title": "Lehrerzentriertes Design",
+        "description": "Jede Funktion ist auf die Zeit der Lehrkräfte zugeschnitten."
       },
-      "qualityEducation": {
-        "title": "Qualitätsbildung",
-        "description": "KI-unterstützt, nicht KI-ersetzt. Ihre Expertise führt, Technologie unterstützt. Wir verstärken menschliche Kreativität und Pädagogik, ersetzen sie niemals."
+      "safeTrusted": {
+        "title": "Sicher & Vertrauenswürdig",
+        "description": "DSGVO-konform, halluzinationssicher, du behältst die Kontrolle."
       },
-      "privacySecurity": {
-        "title": "Datenschutz & Sicherheit",
-        "description": "Ihre Unterrichtspläne und Schülerdaten gehören Ihnen. Immer privat, immer sicher."
-      },
-      "accessibilityForAll": {
-        "title": "Zugänglichkeit für alle",
-        "description": "Großartige Tools sollten nicht vom Budget oder technischen Know-how abhängen. Zaza Teach ist einfach, erschwinglich und für jeden Pädagogen gemacht."
+      "timeRestored": {
+        "title": "Zeit zurückgewinnen",
+        "description": "Tools, die Abende, Wochenenden und Energie zurückgeben."
       }
     },
     "vision": {
       "title": "Unsere Vision für die Zukunft",
-      "paragraph1": "Wir stellen uns eine Welt vor, in der Lehrer um 16 Uhr schuldgefrei nach Hause gehen, Sonntage mit der Familie verbringen und montags erfrischt zurückkehren.",
+      "paragraph1": "Wir stellen uns eine Welt vor, in der Lehrkräfte ohne schlechtes Gewissen um 16 Uhr nach Hause gehen, Sonntage mit der Familie verbringen und montags erholt zurückkehren – unterstützt durch sichere, lehrerzentrierte Tools, die dies möglich machen.",
       "paragraph2": "Wenn Lehrer gedeihen, gedeihen Schüler. Das ist die Zukunft, die wir mit Zaza Teach aufbauen."
     },
     "cta": {
       "title": "Holen Sie sich Ihre Zeit zurück",
-      "subtitle": "Testen Sie Zaza Teach heute kostenlos und erleben Sie, wie es sich anfühlt, Unterrichtspläne in Minuten statt Stunden zu erstellen.",
+      "subtitle": "Probiere Zaza Teach noch heute kostenlos aus und erlebe, wie es sich anfühlt, Unterrichtspläne in Minuten statt in Stunden zu erstellen. Kombiniere es mit Zaza Draft, um auch Berichte und E-Mails schneller zu erledigen.",
       "startFree": "Kostenlos starten",
       "exploreResources": "Ressourcen erkunden"
     }
@@ -1189,10 +1173,10 @@
     }
   },
   "whyNotChatgpt": {
-    "title": "Warum nicht einfach ChatGPT? | Zaza Teach - Der Unterschied",
-    "description": "Entdecken Sie, warum Zaza Teach speziell für Pädagogen entwickelte KI-Tools bietet, die über allgemeine Chatbots wie ChatGPT hinausgehen.",
-    "pageTitle": "Warum nicht einfach ChatGPT?",
-    "subtitle": "Eine häufige Frage von Lehrern, die KI-Tools erkunden. Hier ist, warum spezialisierte Bildungstools einen Unterschied machen.",
+    "title": "Warum Lehrkräfte Zaza Teach vertrauen – statt generischer KI-Tools | Zaza Teach",
+    "description": "Generische KI-Tools wurden nicht für den Unterricht entwickelt. Entdecken Sie, warum Lehrkräfte Zaza Teach mit Schutzmaßnahmen und Standards wählen.",
+    "pageTitle": "Warum Lehrkräfte Zaza Teach vertrauen – statt generischer KI-Tools",
+    "subtitle": "Generische KI-Tools wurden nicht für den Unterricht entwickelt. Zaza Teach wurde von Grund auf für Lehrkräfte entwickelt – mit Schutzmaßnahmen, Standards und Strukturen, auf die Sie sich verlassen können.",
     "sections": {
       "chatgptLimitations": {
         "title": "ChatGPT-Beschränkungen für Lehrer",
@@ -1272,7 +1256,7 @@
         "assessment": "Bewertung",
         "management": "Verwaltung",
         "activities": "Aktivitäten",
-        "aiTools": "KI-Tools",
+        "aiTools": "Intelligente Lehrwerkzeuge",
         "productivity": "Produktivität"
     },
     "items": {
@@ -1293,8 +1277,8 @@
           "description": "Kreative Aktivitäten zur Steigerung der Schülerbeteiligung und interaktiven Gestaltung des Lernens."
         },
         "aiPrompts": {
-          "title": "KI-Lehr-Prompts-Paket",
-          "description": "Sofort einsetzbare KI-Prompts für Unterrichtsplanung, Bewertungserstellung und Inhaltsgenerierung."
+          "title": "Vorlagen-Paket für Lehrkräfte",
+          "description": "Sofort einsetzbare Vorlagen für Unterrichtsplanung, Bewertungserstellung und Inhaltsgenerierung. Unterstützt durch sichere KI."
         },
         "timeSaving": {
           "title": "Zeitsparende Lehrer-Checkliste",
@@ -1304,7 +1288,7 @@
     "viewPrint": "Anzeigen & Drucken",
     "bottomCta": {
         "title": "Benötigen Sie mehr Ressourcen?",
-        "description": "Treten Sie Zaza Teach bei, um Zugang zu unserer vollständigen Bibliothek von KI-gestützten Unterrichtsplanungstools und Premium-Ressourcen zu erhalten.",
+        "description": "Mit Zaza Teach erhältst du Zugriff auf unsere vollständige Bibliothek intelligenter Unterrichtsplanungs-Tools und Premium-Ressourcen.",
         "startTrial": "Kostenlose Testversion starten",
         "contactUs": "Kontaktieren Sie uns"
       }
@@ -1421,5 +1405,90 @@
     "searchFeature": "Suchfunktion",
     "or": "oder",
     "getInTouch": "kontaktieren Sie uns"
+  },
+  "contact": {
+    "pageTitle": "Kontakt",
+    "subtitle": "Wir antworten innerhalb von 24 Stunden. Echte Menschen, klare Antworten.",
+    "form": {
+      "title": "Nachricht senden",
+      "firstName": "Vorname",
+      "lastName": "Nachname", 
+      "email": "E-Mail-Adresse",
+      "role": "Ihre Rolle",
+      "school": "Schule/Organisation (optional)",
+      "topic": "Thema",
+      "priority": "Priorität",
+      "message": "Nachricht",
+      "consent": "Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.",
+      "marketingOptIn": "Ich möchte gelegentlich Updates zu neuen Funktionen und Materialien erhalten.",
+      "sendButton": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "placeholders": {
+        "firstName": "Max",
+        "lastName": "Mustermann",
+        "email": "max.mustermann@schule.de",
+        "school": "Grundschule Musterstadt",
+        "message": "Beschreiben Sie, wie wir Ihnen helfen können..."
+      },
+      "roleOptions": {
+        "select": "Wählen Sie Ihre Rolle",
+        "primaryTeacher": "Grundschullehrer/in",
+        "secondaryTeacher": "Weiterführende/r Lehrer/in",
+        "specialEducationTeacher": "Sonderpädagoge/in",
+        "departmentHead": "Fachbereichsleiter/in",
+        "administrator": "Schulleitung / Administrator/in",
+        "itAdmin": "IT / Admin",
+        "other": "Sonstiges"
+      },
+      "topicOptions": {
+        "select": "Wobei benötigen Sie Hilfe?",
+        "accountBilling": "Konto & Abrechnung",
+        "technicalIssue": "Technisches Problem",
+        "lessonPlanningHelp": "Hilfe zur Unterrichtsplanung",
+        "salesPartnerships": "Vertrieb & Partnerschaften",
+        "pressMedia": "Presse & Medien",
+        "dataPrivacy": "Daten & Datenschutz",
+        "featureRequest": "Funktionsanfrage"
+      },
+      "priorityOptions": {
+        "select": "Wie dringend ist dies?",
+        "low": "Niedrig - Allgemeine Frage",
+        "normal": "Normal - Brauche Hilfe, aber nicht dringend",
+        "high": "Hoch - Blockiert meine Arbeit"
+      },
+      "featureRequestNote": {
+        "text": "Stattdessen eine Funktionsidee einreichen",
+        "link": "/de/feature-request"
+      },
+      "success": {
+        "title": "Danke! Wir haben Ihre Nachricht erhalten und werden innerhalb von 24 Stunden antworten.",
+        "subtitle": "Falls Sie sofortige Hilfe benötigen, versuchen Sie unseren Live-Chat während der Geschäftszeiten.",
+        "backButton": "Zurück zum Kontakt",
+        "homeButton": "Zur Startseite"
+      }
+    },
+    "aside": {
+      "getInTouch": {
+        "title": "Kontakt aufnehmen",
+        "emailLabel": "E-Mail",
+        "emailValue": "help@zazatechnologies.com",
+        "emailNote": "Wir antworten innerhalb von 24 Stunden.",
+        "chatLabel": "Live-Chat",
+        "chatNote": "Auf unserer Website verfügbar",
+        "hoursTitle": "Reaktionszeit",
+        "hoursEmail": "E-Mail: innerhalb von 24 Stunden",
+        "hoursChat": "Chat: sofort während der Geschäftszeiten"
+      },
+      "faq": {
+        "title": "Häufig gestellte Fragen",
+        "body": "Bevor Sie uns schreiben, finden Sie die Antwort vielleicht in unseren FAQs.",
+        "cta": "Zu den FAQs"
+      },
+      "feature": {
+        "title": "Sie haben eine Funktionsidee?",
+        "body": "Helfen Sie uns, Zaza Teach zu verbessern, indem Sie Ihre Funktionswünsche und Vorschläge teilen.",
+        "cta": "Funktionsanfrage senden"
+      }
+    }
   }
 }

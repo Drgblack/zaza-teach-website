@@ -43,9 +43,8 @@
 
 **Suite links:**
 - https://zazateach.com
-- https://zazapromptly.com
+- https://zazadraft.com
 - https://zazatechnologies.com
-- https://realtyclose.com
 
 **This repo's variant:** teach
 

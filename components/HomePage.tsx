@@ -366,7 +366,7 @@ export default function HomePage() {
               asChild
               className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white px-6 py-2"
             >
-              <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer">
                 {t('home.crossSell.cta')} <ArrowRight className="inline-block ml-2 h-4 w-4" />
               </a>
             </Button>
@@ -665,7 +665,7 @@ export default function HomePage() {
                   title: t('home.pricing.plans.bundle.title'),
                   price: t('home.pricing.plans.bundle.price'), 
                   period: t('home.pricing.plans.bundle.period'),
-                  features: getTranslationArray('home.pricing.plans.bundle.features', ["Zaza Teach + Zaza Promptly", "All Pro features", "Cross-platform sync"]),
+                  features: getTranslationArray('home.pricing.plans.bundle.features', ["Zaza Teach + Zaza Draft", "All Pro features", "Cross-platform sync"]),
                   cta: t('home.pricing.plans.bundle.cta'),
                   popular: false
                 }

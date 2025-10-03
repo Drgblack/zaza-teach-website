@@ -45,7 +45,8 @@ export function OrgJsonLd({ site = "https://zazateach.com" }: { site?: string })
     "logo": `${site}/og-logo.png`,
     "sameAs": [
       "https://www.linkedin.com/company/zaza-technologies",
-      "https://www.tiktok.com/@zazateach"
+      "https://www.tiktok.com/@zazateach",
+      "https://zazadraft.com"
     ],
     "founder": { "@type": "Person", "name": "Dr Greg Blackburn", "url": `${site}/about` }
   };

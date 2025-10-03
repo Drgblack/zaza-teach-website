@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "./LocaleProvider";
 
-type Variant = "teach" | "promptly" | "technologies" | "realtyclose";
+type Variant = "teach" | "technologies";
 
 const SOCIALS = [
   { name: "LinkedIn", href: "https://www.linkedin.com/company/zaza-technologies" },
@@ -12,9 +12,8 @@ const SOCIALS = [
 
 const SUITE = [
   { name: "Zaza Teach", href: "https://zazateach.com" },
-  { name: "Zaza Draft (formerly Promptly)", href: "https://zazapromptly.com" },
+  { name: "Zaza Draft", href: "https://zazadraft.com" },
   { name: "Zaza Technologies", href: "https://zazatechnologies.com" },
-  { name: "RealtyClose", href: "https://realtyclose.com" },
 ];
 
 const PRODUCT_CONFIG: Record<Variant, {
@@ -52,36 +51,8 @@ const PRODUCT_CONFIG: Record<Variant, {
       { name: "Terms", href: "/terms" },
       { name: "Cookies", href: "/cookies" },
     ],
-    supportEmail: "support@zazateach.com",
+    supportEmail: "help@zazatechnologies.com",
     copyright: `© ${new Date().getFullYear()} Zaza Teach (part of Zaza Technologies UG). All rights reserved.`,
-  },
-  promptly: {
-    brand: "Zaza Promptly",
-    tagline: "AI-powered assistant that helps teachers write stress-free parent messages, polished and empathetic. Part of Zaza Technologies.",
-    featureLabel: "Features",
-    features: [
-      { name: "Comment Agent", href: "/features/comment-agent" },
-      { name: "Tone Adjustment", href: "/features/tone" },
-      { name: "Translations", href: "/features/translate" },
-      { name: "Closing Suggestions", href: "/features/closings" },
-      { name: "Safe AI Guardrails", href: "/features/safety" },
-    ],
-    company: [
-      { name: "About Us", href: "/about" },
-      { name: "Pricing", href: "/pricing" },
-      { name: "Blog", href: "/blog" },
-      { name: "Our Founder", href: "/founder" },
-      { name: "FAQ", href: "/faq" },
-      { name: "Contact", href: "/contact" },
-    ],
-    legal: [
-      { name: "Impressum", href: "/impressum" },
-      { name: "Privacy", href: "/privacy" },
-      { name: "Terms", href: "/terms" },
-      { name: "Cookies", href: "/cookies" },
-    ],
-    supportEmail: "support@zazapromptly.com",
-    copyright: `© ${new Date().getFullYear()} Zaza Promptly (part of Zaza Technologies UG). All rights reserved.`,
   },
   technologies: {
     brand: "Zaza Technologies",
@@ -110,34 +81,6 @@ const PRODUCT_CONFIG: Record<Variant, {
     ],
     supportEmail: "help@zazatechnologies.com",
     copyright: `© ${new Date().getFullYear()} Zaza Technologies UG (haftungsbeschränkt). All rights reserved.`,
-  },
-  realtyclose: {
-    brand: "RealtyClose",
-    tagline: "The Gmail-first AI assistant for real estate communication. Part of Zaza Technologies.",
-    featureLabel: "Pro Tools",
-    features: [
-      { name: "AI Email Assistant", href: "/features/ai-email-assistant" },
-      { name: "Smart Templates", href: "/features/smart-templates" },
-      { name: "Deal Tracking", href: "/features/deal-tracking" },
-      { name: "Compliance Guardrails", href: "/features/compliance" },
-      { name: "Integrations", href: "/features/integrations" },
-    ],
-    company: [
-      { name: "About Us", href: "/about" },
-      { name: "Pricing", href: "/pricing" },
-      { name: "Blog", href: "/blog" },
-      { name: "Features", href: "/features" },
-      { name: "FAQ", href: "/faq" },
-      { name: "Contact", href: "/contact" },
-    ],
-    legal: [
-      { name: "Impressum", href: "/impressum" },
-      { name: "Privacy", href: "/privacy" },
-      { name: "Terms", href: "/terms" },
-      { name: "Cookies", href: "/cookies" },
-    ],
-    supportEmail: "support@realtyclose.com",
-    copyright: `© ${new Date().getFullYear()} RealtyClose (part of Zaza Technologies UG). All rights reserved.`,
   },
 };
 
@@ -199,7 +142,7 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
           </ul>
           <div className="mt-6 p-4 bg-white/10 rounded-lg">
             <p className="text-sm font-medium mb-2">{locale === 'de' ? 'Brauchen Sie Hilfe bei E-Mails und Berichten?' : 'Need help with emails and reports?'}</p>
-            <a href="https://zazapromptly.com" target="_blank" rel="noopener noreferrer" className="text-[#66B2B2] hover:text-[#66B2B2]/80 text-sm font-medium inline-flex items-center gap-1">
+            <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer" aria-label={locale === 'de' ? 'Zaza Draft öffnen (neuer Tab)' : 'Open Zaza Draft (new tab)'} className="text-[#66B2B2] hover:text-[#66B2B2]/80 text-sm font-medium inline-flex items-center gap-1">
               {locale === 'de' ? 'Zaza Draft ausprobieren' : 'Try Zaza Draft'} →
             </a>
           </div>
@@ -256,7 +199,7 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
           </div>
           <div className="flex items-center gap-3">
             <span>{locale === 'de' ? 'Support:' : 'Support:'}</span>
-            <a href={`mailto:${cfg.supportEmail}`} className="hover:underline">{cfg.supportEmail}</a>
+            <a href={`mailto:${cfg.supportEmail}?subject=Zaza%20Teach%20Support`} className="hover:underline">{cfg.supportEmail}</a>
           </div>
         </div>
         <div className="mx-auto w-full max-w-7xl px-6 pb-8 text-xs text-white/60">

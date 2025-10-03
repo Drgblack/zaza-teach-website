@@ -1,111 +1,192 @@
 'use client';
 
-import { useTranslations } from '@/components/LocaleProvider';
+import { BookOpenText, PenLine, FolderOpen, GraduationCap, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
+const ProductCard = ({ 
+  icon: Icon, 
+  title, 
+  description, 
+  features, 
+  ctaText, 
+  ctaHref, 
+  accentColor, 
+  ctaVariant = 'primary',
+  disabled = false,
+  analyticsId 
+}: {
+  icon: any;
+  title: string;
+  description: string;
+  features: string[];
+  ctaText: string;
+  ctaHref?: string;
+  accentColor: string;
+  ctaVariant?: 'primary' | 'secondary' | 'outline' | 'disabled';
+  disabled?: boolean;
+  analyticsId: string;
+}) => {
+  const getCtaClasses = () => {
+    const baseClasses = 'inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 focus:ring-2 focus:ring-offset-2 w-full sm:w-auto mt-5';
+    
+    switch (ctaVariant) {
+      case 'primary':
+        return `${baseClasses} bg-purple-600 text-white hover:bg-purple-700 focus:ring-purple-500`;
+      case 'secondary':
+        return `${baseClasses} bg-sky-600 text-white hover:bg-sky-700 focus:ring-sky-500`;
+      case 'outline':
+        return `${baseClasses} border-2 border-${accentColor}-500 text-${accentColor}-600 hover:bg-${accentColor}-50 focus:ring-${accentColor}-500`;
+      case 'disabled':
+        return `${baseClasses} bg-gray-400 text-white cursor-not-allowed opacity-60`;
+      default:
+        return baseClasses;
+    }
+  };
+
+  const cardContent = (
+    <div className={`group relative bg-white rounded-2xl border shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 hover:border-foreground/10 focus-within:ring-2 focus-within:ring-${accentColor}-500/50 p-6 sm:p-7 h-full flex flex-col`}>
+      <div className="flex items-start gap-4 mb-4">
+        <div className={`h-10 w-10 rounded-xl bg-${accentColor}-500/10 text-${accentColor}-600 flex items-center justify-center flex-shrink-0`}>
+          <Icon size={22} className="group-hover:scale-105 transition-transform duration-200" aria-hidden="true" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-xl font-semibold tracking-tight text-gray-900">
+            {title}
+          </h3>
+        </div>
+      </div>
+      
+      <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
+        {description}
+      </p>
+      
+      <div className="space-y-2 mb-6">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-start gap-2">
+            <CheckCircle2 className={`text-${accentColor}-600 mt-0.5 h-4 w-4 flex-shrink-0`} />
+            <span className="text-sm leading-6 text-gray-700">{feature}</span>
+          </div>
+        ))}
+      </div>
+      
+      <div className="mt-auto">
+        {disabled || !ctaHref ? (
+          <button
+            className={getCtaClasses()}
+            disabled={disabled}
+            data-analytics={analyticsId}
+            aria-label={ctaText}
+            title={ctaText}
+          >
+            {ctaText}
+          </button>
+        ) : (
+          <Link
+            href={ctaHref}
+            className={getCtaClasses()}
+            data-analytics={analyticsId}
+            aria-label={ctaText}
+            title={ctaText}
+          >
+            {ctaText}
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+
+  return cardContent;
+};
+
 export default function ProductsClient() {
-  const t = useTranslations();
+  const products = [
+    {
+      icon: BookOpenText,
+      title: 'Zaza Teach',
+      description: 'Erstellen Sie in wenigen Minuten statt Stunden curriculumsgerechte Unterrichtspläne. Exportieren Sie nach Word oder PDF mit datenschutzsicheren Optionen für Schulen.',
+      features: [
+        'Pläne in 2-3 Minuten fertig',
+        'Automatische Lehrplanabstimmung',
+        'Vorlagen von Pädagog:innen erstellt',
+        'Ein-Klick-Export (Word/PDF)',
+        'Sicher, privat, klassenzimmerbereit'
+      ],
+      ctaText: 'Zaza Teach kostenlos testen',
+      ctaHref: '/de',
+      accentColor: 'indigo',
+      ctaVariant: 'primary' as const,
+      analyticsId: 'products_teach_try'
+    },
+    {
+      icon: PenLine,
+      title: 'Zaza Draft',
+      description: 'Der stressfreie Weg, professionelle Elternnachrichten in Minuten zu verfassen. Entwürfe, auf die Sie sich verlassen können - mit Tonalität, Übersetzungen und Vorschlägen für den Schluss.',
+      features: [
+        'Umschreiben & Polieren mit einem Klick',
+        'Integrierter Ton- & Stilguide',
+        'Sofortige Übersetzungen',
+        'Sicher, professionell, elterngerecht'
+      ],
+      ctaText: 'Mehr erfahren / Warteliste',
+      ctaHref: '#',
+      accentColor: 'fuchsia',
+      ctaVariant: 'outline' as const,
+      analyticsId: 'products_draft_learn'
+    },
+    {
+      icon: FolderOpen,
+      title: 'Lehrer:innen-Ressourcenbibliothek',
+      description: 'Kuratierte Vorlagen, Leitfäden und Aktivitäten von Pädagog:innen erstellt. Sparen Sie Zeit mit sofort einsetzbaren Materialien, die Sie flexibel anpassen können.',
+      features: [
+        'Unterrichtsplan-Vorlagen',
+        'Klassenaktivitäten & Arbeitsblätter',
+        'Bewertungswerkzeuge',
+        'Praktische Leitfäden'
+      ],
+      ctaText: 'Ressourcen ansehen',
+      ctaHref: '/de/resources',
+      accentColor: 'sky',
+      ctaVariant: 'secondary' as const,
+      analyticsId: 'products_resources_browse'
+    },
+    {
+      icon: GraduationCap,
+      title: 'Zaza Assess (Demnächst verfügbar)',
+      description: 'Entwickeln Sie intelligentere Tests, Quizze und Bewertungsraster in Minuten. Abgestimmt auf Lernziele, gestützt durch pädagogische Best Practices.',
+      features: [
+        'Automatische Quiz-Erstellung',
+        'Rubrik-Generator',
+        'Fragenbank & Lehrplanabgleich',
+        'Leistungsanalysen'
+      ],
+      ctaText: 'Demnächst verfügbar',
+      accentColor: 'emerald',
+      ctaVariant: 'disabled' as const,
+      disabled: true,
+      analyticsId: 'products_assess_coming'
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            {t('products.title')}
-          </h1>
-          <p className="text-xl text-gray-600">
-            {t('products.subtitle')}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* Zaza Teach */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              {t('products.zazaTeach.title')}
-            </h2>
-            <p className="text-gray-600 mb-6">
-              {t('products.zazaTeach.description')}
+    <div className="min-h-screen bg-gradient-to-b from-background via-background to-indigo-50/40 pt-24 pb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <div className="bg-gradient-to-b from-indigo-50/60 to-transparent rounded-3xl py-10 sm:py-12 mb-8">
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-3">
+              Werkzeuge, die Lehrkräften Zeit zurückgeben
+            </h1>
+            <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Jedes Zaza-Produkt hat ein Versprechen: Zeit sparen, Stress reduzieren und Lehrkräfte dabei unterstützen, aufzublühen.
             </p>
-            <ul className="text-gray-700 space-y-2 mb-6">
-              <li>• {t('products.zazaTeach.features.aiGeneration')}</li>
-              <li>• {t('products.zazaTeach.features.curriculumAlignment')}</li>
-              <li>• {t('products.zazaTeach.features.export')}</li>
-              <li>• {t('products.zazaTeach.features.multiLanguage')}</li>
-              <li>• {t('products.zazaTeach.features.privacy')}</li>
-            </ul>
-            <Link
-              href="/de"
-              className="inline-block bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors"
-            >
-              {t('products.zazaTeach.cta')}
-            </Link>
-          </div>
-
-          {/* Zaza Promptly */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              {t('products.zazaPromptly.title')}
-            </h2>
-            <p className="text-gray-600 mb-6">
-              {t('products.zazaPromptly.description')}
-            </p>
-            <ul className="text-gray-700 space-y-2 mb-6">
-              <li>• {t('products.zazaPromptly.features.customPrompts')}</li>
-              <li>• {t('products.zazaPromptly.features.templateLibrary')}</li>
-              <li>• {t('products.zazaPromptly.features.advancedAi')}</li>
-              <li>• {t('products.zazaPromptly.features.educatorFocus')}</li>
-              <li>• {t('products.zazaPromptly.features.integration')}</li>
-            </ul>
-            <span className="inline-block bg-gray-400 text-white px-6 py-3 rounded-md">
-              {t('products.zazaPromptly.comingSoon')}
-            </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Teach Resources Library */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              {t('products.resourcesLibrary.title')}
-            </h2>
-            <p className="text-gray-600 mb-6">
-              {t('products.resourcesLibrary.description')}
-            </p>
-            <ul className="text-gray-700 space-y-2 mb-6">
-              <li>• {t('products.resourcesLibrary.features.lessonTemplates')}</li>
-              <li>• {t('products.resourcesLibrary.features.assessmentTools')}</li>
-              <li>• {t('products.resourcesLibrary.features.classroomActivities')}</li>
-              <li>• {t('products.resourcesLibrary.features.worksheets')}</li>
-              <li>• {t('products.resourcesLibrary.features.bestPractices')}</li>
-            </ul>
-            <Link
-              href="/de/resources"
-              className="inline-block bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-colors"
-            >
-              {t('products.resourcesLibrary.cta')}
-            </Link>
-          </div>
-
-          {/* Teach Assess */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              {t('products.teachAssess.title')}
-            </h2>
-            <p className="text-gray-600 mb-6">
-              {t('products.teachAssess.description')}
-            </p>
-            <ul className="text-gray-700 space-y-2 mb-6">
-              <li>• {t('products.teachAssess.features.autoQuizzes')}</li>
-              <li>• {t('products.teachAssess.features.rubricCreation')}</li>
-              <li>• {t('products.teachAssess.features.questionBank')}</li>
-              <li>• {t('products.teachAssess.features.objectiveAlignment')}</li>
-              <li>• {t('products.teachAssess.features.analytics')}</li>
-            </ul>
-            <span className="inline-block bg-gray-400 text-white px-6 py-3 rounded-md">
-              {t('products.teachAssess.comingSoon')}
-            </span>
-          </div>
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {products.map((product, index) => (
+            <ProductCard key={index} {...product} />
+          ))}
         </div>
       </div>
     </div>
