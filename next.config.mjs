@@ -30,6 +30,13 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Root redirect to English
+      {
+        source: "/",
+        destination: "/en",
+        permanent: false
+      },
+      // Domain redirects
       {
         source: "/:path*",
         has: [{ type: "host", value: "teach.zaza.ai" }],
