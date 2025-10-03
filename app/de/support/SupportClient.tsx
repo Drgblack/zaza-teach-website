@@ -468,7 +468,7 @@ export default function SupportClient() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
-              placeholder="Support-Themen oder FAQs durchsuchen…"
+              placeholder="Support-Themen oder FAQs durchsuchen..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
@@ -516,7 +516,7 @@ export default function SupportClient() {
             </div>
             <div className="p-4 bg-gray-50 rounded-lg">
               <p className="font-semibold text-gray-900 mb-2">Live Chat</p>
-              <p className="text-gray-700">Montag–Freitag, 9–18 Uhr (Ihre Zeitzone).</p>
+              <p className="text-gray-700">Montag-Freitag, 9-18 Uhr (Ihre Zeitzone).</p>
             </div>
           </div>
         </div>

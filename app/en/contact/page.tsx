@@ -33,7 +33,7 @@ interface ContactFormData {
 const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Zaza Teach – Contact",
+  "name": "Zaza Teach - Contact",
   "url": "https://zazateach.com/en/contact",
   "inLanguage": "en",
   "contactPoint": [{
