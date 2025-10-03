@@ -1,0 +1,28 @@
+# CODEOWNERS file for Zaza Teach website
+# 
+# This file defines code ownership for the repository.
+# All changes to these paths require approval from designated owners.
+
+# Asset Protection - Require review for any public/ directory changes
+/public/* @Drgblack
+
+# Critical Configuration Files
+/next.config.mjs @Drgblack
+/package.json @Drgblack
+/package-lock.json @Drgblack
+
+# Brand Configuration
+/src/config/brand.ts @Drgblack
+
+# Environment and Deployment
+/.github/ @Drgblack
+/vercel.json @Drgblack
+
+# SEO and Analytics
+/app/sitemap.ts @Drgblack
+/app/robots.ts @Drgblack
+/components/GoogleAnalytics.tsx @Drgblack
+/components/SEOJsonLd.tsx @Drgblack
+
+# API Routes (require review for security)
+/app/api/ @Drgblack

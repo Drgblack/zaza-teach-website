@@ -1,0 +1,31 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Check for mass image changes
+CHANGED_IMAGES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^public/.*\.(png|jpg|jpeg|svg|webp|ico)$' | wc -l)
+
+if [ "$CHANGED_IMAGES" -gt 3 ]; then
+  echo "🚫 Too many image changes in one commit ($CHANGED_IMAGES files)."
+  echo "   This could indicate accidental mass replacement of assets."
+  echo "   Please commit image changes in smaller batches or get a review."
+  echo "   To bypass this check, use: git commit --no-verify"
+  exit 1
+fi
+
+# Check for duplicate image hashes if any images are being changed
+if [ "$CHANGED_IMAGES" -gt 0 ]; then
+  echo "🔍 Checking for duplicate image content..."
+  
+  # Simple check: warn if we find suspiciously similar file sizes
+  # (A full hash check would be better but requires more complex tooling)
+  if command -v find >/dev/null 2>&1; then
+    DUPLICATE_SIZES=$(find public/ -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.svg" -o -name "*.webp" | xargs -I {} sh -c 'echo "$(stat -c%s "{}" 2>/dev/null || stat -f%z "{}" 2>/dev/null) {}"' | sort | uniq -d -w 10 | wc -l)
+    
+    if [ "$DUPLICATE_SIZES" -gt 0 ]; then
+      echo "⚠️  Warning: Found images with identical file sizes."
+      echo "   This might indicate duplicate content. Please verify manually."
+    fi
+  fi
+fi
+
+echo "✅ Asset integrity check passed"

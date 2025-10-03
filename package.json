@@ -12,7 +12,8 @@
     "lint:dashes": "node scripts/check-no-dashes.mjs",
     "check:i18n": "tsx scripts/check-i18n.ts",
     "validate:i18n": "tsx scripts/validate-i18n-setup.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:assets": "node scripts/check-duplicate-images.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
