@@ -112,7 +112,16 @@ export default function HomePage() {
               </div>
               
               <h2 className="text-4xl md:text-5xl font-bold text-[#2C3E35] mb-6 leading-tight">
-                {t('home.hero.title')}
+                {(() => {
+                  const title = t('home.hero.title');
+                  const highlightWord = title.includes('teachers.') ? 'teachers.' : 'Lehrer.';
+                  return title.split(highlightWord).map((part, index, array) => (
+                    <span key={index}>
+                      {part}
+                      {index < array.length - 1 && <span className="text-[#66B2B2]">{highlightWord}</span>}
+                    </span>
+                  ));
+                })()}
               </h2>
               
               <p className="text-xl text-[#2C3E35]/80 mb-8 leading-relaxed">

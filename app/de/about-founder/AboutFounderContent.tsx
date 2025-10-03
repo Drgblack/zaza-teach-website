@@ -105,7 +105,7 @@ export default function AboutFounderContent() {
               whileTap={{ scale: 0.95 }}
               className="bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 shadow-lg"
             >
-              Try Zaza Teach Free
+              Zaza Teach kostenlos testen
             </motion.button>
           </motion.div>
         </div>

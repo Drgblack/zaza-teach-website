@@ -96,6 +96,18 @@ const ProductCard = ({
           >
             {ctaText}
           </button>
+        ) : ctaHref.startsWith('http') ? (
+          <a
+            href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={getCtaClasses()}
+            data-analytics={analyticsId}
+            aria-label={`${ctaText} (new tab)`}
+            title={`${ctaText} (new tab)`}
+          >
+            {ctaText}
+          </a>
         ) : (
           <Link
             href={ctaHref}
@@ -143,43 +155,11 @@ export default function ProductsPage() {
         'Instant translations',
         'Safe, professional, parent-ready'
       ],
-      ctaText: 'Learn More / Join Waitlist',
-      ctaHref: '#',
+      ctaText: 'Try Zaza Draft',
+      ctaHref: 'https://zazadraft.com',
       accentColor: 'fuchsia',
       ctaVariant: 'outline' as const,
       analyticsId: 'products_draft_learn'
-    },
-    {
-      icon: FolderOpen,
-      title: 'Teacher Resources Library',
-      description: 'Curated templates, guides, and activities created by educators. Save time with ready-to-use materials you can adapt instantly.',
-      features: [
-        'Lesson plan templates',
-        'Classroom activities & worksheets',
-        'Assessment tools',
-        'Practical teaching guides'
-      ],
-      ctaText: 'Browse Resources',
-      ctaHref: '/resources',
-      accentColor: 'sky',
-      ctaVariant: 'secondary' as const,
-      analyticsId: 'products_resources_browse'
-    },
-    {
-      icon: GraduationCap,
-      title: 'Zaza Assess (Coming Soon)',
-      description: 'Design smarter quizzes, tests, and rubrics in minutes. Aligned with learning objectives, backed by best practices.',
-      features: [
-        'Auto quiz generation',
-        'Rubric creator',
-        'Question bank & alignment',
-        'Performance analytics'
-      ],
-      ctaText: 'Coming Soon',
-      accentColor: 'emerald',
-      ctaVariant: 'disabled' as const,
-      disabled: true,
-      analyticsId: 'products_assess_coming'
     }
   ];
 

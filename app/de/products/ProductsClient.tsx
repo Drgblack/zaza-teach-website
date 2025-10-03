@@ -80,6 +80,18 @@ const ProductCard = ({
           >
             {ctaText}
           </button>
+        ) : ctaHref.startsWith('http') ? (
+          <a
+            href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={getCtaClasses()}
+            data-analytics={analyticsId}
+            aria-label={`${ctaText} (neuer Tab)`}
+            title={`${ctaText} (neuer Tab)`}
+          >
+            {ctaText}
+          </a>
         ) : (
           <Link
             href={ctaHref}
@@ -127,43 +139,11 @@ export default function ProductsClient() {
         'Sofortige Übersetzungen',
         'Sicher, professionell, elterngerecht'
       ],
-      ctaText: 'Mehr erfahren / Warteliste',
-      ctaHref: '#',
+      ctaText: 'Zaza Draft ausprobieren',
+      ctaHref: 'https://zazadraft.com',
       accentColor: 'fuchsia',
       ctaVariant: 'outline' as const,
       analyticsId: 'products_draft_learn'
-    },
-    {
-      icon: FolderOpen,
-      title: 'Lehrer:innen-Ressourcenbibliothek',
-      description: 'Kuratierte Vorlagen, Leitfäden und Aktivitäten von Pädagog:innen erstellt. Sparen Sie Zeit mit sofort einsetzbaren Materialien, die Sie flexibel anpassen können.',
-      features: [
-        'Unterrichtsplan-Vorlagen',
-        'Klassenaktivitäten & Arbeitsblätter',
-        'Bewertungswerkzeuge',
-        'Praktische Leitfäden'
-      ],
-      ctaText: 'Ressourcen ansehen',
-      ctaHref: '/de/resources',
-      accentColor: 'sky',
-      ctaVariant: 'secondary' as const,
-      analyticsId: 'products_resources_browse'
-    },
-    {
-      icon: GraduationCap,
-      title: 'Zaza Assess (Demnächst verfügbar)',
-      description: 'Entwickeln Sie intelligentere Tests, Quizze und Bewertungsraster in Minuten. Abgestimmt auf Lernziele, gestützt durch pädagogische Best Practices.',
-      features: [
-        'Automatische Quiz-Erstellung',
-        'Rubrik-Generator',
-        'Fragenbank & Lehrplanabgleich',
-        'Leistungsanalysen'
-      ],
-      ctaText: 'Demnächst verfügbar',
-      accentColor: 'emerald',
-      ctaVariant: 'disabled' as const,
-      disabled: true,
-      analyticsId: 'products_assess_coming'
     }
   ];
 
