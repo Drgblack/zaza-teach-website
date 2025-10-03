@@ -51,6 +51,16 @@ export default function FeatureRequestClient() {
     setError(null);
 
     try {
+      // Fire GA4 event
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'support_ticket_submitted', {
+          priority: formData.priority,
+          role: formData.role,
+          locale: 'de',
+          feature_title: formData.feature_title
+        });
+      }
+
       const response = await fetch('/api/feature-request', {
         method: 'POST',
         headers: {

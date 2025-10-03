@@ -13,7 +13,8 @@
     "check:i18n": "tsx scripts/check-i18n.ts",
     "validate:i18n": "tsx scripts/validate-i18n-setup.ts",
     "typecheck": "tsc --noEmit",
-    "check:assets": "node scripts/check-duplicate-images.mjs"
+    "check:assets": "node scripts/check-duplicate-images.mjs",
+    "pre-commit:assets": "node scripts/pre-commit-asset-check.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

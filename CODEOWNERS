@@ -1,0 +1,27 @@
+# Global owners
+* @Drgblack
+
+# Public assets require extra review
+/public/* @Drgblack
+/public/images/* @Drgblack
+/public/logo/* @Drgblack
+
+# Core configuration files
+/.env* @Drgblack
+/package.json @Drgblack
+/package-lock.json @Drgblack
+/next.config.* @Drgblack
+/vercel.json @Drgblack
+
+# Brand and asset configuration
+/src/config/brand.ts @Drgblack
+
+# Critical layout and SEO files
+/app/layout.tsx @Drgblack
+/app/sitemap.ts @Drgblack
+/app/robots.ts @Drgblack
+/lib/seo.ts @Drgblack
+/components/SEOJsonLd.tsx @Drgblack
+
+# Translation files
+/src/i18n/messages/* @Drgblack

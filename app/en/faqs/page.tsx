@@ -23,7 +23,7 @@ const faqCategories = [
       },
       {
         q: 'How does Zaza Teach work?',
-        a: 'Simply input your learning objectives, grade level, and subject area. Our AI will generate a complete lesson plan that you can customize and export.'
+        a: 'You stay in control. Simply input your learning objectives, grade level, and subject area. Our safe AI generates a foundation lesson plan that you review, customize, and export as needed.'
       },
       {
         q: 'Is Zaza Teach free to use?',
@@ -58,7 +58,7 @@ const faqCategories = [
       },
       {
         q: 'How accurate are the AI-generated lesson plans?',
-        a: 'Lesson plans are based on educational best practice and curriculum standards to ensure high-quality outputs. You always have full control to review and adapt.'
+        a: 'Our AI provides starting points based on educational best practice and curriculum standards. You stay in control - always review, adapt, and personalize every plan to match your teaching style and student needs.'
       },
       {
         q: 'What languages does Zaza Teach support?',
