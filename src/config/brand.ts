@@ -10,24 +10,22 @@ export const brandAssets = {
   logos: {
     // Real square gradient Z logo (pink to purple)
     primary: '/zaza_z_logo.png',
-    // Alternative logo
-    secondary: '/logo.png',
     // SVG version for scalability (deprecated)
     svg: '/logo-real.svg',
     // For backwards compatibility
     default: '/zaza_z_logo.png'
   },
   
-  // Favicon and app icons
+  // Favicon and app icons (canonical paths in /logo/ directory)
   favicons: {
-    ico: '/favicon.ico',
+    ico: '/logo/favicon.ico',
     png: '/favicon.png',
     sizes: {
-      '16x16': '/favicon-16x16.png',
-      '32x32': '/favicon-32x32.png',
-      '180x180': '/apple-touch-icon.png',
-      '192x192': '/android-chrome-192x192.png',
-      '512x512': '/android-chrome-512x512.png'
+      '16x16': '/logo/favicon-16x16.png',
+      '32x32': '/logo/favicon-32x32.png',
+      '180x180': '/logo/apple-touch-icon.png',
+      '192x192': '/logo/android-chrome-192x192.png',
+      '512x512': '/logo/android-chrome-512x512.png'
     }
   },
   
