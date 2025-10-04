@@ -9,6 +9,7 @@ import LiftCard from './ui/LiftCard';
 import { BookOpen, Clock, Users, Sparkles, ArrowRight, Star, CheckCircle, X, Zap, FileText, Share2, Globe, Heart, Coffee, AlertTriangle, Battery, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AIOptimizedContent, SchemaEnhancedText, EDUCATION_SEMANTIC_KEYWORDS, AI_EDUCATION_TOPICS } from './AIOptimizedContent';
 import { useTranslations } from './LocaleProvider';
+import { trackCtaClick, trackPricingClick } from './GoogleAnalytics';
 
 export default function HomePage() {
   const t = useTranslations();
@@ -143,6 +144,12 @@ export default function HomePage() {
               <p className="text-[#2C3E35]/60 text-lg text-center lg:text-left">
                 {t('home.hero.subtext')}
               </p>
+              
+              <div className="mt-4 p-3 bg-[#66B2B2]/10 rounded-lg border border-[#66B2B2]/20">
+                <p className="text-[#2C3E35]/70 text-sm text-center lg:text-left font-medium">
+                  {t('home.hero.trustKicker')}
+                </p>
+              </div>
             </motion.div>
 
             {/* Right Column - Teacher Photo Carousel */}
@@ -374,6 +381,7 @@ export default function HomePage() {
             <Button
               asChild
               className="bg-[#8A2BE2] hover:bg-[#8A2BE2]/90 text-white px-6 py-2"
+              onClick={() => trackCtaClick('mid-cta', 'try_draft')}
             >
               <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer">
                 {t('home.crossSell.cta')} <ArrowRight className="inline-block ml-2 h-4 w-4" />
@@ -659,7 +667,8 @@ export default function HomePage() {
                   price: t('home.pricing.plans.free.price'),
                   features: getTranslationArray('home.pricing.plans.free.features', ["5 lesson plans/month"]),
                   cta: t('home.pricing.plans.free.cta'),
-                  popular: false
+                  popular: false,
+                  planType: 'free' as const
                 },
                 {
                   title: t('home.pricing.plans.pro.title'), 
@@ -668,7 +677,8 @@ export default function HomePage() {
                   features: getTranslationArray('home.pricing.plans.pro.features', ["Unlimited plans", "Full template library", "Priority support"]),
                   cta: t('home.pricing.plans.pro.cta'),
                   popular: true,
-                  popularText: t('home.pricing.plans.pro.popular')
+                  popularText: t('home.pricing.plans.pro.popular'),
+                  planType: 'pro' as const
                 },
                 {
                   title: t('home.pricing.plans.bundle.title'),
@@ -676,7 +686,8 @@ export default function HomePage() {
                   period: t('home.pricing.plans.bundle.period'),
                   features: getTranslationArray('home.pricing.plans.bundle.features', ["Zaza Teach + Zaza Draft", "All Pro features", "Cross-platform sync"]),
                   cta: t('home.pricing.plans.bundle.cta'),
-                  popular: false
+                  popular: false,
+                  planType: 'bundle' as const
                 }
               ].map((plan, index) => (
                 <motion.div
@@ -712,6 +723,7 @@ export default function HomePage() {
                         ? 'bg-[#66B2B2] hover:bg-[#66B2B2]/90' 
                         : 'bg-[#8A2BE2] hover:bg-[#8A2BE2]/90'
                     } text-white`}
+                    onClick={() => trackPricingClick(plan.planType)}
                   >
                     {plan.cta}
                   </Button>

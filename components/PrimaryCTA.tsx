@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { MouseEvent } from 'react';
+import { trackCtaClick } from './GoogleAnalytics';
 
 type Props = {
   label?: string;
@@ -20,9 +21,16 @@ export default function PrimaryCTA({
   const target = process.env.NEXT_PUBLIC_SIGNUP_URL || '/signup';
 
   const onClick = (e: MouseEvent<HTMLButtonElement>) => {
-    // lightweight analytics hook; safe if window.gtag undefined
-    // @ts-ignore
-    window?.gtag?.('event', 'cta_click', { from, target, product: 'teach' });
+    // Map from prop to tracking location
+    const locationMap: Record<string, 'hero' | 'mid-cta' | 'pricing'> = {
+      'home_hero': 'hero',
+      'mid-cta': 'mid-cta',
+      'pricing': 'pricing',
+    };
+    
+    const location = locationMap[from] || 'hero';
+    trackCtaClick(location, 'start_free');
+    
     router.push(target);
   };
 

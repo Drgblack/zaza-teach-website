@@ -106,6 +106,23 @@ export const trackButtonClick = (buttonName: string, location: string) => {
   trackEvent('click', 'engagement', `${buttonName}_${location}`);
 };
 
+export const trackCtaClick = (location: 'hero' | 'mid-cta' | 'pricing', label: 'start_free' | 'try_draft') => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'cta_click', {
+      location: location,
+      label: label,
+    });
+  }
+};
+
+export const trackPricingClick = (plan: 'free' | 'pro' | 'bundle') => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'pricing_click', {
+      plan: plan,
+    });
+  }
+};
+
 export default function GoogleAnalytics(props: GoogleAnalyticsProps) {
   return (
     <Suspense fallback={null}>
