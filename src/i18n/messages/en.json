@@ -175,120 +175,59 @@
     }
   },
   "pricing": {
-    "title": "Choose the plan that helps you reclaim your time and thrive as a teacher.",
-    "subtitle": "Join thousands of educators who've transformed their teaching experience with smart lesson planning.",
+    "heroTitle": "Choose the plan that helps you reclaim your time and thrive as a teacher.",
+    "heroSubtitle": "Join thousands of educators who save hours every week with smart lesson planning.",
+    "disclaimer": "All plans include access to core lesson planning features. Cancel anytime. No hidden fees.",
     "plans": {
       "free": {
-        "title": "Free Plan",
+        "name": "Free",
         "price": "€0",
         "period": "/month",
-        "cta": "Start free with 5 lesson plans/month",
-        "cancelAnytime": "Cancel anytime",
-        "features": {
-          "saveHours": {
-            "title": "Save hours every month with ready-to-use lessons.",
-            "subtitle": "5 lesson plans per month"
-          },
-          "quickStart": {
-            "title": "Quick-start ideas for everyday teaching.",
-            "subtitle": "Basic templates"
-          },
-          "takeLessons": {
-            "title": "Take your lessons anywhere - print or share in seconds.",
-            "subtitle": "PDF export"
-          },
-          "community": {
-            "title": "Join a growing community of educators who share and support each other.",
-            "subtitle": "Community support"
-          }
-        }
+        "cta": "Start free (5 lesson plans/month)",
+        "bullets": [
+          "Save hours every month with ready-to-use lesson plans",
+          "Quick-start ideas for everyday teaching",
+          "Print or share in seconds — Word/PDF export",
+          "Join a growing community of educators who share and support each other"
+        ]
       },
       "pro": {
-        "title": "Pro Plan", 
+        "name": "Pro — Unlimited planning",
         "price": "€19.99",
         "period": "/month",
+        "badge": "Most popular",
         "cta": "Reclaim your time every week",
-        "popular": "Most Popular",
-        "cancelAnytime": "Cancel anytime",
-        "features": {
-          "planEvery": {
-            "title": "Plan every class in minutes, stress-free.",
-            "subtitle": "Unlimited lesson plans"
-          },
-          "accessAdvanced": {
-            "title": "Access advanced, curriculum-aligned teaching resources.",
-            "subtitle": "Premium templates"
-          },
-          "downloadCustomize": {
-            "title": "Download and customize lessons for staff meetings and parents.",
-            "subtitle": "Word & PDF export"
-          },
-          "getFast": {
-            "title": "Get fast answers when you need them most.",
-            "subtitle": "Priority support"
-          },
-          "tailorLessons": {
-            "title": "Tailor lessons to your unique classroom.",
-            "subtitle": "Advanced customization"
-          }
-        }
+        "bullets": [
+          "Plan every class in minutes — stress-free",
+          "Full template library + curriculum-aligned resources",
+          "Download & customize lessons for staff meetings and parents",
+          "Priority support when you need it most",
+          "Tailor lessons to your classroom — tone, depth, scaffolding"
+        ]
       },
       "bundle": {
-        "title": "Teach & Write Smarter",
-        "price": "€24.99", 
+        "name": "Bundle: Teach + Draft",
+        "price": "€24.99",
         "period": "/month",
-        "cta": "Teach & Write Smarter",
-        "cancelAnytime": "Cancel anytime",
-        "features": {
-          "lessonPlanning": {
-            "title": "Lesson planning plus all your school writing tasks in one. Together, Teach + Draft remove 80% of teacher admin.",
-            "subtitle": "Zaza Teach + Zaza Draft"
-          },
-          "everything": {
-            "title": "Everything you need to plan smarter.",
-            "subtitle": "All Pro features"
-          },
-          "seamlessly": {
-            "title": "Seamlessly switch between laptop and mobile.",
-            "subtitle": "Cross-platform sync"
-          },
-          "smarterSuggestions": {
-            "title": "Smarter suggestions, faster planning.",
-            "subtitle": "Advanced AI features"
-          },
-          "connectFavorite": {
-            "title": "Connect with your favorite tools.",
-            "subtitle": "Custom integrations"
-          }
-        }
+        "cta": "Teach & write smarter",
+        "bullets": [
+          "Everything you need to plan smarter and write faster",
+          "Seamless switch between laptop and mobile",
+          "Smarter suggestions, faster planning",
+          "Connect with your favorite tools",
+          "Zaza Draft: Your writing partner for parent comms, reports, and documentation (you stay in control)"
+        ],
+        "ctaLink": "https://zazadraft.com/?utm_source=teach&utm_medium=pricing&utm_campaign=bundle_cta"
       }
     },
-    "footer": "All plans include access to our core lesson planning features. Cancel anytime. No hidden fees.",
-    "testimonials": {
-      "title": "Teachers are already saving hours every week with Zaza Teach",
-      "items": [
-        {
-          "quote": "Zaza Teach gave me my Sundays back. I can finally spend time with my family instead of stressing over lesson plans.",
-          "author": "Emma T.",
-          "role": "Primary School Teacher"
-        },
-        {
-          "quote": "I was drowning in admin. Now, with lesson planning done in minutes, I can focus on the fun parts of teaching again.",
-          "author": "Marcus D.",
-          "role": "Secondary School Teacher"
-        },
-        {
-          "quote": "The templates are spot-on and save me hours. Honestly, I feel like a better teacher because I have the energy to be present with my students.",
-          "author": "Sofia L.",
-          "role": "Language Teacher"
-        }
+    "proof": {
+      "line1": "Teachers are already saving hours every week with Zaza Teach",
+      "pillars": [
+        "Trusted by over 1,000+ educators worldwide",
+        "Backed by 20+ years of education expertise",
+        "Designed with teachers, for teachers",
+        "Created by a PhD educator to reduce teacher workload safely"
       ]
-    },
-    "trust": {
-      "trustedBy": "Trusted by over 1,000+ educators worldwide",
-      "backedBy": "Backed by 20+ years of education expertise", 
-      "designedWith": "Designed with teachers, for teachers",
-      "createdBy": "Created by a PhD educator to reduce teacher workload safely"
     }
   },
   "blog": {
