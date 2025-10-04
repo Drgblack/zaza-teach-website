@@ -10,7 +10,7 @@ export function FounderHeroClient() {
     <header className="text-center space-y-6">
       <div className="inline-block rounded-full ring-2 ring-black/5 dark:ring-white/10 overflow-hidden">
         <Image
-          src="/images/founder/greg-blackburn-headshot.jpg"
+          src="/images/founder.jpg"
           alt={t('aboutFounder.hero.altText')}
           width={176}
           height={176}
