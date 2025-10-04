@@ -30,7 +30,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Domain redirects
+      // Domain redirects only
       {
         source: "/:path*",
         has: [{ type: "host", value: "teach.zaza.ai" }],
@@ -42,12 +42,6 @@ const nextConfig = {
         has: [{ type: "host", value: "www.zazateach.com" }],
         destination: "https://zazateach.com/:path*",
         permanent: true
-      },
-      // Root redirect to English
-      {
-        source: "/",
-        destination: "/en",
-        permanent: false
       }
     ];
   }
