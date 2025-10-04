@@ -30,7 +30,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Domain redirects only
+      // Domain redirects only - no locale logic here
       {
         source: "/:path*",
         has: [{ type: "host", value: "teach.zaza.ai" }],
