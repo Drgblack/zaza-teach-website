@@ -28,22 +28,9 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
   },
+  // Removed all redirects to avoid conflicts with middleware
   async redirects() {
-    return [
-      // Domain redirects only - no locale logic here
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "teach.zaza.ai" }],
-        destination: "https://zazateach.com/:path*",
-        permanent: true
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.zazateach.com" }],
-        destination: "https://zazateach.com/:path*",
-        permanent: true
-      }
-    ];
+    return [];
   }
 }
 
