@@ -11,132 +11,36 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image' }
 };
 
-// German FAQ data for JSON-LD
-const faqCategories = [
-  {
-    category: 'Erste Schritte',
-    icon: 'Book',
-    color: 'purple',
-    faqs: [
-      {
-        q: 'Was ist Zaza Teach?',
-        a: 'Zaza Teach unterstützt Lehrkräfte dabei, in wenigen Minuten curriculum-konforme Unterrichtspläne zu erstellen - mit Exportoptionen nach Word und PDF. Unterstützt durch sichere Technologie, die speziell für den Bildungsbereich entwickelt wurde.'
-      },
-      {
-        q: 'Wie funktioniert Zaza Teach?',
-        a: 'Geben Sie einfach Ihre Lernziele, Klassenstufe und das Fachgebiet ein. Unsere KI generiert einen vollständigen Unterrichtsplan, den Sie anpassen und exportieren können.'
-      },
-      {
-        q: 'Ist Zaza Teach kostenlos nutzbar?',
-        a: 'Ja, Zaza Teach bietet eine kostenlose Version mit grundlegenden Unterrichtsplanungsfunktionen. Premium-Funktionen sind mit unseren kostenpflichtigen Plänen verfügbar.'
-      },
-      {
-        q: 'Benötige ich spezielle Software für Zaza Teach?',
-        a: 'Nein, Zaza Teach ist eine webbasierte Anwendung, die in jedem modernen Browser funktioniert. Keine Downloads oder Installationen erforderlich.'
-      }
-    ]
-  },
-  {
-    category: 'Funktionen & Features',
-    icon: 'MessageCircle',
-    color: 'blue',
-    faqs: [
-      {
-        q: 'Welche Klassenstufen unterstützt Zaza Teach?',
-        a: 'Zaza Teach unterstützt alle Klassenstufen von der Grundschule bis zur Oberstufe, mit für jede Altersgruppe angepassten Inhalten.'
-      },
-      {
-        q: 'Kann ich meine Unterrichtspläne exportieren?',
-        a: 'Ja, Sie können Ihre Unterrichtspläne als Word-Dokumente oder PDF-Dateien exportieren für einfaches Drucken und Teilen.'
-      },
-      {
-        q: 'Welche Fächer deckt Zaza Teach ab?',
-        a: 'Zaza Teach deckt alle Hauptfächer ab, einschließlich Mathematik, Naturwissenschaften, Deutsch, Sozialwissenschaften und mehr.'
-      },
-      {
-        q: 'Kann ich die generierten Unterrichtspläne anpassen?',
-        a: 'Absolut! Alle Unterrichtspläne sind vollständig anpassbar, sodass Sie Inhalte, Aktivitäten und Bewertungen nach Bedarf ändern können.'
-      },
-      {
-        q: 'Wie genau sind die KI-generierten Unterrichtspläne?',
-        a: 'Die Unterrichtspläne basieren auf bewährten pädagogischen Praktiken und Lehrplanstandards, um qualitativ hochwertige Ergebnisse zu gewährleisten. Du behältst jederzeit die volle Kontrolle zur Überprüfung und Anpassung.'
-      },
-      {
-        q: 'Welche Sprachen unterstützt Zaza Teach?',
-        a: 'Zaza Teach ist auf Englisch, Deutsch, Französisch, Spanisch und Italienisch verfügbar, weitere Sprachen folgen bald.'
-      }
-    ]
-  },
-  {
-    category: 'Zusammenarbeit & Support',
-    icon: 'Users',
-    color: 'green',
-    faqs: [
-      {
-        q: 'Kann ich mit anderen Lehrern zusammenarbeiten?',
-        a: 'Ja, Zaza Teach bietet Kollaborationsfunktionen, mit denen Sie Unterrichtspläne teilen und mit Kollegen zusammenarbeiten können.'
-      },
-      {
-        q: 'Kann ich Zaza Teach für Homeschooling verwenden?',
-        a: 'Ja, Zaza Teach ist perfekt für Homeschool-Pädagogen, die strukturierte, lehrplangerechte Unterrichtspläne möchten.'
-      },
-      {
-        q: 'Welcher Support ist verfügbar, wenn ich Hilfe brauche?',
-        a: 'Wir bieten umfassenden Support einschließlich Dokumentation, Video-Tutorials und direkten Kundensupport über unser Hilfe-Center.'
-      },
-      {
-        q: 'Kann ich Zaza Teach in das LMS meiner Schule integrieren?',
-        a: 'Wir arbeiten an Integrationen mit beliebten Lernmanagementsystemen. Kontaktieren Sie uns für aktuelle Integrationsoptionen.'
-      }
-    ]
-  },
-  {
-    category: 'Sicherheit & Datenschutz',
-    icon: 'Shield',
-    color: 'orange',
-    faqs: [
-      {
-        q: 'Sind meine Daten bei Zaza Teach sicher?',
-        a: 'Absolut. Wir priorisieren Datensicherheit und Datenschutz mit robusten Verschlüsselungs- und strengen Datenschutzrichtlinien.'
-      },
-      {
-        q: 'Wie oft wird Zaza Teach aktualisiert?',
-        a: 'Wir verbessern Zaza Teach kontinuierlich mit regelmäßigen Updates, neuen Funktionen und erweiterten KI-Fähigkeiten basierend auf Nutzerfeedback.'
-      }
-    ]
-  },
-  {
-    category: 'Über Zaza & den Gründer',
-    icon: 'UserCheck',
-    color: 'purple',
-    faqs: [
-      {
-        q: 'Wer steckt hinter Zaza Teach - und warum können Lehrkräfte der Lösung vertrauen?',
-        a: 'Zaza Teach wird von <strong>Dr. Greg Blackburn</strong> geleitet, einem Spezialisten für Bildung und Lerntechnologien mit über 20 Jahren Erfahrung. Er gründete Zaza, um die Arbeitsbelastung von Lehrkräften sicher zu reduzieren und ihnen mehr Zeit zurückzugeben.<br><br>Erfahren Sie mehr auf unserer <a href="/de/about">Über uns-Seite</a> und sehen Sie, wie wir mit Daten umgehen auf unserer <a href="/de/privacy">Datenschutz-Seite</a>.'
-      }
-    ]
-  },
-  {
-    category: 'Produktübergreifende Hilfe',
-    icon: 'MessageCircle',
-    color: 'blue',
-    faqs: [
-      {
-        q: 'Was, wenn ich auch Hilfe bei E-Mails und Berichten brauche?',
-        a: 'Dafür gibt es Zaza Draft. Es erstellt sichere Entwürfe für Elternkommunikation und Berichte. Erfahre mehr unter <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer">Zaza Draft</a>.'
-      }
-    ]
-  }
-];
+export default async function FAQsPage() {
+  // Get FAQ data from i18n messages for JSON-LD
+  const messages = (await import('../../../src/i18n/messages/de.json')).default;
+  
+  const faqCategories = [
+    {
+      category: messages.faq.categories.gettingStarted.title,
+      faqs: messages.faq.categories.gettingStarted.faqs
+    },
+    {
+      category: messages.faq.categories.featuresAndFunctionality.title,
+      faqs: messages.faq.categories.featuresAndFunctionality.faqs
+    },
+    {
+      category: messages.faq.categories.collaborationAndSupport.title,
+      faqs: messages.faq.categories.collaborationAndSupport.faqs
+    },
+    {
+      category: messages.faq.categories.securityAndPrivacy.title,
+      faqs: messages.faq.categories.securityAndPrivacy.faqs
+    }
+  ];
 
-export default function FAQsPage() {
   // Flatten all FAQs for JSON-LD
   const allFaqs = faqCategories.flatMap(category => category.faqs);
 
   return (
     <>
       <FAQJsonLd faqs={allFaqs} />
-      <FAQClient faqCategories={faqCategories} />
+      <FAQClient />
     </>
   );
 }

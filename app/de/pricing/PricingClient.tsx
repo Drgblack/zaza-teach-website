@@ -1,8 +1,15 @@
 'use client';
 
+import React from 'react';
 import { useTranslations, useLocale } from '../../../components/LocaleProvider';
 import { Check, Star } from 'lucide-react';
 import Link from 'next/link';
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 export default function PricingClient() {
   const t = useTranslations();
@@ -21,170 +28,202 @@ export default function PricingClient() {
 
   const pricingData = getTranslationObject('pricing');
   const plans = getTranslationObject('pricing.plans');
-  const testimonials = getTranslationArray('pricing.testimonials.items');
+  const proof = getTranslationObject('pricing.proof');
+
+  const heroTitle = t('pricing.heroTitle');
+  const heroSubtitle = t('pricing.heroSubtitle');
+  const disclaimer = t('pricing.disclaimer');
+
+  // GA4 Event handlers
+  const trackPricingView = () => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'pricing_view', {
+        event_category: 'pricing',
+        event_label: locale,
+        page_title: 'Pricing Page',
+        page_location: window.location.href
+      });
+    }
+  };
+
+  const trackPlanCTAClick = (planName: string, planPrice: string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'pricing_plan_cta_click', {
+        event_category: 'pricing',
+        event_label: planName,
+        value: parseFloat(planPrice.replace(/[^\d.]/g, '')),
+        currency: 'EUR',
+        plan_name: planName,
+        locale: locale
+      });
+    }
+  };
+
+  const trackBundleOutboundClick = () => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'bundle_outbound_click', {
+        event_category: 'pricing',
+        event_label: 'zaza_draft_bundle',
+        locale: locale
+      });
+    }
+  };
+
+  // Track page view on component mount
+  React.useEffect(() => {
+    trackPricingView();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Hero Section */}
-      <div className="relative pt-16 pb-32 overflow-hidden">
-        <div className="relative">
-          <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
-            <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
-              <div>
-                <div className="mt-6">
-                  <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    {t('pricing.title')}
-                  </h1>
-                  <p className="mt-4 text-lg text-gray-500">
-                    {t('pricing.subtitle')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="relative pt-24 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            {heroTitle}
+          </h1>
+          <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+            {heroSubtitle}
+          </p>
         </div>
       </div>
 
       {/* Pricing Cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
+          
           {/* Free Plan */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-900">{plans?.free?.title || 'Kostenlos'}</h3>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-gray-900">{plans?.free?.price || '€0'}</span>
-                <span className="text-gray-500">{plans?.free?.period || '/Monat'}</span>
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 relative">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {plans?.free?.name || 'Free'}
+              </h3>
+              <div className="mb-6">
+                <span className="text-5xl font-bold text-gray-900">
+                  {plans?.free?.price || '0 €'}
+                </span>
+                <span className="text-gray-500 text-lg ml-1">
+                  {plans?.free?.period || '/Monat'}
+                </span>
               </div>
               <Link 
                 href={`/${locale}/signup`}
-                className="mt-6 w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-block text-center"
+                onClick={() => trackPlanCTAClick('Free', plans?.free?.price || '0')}
+                className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg"
               >
-                {plans?.free?.cta || 'Zeit sparen kostenlos starten'}
+                {plans?.free?.cta || 'Kostenlos starten'}
               </Link>
-              <p className="mt-2 text-sm text-gray-500">{plans?.free?.cancelAnytime || 'Jederzeit kündbar'}</p>
             </div>
-            <div className="mt-8">
-              {plans?.free?.features && Object.entries(plans.free.features).map(([key, feature]: [string, any]) => (
-                <div key={key} className="flex items-start mb-4">
-                  <Check className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-gray-900 font-medium">{feature?.title || feature}</p>
-                    {feature?.subtitle && <p className="text-gray-600 text-sm">{feature.subtitle}</p>}
-                  </div>
+            
+            <div className="space-y-4">
+              {plans?.free?.bullets && plans.free.bullets.map((bullet: string, index: number) => (
+                <div key={index} className="flex items-start">
+                  <Check className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700 leading-relaxed">{bullet}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Pro Plan */}
-          <div className="bg-white rounded-lg shadow-lg p-8 relative border-2 border-blue-500">
-            {plans?.pro?.popular && (
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium flex items-center">
-                  <Star className="h-4 w-4 mr-1" />
-                  {plans.pro.popular}
+          <div className="bg-white rounded-2xl shadow-xl border-2 border-blue-500 p-8 relative transform scale-105">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span className="bg-blue-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center">
+                <Star className="h-4 w-4 mr-1" />
+                {plans?.pro?.badge || 'Am beliebtesten'}
+              </span>
+            </div>
+            
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {plans?.pro?.name || 'Pro'}
+              </h3>
+              <div className="mb-6">
+                <span className="text-5xl font-bold text-gray-900">
+                  {plans?.pro?.price || '19,99 €'}
                 </span>
-              </div>
-            )}
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-900">{plans?.pro?.title || 'Pro-Paket'}</h3>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-gray-900">{plans?.pro?.price || '€19.99'}</span>
-                <span className="text-gray-500">{plans?.pro?.period || '/Monat'}</span>
+                <span className="text-gray-500 text-lg ml-1">
+                  {plans?.pro?.period || '/Monat'}
+                </span>
               </div>
               <Link 
                 href={`/${locale}/signup?plan=pro`}
-                className="mt-6 w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-block text-center"
+                onClick={() => trackPlanCTAClick('Pro', plans?.pro?.price || '19.99')}
+                className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg"
               >
-                {plans?.pro?.cta || 'Holen Sie sich Ihre Sonntage zurück'}
+                {plans?.pro?.cta || 'Pro starten'}
               </Link>
-              <p className="mt-2 text-sm text-gray-500">{plans?.pro?.cancelAnytime || 'Jederzeit kündbar'}</p>
             </div>
-            <div className="mt-8">
-              {plans?.pro?.features && Object.entries(plans.pro.features).map(([key, feature]: [string, any]) => (
-                <div key={key} className="flex items-start mb-4">
-                  <Check className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-gray-900 font-medium">{feature?.title || feature}</p>
-                    {feature?.subtitle && <p className="text-gray-600 text-sm">{feature.subtitle}</p>}
-                  </div>
+            
+            <div className="space-y-4">
+              {plans?.pro?.bullets && plans.pro.bullets.map((bullet: string, index: number) => (
+                <div key={index} className="flex items-start">
+                  <Check className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700 leading-relaxed">{bullet}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Bundle Plan */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-900">{plans?.bundle?.title || 'Bundle'}</h3>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-gray-900">{plans?.bundle?.price || '€24.99'}</span>
-                <span className="text-gray-500">{plans?.bundle?.period || '/Monat'}</span>
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 relative">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {plans?.bundle?.name || 'Bundle'}
+              </h3>
+              <div className="mb-6">
+                <span className="text-5xl font-bold text-gray-900">
+                  {plans?.bundle?.price || '24,99 €'}
+                </span>
+                <span className="text-gray-500 text-lg ml-1">
+                  {plans?.bundle?.period || '/Monat'}
+                </span>
               </div>
-              <Link 
-                href={`/${locale}/signup?plan=bundle`}
-                className="mt-6 w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-block text-center"
+              <a 
+                href={plans?.bundle?.ctaLink || 'https://zazadraft.com/de'}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackBundleOutboundClick}
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-colors inline-block text-center text-lg"
               >
-                {plans?.bundle?.cta || 'Intelligenter unterrichten & kommunizieren'}
-              </Link>
-              <p className="mt-2 text-sm text-gray-500">{plans?.bundle?.cancelAnytime || 'Jederzeit kündbar'}</p>
+                {plans?.bundle?.cta || 'Bundle holen'}
+              </a>
             </div>
-            <div className="mt-8">
-              {plans?.bundle?.features && Object.entries(plans.bundle.features).map(([key, feature]: [string, any]) => (
-                <div key={key} className="flex items-start mb-4">
-                  <Check className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-gray-900 font-medium">{feature?.title || feature}</p>
-                    {feature?.subtitle && <p className="text-gray-600 text-sm">{feature.subtitle}</p>}
-                  </div>
+            
+            <div className="space-y-4">
+              {plans?.bundle?.bullets && plans.bundle.bullets.map((bullet: string, index: number) => (
+                <div key={index} className="flex items-start">
+                  <Check className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <p className="text-gray-700 leading-relaxed">{bullet}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Footer text */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600">{t('pricing.footer')}</p>
+        {/* Footer Disclaimer */}
+        <div className="mt-16 text-center">
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            {disclaimer}
+          </p>
         </div>
       </div>
 
-      {/* Testimonials Section */}
-      {testimonials && testimonials.length > 0 && (
-        <div className="mt-20 bg-gray-50 py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              {t('pricing.testimonials.title')}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {testimonials.map((testimonial: any, index: number) => (
-                <div key={index} className="bg-white rounded-lg p-6 shadow-md">
-                  <p className="text-gray-700 mb-4">"{testimonial?.quote || ''}"</p>
-                  <div className="text-sm text-gray-500">
-                    <p className="font-medium text-gray-900">{testimonial?.author || ''}</p>
-                    <p>{testimonial?.role || ''}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Trust Section */}
-      <div className="mt-16 bg-white py-12">
+      {/* Social Proof Section */}
+      <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <p className="text-lg font-medium text-gray-900">{t('pricing.trust.trustedBy')}</p>
-            </div>
-            <div>
-              <p className="text-lg font-medium text-gray-900">{t('pricing.trust.backedBy')}</p>
-            </div>
-            <div>
-              <p className="text-lg font-medium text-gray-900">{t('pricing.trust.designedWith')}</p>
-            </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-12">
+            {proof?.line1 || 'Lehrkräfte sparen bereits jede Woche Stunden ein'}
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {proof?.pillars && proof.pillars.map((pillar: string, index: number) => (
+              <div key={index} className="text-center">
+                <p className="text-lg font-semibold text-gray-800 leading-relaxed">
+                  {pillar}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
