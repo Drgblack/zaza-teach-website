@@ -80,7 +80,15 @@ export default function PricingClient() {
       <div className="relative pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            {heroTitle}
+            {heroTitle.includes('Unterricht wieder Freude macht') ? (
+              <>
+                {heroTitle.split('damit Unterricht wieder Freude macht')[0]}
+                damit <span className="bg-gradient-to-r from-[#E0115F] to-[#8A2BE2] bg-clip-text text-transparent">
+                  Unterricht wieder Freude macht
+                </span>
+                {heroTitle.split('damit Unterricht wieder Freude macht')[1]}
+              </>
+            ) : heroTitle}
           </h1>
           <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
             {heroSubtitle}
