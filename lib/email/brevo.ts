@@ -67,7 +67,7 @@ Datenschutzerklärung: https://zazateach.com/de/privacy
 
   // English template
   return {
-    subject: 'Thanks for your idea — we\'ll review it within 48 hours',
+    subject: 'Thanks for your idea. We\'ll review it within 48 hours',
     htmlContent: `
       <html>
         <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
