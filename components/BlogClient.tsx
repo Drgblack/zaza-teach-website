@@ -20,8 +20,7 @@ type CategoryConfig = {
 const getCategoriesConfig = (t: any): Record<string, CategoryConfig> => ({
   "teaching-practice": {
     label: t('blog.categories.teachingPractice'),
-    tags: ["Classroom Management", "Classroom Practice", "Student Engagement", "Assessment", "Feedback", "Differentiation", "Components", "Teaching Tips"],
-    defaultOpen: true
+    tags: ["Classroom Management", "Classroom Practice", "Student Engagement", "Assessment", "Feedback", "Differentiation", "Components", "Teaching Tips"]
   },
   "curriculum-planning": {
     label: t('blog.categories.curriculumPlanning'),
@@ -175,7 +174,8 @@ export default function BlogClient({ posts, allTags }: BlogClientProps) {
           <div className="mb-6">
             <button
               onClick={() => setActiveTag(null)}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-colors ${
+              aria-pressed={!activeTag}
+              className={`px-6 py-3 rounded-full text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 ${
                 !activeTag
                   ? "bg-purple-600 text-white shadow-md"
                   : "bg-white text-gray-600 border border-gray-300 hover:bg-purple-50 hover:text-purple-600"
@@ -198,6 +198,7 @@ export default function BlogClient({ posts, allTags }: BlogClientProps) {
                   {/* Category Header */}
                   <button
                     onClick={() => toggleCategory(categoryKey)}
+                    aria-expanded={isOpen}
                     className="w-full flex items-center justify-between px-4 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
                   >
                     <span className="text-sm font-medium text-gray-700">
@@ -224,7 +225,8 @@ export default function BlogClient({ posts, allTags }: BlogClientProps) {
                                 setOpenCategories(new Set());
                               }
                             }}
-                            className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
+                            aria-pressed={activeTag === tag}
+                            className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 ${
                               activeTag === tag
                                 ? "bg-purple-600 text-white"
                                 : "text-gray-700 hover:bg-purple-50 hover:text-purple-600"

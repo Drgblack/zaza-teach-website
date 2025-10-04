@@ -1,7 +1,7 @@
 ---
 title: "How to Reclaim Your Sunday Without Sacrificing Lesson Quality"
 description: "Protect your personal time and family moments while maintaining high-quality lessons. Learn practical strategies to break the cycle of Sunday planning burnout."
-slug: "reclaim-your-sunday-lesson-quality"
+slug: "reclaim-your-sunday"
 date: "2025-01-22"
 updated: "2025-01-22"
 image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"

@@ -1,7 +1,7 @@
 ---
 title: "Creating Classroom Joy: Small Wins That Make a Big Difference"
 description: "Transform your classroom culture with simple, intentional practices that bring joy to daily learning and strengthen student-teacher connections."
-slug: "creating-classroom-joy-small-wins"
+slug: "classroom-joy-small-wins"
 date: "2025-01-22"
 updated: "2025-01-22"
 image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"

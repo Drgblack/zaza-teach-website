@@ -1,7 +1,7 @@
 ---
 title: "Making Feedback Faster: Comment Banks That Actually Work"
 description: "Transform your grading workflow with strategic comment banks that save hours while providing meaningful, personalized feedback to students."
-slug: "making-feedback-faster-comment-banks"
+slug: "comment-banks-that-work"
 date: "2025-01-22"
 updated: "2025-01-22"
 image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"

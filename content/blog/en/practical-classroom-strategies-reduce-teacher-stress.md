@@ -1,7 +1,7 @@
 ---
 title: "Practical Classroom Strategies to Reduce Teacher Stress"
 description: "Discover proven strategies to manage teacher stress, build resilience, and create a more sustainable teaching practice that protects your wellbeing."
-slug: "practical-classroom-strategies-reduce-teacher-stress"
+slug: "reduce-teacher-stress"
 date: "2025-01-22"
 updated: "2025-01-22"
 image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"

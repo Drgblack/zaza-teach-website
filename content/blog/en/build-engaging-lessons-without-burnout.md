@@ -1,7 +1,7 @@
 ---
 title: "How to Build Lessons That Engage Without Burning You Out"
 description: "Create high-impact, engaging lessons while protecting your time and energy. Learn sustainable design principles that work for both teachers and students."
-slug: "build-engaging-lessons-without-burnout"
+slug: "build-lessons-without-burnout"
 date: "2025-01-22"
 updated: "2025-01-22"
 image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"

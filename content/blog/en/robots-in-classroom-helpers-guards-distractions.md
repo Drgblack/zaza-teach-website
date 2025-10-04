@@ -1,7 +1,7 @@
 ---
 title: "Robots in the Classroom: Helpers, Guards, or Distractions?"
 description: "Explore how educational robots are transforming learning environments - from STEM companions to security assistants. Discover the benefits, challenges, and future potential."
-slug: "robots-in-classroom-helpers-guards-distractions"
+slug: "robots-in-classroom"
 date: "2025-01-22"
 updated: "2025-01-22"
 image: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"

@@ -1,7 +1,7 @@
 ---
 title: "5 Time-Saving Tips for Busy Teachers"
 description: "Practical strategies to reclaim your time and reduce the stress of lesson preparation."
-slug: "time-saving-tips-busy-teachers"
+slug: "five-time-saving-tips"
 date: "2025-01-10"
 updated: "2025-01-10"
 image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"

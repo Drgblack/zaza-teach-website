@@ -1,7 +1,7 @@
 ---
-title: "Curriculum-Ready Lesson Planning: Save Time While Meeting Standards"
+title: "The Future of Lesson Planning: AI That Understands Curriculum"
 description: "Discover how smart tools are revolutionizing lesson planning by deeply understanding curriculum standards, creating aligned content, and saving teachers countless hours of preparation."
-slug: "future-lesson-planning-ai-curriculum"
+slug: "ai-understands-curriculum"
 date: "2025-01-22"
 updated: "2025-01-22"
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"

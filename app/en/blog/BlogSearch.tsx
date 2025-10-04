@@ -21,8 +21,7 @@ type CategoryConfig = {
 const getCategoriesConfig = (t: any): Record<string, CategoryConfig> => ({
   "teaching-practice": {
     label: t('blog.categories.teachingPractice'),
-    tags: ["Classroom Management", "Classroom Practice", "Student Engagement", "Assessment", "Feedback", "Differentiation", "Components", "Teaching Tips"],
-    defaultOpen: true
+    tags: ["Classroom Management", "Classroom Practice", "Student Engagement", "Assessment", "Feedback", "Differentiation", "Components", "Teaching Tips"]
   },
   "curriculum-planning": {
     label: t('blog.categories.curriculumPlanning'),

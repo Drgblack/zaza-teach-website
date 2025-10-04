@@ -1,7 +1,7 @@
 ---
-title: "Smart Teaching Assistants: Reclaim Your Time for What Matters"
+title: "The Rise of Digital Teacher's Assistants"
 description: "Discover how digital assistants are transforming teaching by handling routine tasks, providing insights, and freeing educators to focus on inspiration and connection."
-slug: "rise-of-digital-teacher-assistants"
+slug: "digital-teacher-assistants"
 date: "2025-01-22"
 updated: "2025-01-22"
 image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
