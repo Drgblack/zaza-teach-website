@@ -11,10 +11,10 @@ export default function StudentEngagementActivitiesPage() {
       <div className="max-w-4xl mx-auto px-4 print:px-0">
         {/* Header - hidden when printing */}
         <div className="text-center mb-8 print:hidden">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl font-bold text-slate-900 mb-4">
             Student Engagement Activities
           </h1>
-          <p className="text-gray-600">
+          <p className="text-slate-600">
             Use Ctrl+P (Cmd+P on Mac) to print or save as PDF
           </p>
         </div>
@@ -22,9 +22,9 @@ export default function StudentEngagementActivitiesPage() {
         {/* Printable Content */}
         <div className="bg-white p-8 print:p-0">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold mb-2 text-gray-900">STUDENT ENGAGEMENT ACTIVITIES</h1>
-            <p className="text-sm text-gray-600">50+ activities to boost participation and learning</p>
-            <p className="text-xs text-gray-500 mt-1">Free resource from Zaza Teach</p>
+            <h1 className="text-2xl font-bold mb-2 text-slate-900">STUDENT ENGAGEMENT ACTIVITIES</h1>
+            <p className="text-sm text-slate-600">50+ activities to boost participation and learning</p>
+            <p className="text-xs text-slate-500 mt-1">Free resource from Zaza Teach</p>
           </div>
 
           <div className="space-y-8">
@@ -33,8 +33,8 @@ export default function StudentEngagementActivitiesPage() {
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Think-Pair-Share Variations</h4>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <h4 className="font-semibold mb-2 text-slate-900">Think-Pair-Share Variations</h4>
+                  <ul className="space-y-1 text-sm text-slate-700">
                     <li>• Think-Write-Pair-Share</li>
                     <li>• Stand-and-Share (physical movement)</li>
                     <li>• Speed Dating discussions</li>
@@ -44,8 +44,8 @@ export default function StudentEngagementActivitiesPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Quick Polls & Checks</h4>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <h4 className="font-semibold mb-2 text-slate-900">Quick Polls & Checks</h4>
+                  <ul className="space-y-1 text-sm text-slate-700">
                     <li>• Fist-to-Five understanding</li>
                     <li>• Four Corners opinion</li>
                     <li>• Human Bar Graph</li>
@@ -61,8 +61,8 @@ export default function StudentEngagementActivitiesPage() {
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Review Games</h4>
-                  <ul className="space-y-1 text-sm text-gray-700 ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Review Games</h4>
+                  <ul className="space-y-1 text-sm text-slate-700 ml-4">
                     <li>• Vocabulary Bingo with student-created cards</li>
                     <li>• Jeopardy-style review (team competition)</li>
                     <li>• Kahoot or digital quiz games</li>
@@ -72,8 +72,8 @@ export default function StudentEngagementActivitiesPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Movement Games</h4>
-                  <ul className="space-y-1 text-sm text-gray-700 ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Movement Games</h4>
+                  <ul className="space-y-1 text-sm text-slate-700 ml-4">
                     <li>• Musical Chairs with content questions</li>
                     <li>• Relay Races with problem-solving</li>
                     <li>• Snowball Fight (crumpled paper Q&A)</li>
@@ -89,8 +89,8 @@ export default function StudentEngagementActivitiesPage() {
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Visual Activities</h4>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <h4 className="font-semibold mb-2 text-slate-900">Visual Activities</h4>
+                  <ul className="space-y-1 text-sm text-slate-700">
                     <li>• Sketch-to-Stretch concepts</li>
                     <li>• Mind Map creation</li>
                     <li>• Comic Strip summaries</li>
@@ -100,8 +100,8 @@ export default function StudentEngagementActivitiesPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Performance Activities</h4>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <h4 className="font-semibold mb-2 text-slate-900">Performance Activities</h4>
+                  <ul className="space-y-1 text-sm text-slate-700">
                     <li>• Role-play scenarios</li>
                     <li>• Tableau (frozen scenes)</li>
                     <li>• Rap/Song creation</li>
@@ -117,8 +117,8 @@ export default function StudentEngagementActivitiesPage() {
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Structured Collaboration</h4>
-                  <ul className="space-y-1 text-sm text-gray-700 ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Structured Collaboration</h4>
+                  <ul className="space-y-1 text-sm text-slate-700 ml-4">
                     <li>• Jigsaw Method (expert groups)</li>
                     <li>• Numbered Heads Together</li>
                     <li>• Round Robin brainstorming</li>
@@ -128,8 +128,8 @@ export default function StudentEngagementActivitiesPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Project-Based Activities</h4>
-                  <ul className="space-y-1 text-sm text-gray-700 ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Project-Based Activities</h4>
+                  <ul className="space-y-1 text-sm text-slate-700 ml-4">
                     <li>• Design Challenge competitions</li>
                     <li>• Mock Trial or Debate</li>
                     <li>• Create a Museum Exhibit</li>
@@ -145,8 +145,8 @@ export default function StudentEngagementActivitiesPage() {
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Digital Tools</h4>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <h4 className="font-semibold mb-2 text-slate-900">Digital Tools</h4>
+                  <ul className="space-y-1 text-sm text-slate-700">
                     <li>• Padlet collaboration walls</li>
                     <li>• Mentimeter live polling</li>
                     <li>• Flipgrid video responses</li>
@@ -156,8 +156,8 @@ export default function StudentEngagementActivitiesPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Blended Activities</h4>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <h4 className="font-semibold mb-2 text-slate-900">Blended Activities</h4>
+                  <ul className="space-y-1 text-sm text-slate-700">
                     <li>• QR Code scavenger hunts</li>
                     <li>• Digital Breakout rooms</li>
                     <li>• Online collaboration docs</li>
@@ -173,8 +173,8 @@ export default function StudentEngagementActivitiesPage() {
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Analysis Activities</h4>
-                  <ul className="space-y-1 text-sm text-gray-700 ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Analysis Activities</h4>
+                  <ul className="space-y-1 text-sm text-slate-700 ml-4">
                     <li>• Case Study analysis</li>
                     <li>• Mystery Box investigations</li>
                     <li>• What Would You Do? scenarios</li>
@@ -184,8 +184,8 @@ export default function StudentEngagementActivitiesPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2 text-gray-900">Problem-Solving</h4>
-                  <ul className="space-y-1 text-sm text-gray-700 ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Problem-Solving</h4>
+                  <ul className="space-y-1 text-sm text-slate-700 ml-4">
                     <li>• STEM challenges with limited materials</li>
                     <li>• Logic puzzles related to content</li>
                     <li>• Real-world problem scenarios</li>
@@ -197,8 +197,8 @@ export default function StudentEngagementActivitiesPage() {
             </div>
 
             <div className="border-2 border-gray-300 p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-4 text-gray-900">✨ ENGAGEMENT TIPS</h3>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <h3 className="font-bold text-xl mb-4 text-slate-900">✨ ENGAGEMENT TIPS</h3>
+              <ul className="space-y-2 text-sm text-slate-700">
                 <li><strong>Choice:</strong> Let students select from 2-3 activity options</li>
                 <li><strong>Relevance:</strong> Connect activities to student interests and real life</li>
                 <li><strong>Variety:</strong> Rotate between individual, pair, and group work</li>
@@ -209,7 +209,7 @@ export default function StudentEngagementActivitiesPage() {
             </div>
           </div>
 
-          <div className="text-center mt-8 text-xs text-gray-500">
+          <div className="text-center mt-8 text-xs text-slate-500">
             <p>Free resource from Zaza Teach • Visit zazateach.com for more teaching resources</p>
           </div>
         </div>

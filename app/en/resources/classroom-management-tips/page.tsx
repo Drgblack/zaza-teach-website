@@ -28,13 +28,13 @@ export default function ClassroomManagementTipsPage() {
           </div>
 
           <div className="space-y-8">
-            <div className="bg-blue-50 p-6 rounded-lg">
+            <div className="bg-blue-50 p-6 rounded-lg text-slate-800">
               <h3 className="font-bold text-xl mb-4 text-blue-800">🏗️ BUILDING CLASSROOM CULTURE</h3>
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">First Week Foundations</h4>
-                  <ul className="space-y-1 text-sm ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">First Week Foundations</h4>
+                  <ul className="space-y-1 text-sm ml-4 text-slate-800">
                     <li>• Co-create classroom rules with students (3-5 simple, positive rules)</li>
                     <li>• Establish consistent routines for entry, transitions, and dismissal</li>
                     <li>• Teach and practice procedures explicitly (bathroom, pencil sharpener, etc.)</li>
@@ -43,8 +43,8 @@ export default function ClassroomManagementTipsPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2">Building Relationships</h4>
-                  <ul className="space-y-1 text-sm ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Building Relationships</h4>
+                  <ul className="space-y-1 text-sm ml-4 text-slate-800">
                     <li>• Learn every student's name by day 3</li>
                     <li>• Greet students individually as they enter</li>
                     <li>• Share something personal about yourself each week</li>
@@ -54,13 +54,13 @@ export default function ClassroomManagementTipsPage() {
               </div>
             </div>
 
-            <div className="bg-green-50 p-6 rounded-lg">
+            <div className="bg-green-50 p-6 rounded-lg text-slate-800">
               <h3 className="font-bold text-xl mb-4 text-green-800">⚡ PREVENTING PROBLEMS</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Environmental Strategies</h4>
-                  <ul className="space-y-1 text-sm">
+                  <h4 className="font-semibold mb-2 text-slate-900">Environmental Strategies</h4>
+                  <ul className="space-y-1 text-sm text-slate-800">
                     <li>• Arrange desks to minimize distractions</li>
                     <li>• Create clear pathways for movement</li>
                     <li>• Post visual schedules and expectations</li>
@@ -70,8 +70,8 @@ export default function ClassroomManagementTipsPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2">Instructional Strategies</h4>
-                  <ul className="space-y-1 text-sm">
+                  <h4 className="font-semibold mb-2 text-slate-900">Instructional Strategies</h4>
+                  <ul className="space-y-1 text-sm text-slate-800">
                     <li>• Keep lessons moving with quick pace</li>
                     <li>• Use "think-pair-share" for engagement</li>
                     <li>• Incorporate movement breaks</li>
@@ -82,13 +82,13 @@ export default function ClassroomManagementTipsPage() {
               </div>
             </div>
 
-            <div className="bg-yellow-50 p-6 rounded-lg">
+            <div className="bg-yellow-50 p-6 rounded-lg text-slate-800">
               <h3 className="font-bold text-xl mb-4 text-yellow-800">🎯 POSITIVE BEHAVIOR SUPPORTS</h3>
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Recognition Systems</h4>
-                  <ul className="space-y-1 text-sm ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Recognition Systems</h4>
+                  <ul className="space-y-1 text-sm ml-4 text-slate-800">
                     <li>• Specific praise: "I love how you waited patiently for help"</li>
                     <li>• Class-wide rewards for group goals</li>
                     <li>• Individual behavior charts for struggling students</li>
@@ -98,8 +98,8 @@ export default function ClassroomManagementTipsPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2">Quick Engagement Tools</h4>
-                  <ul className="space-y-1 text-sm ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Quick Engagement Tools</h4>
+                  <ul className="space-y-1 text-sm ml-4 text-slate-800">
                     <li>• "Give me 5" attention signal</li>
                     <li>• Call and response chants</li>
                     <li>• Hand signals for common needs</li>
@@ -110,13 +110,13 @@ export default function ClassroomManagementTipsPage() {
               </div>
             </div>
 
-            <div className="bg-orange-50 p-6 rounded-lg">
+            <div className="bg-orange-50 p-6 rounded-lg text-slate-800">
               <h3 className="font-bold text-xl mb-4 text-orange-800">🚨 ADDRESSING DISRUPTIONS</h3>
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">De-escalation Techniques</h4>
-                  <ul className="space-y-1 text-sm ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">De-escalation Techniques</h4>
+                  <ul className="space-y-1 text-sm ml-4 text-slate-800">
                     <li>• Stay calm and keep voice low</li>
                     <li>• Use non-verbal cues first (eye contact, proximity)</li>
                     <li>• Give private redirect rather than public correction</li>
@@ -126,8 +126,8 @@ export default function ClassroomManagementTipsPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2">Progressive Consequences</h4>
-                  <ol className="space-y-1 text-sm ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Progressive Consequences</h4>
+                  <ol className="space-y-1 text-sm ml-4 text-slate-800">
                     <li>1. Nonverbal warning (look, proximity, gesture)</li>
                     <li>2. Verbal redirect (private, quiet)</li>
                     <li>3. Choice given with consequence</li>
@@ -138,13 +138,13 @@ export default function ClassroomManagementTipsPage() {
               </div>
             </div>
 
-            <div className="bg-purple-50 p-6 rounded-lg">
+            <div className="bg-purple-50 p-6 rounded-lg text-slate-800">
               <h3 className="font-bold text-xl mb-4 text-purple-800">🔄 TRANSITIONS & ROUTINES</h3>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Smooth Transitions</h4>
-                  <ul className="space-y-1 text-sm">
+                  <h4 className="font-semibold mb-2 text-slate-900">Smooth Transitions</h4>
+                  <ul className="space-y-1 text-sm text-slate-800">
                     <li>• Use countdown timers (3-2-1)</li>
                     <li>• Play "transition music"</li>
                     <li>• Give specific instructions</li>
@@ -154,8 +154,8 @@ export default function ClassroomManagementTipsPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2">Daily Routines</h4>
-                  <ul className="space-y-1 text-sm">
+                  <h4 className="font-semibold mb-2 text-slate-900">Daily Routines</h4>
+                  <ul className="space-y-1 text-sm text-slate-800">
                     <li>• Morning greeting and warm-up</li>
                     <li>• Clear dismissal procedures</li>
                     <li>• Bathroom/water procedures</li>
@@ -166,13 +166,13 @@ export default function ClassroomManagementTipsPage() {
               </div>
             </div>
 
-            <div className="bg-red-50 p-6 rounded-lg">
+            <div className="bg-red-50 p-6 rounded-lg text-slate-800">
               <h3 className="font-bold text-xl mb-4 text-red-800">📞 DIFFICULT SITUATIONS</h3>
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">When a Student Refuses to Work</h4>
-                  <ul className="space-y-1 text-sm ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">When a Student Refuses to Work</h4>
+                  <ul className="space-y-1 text-sm ml-4 text-slate-800">
                     <li>• Don't take it personally - investigate the why</li>
                     <li>• Offer modified assignments or break tasks into smaller steps</li>
                     <li>• Check if they need help or don't understand</li>
@@ -182,8 +182,8 @@ export default function ClassroomManagementTipsPage() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-2">Parent Communication</h4>
-                  <ul className="space-y-1 text-sm ml-4">
+                  <h4 className="font-semibold mb-2 text-slate-900">Parent Communication</h4>
+                  <ul className="space-y-1 text-sm ml-4 text-slate-800">
                     <li>• Call home about positive behaviors first</li>
                     <li>• Document incidents objectively</li>
                     <li>• Focus on solutions, not blame</li>
@@ -195,8 +195,8 @@ export default function ClassroomManagementTipsPage() {
             </div>
 
             <div className="border-2 border-gray-300 p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-4">💡 REMEMBER</h3>
-              <ul className="space-y-2 text-sm">
+              <h3 className="font-bold text-xl mb-4 text-slate-900">💡 REMEMBER</h3>
+              <ul className="space-y-2 text-sm text-slate-800">
                 <li><strong>Consistency is key:</strong> Follow through on expectations every time</li>
                 <li><strong>Relationships first:</strong> Students don't care how much you know until they know how much you care</li>
                 <li><strong>Reflect and adjust:</strong> What works for one class may not work for another</li>

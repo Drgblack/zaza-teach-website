@@ -197,7 +197,12 @@
   /* Print-friendly colors */
   .text-gray-900,
   .text-gray-800,
-  .text-gray-700 {
+  .text-gray-700,
+  .text-slate-900,
+  .text-slate-800,
+  .text-slate-700,
+  .text-slate-600,
+  .text-slate-500 {
     color: #000 !important;
   }
   
@@ -262,6 +267,63 @@
   .page-break-inside-avoid {
     page-break-inside: avoid;
     break-inside: avoid;
+  }
+  
+  /* Resource section print styles */
+  .resource-section,
+  .bg-blue-50,
+  .bg-green-50,
+  .bg-yellow-50,
+  .bg-orange-50,
+  .bg-red-50,
+  .bg-purple-50 {
+    background: #ffffff !important;
+    color: #111827 !important; /* slate-900 */
+    border: 1px solid #d1d5db !important; /* gray-300 */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .resource-section h1,
+  .resource-section h2,
+  .resource-section h3,
+  .resource-section h4,
+  .bg-blue-50 h1,
+  .bg-blue-50 h2,
+  .bg-blue-50 h3,
+  .bg-blue-50 h4,
+  .bg-green-50 h1,
+  .bg-green-50 h2,
+  .bg-green-50 h3,
+  .bg-green-50 h4,
+  .bg-yellow-50 h1,
+  .bg-yellow-50 h2,
+  .bg-yellow-50 h3,
+  .bg-yellow-50 h4,
+  .bg-orange-50 h1,
+  .bg-orange-50 h2,
+  .bg-orange-50 h3,
+  .bg-orange-50 h4,
+  .bg-red-50 h1,
+  .bg-red-50 h2,
+  .bg-red-50 h3,
+  .bg-red-50 h4,
+  .bg-purple-50 h1,
+  .bg-purple-50 h2,
+  .bg-purple-50 h3,
+  .bg-purple-50 h4 {
+    color: #111827 !important; /* slate-900 */
+  }
+  
+  .resource-section a,
+  .bg-blue-50 a,
+  .bg-green-50 a,
+  .bg-yellow-50 a,
+  .bg-orange-50 a,
+  .bg-red-50 a,
+  .bg-purple-50 a {
+    color: #111827 !important;
+    text-decoration: underline;
   }
 }
 
