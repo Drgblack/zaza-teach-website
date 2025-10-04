@@ -119,7 +119,7 @@ export default function HomePage() {
                   return title.split(highlightWord).map((part, index, array) => (
                     <span key={index}>
                       {part}
-                      {index < array.length - 1 && <span className="text-[#66B2B2]">{highlightWord}</span>}
+                      {index < array.length - 1 && <span className="bg-gradient-to-r from-[#E0115F] to-[#8A2BE2] bg-clip-text text-transparent">{highlightWord}</span>}
                     </span>
                   ));
                 })()}
@@ -533,7 +533,7 @@ export default function HomePage() {
                 <div className="text-center">
                   <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-3 border-2 border-white shadow-lg">
                     <img
-                      src="/images/founder/greg-blackburn-headshot.jpg"
+                      src="/images/founder.jpg"
                       alt="Dr. Greg Blackburn - Founder & CEO, Zaza Technologies"
                       className="w-full h-full object-cover"
                     />
