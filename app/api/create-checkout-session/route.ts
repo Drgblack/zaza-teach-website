@@ -10,6 +10,9 @@ import {
   PRICING,
 } from '@/lib/pricing';
 
+const CHECKOUT_DEBUG_ENABLED =
+  process.env.CHECKOUT_DEBUG === 'true' || process.env.NODE_ENV !== 'production';
+
 const CheckoutRequestSchema = z.object({
   plan: z.enum(['free', 'draft', 'teach', 'bundle']),
   interval: z.enum(['monthly', 'yearly']).default(DEFAULT_INTERVAL),
@@ -21,6 +24,47 @@ const CheckoutRequestSchema = z.object({
 const stripe = process.env.STRIPE_SECRET_KEY
   ? new Stripe(process.env.STRIPE_SECRET_KEY)
   : null;
+
+function getStripeKeyMode(secretKey?: string) {
+  if (!secretKey) {
+    return 'missing';
+  }
+
+  if (secretKey.startsWith('sk_live_')) {
+    return 'live';
+  }
+
+  if (secretKey.startsWith('sk_test_')) {
+    return 'test';
+  }
+
+  return 'unknown';
+}
+
+function getSafeErrorDetails(error: unknown) {
+  if (error instanceof Stripe.errors.StripeError) {
+    return {
+      code: error.code,
+      decline_code: error.decline_code,
+      message: error.message,
+      param: error.param,
+      requestId: error.requestId,
+      type: error.type,
+    };
+  }
+
+  if (error instanceof Error) {
+    return {
+      message: error.message,
+      type: error.name,
+    };
+  }
+
+  return {
+    message: 'Unknown error',
+    type: 'UnknownError',
+  };
+}
 
 function getPricingUrl(locale: 'en' | 'de') {
   return new URL(locale === 'de' ? '/de/pricing' : '/en/pricing', siteUrl);
@@ -55,19 +99,61 @@ function buildFreeSignupUrl({
 }
 
 export async function POST(request: NextRequest) {
+  let debugContext:
+    | {
+        cancelUrl?: string;
+        currency?: CurrencyCode;
+        interval?: BillingInterval;
+        locale?: 'en' | 'de';
+        plan?: CheckoutPlan;
+        priceId?: string;
+        source?: string;
+        stripeKeyMode: string;
+        successUrl?: string;
+      }
+    | undefined;
+
   try {
     const body = await request.json();
     const data = CheckoutRequestSchema.parse(body);
+    const stripeKeyMode = getStripeKeyMode(process.env.STRIPE_SECRET_KEY);
+
+    debugContext = {
+      currency: data.currency,
+      interval: data.interval,
+      locale: data.locale,
+      plan: data.plan,
+      source: data.source,
+      stripeKeyMode,
+    };
 
     if (data.plan === 'free') {
+      const signupUrl = buildFreeSignupUrl(data);
+      console.info('[checkout] free-signup redirect', {
+        ...debugContext,
+        signupUrl,
+      });
+
       return NextResponse.json({
-        url: buildFreeSignupUrl(data),
+        url: signupUrl,
       });
     }
 
     if (!stripe) {
+      console.error('[checkout] stripe not configured', debugContext);
+
       return NextResponse.json(
-        { error: 'Stripe is not configured. Set STRIPE_SECRET_KEY to enable checkout.' },
+        {
+          error: 'Stripe is not configured. Set STRIPE_SECRET_KEY to enable checkout.',
+          ...(CHECKOUT_DEBUG_ENABLED
+            ? {
+                debug: {
+                  ...debugContext,
+                  envVar: 'STRIPE_SECRET_KEY',
+                },
+              }
+            : {}),
+        },
         { status: 500 },
       );
     }
@@ -87,7 +173,17 @@ export async function POST(request: NextRequest) {
     cancelUrl.searchParams.set('interval', data.interval);
     cancelUrl.searchParams.set('currency', data.currency);
 
+    debugContext = {
+      ...debugContext,
+      cancelUrl: cancelUrl.toString(),
+      priceId,
+      successUrl: successUrl.toString(),
+    };
+
+    console.info('[checkout] creating session', debugContext);
+
     const session = await stripe.checkout.sessions.create({
+      currency: data.currency.toLowerCase(),
       mode: 'subscription',
       line_items: [
         {
@@ -110,24 +206,53 @@ export async function POST(request: NextRequest) {
       throw new Error('Stripe did not return a checkout URL.');
     }
 
+    console.info('[checkout] session created', {
+      ...debugContext,
+      sessionId: session.id,
+      sessionUrl: session.url,
+    });
+
     return NextResponse.json({
       url: session.url,
     });
   } catch (error) {
-    console.error('Create checkout session error:', error);
+    const errorDetails = getSafeErrorDetails(error);
+
+    console.error('[checkout] create session failed', {
+      ...debugContext,
+      error: errorDetails,
+    });
 
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         {
           error: 'Invalid checkout request.',
           details: error.flatten(),
+          ...(CHECKOUT_DEBUG_ENABLED
+            ? {
+                debug: {
+                  ...debugContext,
+                  error: errorDetails,
+                },
+              }
+            : {}),
         },
         { status: 400 },
       );
     }
 
     return NextResponse.json(
-      { error: 'Unable to create checkout session.' },
+      {
+        error: 'Unable to create checkout session.',
+        ...(CHECKOUT_DEBUG_ENABLED
+          ? {
+              debug: {
+                ...debugContext,
+                error: errorDetails,
+              },
+            }
+          : {}),
+      },
       { status: 500 },
     );
   }

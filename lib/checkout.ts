@@ -29,13 +29,42 @@ export async function startCheckout({
     }),
   });
 
-  const data = (await response.json()) as {
+  const rawBody = await response.text();
+  let data: {
+    debug?: unknown;
+    details?: unknown;
     error?: string;
     url?: string;
-  };
+  } = {};
+
+  try {
+    data = rawBody ? JSON.parse(rawBody) : {};
+  } catch (parseError) {
+    console.error('Checkout API returned a non-JSON response.', {
+      parseError,
+      rawBody,
+      status: response.status,
+    });
+  }
 
   if (!response.ok || !data.url) {
-    throw new Error(data.error || 'Unable to start checkout.');
+    console.error('Checkout API request failed.', {
+      body: data,
+      rawBody,
+      request: {
+        currency,
+        interval,
+        locale,
+        plan,
+        source,
+      },
+      status: response.status,
+      statusText: response.statusText,
+    });
+
+    throw new Error(
+      data.error || `Unable to start checkout. HTTP ${response.status} ${response.statusText}`.trim(),
+    );
   }
 
   window.location.assign(data.url);
