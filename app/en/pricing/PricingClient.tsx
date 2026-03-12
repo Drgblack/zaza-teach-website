@@ -2,6 +2,7 @@
 
 import React from 'react';
 import CurrencySwitcher from '@/components/CurrencySwitcher';
+import EarlyAccessModal from '@/components/EarlyAccessModal';
 import { useCurrency } from '@/components/CurrencyProvider';
 import { formatPrice } from '@/lib/currency';
 import { startCheckout } from '@/lib/checkout';
@@ -13,6 +14,11 @@ import {
   FREE_PLAN_PRICE,
   PRICING,
 } from '@/lib/pricing';
+import {
+  EarlyAccessContext,
+  getEarlyAccessLabel,
+  TEACH_SALES_ENABLED,
+} from '@/lib/teach-sales';
 import { useTranslations, useLocale } from '../../../components/LocaleProvider';
 import { Check, Star } from 'lucide-react';
 
@@ -22,7 +28,12 @@ export default function PricingClient() {
   const { currency } = useCurrency();
   const [interval, setInterval] = React.useState<BillingInterval>(DEFAULT_INTERVAL);
   const [pendingCheckoutPlan, setPendingCheckoutPlan] = React.useState<CheckoutPlan | null>(null);
+  const [earlyAccessContext, setEarlyAccessContext] = React.useState<EarlyAccessContext | null>(
+    null,
+  );
+  const marketingLocale = locale === 'de' ? 'de' : 'en';
   const priceLocale = locale === 'de' ? 'de-DE' : 'en-US';
+  const earlyAccessLabel = getEarlyAccessLabel(marketingLocale);
 
   // Helper to safely get translation objects/arrays
   const getTranslationObject = (key: string, fallback: any = {}): any => {
@@ -81,12 +92,29 @@ export default function PricingClient() {
 
     trackPlanCTAClick(planNames[plan], planPrices[plan]);
 
+    if (!TEACH_SALES_ENABLED) {
+      console.info('Teach sales disabled, opening early access modal from pricing page.', {
+        currency,
+        interval,
+        locale: marketingLocale,
+        plan,
+      });
+      setEarlyAccessContext({
+        currency,
+        interval,
+        locale: marketingLocale,
+        plan,
+        source: 'pricing_page',
+      });
+      return;
+    }
+
     if (plan === 'free') {
       try {
         redirectToFreeSignup({
           currency,
           interval,
-          locale: locale === 'de' ? 'de' : 'en',
+          locale: marketingLocale,
           source: 'pricing_page',
         });
       } catch (error) {
@@ -108,7 +136,7 @@ export default function PricingClient() {
         plan,
         interval,
         currency,
-        locale: locale === 'de' ? 'de' : 'en',
+        locale: marketingLocale,
         source: 'pricing_page',
       });
     } catch (error) {
@@ -202,7 +230,7 @@ export default function PricingClient() {
                 disabled={pendingCheckoutPlan === 'free'}
                 className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {plans?.free?.cta || 'Start Free'}
+                {TEACH_SALES_ENABLED ? plans?.free?.cta || 'Start Free' : earlyAccessLabel}
               </button>
             </div>
             
@@ -243,7 +271,7 @@ export default function PricingClient() {
                 disabled={pendingCheckoutPlan === 'teach'}
                 className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {plans?.pro?.cta || 'Start Pro'}
+                {TEACH_SALES_ENABLED ? plans?.pro?.cta || 'Start Pro' : earlyAccessLabel}
               </button>
             </div>
             
@@ -277,7 +305,7 @@ export default function PricingClient() {
                 disabled={pendingCheckoutPlan === 'bundle'}
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {plans?.bundle?.cta || 'Get Bundle'}
+                {TEACH_SALES_ENABLED ? plans?.bundle?.cta || 'Get Bundle' : earlyAccessLabel}
               </button>
             </div>
             
@@ -318,6 +346,16 @@ export default function PricingClient() {
           </div>
         </div>
       </div>
+
+      <EarlyAccessModal
+        context={earlyAccessContext}
+        open={earlyAccessContext !== null}
+        onOpenChange={(open) => {
+          if (!open) {
+            setEarlyAccessContext(null);
+          }
+        }}
+      />
     </div>
   );
 }

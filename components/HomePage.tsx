@@ -2,10 +2,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useCurrency } from '@/components/CurrencyProvider';
+import EarlyAccessModal from '@/components/EarlyAccessModal';
 import { formatPrice } from '@/lib/currency';
 import { startCheckout } from '@/lib/checkout';
 import { redirectToFreeSignup } from '@/lib/free-signup';
 import { CheckoutPlan, DEFAULT_INTERVAL, FREE_PLAN_PRICE, PRICING } from '@/lib/pricing';
+import { EarlyAccessContext, getEarlyAccessLabel, TEACH_SALES_ENABLED } from '@/lib/teach-sales';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
@@ -22,6 +24,9 @@ export default function HomePage() {
   const { currency } = useCurrency();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [pendingCheckoutPlan, setPendingCheckoutPlan] = useState<CheckoutPlan | null>(null);
+  const [earlyAccessContext, setEarlyAccessContext] = useState<EarlyAccessContext | null>(null);
+  const marketingLocale = locale === 'de' ? 'de' : 'en';
+  const earlyAccessLabel = getEarlyAccessLabel(marketingLocale);
   const priceLocale = locale === 'de' ? 'de-DE' : 'en-US';
   
   // Safe array access with fallbacks
@@ -84,12 +89,29 @@ export default function HomePage() {
   const teachers = getTeachers();
 
   const handlePlanAction = async (plan: CheckoutPlan) => {
+    if (!TEACH_SALES_ENABLED) {
+      console.info('Teach sales disabled, opening early access modal from homepage pricing.', {
+        currency,
+        interval: DEFAULT_INTERVAL,
+        locale: marketingLocale,
+        plan,
+      });
+      setEarlyAccessContext({
+        currency,
+        interval: DEFAULT_INTERVAL,
+        locale: marketingLocale,
+        plan,
+        source: 'home_pricing',
+      });
+      return;
+    }
+
     if (plan === 'free') {
       try {
         redirectToFreeSignup({
           currency,
           interval: DEFAULT_INTERVAL,
-          locale: locale === 'de' ? 'de' : 'en',
+          locale: marketingLocale,
           source: 'home_pricing',
         });
       } catch (error) {
@@ -115,7 +137,7 @@ export default function HomePage() {
         plan,
         interval: DEFAULT_INTERVAL,
         currency,
-        locale: locale === 'de' ? 'de' : 'en',
+        locale: marketingLocale,
         source: 'home_pricing',
       });
     } catch (error) {
@@ -722,7 +744,7 @@ export default function HomePage() {
 	                  title: t('home.pricing.plans.free.title'),
 	                  price: formatPrice(FREE_PLAN_PRICE, currency, priceLocale),
 	                  features: getTranslationArray('home.pricing.plans.free.features', ["5 lesson plans/month"]),
-	                  cta: t('home.pricing.plans.free.cta'),
+	                  cta: TEACH_SALES_ENABLED ? t('home.pricing.plans.free.cta') : earlyAccessLabel,
 	                  popular: false,
                   planType: 'free' as const
                 },
@@ -731,7 +753,7 @@ export default function HomePage() {
 	                  price: formatPrice(PRICING.teach[DEFAULT_INTERVAL][currency].amount, currency, priceLocale),
 	                  period: t('home.pricing.plans.pro.period'),
 	                  features: getTranslationArray('home.pricing.plans.pro.features', ["Unlimited plans", "Full template library", "Priority support"]),
-	                  cta: t('home.pricing.plans.pro.cta'),
+	                  cta: TEACH_SALES_ENABLED ? t('home.pricing.plans.pro.cta') : earlyAccessLabel,
                   popular: true,
                   popularText: t('home.pricing.plans.pro.popular'),
                   planType: 'teach' as const
@@ -741,7 +763,7 @@ export default function HomePage() {
 	                  price: formatPrice(PRICING.bundle[DEFAULT_INTERVAL][currency].amount, currency, priceLocale), 
 	                  period: t('home.pricing.plans.bundle.period'),
 	                  features: getTranslationArray('home.pricing.plans.bundle.features', ["Zaza Teach + Zaza Draft", "All Pro features", "Cross-platform sync"]),
-	                  cta: t('home.pricing.plans.bundle.cta'),
+	                  cta: TEACH_SALES_ENABLED ? t('home.pricing.plans.bundle.cta') : earlyAccessLabel,
                   popular: false,
                   planType: 'bundle' as const
                 }
@@ -824,6 +846,16 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      <EarlyAccessModal
+        context={earlyAccessContext}
+        open={earlyAccessContext !== null}
+        onOpenChange={(open) => {
+          if (!open) {
+            setEarlyAccessContext(null);
+          }
+        }}
+      />
     </div>
   );
 } 

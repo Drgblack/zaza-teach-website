@@ -1,9 +1,11 @@
 'use client';
 
-import { MouseEvent } from 'react';
+import { MouseEvent, useState } from 'react';
 import { useCurrency } from '@/components/CurrencyProvider';
+import EarlyAccessModal from '@/components/EarlyAccessModal';
 import { redirectToFreeSignup } from '@/lib/free-signup';
 import { DEFAULT_INTERVAL } from '@/lib/pricing';
+import { getEarlyAccessLabel, TEACH_SALES_ENABLED } from '@/lib/teach-sales';
 import { trackCtaClick } from './GoogleAnalytics';
 import { useLocale } from './LocaleProvider';
 
@@ -22,6 +24,9 @@ export default function PrimaryCTA({
 }: Props) {
   const locale = useLocale();
   const { currency } = useCurrency();
+  const [isEarlyAccessOpen, setIsEarlyAccessOpen] = useState(false);
+  const marketingLocale = locale === 'de' ? 'de' : 'en';
+  const buttonLabel = TEACH_SALES_ENABLED ? label : getEarlyAccessLabel(marketingLocale);
 
   const onClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -36,11 +41,22 @@ export default function PrimaryCTA({
     const location = locationMap[from] || 'hero';
     trackCtaClick(location, 'start_free');
 
+    if (!TEACH_SALES_ENABLED) {
+      console.info('Teach sales disabled, opening early access modal from primary CTA.', {
+        currency,
+        interval: DEFAULT_INTERVAL,
+        locale: marketingLocale,
+        source: from,
+      });
+      setIsEarlyAccessOpen(true);
+      return;
+    }
+
     try {
       redirectToFreeSignup({
         currency,
         interval: DEFAULT_INTERVAL,
-        locale: locale === 'de' ? 'de' : 'en',
+        locale: marketingLocale,
         source: from,
       });
     } catch (error) {
@@ -60,24 +76,38 @@ export default function PrimaryCTA({
   };
 
   return (
-    <button
-      type="button"
-      aria-label={ariaLabel}
-      onClick={onClick}
-      className={[
-        'inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold',
-        'bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white',
-        'shadow-lg shadow-fuchsia-400/30 hover:shadow-xl hover:shadow-fuchsia-400/40',
-        'transition-transform duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0',
-        'focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2',
-        className,
-      ].join(' ')}
-      data-cta="start-free-today"
-      data-source={from}
-    >
-      <span className="i-lucide-sparkles" aria-hidden="true" />
-      {label}
-      <span className="i-lucide-arrow-right" aria-hidden="true" />
-    </button>
+    <>
+      <button
+        type="button"
+        aria-label={ariaLabel}
+        onClick={onClick}
+        className={[
+          'inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold',
+          'bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white',
+          'shadow-lg shadow-fuchsia-400/30 hover:shadow-xl hover:shadow-fuchsia-400/40',
+          'transition-transform duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0',
+          'focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2',
+          className,
+        ].join(' ')}
+        data-cta="start-free-today"
+        data-source={from}
+      >
+        <span className="i-lucide-sparkles" aria-hidden="true" />
+        {buttonLabel}
+        <span className="i-lucide-arrow-right" aria-hidden="true" />
+      </button>
+
+      <EarlyAccessModal
+        context={{
+          currency,
+          interval: DEFAULT_INTERVAL,
+          locale: marketingLocale,
+          plan: 'free',
+          source: from,
+        }}
+        open={isEarlyAccessOpen}
+        onOpenChange={setIsEarlyAccessOpen}
+      />
+    </>
   );
 }
