@@ -47,6 +47,8 @@ export default function PricingClient() {
   const heroTitle = t('pricing.heroTitle');
   const heroSubtitle = t('pricing.heroSubtitle');
   const disclaimer = t('pricing.disclaimer');
+  const prelaunchHelperLine =
+    'Startet bald - melde dich fuer Early Access an, um erste Einladungen, Launch-Updates und priorisiertes Onboarding zu erhalten.';
 
   // GA4 Event handlers
   const trackPricingView = () => {
@@ -208,6 +210,11 @@ export default function PricingClient() {
 
       {/* Pricing Cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        {!TEACH_SALES_ENABLED ? (
+          <div className="mx-auto mb-8 max-w-3xl rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-center text-sm leading-relaxed text-slate-700 shadow-sm sm:text-base">
+            {prelaunchHelperLine}
+          </div>
+        ) : null}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
           
           {/* Free Plan */}

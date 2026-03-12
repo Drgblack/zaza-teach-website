@@ -28,6 +28,8 @@ export function getEarlyAccessCopy(locale: MarketingLocale) {
         'Die Anmeldung zum Early Access konnte nicht gespeichert werden. Bitte versuche es erneut.',
       nameLabel: 'Name',
       namePlaceholder: 'Dein Name',
+      reassurance:
+        'Keine Zahlung noetig. Wir sagen dir Bescheid, sobald Zaza Teach bereit ist.',
       submitLabel: 'Early Access beitreten',
       submittingLabel: 'Wird gesendet...',
       successBody:
@@ -46,6 +48,8 @@ export function getEarlyAccessCopy(locale: MarketingLocale) {
       'We could not save your early access request. Please try again.',
     nameLabel: 'Name',
     namePlaceholder: 'Your name',
+    reassurance:
+      'No payment needed. We’ll let you know as soon as Zaza Teach is ready.',
     submitLabel: 'Join Early Access',
     submittingLabel: 'Submitting...',
     successBody:

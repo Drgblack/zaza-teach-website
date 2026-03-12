@@ -112,6 +112,8 @@ export default function EarlyAccessModal({ context, open, onOpenChange }: Props)
           <DialogDescription>{copy.description}</DialogDescription>
         </DialogHeader>
 
+        <p className="text-sm leading-relaxed text-slate-600">{copy.reassurance}</p>
+
         {isSubmitted ? (
           <div className="space-y-3 rounded-xl bg-emerald-50 p-4 text-sm text-emerald-900">
             <p className="font-semibold">{copy.successTitle}</p>
