@@ -5,7 +5,13 @@ import CurrencySwitcher from '@/components/CurrencySwitcher';
 import { useCurrency } from '@/components/CurrencyProvider';
 import { formatPrice } from '@/lib/currency';
 import { startCheckout } from '@/lib/checkout';
-import { CheckoutPlan, FREE_PLAN_PRICE, PRICING } from '@/lib/pricing';
+import {
+  BillingInterval,
+  CheckoutPlan,
+  DEFAULT_INTERVAL,
+  FREE_PLAN_PRICE,
+  PRICING,
+} from '@/lib/pricing';
 import { useTranslations, useLocale } from '../../../components/LocaleProvider';
 import { Check, Star } from 'lucide-react';
 
@@ -13,6 +19,7 @@ export default function PricingClient() {
   const t = useTranslations();
   const locale = useLocale();
   const { currency } = useCurrency();
+  const [interval, setInterval] = React.useState<BillingInterval>(DEFAULT_INTERVAL);
   const [pendingCheckoutPlan, setPendingCheckoutPlan] = React.useState<CheckoutPlan | null>(null);
   const priceLocale = locale === 'de' ? 'de-DE' : 'en-US';
 
@@ -38,6 +45,7 @@ export default function PricingClient() {
         page_title: 'Pricing Page',
         page_location: window.location.href,
         selected_currency: currency,
+        selected_interval: interval,
       });
     }
   };
@@ -58,14 +66,16 @@ export default function PricingClient() {
   const handlePlanCheckout = async (plan: CheckoutPlan) => {
     const planNames = {
       free: plans?.free?.name || 'Free',
-      pro: plans?.pro?.name || 'Pro',
+      draft: plans?.draft?.name || 'Draft',
+      teach: plans?.pro?.name || 'Pro',
       bundle: plans?.bundle?.name || 'Bundle',
     };
 
     const planPrices = {
       free: FREE_PLAN_PRICE,
-      pro: PRICING.pro[currency].price,
-      bundle: PRICING.bundle[currency].price,
+      draft: PRICING.draft[interval][currency].amount,
+      teach: PRICING.teach[interval][currency].amount,
+      bundle: PRICING.bundle[interval][currency].amount,
     };
 
     trackPlanCTAClick(planNames[plan], planPrices[plan]);
@@ -74,6 +84,7 @@ export default function PricingClient() {
       setPendingCheckoutPlan(plan);
       await startCheckout({
         plan,
+        interval,
         currency,
         locale: locale === 'de' ? 'de' : 'en',
         source: 'pricing_page',
@@ -89,7 +100,10 @@ export default function PricingClient() {
   // Track page view on component mount
   React.useEffect(() => {
     trackPricingView();
-  }, [currency]);
+  }, [currency, interval]);
+
+  const paidPlanPeriodLabel = interval === 'yearly' ? '/Jahr' : plans?.pro?.period || '/Monat';
+  const bundlePeriodLabel = interval === 'yearly' ? '/Jahr' : plans?.bundle?.period || '/Monat';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -110,8 +124,34 @@ export default function PricingClient() {
           <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
             {heroSubtitle}
           </p>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-col items-center gap-4">
             <CurrencySwitcher />
+            <div
+              className="inline-flex items-center rounded-full border border-blue-100 bg-white/90 p-1 shadow-sm backdrop-blur"
+              role="group"
+              aria-label="Billing interval selector"
+            >
+              {(['monthly', 'yearly'] as const).map((value) => {
+                const isActive = interval === value;
+
+                return (
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => setInterval(value)}
+                    className={[
+                      'rounded-full px-4 py-2 text-sm font-semibold transition-colors',
+                      isActive
+                        ? 'bg-blue-600 text-white shadow-sm'
+                        : 'text-slate-700 hover:bg-slate-100',
+                    ].join(' ')}
+                    aria-pressed={isActive}
+                  >
+                    {value === 'monthly' ? 'Monatlich' : 'Jährlich'}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -169,16 +209,16 @@ export default function PricingClient() {
               </h3>
               <div className="mb-6">
                 <span className="text-5xl font-bold text-gray-900">
-                  {formatPrice(PRICING.pro[currency].price, currency, priceLocale)}
+                  {formatPrice(PRICING.teach[interval][currency].amount, currency, priceLocale)}
                 </span>
                 <span className="text-gray-500 text-lg ml-1">
-                  {plans?.pro?.period || '/Monat'}
+                  {paidPlanPeriodLabel}
                 </span>
               </div>
               <button
                 type="button"
-                onClick={() => void handlePlanCheckout('pro')}
-                disabled={pendingCheckoutPlan === 'pro'}
+                onClick={() => void handlePlanCheckout('teach')}
+                disabled={pendingCheckoutPlan === 'teach'}
                 className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {plans?.pro?.cta || 'Pro starten'}
@@ -203,10 +243,10 @@ export default function PricingClient() {
               </h3>
               <div className="mb-6">
                 <span className="text-5xl font-bold text-gray-900">
-                  {formatPrice(PRICING.bundle[currency].price, currency, priceLocale)}
+                  {formatPrice(PRICING.bundle[interval][currency].amount, currency, priceLocale)}
                 </span>
                 <span className="text-gray-500 text-lg ml-1">
-                  {plans?.bundle?.period || '/Monat'}
+                  {bundlePeriodLabel}
                 </span>
               </div>
               <button

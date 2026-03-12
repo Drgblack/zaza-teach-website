@@ -1,54 +1,56 @@
 # Stripe Multi-Currency Setup
 
-This marketing site uses Stripe Price objects directly. Do not convert currencies in the frontend or backend.
+Stripe is the source of truth for checkout pricing on the website. The website must resolve every paid CTA to a Stripe Price ID from [lib/pricing.ts](/c:/Users/User/zaza-teach-website/lib/pricing.ts).
 
-## Products
+## Default Website Behavior
 
-Create these Stripe products:
+1. Default interval: `monthly`
+2. Supported currencies: `EUR`, `USD`, `GBP`
+3. Checkout must use Stripe Price IDs, not product names
 
-1. `Zaza Teach Pro`
-2. `Zaza Teach Bundle`
+## Live Stripe Products And Price IDs
 
-## Prices
+### Zaza Draft Pro
 
-Create a separate recurring monthly Price for each product and currency.
+1. Monthly: `price_1TA6ouHXkbT25qrKoapecaPz`
+2. Yearly: `price_1TA6ouHXkbT25qrKUW5KmHXr`
 
 ### Zaza Teach Pro
 
-1. `EUR` at `19.99`
-2. `USD` at `19.99`
-3. `GBP` at `17.99`
+1. Monthly: `price_1TA6gIHXkbT25qrK5l8sKOX3`
+2. Yearly: `price_1TA6gIHXkbT25qrKckEqdVd3`
 
-### Zaza Teach Bundle
+### Zaza Bundle: Teach + Draft
 
-1. `EUR` at `24.99`
-2. `USD` at `24.99`
-3. `GBP` at `21.99`
+1. Monthly: `price_1TA6mFHXkbT25qrK40mdltez`
+2. Yearly: `price_1TA6mFHXkbT25qrKzZq3qTtE`
 
-## App Config Mapping
+## Display Amounts
 
-After the Price objects are created, replace the placeholder IDs in [lib/pricing.ts](/c:/Users/User/zaza-teach-website/lib/pricing.ts).
+### Draft
 
-Expected mapping:
+1. Monthly: `EUR 14.99`, `USD 16.00`, `GBP 13.00`
+2. Yearly: `EUR 149.00`, `USD 160.00`, `GBP 130.00`
 
-1. `price_pro_eur`
-2. `price_pro_usd`
-3. `price_pro_gbp`
-4. `price_bundle_eur`
-5. `price_bundle_usd`
-6. `price_bundle_gbp`
+### Teach
+
+1. Monthly: `EUR 19.99`, `USD 22.00`, `GBP 17.00`
+2. Yearly: `EUR 199.00`, `USD 220.00`, `GBP 170.00`
+
+### Bundle
+
+1. Monthly: `EUR 24.99`, `USD 27.00`, `GBP 22.00`
+2. Yearly: `EUR 249.00`, `USD 270.00`, `GBP 220.00`
+
+## Checkout Mapping
+
+1. `plan=draft` resolves to `PRICING.draft[interval][currency].stripePriceId`
+2. `plan=teach` resolves to `PRICING.teach[interval][currency].stripePriceId`
+3. `plan=bundle` resolves to `PRICING.bundle[interval][currency].stripePriceId`
+4. `plan=free` bypasses Stripe and redirects to the signup flow
 
 ## Environment
-
-Set these variables in deployment:
 
 1. `STRIPE_SECRET_KEY`
 2. `NEXT_PUBLIC_SITE_URL`
 3. `NEXT_PUBLIC_SIGNUP_URL`
-
-## Checkout Behavior
-
-1. Free plan requests still resolve to the signup URL and carry `plan`, `currency`, and `locale`.
-2. Paid plans use `/api/create-checkout-session`.
-3. The API selects the Stripe Price ID from [lib/pricing.ts](/c:/Users/User/zaza-teach-website/lib/pricing.ts) using the submitted `plan` and `currency`.
-4. Stripe Checkout must always show the same currency displayed in the UI.

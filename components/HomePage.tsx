@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useCurrency } from '@/components/CurrencyProvider';
 import { formatPrice } from '@/lib/currency';
 import { startCheckout } from '@/lib/checkout';
-import { CheckoutPlan, FREE_PLAN_PRICE, PRICING } from '@/lib/pricing';
+import { CheckoutPlan, DEFAULT_INTERVAL, FREE_PLAN_PRICE, PRICING } from '@/lib/pricing';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
@@ -87,6 +87,7 @@ export default function HomePage() {
       setPendingCheckoutPlan(plan);
       await startCheckout({
         plan,
+        interval: DEFAULT_INTERVAL,
         currency,
         locale: locale === 'de' ? 'de' : 'en',
         source: 'home_pricing',
@@ -701,17 +702,17 @@ export default function HomePage() {
                 },
 	                {
 	                  title: t('home.pricing.plans.pro.title'), 
-	                  price: formatPrice(PRICING.pro[currency].price, currency, priceLocale),
+	                  price: formatPrice(PRICING.teach[DEFAULT_INTERVAL][currency].amount, currency, priceLocale),
 	                  period: t('home.pricing.plans.pro.period'),
 	                  features: getTranslationArray('home.pricing.plans.pro.features', ["Unlimited plans", "Full template library", "Priority support"]),
 	                  cta: t('home.pricing.plans.pro.cta'),
                   popular: true,
                   popularText: t('home.pricing.plans.pro.popular'),
-                  planType: 'pro' as const
+                  planType: 'teach' as const
                 },
 	                {
 	                  title: t('home.pricing.plans.bundle.title'),
-	                  price: formatPrice(PRICING.bundle[currency].price, currency, priceLocale), 
+	                  price: formatPrice(PRICING.bundle[DEFAULT_INTERVAL][currency].amount, currency, priceLocale), 
 	                  period: t('home.pricing.plans.bundle.period'),
 	                  features: getTranslationArray('home.pricing.plans.bundle.features', ["Zaza Teach + Zaza Draft", "All Pro features", "Cross-platform sync"]),
 	                  cta: t('home.pricing.plans.bundle.cta'),

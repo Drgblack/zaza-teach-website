@@ -2,10 +2,17 @@ import Stripe from 'stripe';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { siteUrl } from '@/lib/site';
-import { CheckoutPlan, CurrencyCode, PRICING } from '@/lib/pricing';
+import {
+  BillingInterval,
+  CheckoutPlan,
+  CurrencyCode,
+  DEFAULT_INTERVAL,
+  PRICING,
+} from '@/lib/pricing';
 
 const CheckoutRequestSchema = z.object({
-  plan: z.enum(['free', 'pro', 'bundle']),
+  plan: z.enum(['free', 'draft', 'teach', 'bundle']),
+  interval: z.enum(['monthly', 'yearly']).default(DEFAULT_INTERVAL),
   currency: z.enum(['EUR', 'USD', 'GBP']),
   locale: z.enum(['en', 'de']).default('en'),
   source: z.string().max(100).optional(),
@@ -21,11 +28,13 @@ function getPricingUrl(locale: 'en' | 'de') {
 
 function buildFreeSignupUrl({
   currency,
+  interval,
   locale,
   plan,
   source,
 }: {
   currency: CurrencyCode;
+  interval: BillingInterval;
   locale: 'en' | 'de';
   plan: CheckoutPlan;
   source?: string;
@@ -34,6 +43,7 @@ function buildFreeSignupUrl({
   const url = new URL(signupUrl);
 
   url.searchParams.set('plan', plan);
+  url.searchParams.set('interval', interval);
   url.searchParams.set('currency', currency);
   url.searchParams.set('locale', locale);
 
@@ -62,17 +72,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const priceId = PRICING[data.plan][data.currency].stripePriceId;
+    const priceId = PRICING[data.plan][data.interval][data.currency].stripePriceId;
     const pricingUrl = getPricingUrl(data.locale);
     const successUrl = new URL(pricingUrl);
     const cancelUrl = new URL(pricingUrl);
 
     successUrl.searchParams.set('checkout', 'success');
     successUrl.searchParams.set('plan', data.plan);
+    successUrl.searchParams.set('interval', data.interval);
     successUrl.searchParams.set('currency', data.currency);
 
     cancelUrl.searchParams.set('checkout', 'cancelled');
     cancelUrl.searchParams.set('plan', data.plan);
+    cancelUrl.searchParams.set('interval', data.interval);
     cancelUrl.searchParams.set('currency', data.currency);
 
     const session = await stripe.checkout.sessions.create({
@@ -87,6 +99,7 @@ export async function POST(request: NextRequest) {
       cancel_url: cancelUrl.toString(),
       metadata: {
         currency: data.currency,
+        interval: data.interval,
         locale: data.locale,
         plan: data.plan,
         source: data.source || 'marketing_site',

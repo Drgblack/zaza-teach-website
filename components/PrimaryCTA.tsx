@@ -3,6 +3,7 @@
 import { MouseEvent } from 'react';
 import { useCurrency } from '@/components/CurrencyProvider';
 import { startCheckout } from '@/lib/checkout';
+import { DEFAULT_INTERVAL } from '@/lib/pricing';
 import { trackCtaClick } from './GoogleAnalytics';
 import { useLocale } from './LocaleProvider';
 
@@ -37,6 +38,7 @@ export default function PrimaryCTA({
 
     void startCheckout({
       plan: 'free',
+      interval: DEFAULT_INTERVAL,
       currency,
       locale: locale === 'de' ? 'de' : 'en',
       source: from,

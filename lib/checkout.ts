@@ -1,7 +1,8 @@
-import { CheckoutPlan, CurrencyCode } from '@/lib/pricing';
+import { BillingInterval, CheckoutPlan, CurrencyCode } from '@/lib/pricing';
 
 type StartCheckoutArgs = {
   currency: CurrencyCode;
+  interval: BillingInterval;
   locale: 'en' | 'de';
   plan: CheckoutPlan;
   source?: string;
@@ -9,6 +10,7 @@ type StartCheckoutArgs = {
 
 export async function startCheckout({
   currency,
+  interval,
   locale,
   plan,
   source,
@@ -20,6 +22,7 @@ export async function startCheckout({
     },
     body: JSON.stringify({
       plan,
+      interval,
       currency,
       locale,
       source,

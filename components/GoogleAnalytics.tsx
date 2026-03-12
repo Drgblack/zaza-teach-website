@@ -5,11 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 
 declare global {
   interface Window {
-    gtag: (
-      command: 'config' | 'event' | 'js' | 'set',
-      targetId: string | Date,
-      config?: Record<string, any>
-    ) => void;
+    gtag?: (...args: any[]) => void;
   }
 }
 
@@ -115,7 +111,7 @@ export const trackCtaClick = (location: 'hero' | 'mid-cta' | 'pricing', label: '
   }
 };
 
-export const trackPricingClick = (plan: 'free' | 'pro' | 'bundle') => {
+export const trackPricingClick = (plan: 'free' | 'teach' | 'bundle' | 'draft') => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'pricing_click', {
       plan: plan,
