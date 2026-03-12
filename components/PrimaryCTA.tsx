@@ -1,8 +1,10 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { MouseEvent } from 'react';
+import { useCurrency } from '@/components/CurrencyProvider';
+import { startCheckout } from '@/lib/checkout';
 import { trackCtaClick } from './GoogleAnalytics';
+import { useLocale } from './LocaleProvider';
 
 type Props = {
   label?: string;
@@ -17,10 +19,12 @@ export default function PrimaryCTA({
   from = 'home_hero',
   className = '',
 }: Props) {
-  const router = useRouter();
-  const target = process.env.NEXT_PUBLIC_SIGNUP_URL || '/signup';
+  const locale = useLocale();
+  const { currency } = useCurrency();
 
   const onClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
     // Map from prop to tracking location
     const locationMap: Record<string, 'hero' | 'mid-cta' | 'pricing'> = {
       'home_hero': 'hero',
@@ -30,8 +34,20 @@ export default function PrimaryCTA({
     
     const location = locationMap[from] || 'hero';
     trackCtaClick(location, 'start_free');
-    
-    router.push(target);
+
+    void startCheckout({
+      plan: 'free',
+      currency,
+      locale: locale === 'de' ? 'de' : 'en',
+      source: from,
+    }).catch((error) => {
+      console.error('Failed to start free signup flow:', error);
+      window.alert(
+        locale === 'de'
+          ? 'Der kostenlose Start konnte nicht geöffnet werden. Bitte versuchen Sie es erneut.'
+          : 'We could not open the free signup flow. Please try again.',
+      );
+    });
   };
 
   return (

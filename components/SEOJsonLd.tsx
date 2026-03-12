@@ -73,7 +73,7 @@ export function TeachAppJsonLd({
     "audience": { "@type": "Audience", "audienceType": "Teachers" },
     "availableLanguage": ["en", "de", "fr", "es", "it"],
     "isAccessibleForFree": true,
-    "offers": { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "url": `${site}/pricing` }
+    "offers": { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "EUR", "url": `${site}/pricing` }
   };
   return <Script data={data} />;
 }

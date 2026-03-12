@@ -1,6 +1,10 @@
 ﻿"use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useCurrency } from '@/components/CurrencyProvider';
+import { formatPrice } from '@/lib/currency';
+import { startCheckout } from '@/lib/checkout';
+import { CheckoutPlan, FREE_PLAN_PRICE, PRICING } from '@/lib/pricing';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
@@ -8,12 +12,16 @@ import PrimaryCTA from './PrimaryCTA';
 import LiftCard from './ui/LiftCard';
 import { BookOpen, Clock, Users, Sparkles, ArrowRight, Star, CheckCircle, X, Zap, FileText, Share2, Globe, Heart, Coffee, AlertTriangle, Battery, ChevronLeft, ChevronRight } from 'lucide-react';
 import { AIOptimizedContent, SchemaEnhancedText, EDUCATION_SEMANTIC_KEYWORDS, AI_EDUCATION_TOPICS } from './AIOptimizedContent';
-import { useTranslations } from './LocaleProvider';
+import { useLocale, useTranslations } from './LocaleProvider';
 import { trackCtaClick, trackPricingClick } from './GoogleAnalytics';
 
 export default function HomePage() {
   const t = useTranslations();
+  const locale = useLocale();
+  const { currency } = useCurrency();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [pendingCheckoutPlan, setPendingCheckoutPlan] = useState<CheckoutPlan | null>(null);
+  const priceLocale = locale === 'de' ? 'de-DE' : 'en-US';
   
   // Safe array access with fallbacks
   const getTranslationArray = (key: string, fallback: string[] = []): string[] => {
@@ -73,6 +81,27 @@ export default function HomePage() {
   };
 
   const teachers = getTeachers();
+
+  const handlePlanCheckout = async (plan: CheckoutPlan) => {
+    try {
+      setPendingCheckoutPlan(plan);
+      await startCheckout({
+        plan,
+        currency,
+        locale: locale === 'de' ? 'de' : 'en',
+        source: 'home_pricing',
+      });
+    } catch (error) {
+      console.error('Failed to start checkout:', error);
+      window.alert(
+        locale === 'de'
+          ? 'Checkout konnte nicht gestartet werden. Bitte versuchen Sie es erneut.'
+          : 'We could not start checkout. Please try again.',
+      );
+    } finally {
+      setPendingCheckoutPlan(null);
+    }
+  };
 
   // Auto-rotate slides every 4 seconds (for both hero and testimonial carousels)
   useEffect(() => {
@@ -661,31 +690,31 @@ export default function HomePage() {
             <h3 className="text-3xl font-bold text-[#2C3E35] mb-12">{t('home.pricing.title')}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {[
-                {
-                  title: t('home.pricing.plans.free.title'),
-                  price: t('home.pricing.plans.free.price'),
-                  features: getTranslationArray('home.pricing.plans.free.features', ["5 lesson plans/month"]),
-                  cta: t('home.pricing.plans.free.cta'),
-                  popular: false,
+	              {[
+	                {
+	                  title: t('home.pricing.plans.free.title'),
+	                  price: formatPrice(FREE_PLAN_PRICE, currency, priceLocale),
+	                  features: getTranslationArray('home.pricing.plans.free.features', ["5 lesson plans/month"]),
+	                  cta: t('home.pricing.plans.free.cta'),
+	                  popular: false,
                   planType: 'free' as const
                 },
-                {
-                  title: t('home.pricing.plans.pro.title'), 
-                  price: t('home.pricing.plans.pro.price'),
-                  period: t('home.pricing.plans.pro.period'),
-                  features: getTranslationArray('home.pricing.plans.pro.features', ["Unlimited plans", "Full template library", "Priority support"]),
-                  cta: t('home.pricing.plans.pro.cta'),
+	                {
+	                  title: t('home.pricing.plans.pro.title'), 
+	                  price: formatPrice(PRICING.pro[currency].price, currency, priceLocale),
+	                  period: t('home.pricing.plans.pro.period'),
+	                  features: getTranslationArray('home.pricing.plans.pro.features', ["Unlimited plans", "Full template library", "Priority support"]),
+	                  cta: t('home.pricing.plans.pro.cta'),
                   popular: true,
                   popularText: t('home.pricing.plans.pro.popular'),
                   planType: 'pro' as const
                 },
-                {
-                  title: t('home.pricing.plans.bundle.title'),
-                  price: t('home.pricing.plans.bundle.price'), 
-                  period: t('home.pricing.plans.bundle.period'),
-                  features: getTranslationArray('home.pricing.plans.bundle.features', ["Zaza Teach + Zaza Draft", "All Pro features", "Cross-platform sync"]),
-                  cta: t('home.pricing.plans.bundle.cta'),
+	                {
+	                  title: t('home.pricing.plans.bundle.title'),
+	                  price: formatPrice(PRICING.bundle[currency].price, currency, priceLocale), 
+	                  period: t('home.pricing.plans.bundle.period'),
+	                  features: getTranslationArray('home.pricing.plans.bundle.features', ["Zaza Teach + Zaza Draft", "All Pro features", "Cross-platform sync"]),
+	                  cta: t('home.pricing.plans.bundle.cta'),
                   popular: false,
                   planType: 'bundle' as const
                 }
@@ -717,16 +746,21 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    className={`w-full ${
-                      plan.popular 
-                        ? 'bg-[#66B2B2] hover:bg-[#66B2B2]/90' 
-                        : 'bg-[#8A2BE2] hover:bg-[#8A2BE2]/90'
-                    } text-white`}
-                    onClick={() => trackPricingClick(plan.planType)}
-                  >
-                    {plan.cta}
-                  </Button>
+	                  <Button 
+	                    type="button"
+	                    className={`w-full ${
+	                      plan.popular 
+	                        ? 'bg-[#66B2B2] hover:bg-[#66B2B2]/90' 
+	                        : 'bg-[#8A2BE2] hover:bg-[#8A2BE2]/90'
+	                    } text-white`}
+	                    disabled={pendingCheckoutPlan === plan.planType}
+	                    onClick={() => {
+	                      trackPricingClick(plan.planType);
+	                      void handlePlanCheckout(plan.planType);
+	                    }}
+	                  >
+	                    {plan.cta}
+	                  </Button>
                 </motion.div>
               ))}
             </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { CurrencyProvider } from '@/components/CurrencyProvider';
 import { LocaleProvider } from '../../components/LocaleProvider';
 import { ErrorBoundary } from '../../components/ErrorBoundary';
 import Footer from "../../components/Footer";
@@ -41,15 +42,17 @@ export default async function GermanLayout({
       <body className="min-h-screen flex flex-col">
         <ErrorBoundary>
           <LocaleProvider locale={locale} messages={messages}>
-            <GoogleAnalytics trackingId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
-            <SkipLink />
-            <Header />
-            <main id="main-content" className="flex-1">
-              <ErrorBoundary>
-                {children}
-              </ErrorBoundary>
-            </main>
-            <Footer variant="teach" />
+            <CurrencyProvider>
+              <GoogleAnalytics trackingId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
+              <SkipLink />
+              <Header />
+              <main id="main-content" className="flex-1">
+                <ErrorBoundary>
+                  {children}
+                </ErrorBoundary>
+              </main>
+              <Footer variant="teach" />
+            </CurrencyProvider>
           </LocaleProvider>
         </ErrorBoundary>
       </body>

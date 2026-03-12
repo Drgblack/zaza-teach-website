@@ -1,19 +1,20 @@
 'use client';
 
 import React from 'react';
+import CurrencySwitcher from '@/components/CurrencySwitcher';
+import { useCurrency } from '@/components/CurrencyProvider';
+import { formatPrice } from '@/lib/currency';
+import { startCheckout } from '@/lib/checkout';
+import { CheckoutPlan, FREE_PLAN_PRICE, PRICING } from '@/lib/pricing';
 import { useTranslations, useLocale } from '../../../components/LocaleProvider';
 import { Check, Star } from 'lucide-react';
-import Link from 'next/link';
-
-declare global {
-  interface Window {
-    gtag?: (...args: any[]) => void;
-  }
-}
 
 export default function PricingClient() {
   const t = useTranslations();
   const locale = useLocale();
+  const { currency } = useCurrency();
+  const [pendingCheckoutPlan, setPendingCheckoutPlan] = React.useState<CheckoutPlan | null>(null);
+  const priceLocale = locale === 'de' ? 'de-DE' : 'en-US';
 
   // Helper to safely get translation objects/arrays
   const getTranslationObject = (key: string, fallback: any = {}): any => {
@@ -21,12 +22,6 @@ export default function PricingClient() {
     return typeof result === 'object' && result !== null ? result : fallback;
   };
 
-  const getTranslationArray = (key: string, fallback: string[] = []): string[] => {
-    const result = t(key);
-    return Array.isArray(result) ? result : fallback;
-  };
-
-  const pricingData = getTranslationObject('pricing');
   const plans = getTranslationObject('pricing.plans');
   const proof = getTranslationObject('pricing.proof');
 
@@ -41,38 +36,60 @@ export default function PricingClient() {
         event_category: 'pricing',
         event_label: locale,
         page_title: 'Pricing Page',
-        page_location: window.location.href
+        page_location: window.location.href,
+        selected_currency: currency,
       });
     }
   };
 
-  const trackPlanCTAClick = (planName: string, planPrice: string) => {
+  const trackPlanCTAClick = (planName: string, planPrice: number) => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'pricing_plan_cta_click', {
         event_category: 'pricing',
         event_label: planName,
-        value: parseFloat(planPrice.replace(/[^\d.]/g, '')),
-        currency: 'EUR',
+        value: planPrice,
+        currency,
         plan_name: planName,
-        locale: locale
+        locale,
       });
     }
   };
 
-  const trackBundleOutboundClick = () => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'bundle_outbound_click', {
-        event_category: 'pricing',
-        event_label: 'zaza_draft_bundle',
-        locale: locale
+  const handlePlanCheckout = async (plan: CheckoutPlan) => {
+    const planNames = {
+      free: plans?.free?.name || 'Free',
+      pro: plans?.pro?.name || 'Pro',
+      bundle: plans?.bundle?.name || 'Bundle',
+    };
+
+    const planPrices = {
+      free: FREE_PLAN_PRICE,
+      pro: PRICING.pro[currency].price,
+      bundle: PRICING.bundle[currency].price,
+    };
+
+    trackPlanCTAClick(planNames[plan], planPrices[plan]);
+
+    try {
+      setPendingCheckoutPlan(plan);
+      await startCheckout({
+        plan,
+        currency,
+        locale: locale === 'de' ? 'de' : 'en',
+        source: 'pricing_page',
       });
+    } catch (error) {
+      console.error('Failed to start checkout:', error);
+      window.alert('We could not start checkout. Please try again.');
+    } finally {
+      setPendingCheckoutPlan(null);
     }
   };
 
   // Track page view on component mount
   React.useEffect(() => {
     trackPricingView();
-  }, []);
+  }, [currency]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -93,6 +110,9 @@ export default function PricingClient() {
           <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
             {heroSubtitle}
           </p>
+          <div className="mt-8 flex justify-center">
+            <CurrencySwitcher />
+          </div>
         </div>
       </div>
 
@@ -108,19 +128,20 @@ export default function PricingClient() {
               </h3>
               <div className="mb-6">
                 <span className="text-5xl font-bold text-gray-900">
-                  {plans?.free?.price || '€0'}
+                  {formatPrice(FREE_PLAN_PRICE, currency, priceLocale)}
                 </span>
                 <span className="text-gray-500 text-lg ml-1">
                   {plans?.free?.period || '/month'}
                 </span>
               </div>
-              <Link 
-                href={`/${locale}/signup`}
-                onClick={() => trackPlanCTAClick('Free', plans?.free?.price || '0')}
-                className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg"
+              <button
+                type="button"
+                onClick={() => void handlePlanCheckout('free')}
+                disabled={pendingCheckoutPlan === 'free'}
+                className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {plans?.free?.cta || 'Start Free'}
-              </Link>
+              </button>
             </div>
             
             <div className="space-y-4">
@@ -148,19 +169,20 @@ export default function PricingClient() {
               </h3>
               <div className="mb-6">
                 <span className="text-5xl font-bold text-gray-900">
-                  {plans?.pro?.price || '€19.99'}
+                  {formatPrice(PRICING.pro[currency].price, currency, priceLocale)}
                 </span>
                 <span className="text-gray-500 text-lg ml-1">
                   {plans?.pro?.period || '/month'}
                 </span>
               </div>
-              <Link 
-                href={`/${locale}/signup?plan=pro`}
-                onClick={() => trackPlanCTAClick('Pro', plans?.pro?.price || '19.99')}
-                className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg"
+              <button
+                type="button"
+                onClick={() => void handlePlanCheckout('pro')}
+                disabled={pendingCheckoutPlan === 'pro'}
+                className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {plans?.pro?.cta || 'Start Pro'}
-              </Link>
+              </button>
             </div>
             
             <div className="space-y-4">
@@ -181,21 +203,20 @@ export default function PricingClient() {
               </h3>
               <div className="mb-6">
                 <span className="text-5xl font-bold text-gray-900">
-                  {plans?.bundle?.price || '€24.99'}
+                  {formatPrice(PRICING.bundle[currency].price, currency, priceLocale)}
                 </span>
                 <span className="text-gray-500 text-lg ml-1">
                   {plans?.bundle?.period || '/month'}
                 </span>
               </div>
-              <a 
-                href={plans?.bundle?.ctaLink || 'https://zazadraft.com'}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={trackBundleOutboundClick}
-                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-colors inline-block text-center text-lg"
+              <button
+                type="button"
+                onClick={() => void handlePlanCheckout('bundle')}
+                disabled={pendingCheckoutPlan === 'bundle'}
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {plans?.bundle?.cta || 'Get Bundle'}
-              </a>
+              </button>
             </div>
             
             <div className="space-y-4">
