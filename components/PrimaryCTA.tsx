@@ -2,7 +2,7 @@
 
 import { MouseEvent } from 'react';
 import { useCurrency } from '@/components/CurrencyProvider';
-import { startCheckout } from '@/lib/checkout';
+import { redirectToFreeSignup } from '@/lib/free-signup';
 import { DEFAULT_INTERVAL } from '@/lib/pricing';
 import { trackCtaClick } from './GoogleAnalytics';
 import { useLocale } from './LocaleProvider';
@@ -36,20 +36,27 @@ export default function PrimaryCTA({
     const location = locationMap[from] || 'hero';
     trackCtaClick(location, 'start_free');
 
-    void startCheckout({
-      plan: 'free',
-      interval: DEFAULT_INTERVAL,
-      currency,
-      locale: locale === 'de' ? 'de' : 'en',
-      source: from,
-    }).catch((error) => {
-      console.error('Failed to start free signup flow:', error);
+    try {
+      redirectToFreeSignup({
+        currency,
+        interval: DEFAULT_INTERVAL,
+        locale: locale === 'de' ? 'de' : 'en',
+        source: from,
+      });
+    } catch (error) {
+      console.error('Failed to start free signup flow:', {
+        currency,
+        error,
+        interval: DEFAULT_INTERVAL,
+        locale,
+        source: from,
+      });
       window.alert(
         locale === 'de'
           ? 'Der kostenlose Start konnte nicht geöffnet werden. Bitte versuchen Sie es erneut.'
           : 'We could not open the free signup flow. Please try again.',
       );
-    });
+    }
   };
 
   return (

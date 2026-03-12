@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useCurrency } from '@/components/CurrencyProvider';
 import { formatPrice } from '@/lib/currency';
 import { startCheckout } from '@/lib/checkout';
+import { redirectToFreeSignup } from '@/lib/free-signup';
 import { CheckoutPlan, DEFAULT_INTERVAL, FREE_PLAN_PRICE, PRICING } from '@/lib/pricing';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
@@ -82,7 +83,32 @@ export default function HomePage() {
 
   const teachers = getTeachers();
 
-  const handlePlanCheckout = async (plan: CheckoutPlan) => {
+  const handlePlanAction = async (plan: CheckoutPlan) => {
+    if (plan === 'free') {
+      try {
+        redirectToFreeSignup({
+          currency,
+          interval: DEFAULT_INTERVAL,
+          locale: locale === 'de' ? 'de' : 'en',
+          source: 'home_pricing',
+        });
+      } catch (error) {
+        console.error('Failed to start free signup flow from home pricing.', {
+          currency,
+          error,
+          interval: DEFAULT_INTERVAL,
+          locale,
+          plan,
+        });
+        window.alert(
+          locale === 'de'
+            ? 'Der kostenlose Start konnte nicht geöffnet werden. Bitte versuchen Sie es erneut.'
+            : 'We could not open the free signup flow. Please try again.',
+        );
+      }
+      return;
+    }
+
     try {
       setPendingCheckoutPlan(plan);
       await startCheckout({
@@ -757,7 +783,7 @@ export default function HomePage() {
 	                    disabled={pendingCheckoutPlan === plan.planType}
 	                    onClick={() => {
 	                      trackPricingClick(plan.planType);
-	                      void handlePlanCheckout(plan.planType);
+	                      void handlePlanAction(plan.planType);
 	                    }}
 	                  >
 	                    {plan.cta}

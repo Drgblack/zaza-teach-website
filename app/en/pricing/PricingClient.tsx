@@ -5,6 +5,7 @@ import CurrencySwitcher from '@/components/CurrencySwitcher';
 import { useCurrency } from '@/components/CurrencyProvider';
 import { formatPrice } from '@/lib/currency';
 import { startCheckout } from '@/lib/checkout';
+import { redirectToFreeSignup } from '@/lib/free-signup';
 import {
   BillingInterval,
   CheckoutPlan,
@@ -63,7 +64,7 @@ export default function PricingClient() {
     }
   };
 
-  const handlePlanCheckout = async (plan: CheckoutPlan) => {
+  const handlePlanAction = async (plan: CheckoutPlan) => {
     const planNames = {
       free: plans?.free?.name || 'Free',
       draft: plans?.draft?.name || 'Draft',
@@ -79,6 +80,27 @@ export default function PricingClient() {
     };
 
     trackPlanCTAClick(planNames[plan], planPrices[plan]);
+
+    if (plan === 'free') {
+      try {
+        redirectToFreeSignup({
+          currency,
+          interval,
+          locale: locale === 'de' ? 'de' : 'en',
+          source: 'pricing_page',
+        });
+      } catch (error) {
+        console.error('Failed to start free signup flow from pricing page.', {
+          currency,
+          error,
+          interval,
+          locale,
+          plan,
+        });
+        window.alert('We could not open the free signup flow. Please try again.');
+      }
+      return;
+    }
 
     try {
       setPendingCheckoutPlan(plan);
@@ -176,7 +198,7 @@ export default function PricingClient() {
               </div>
               <button
                 type="button"
-                onClick={() => void handlePlanCheckout('free')}
+                onClick={() => void handlePlanAction('free')}
                 disabled={pendingCheckoutPlan === 'free'}
                 className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
@@ -217,7 +239,7 @@ export default function PricingClient() {
               </div>
               <button
                 type="button"
-                onClick={() => void handlePlanCheckout('teach')}
+                onClick={() => void handlePlanAction('teach')}
                 disabled={pendingCheckoutPlan === 'teach'}
                 className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >
@@ -251,7 +273,7 @@ export default function PricingClient() {
               </div>
               <button
                 type="button"
-                onClick={() => void handlePlanCheckout('bundle')}
+                onClick={() => void handlePlanAction('bundle')}
                 disabled={pendingCheckoutPlan === 'bundle'}
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-colors inline-block text-center text-lg disabled:cursor-not-allowed disabled:opacity-70"
               >

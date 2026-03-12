@@ -70,34 +70,6 @@ function getPricingUrl(locale: 'en' | 'de') {
   return new URL(locale === 'de' ? '/de/pricing' : '/en/pricing', siteUrl);
 }
 
-function buildFreeSignupUrl({
-  currency,
-  interval,
-  locale,
-  plan,
-  source,
-}: {
-  currency: CurrencyCode;
-  interval: BillingInterval;
-  locale: 'en' | 'de';
-  plan: CheckoutPlan;
-  source?: string;
-}) {
-  const signupUrl = process.env.NEXT_PUBLIC_SIGNUP_URL || 'https://app.zazateach.com/signup';
-  const url = new URL(signupUrl);
-
-  url.searchParams.set('plan', plan);
-  url.searchParams.set('interval', interval);
-  url.searchParams.set('currency', currency);
-  url.searchParams.set('locale', locale);
-
-  if (source) {
-    url.searchParams.set('source', source);
-  }
-
-  return url.toString();
-}
-
 export async function POST(request: NextRequest) {
   let debugContext:
     | {
@@ -128,15 +100,24 @@ export async function POST(request: NextRequest) {
     };
 
     if (data.plan === 'free') {
-      const signupUrl = buildFreeSignupUrl(data);
-      console.info('[checkout] free-signup redirect', {
+      console.warn('[checkout] free plan sent to paid checkout endpoint', {
         ...debugContext,
-        signupUrl,
       });
 
-      return NextResponse.json({
-        url: signupUrl,
-      });
+      return NextResponse.json(
+        {
+          error: 'Free plan should use the signup flow directly, not Stripe Checkout.',
+          ...(CHECKOUT_DEBUG_ENABLED
+            ? {
+                debug: {
+                  ...debugContext,
+                  expectedFlow: 'direct_signup',
+                },
+              }
+            : {}),
+        },
+        { status: 400 },
+      );
     }
 
     if (!stripe) {
