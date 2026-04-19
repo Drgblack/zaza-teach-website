@@ -140,6 +140,33 @@ export default function Footer({ variant = "teach" }: { variant?: Variant }) {
               </li>
             ))}
           </ul>
+          <div className="mt-6">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide">Also from Zaza</p>
+            <ul className="space-y-1 text-sm">
+              <li>
+                <a
+                  href="https://zeropaste.io"
+                  title="ZeroPaste - Invoice data extraction for bookkeepers and accountants"
+                  rel="noopener"
+                  target="_blank"
+                  className="hover:underline"
+                >
+                  ZeroPaste - Invoice Data Extraction
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.zazadraft.com"
+                  title="Zaza Draft - Communication safety for teachers"
+                  rel="noopener"
+                  target="_blank"
+                  className="hover:underline"
+                >
+                  Zaza Draft
+                </a>
+              </li>
+            </ul>
+          </div>
           <div className="mt-6 p-4 bg-white/10 rounded-lg">
             <p className="text-sm font-medium mb-2">{locale === 'de' ? 'Brauchen Sie Hilfe bei E-Mails und Berichten?' : 'Need help with emails and reports?'}</p>
             <a href="https://zazadraft.com" target="_blank" rel="noopener noreferrer" aria-label={locale === 'de' ? 'Zaza Draft öffnen (neuer Tab)' : 'Open Zaza Draft (new tab)'} className="text-[#66B2B2] hover:text-[#66B2B2]/80 text-sm font-medium inline-flex items-center gap-1">
